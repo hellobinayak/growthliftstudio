@@ -1,0 +1,335 @@
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { 
+  ArrowRight, 
+  TrendingUp, 
+  Target, 
+  CheckCircle2,
+  Layers,
+  Calendar
+} from "lucide-react";
+import { DotGrid, LightBeam, BeamPattern, Particles } from "../components/BackgroundEffects";
+import { Button, InteractiveCard } from "../components/UI";
+import { Link } from "react-router-dom";
+
+export default function Home() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  return (
+    <div ref={containerRef} className="relative">
+      {/* Background Layer */}
+      <div className="absolute inset-0 z-0 overflow-hidden min-h-screen">
+        <motion.div style={{ y: backgroundY }} className="h-full w-full relative">
+          <DotGrid />
+          <LightBeam className="opacity-40" />
+          <BeamPattern />
+          <Particles />
+          
+          {/* Subtle Cursor Follow Glow */}
+          <motion.div 
+            animate={{ x: mousePos.x - 300, y: mousePos.y - 300 }}
+            transition={{ type: "spring", stiffness: 150, damping: 25, mass: 0.5 }}
+            className="absolute h-[600px] w-[600px] rounded-full bg-brand-cyan/5 blur-[100px] pointer-events-none"
+          />
+        </motion.div>
+      </div>
+
+      {/* Hero Section */}
+      <section className="relative z-10 pt-28 pb-12 px-6">
+        <div className="mx-auto max-w-5xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="text-[10px] tracking-[0.3em] uppercase text-zinc-400 font-bold border border-zinc-200 px-4 py-1.5 rounded-full bg-white/50 mb-8 inline-block shadow-sm">
+              For Home Service Businesses
+            </span>
+            <h1 className="text-5xl md:text-8xl font-sans font-extrabold tracking-tighter mb-8 leading-[0.95] text-balance text-brand-navy">
+              Your calendar shouldn’t <br />
+              <span className="shimmer-text text-brand-cyan">have empty slots.</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-zinc-500 max-w-3xl mx-auto mb-6 text-balance leading-relaxed">
+              We build systems that bring in <span className="text-brand-navy font-bold">booked, confirmed jobs</span>—not inquiries you have to chase.
+            </p>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-cyan mb-12">
+              You run the crew. We handle the pipeline.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+              <Link to="/contact">
+                <Button size="lg" className="bg-brand-navy text-white hover:bg-brand-navy/90 text-lg py-7 px-10 shadow-xl shadow-brand-navy/20 w-full sm:w-auto">
+                  Book a Call
+                </Button>
+              </Link>
+              <Link to="/results">
+                <Button variant="outline" size="lg" className="border-zinc-200 text-zinc-600 hover:bg-zinc-50 text-lg py-7 px-10 w-full sm:w-auto">
+                  See case studies
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Credibility Section - Logos */}
+      <section className="relative z-10 py-20 bg-white border-y border-zinc-200/50 overflow-hidden">
+        {/* Blue-Shaded Gloss Layering */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,rgba(0,183,212,0.1),transparent)] opacity-70 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-cyan-50/10 to-white pointer-events-none" />
+        
+        {/* Diagonal Gloss Streak with Blue Tint */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute -inset-[100%] aspect-square bg-[linear-gradient(45deg,transparent_25%,rgba(0,183,212,0.15)_50%,transparent_75%)] opacity-20 transform -translate-x-1/2 -translate-y-1/2 animate-[shimmer_15s_infinite] pointer-events-none" />
+        </div>
+
+        {/* Top Specular Highlight with Blue shadow */}
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent shadow-[0_1px_15px_rgba(0,183,212,0.3)]" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-100/50 to-transparent" />
+        
+        <div className="mx-auto max-w-7xl px-6 relative">
+          <div className="flex flex-wrap justify-center items-start gap-x-24 gap-y-12 transition-all duration-700">
+            {[
+              { src: "https://cdn.simpleicons.org/meta/0D1B2A", alt: "Meta", name: "Meta" },
+              { src: "https://cdn.simpleicons.org/google/0D1B2A", alt: "Google", name: "Google" },
+              { src: "https://cdn.simpleicons.org/instagram/0D1B2A", alt: "Instagram", name: "Instagram" },
+              { src: "https://cdn.simpleicons.org/stripe/0D1B2A", alt: "Stripe", name: "Stripe" },
+              { icon: <Layers className="h-6 w-6 text-brand-cyan" />, alt: "GoHighLevel", name: "GoHighLevel" }
+            ].map((logo, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 0.6, y: 0 }}
+                whileHover={{ opacity: 1, scale: 1.1, y: -6 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  delay: i * 0.1,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }}
+                className="flex flex-col items-center gap-4 justify-center filter grayscale group/logo text-center relative"
+              >
+                <div className="h-10 flex items-center justify-center transition-all duration-300 transform group-hover/logo:filter-none">
+                  {logo.src ? (
+                    <img 
+                      src={logo.src} 
+                      alt={logo.alt} 
+                      className="h-8 md:h-10 w-auto transition-all"
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : (
+                    <div className="h-10 w-10 bg-brand-navy rounded-lg flex items-center justify-center shadow-xl shadow-brand-navy/10 relative overflow-hidden group-hover/logo:bg-brand-cyan transition-colors">
+                      <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
+                      {logo.icon}
+                    </div>
+                  )}
+                </div>
+                <span className="font-sans font-black text-[11px] tracking-[0.25em] text-brand-navy/40 group-hover/logo:text-brand-navy transition-all uppercase">
+                  {logo.name}
+                </span>
+                <div className="absolute -inset-4 bg-white/40 blur-xl opacity-0 group-hover/logo:opacity-100 transition-opacity -z-10" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Value Proposition Section */}
+      <section className="relative z-10 py-32 bg-white">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid lg:grid-cols-2 gap-20 items-center mb-24">
+            <div>
+              <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-6">The Outcome</h2>
+              <p className="text-4xl md:text-6xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
+                Stop chasing inquiries. <br />
+                <span className="text-brand-cyan">Start booking jobs.</span>
+              </p>
+              <p className="text-xl text-zinc-500 leading-relaxed font-medium max-w-xl">
+                Most agencies measure success in 'leads'. We measure it in confirmed appointments and work on your crew's schedule.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <InteractiveCard className="p-8 bg-zinc-50 border border-zinc-100 rounded-3xl group">
+                 <div className="h-10 w-10 bg-brand-cyan/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-cyan transition-colors">
+                    <Target className="h-5 w-5 text-brand-cyan group-hover:text-brand-navy transition-colors" />
+                 </div>
+                 <h4 className="text-lg font-black text-brand-navy mb-2">High Intent Only</h4>
+                 <p className="text-sm text-zinc-500 font-medium">We filter for intent so you don't waste time on price-shoppers.</p>
+              </InteractiveCard>
+              <InteractiveCard className="p-8 bg-zinc-50 border border-zinc-100 rounded-3xl group">
+                 <div className="h-10 w-10 bg-brand-cyan/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-cyan transition-colors">
+                    <TrendingUp className="h-5 w-5 text-brand-cyan group-hover:text-brand-navy transition-colors" />
+                 </div>
+                 <h4 className="text-lg font-black text-brand-navy mb-2">Predictable Flow</h4>
+                 <p className="text-sm text-zinc-500 font-medium">Stabilize your income with a pipeline that doesn't go silent.</p>
+              </InteractiveCard>
+              <InteractiveCard className="p-8 bg-zinc-50 border border-zinc-100 rounded-3xl group sm:col-span-2">
+                 <div className="h-10 w-10 bg-brand-cyan/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-cyan transition-colors">
+                    <Layers className="h-5 w-5 text-brand-cyan group-hover:text-brand-navy transition-colors" />
+                 </div>
+                 <h4 className="text-lg font-black text-brand-navy mb-2">Turnkey Operation</h4>
+                 <p className="text-sm text-zinc-500 font-medium max-w-xs">We handle the tech and targeting while you handle the tools. No extra management needed.</p>
+              </InteractiveCard>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section Preview */}
+      <section id="process" className="relative z-10 py-32 bg-zinc-50 border-y border-zinc-100">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="text-center mb-20 text-balance">
+            <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Process</h2>
+            <p className="text-4xl md:text-5xl font-extrabold tracking-tight text-brand-navy leading-tight">
+              Simple system. Clear outcome.
+            </p>
+          </div>
+
+          <div className="flex flex-col lg:flex-row items-stretch justify-between gap-4 lg:gap-2">
+            {[
+              { step: "01", title: "Audit", desc: "Breakdown of your current pipeline." },
+              { step: "02", title: "Build", desc: "Targeted campaigns for your local market." },
+              { step: "03", title: "Optimize", desc: "Refinement based on real-time data." },
+              { step: "04", title: "Book", desc: "Qualified calls and confirmed jobs." }
+            ].map((item, i, arr) => (
+              <React.Fragment key={i}>
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
+                  className="flex-1 group relative p-8 rounded-2xl bg-gradient-to-br from-white via-cyan-50/40 to-brand-cyan/5 border border-white shadow-xl shadow-brand-cyan/5 flex flex-col overflow-hidden cursor-default min-w-0"
+                >
+                  <div className="absolute top-0 -left-[100%] w-[200%] h-full bg-gradient-to-r from-transparent via-white/60 to-transparent -rotate-45 group-hover:left-[100%] transition-all duration-1000 pointer-events-none" />
+                  <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-cyan mb-4 block relative z-10 transition-transform group-hover:translate-x-1">Phase {item.step}</span>
+                  <h3 className="text-3xl lg:text-4xl font-black text-brand-navy mb-4 relative z-10 tracking-tighter transition-all group-hover:text-brand-cyan group-hover:scale-[1.02] origin-left">
+                    {item.title}
+                  </h3>
+                  <p className="text-zinc-500 text-sm leading-relaxed relative z-10 font-medium">
+                    {item.desc}
+                  </p>
+                </motion.div>
+                {i < arr.length - 1 && (
+                  <div className="hidden lg:flex items-center justify-center z-20">
+                    <ArrowRight className="h-6 w-6 text-brand-cyan/30" />
+                  </div>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Preview Section */}
+      <section className="relative z-10 py-32 bg-white">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
+            <div className="max-w-2xl">
+              <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">What We Handle</h2>
+              <p className="text-4xl md:text-5xl font-sans font-black text-brand-navy tracking-tighter leading-tight">
+                Systems built for <br />
+                <span className="text-brand-cyan">owner-operators.</span>
+              </p>
+            </div>
+            <Link to="/services">
+              <Button variant="outline" className="border-brand-navy/10 hover:border-brand-cyan text-brand-navy font-bold px-8 h-14">
+                View All Services <ArrowRight className="h-4 w-4 ml-2" />
+              </Button>
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { title: "Advertising", desc: "Local targeting where homeowners are looking.", icon: <Target className="h-5 w-5" /> },
+              { title: "Booking Systems", desc: "Turning interest into scheduled appointments.", icon: <Calendar className="h-5 w-5" /> },
+              { title: "Follow-Up", desc: "Automated sequences so no lead is missed.", icon: <TrendingUp className="h-5 w-5" /> },
+              { title: "Pipeline Management", desc: "Visibility into your revenue future.", icon: <Layers className="h-5 w-5" /> }
+            ].map((s, i) => (
+              <InteractiveCard key={i} className="p-8 bg-white border border-zinc-100 rounded-3xl group">
+                <div className="h-10 w-10 bg-brand-cyan/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-cyan transition-colors">
+                  <div className="text-brand-cyan group-hover:text-brand-navy transition-colors">
+                    {s.icon}
+                  </div>
+                </div>
+                <h4 className="text-lg font-black text-brand-navy mb-2">{s.title}</h4>
+                <p className="text-xs text-zinc-500 font-bold leading-relaxed">{s.desc}</p>
+              </InteractiveCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Preview Section */}
+      <section className="relative z-10 py-32 bg-zinc-50 border-y border-zinc-100">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="text-center mb-20">
+            <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Case Studies</h2>
+            <p className="text-4xl md:text-5xl font-sans font-black text-brand-navy tracking-tighter">
+              Proof the system <span className="text-brand-cyan">performs.</span>
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            {[
+              { company: "Remodeling", results: "8 jobs in 30 days" },
+              { company: "Roofing", results: "5 installs in 3 weeks" },
+              { company: "Local Service", results: "10+ monthly bookings" }
+            ].map((cs, i) => (
+              <InteractiveCard key={i} className="p-10 bg-white border border-zinc-100 rounded-[2.5rem] group hover:border-brand-cyan transition-all shadow-sm hover:shadow-xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-6 opacity-[0.03] group-hover:opacity-10 transition-opacity">
+                   <TrendingUp className="h-24 w-24 text-brand-navy" />
+                </div>
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-cyan mb-4 block underline decoration-brand-cyan/20 underline-offset-4">Verified Result</span>
+                <h4 className="text-xl font-black text-brand-navy mb-6 leading-tight">{cs.company} <br /> Business</h4>
+                <div className="pt-6 border-t border-zinc-50">
+                   <p className="text-2xl font-black text-brand-navy group-hover:text-brand-cyan transition-colors">{cs.results}</p>
+                </div>
+              </InteractiveCard>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/results">
+              <Button size="lg" variant="outline" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white px-12 h-16 font-black uppercase tracking-widest text-xs">
+                View Full Studies <ArrowRight className="h-4 w-4 ml-3" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured CTA */}
+      <section className="relative z-10 py-32 bg-white">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h2 className="text-5xl md:text-7xl font-sans font-extrabold mb-8 tracking-tighter leading-[1.1] text-brand-navy">
+            Your next booked jobs are <br />
+            <span className="shimmer-text font-italic italic">already in your market.</span>
+          </h2>
+          <Button size="lg" className="h-20 px-14 text-xl bg-brand-navy text-white hover:bg-brand-navy/90 rounded-2xl group transition-all">
+            <Link to="/contact" className="flex items-center gap-3">
+              Book a Call
+              <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </Button>
+        </div>
+      </section>
+    </div>
+  );
+}
