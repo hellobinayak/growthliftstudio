@@ -26,6 +26,7 @@ export function Button({
     sm: "h-9 px-4 text-xs font-bold",
     md: "h-11 px-8 py-3 text-sm font-bold",
     lg: "h-14 px-10 py-4 text-base font-bold",
+    xl: "h-10 px-8 text-xs font-black uppercase tracking-[0.15em]",
   };
 
   return (

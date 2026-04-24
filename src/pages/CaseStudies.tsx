@@ -10,7 +10,7 @@ import {
   MapPin
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { InteractiveCard } from "../components/UI";
+import { Button, InteractiveCard } from "../components/UI";
 import { useSurvey } from "../context/SurveyContext";
 
 export default function CaseStudies() {
@@ -139,15 +139,16 @@ export default function CaseStudies() {
             <span className="shimmer-text">It's a better system.</span>
           </h2>
           
-          <button 
+          <Button 
             onClick={openSurvey}
-            className="h-24 px-16 text-2xl bg-brand-cyan text-brand-navy font-black rounded-2xl hover:scale-105 hover:bg-white transition-all shadow-2xl shadow-brand-cyan/20 group"
+            size="xl"
+            className="bg-brand-cyan text-brand-navy hover:bg-white rounded-2xl shadow-2xl shadow-brand-cyan/20 group"
           >
             <span className="flex items-center gap-3">
               Book a Call
               <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform" />
             </span>
-          </button>
+          </Button>
         </div>
       </section>
     </div>

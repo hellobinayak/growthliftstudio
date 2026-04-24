@@ -76,13 +76,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
               <Button 
                 onClick={openSurvey}
-                size="lg" 
-                className="bg-brand-navy text-white hover:bg-brand-navy/90 text-lg py-7 px-10 shadow-xl shadow-brand-navy/20 w-full sm:w-auto"
+                size="xl" 
+                className="bg-brand-navy text-white hover:bg-brand-navy/90 shadow-xl shadow-brand-navy/20 w-full sm:w-auto"
               >
                 Book a Call
               </Button>
               <Link to="/results">
-                <Button variant="outline" size="lg" className="border-zinc-200 text-zinc-600 hover:bg-zinc-50 text-lg py-7 px-10 w-full sm:w-auto">
+                <Button variant="outline" size="xl" className="border-zinc-200 text-zinc-600 hover:bg-zinc-50 w-full sm:w-auto">
                   See case studies
                 </Button>
               </Link>
@@ -207,10 +207,10 @@ export default function Home() {
 
           <div className="flex flex-col lg:flex-row items-stretch justify-between gap-4 lg:gap-2">
             {[
-              { step: "01", title: "Audit", desc: "Breakdown of your current pipeline." },
-              { step: "02", title: "Build", desc: "Targeted campaigns for your local market." },
-              { step: "03", title: "Optimize", desc: "Refinement based on real-time data." },
-              { step: "04", title: "Book", desc: "Qualified calls and confirmed jobs." }
+              { step: "01", title: "Audit", desc: "We study your service area, your competition, and exactly where your current pipeline is losing jobs. No guesswork — just a clear picture of what needs to be built." },
+              { step: "02", title: "Build", desc: "Your ad campaigns, booking system, and follow-up sequences are built and launched — fully done for you. You don't touch a single setting." },
+              { step: "03", title: "Optimize", desc: "Every week, we refine targeting, copy, and conversion points based on real data from your market. The system gets sharper the longer it runs." },
+              { step: "04", title: "Book", desc: "Qualified homeowners land directly on your calendar. You show up, run the estimate, and close the job. That's your only job." }
             ].map((item, i, arr) => (
               <React.Fragment key={i}>
                 <motion.div 
@@ -384,8 +384,8 @@ export default function Home() {
           </h2>
           <Button 
             onClick={openSurvey}
-            size="lg" 
-            className="h-20 px-14 text-xl bg-brand-navy text-white hover:bg-brand-navy/90 rounded-2xl group transition-all"
+            size="xl" 
+            className="bg-brand-navy text-white hover:bg-brand-navy/90 rounded-2xl group transition-all"
           >
             <div className="flex items-center gap-3">
               Book a Call

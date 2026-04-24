@@ -1,6 +1,5 @@
 import React from "react";
 import { 
-  TrendingUp, 
   Instagram, 
   Facebook, 
   Linkedin, 
@@ -34,8 +33,12 @@ export function Layout({ children }: LayoutProps) {
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-100 bg-white/70 backdrop-blur-md">
         <div className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group cursor-pointer">
-            <div className="h-10 w-10 bg-brand-navy rounded-xl flex items-center justify-center group-hover:rotate-6 transition-transform shadow-lg shadow-brand-navy/10">
-              <TrendingUp className="h-6 w-6 text-brand-cyan" />
+            <div className="h-10 w-10 overflow-hidden flex items-center justify-center group-hover:rotate-6 transition-transform">
+              <img 
+                src="https://lh3.googleusercontent.com/d/1KqrKpekKkYsgY6QR-WzzF_QEwaxhswBM" 
+                alt="Growth Lift Studio Logo" 
+                className="h-full w-full object-cover"
+              />
             </div>
             <span className="font-sans font-extrabold text-xl tracking-tight text-brand-navy">Growth Lift Studio</span>
           </Link>
@@ -74,8 +77,12 @@ export function Layout({ children }: LayoutProps) {
             {/* Brand Column */}
             <div className="col-span-2">
               <div className="flex items-center gap-3 mb-6">
-                <div className="h-10 w-10 bg-brand-navy rounded-xl flex items-center justify-center">
-                  <TrendingUp className="h-6 w-6 text-brand-cyan" />
+                <div className="h-10 w-10 overflow-hidden flex items-center justify-center">
+                  <img 
+                    src="https://lh3.googleusercontent.com/d/1KqrKpekKkYsgY6QR-WzzF_QEwaxhswBM" 
+                    alt="Growth Lift Studio Logo" 
+                    className="h-full w-full object-cover"
+                  />
                 </div>
                 <span className="font-sans font-black text-xl tracking-tight text-brand-navy">Growth Lift Studio</span>
               </div>
@@ -100,21 +107,21 @@ export function Layout({ children }: LayoutProps) {
 
             {/* Links Columns */}
             <div>
-              <h4 className="font-sans font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-6">System</h4>
+              <h4 className="font-sans font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-6">Expertise</h4>
               <ul className="space-y-4 text-sm font-bold text-zinc-500">
                 <li><Link to="/services" className="hover:text-brand-cyan transition-colors">Services</Link></li>
-                <li><Link to="/#process" className="hover:text-brand-cyan transition-colors">Process</Link></li>
                 <li><Link to="/results" className="hover:text-brand-cyan transition-colors">Case Studies</Link></li>
                 <li><Link to="/testimonials" className="hover:text-brand-cyan transition-colors">Testimonials</Link></li>
+                <li><a href="/#process" className="hover:text-brand-cyan transition-colors">Our Process</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-sans font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-6">Company</h4>
+              <h4 className="font-sans font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-6">Resources</h4>
               <ul className="space-y-4 text-sm font-bold text-zinc-500">
                 <li><Link to="/about" className="hover:text-brand-cyan transition-colors">About Us</Link></li>
+                <li><Link to="/about#faq" className="hover:text-brand-cyan transition-colors">FAQ</Link></li>
                 <li><Link to="/contact" className="hover:text-brand-cyan transition-colors">Contact</Link></li>
-                <li><Link to="/results" className="hover:text-brand-cyan transition-colors">Case Studies</Link></li>
               </ul>
             </div>
 
