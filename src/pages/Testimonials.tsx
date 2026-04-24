@@ -77,17 +77,17 @@ export default function Testimonials() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Testimonials</h2>
-              <h1 className="text-5xl md:text-7xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight text-balance">
+              <h1 className="text-3xl sm:text-5xl md:text-7xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight text-balance">
                 What it looks like when <br />
                 <span className="text-brand-cyan underline decoration-8 decoration-brand-cyan/10">the pipeline is working.</span>
               </h1>
               
               <div className="space-y-6 max-w-2xl">
-                <p className="text-2xl text-brand-navy font-bold leading-tight">
+                <p className="text-xl sm:text-2xl text-brand-navy font-bold leading-tight">
                   Most decisions come down to one question— <br />
                   <span className="text-brand-cyan italic font-extrabold">does this actually work?</span>
                 </p>
-                <p className="text-xl text-zinc-500 leading-relaxed font-medium">
+                <p className="text-lg sm:text-xl text-zinc-500 leading-relaxed font-medium">
                   These are experiences from home service businesses using the system in real markets.
                 </p>
               </div>
@@ -119,7 +119,7 @@ export default function Testimonials() {
                 <div className="flex flex-col gap-4">
                   <div>
                     <p className="text-[10px] font-black text-brand-cyan uppercase tracking-[0.4em] mb-1">Success Story</p>
-                    <h3 className="text-2xl font-black text-brand-navy tracking-tighter">DAMAINE HARRISON</h3>
+                    <h3 className="text-xl sm:text-2xl font-black text-brand-navy tracking-tighter">DAMAINE HARRISON</h3>
                   </div>
                   
                   <div className="space-y-3">
@@ -152,7 +152,7 @@ export default function Testimonials() {
           <div className="flex items-center justify-between mb-12">
             <div>
               <h3 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-2">Success Stories</h3>
-              <p className="text-3xl font-black text-brand-navy tracking-tight">Verified Results</p>
+              <p className="text-2xl sm:text-3xl font-black text-brand-navy tracking-tight">Verified Results</p>
             </div>
             <div className="flex gap-4">
               <button 
@@ -194,7 +194,7 @@ export default function Testimonials() {
                     <Quote className="h-6 w-6 text-brand-cyan opacity-40 group-hover:opacity-100 transition-opacity" />
                   </div>
 
-                  <p className="text-lg text-brand-navy leading-relaxed font-bold flex-grow italic mb-8 text-balance relative z-10">
+                  <p className="text-base sm:text-lg text-brand-navy leading-relaxed font-bold flex-grow italic mb-8 text-balance relative z-10">
                     "{t.quote}"
                   </p>
 
@@ -220,7 +220,7 @@ export default function Testimonials() {
             <div className="grid lg:grid-cols-2 gap-20 items-center">
                <div>
                   <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-6">Consistency</h2>
-                  <p className="text-4xl md:text-6xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
+                  <p className="text-2xl sm:text-4xl md:text-6xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
                     Different businesses. <br />
                     Different markets. <br />
                     <span className="text-brand-cyan">Same outcome.</span>
@@ -249,7 +249,7 @@ export default function Testimonials() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,183,212,0.1),transparent)] pointer-events-none" />
         
         <div className="mx-auto max-w-4xl relative z-10">
-          <h2 className="text-4xl md:text-6xl font-black mb-12 tracking-tight leading-tight text-white">
+          <h2 className="text-2xl sm:text-4xl md:text-6xl font-black mb-12 tracking-tight leading-tight text-white">
             If the system works, it shows <br />
             <span className="shimmer-text font-black">in the calendar.</span>
           </h2>

@@ -30,6 +30,8 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import CaseStudies from "./pages/CaseStudies";
 import AboutUs from "./pages/AboutUs";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
 import Testimonials from "./pages/Testimonials";
 import Contact from "./pages/Contact";
 
@@ -61,6 +63,8 @@ export default function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/results" element={<CaseStudies />} />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/contact" element={<Contact />} />
             {/* Fallback */}

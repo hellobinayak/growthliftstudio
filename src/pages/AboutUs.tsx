@@ -111,16 +111,16 @@ export default function AboutUs() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">About Us</h2>
-              <h1 className="text-5xl md:text-7xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
+              <h1 className="text-3xl sm:text-5xl md:text-7xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
                 Built around how home service <br />
                 <span className="text-brand-cyan underline decoration-8 decoration-brand-cyan/10">businesses actually operate.</span>
               </h1>
               
               <div className="space-y-8 max-w-2xl">
-                <p className="text-2xl text-brand-navy font-bold leading-tight text-balance">
+                <p className="text-xl sm:text-2xl text-brand-navy font-bold leading-tight text-balance">
                   Binayak Dey founded Growth Lift Studio to solve one problem — home service businesses doing great work but losing revenue to an inconsistent pipeline.
                 </p>
-                <p className="text-xl text-zinc-500 leading-relaxed font-medium">
+                <p className="text-lg sm:text-xl text-zinc-500 leading-relaxed font-medium">
                   Every system we build is focused on one outcome: confirmed jobs on your calendar, consistently.
                 </p>
                 <div className="flex items-center gap-3">
@@ -150,7 +150,7 @@ export default function AboutUs() {
                 
                 <div className="p-6 pt-8">
                    <p className="text-[10px] font-black text-brand-cyan uppercase tracking-[0.3em] mb-1">FOUNDER</p>
-                   <h3 className="text-3xl font-black text-brand-navy tracking-tight mb-4">Binayak Dey</h3>
+                   <h3 className="text-2xl sm:text-3xl font-black text-brand-navy tracking-tight mb-4">Binayak Dey</h3>
                    <p className="text-sm text-zinc-500 font-medium leading-relaxed mb-8">
                      Focusing on one outcome: confirmed jobs on your calendar, consistently.
                    </p>
@@ -253,7 +253,7 @@ export default function AboutUs() {
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Frequently Asked Questions</h2>
-            <p className="text-4xl md:text-5xl font-black text-brand-navy tracking-tight">
+            <p className="text-2xl sm:text-3xl md:text-5xl font-black text-brand-navy tracking-tight">
               You've got questions. <br />
               <span className="text-zinc-400">Here are the honest answers.</span>
             </p>
@@ -301,7 +301,7 @@ export default function AboutUs() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,183,212,0.1),transparent)] pointer-events-none" />
         
         <div className="mx-auto max-w-4xl relative z-10">
-          <h2 className="text-4xl md:text-6xl font-black mb-12 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-6xl font-black mb-12 tracking-tight leading-tight">
             If it works, you'll see it <br />
             <span className="shimmer-text italic">in your calendar.</span>
           </h2>

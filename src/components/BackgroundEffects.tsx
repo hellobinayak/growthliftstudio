@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "motion/react";
 import { cn } from "@/src/lib/utils";
 
@@ -17,7 +18,7 @@ export function DotGrid({ className }: { className?: string }) {
         }}
       />
       <div 
-        className="animate-dot-pulse absolute inset-0 opacity-[0.1]"
+        className="absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage: `radial-gradient(var(--color-brand-cyan) 1.5px, transparent 1.5px)`,
           backgroundSize: "64px 64px",
@@ -123,6 +124,49 @@ export function Spotlight({ className }: { className?: string }) {
         className="absolute top-[10%] right-[10%] h-[800px] w-[500px] rounded-full bg-white/5 blur-[100px] [transform:rotate(25deg)]"
       />
     </motion.div>
+  );
+}
+
+export function FloatingDots({ count = 20, className }: { count?: number; className?: string }) {
+  const dots = React.useMemo(() => {
+    return Array.from({ length: count }).map((_, i) => ({
+      id: i,
+      size: Math.random() * 2 + 1,
+      left: Math.random() * 100 + "%",
+      top: Math.random() * 100 + "%",
+      duration: Math.random() * 15 + 10,
+      delay: -Math.random() * 20,
+      moveX: (Math.random() - 0.5) * 150,
+      moveY: (Math.random() - 0.5) * 150,
+    }));
+  }, [count]);
+
+  return (
+    <div className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}>
+      {dots.map((dot) => (
+        <motion.div
+          key={dot.id}
+          className="absolute rounded-full bg-brand-cyan/30"
+          style={{
+            width: dot.size,
+            height: dot.size,
+            left: dot.left,
+            top: dot.top,
+          }}
+          animate={{
+            x: [0, dot.moveX, 0],
+            y: [0, dot.moveY, 0],
+            opacity: [0.1, 0.4, 0.2],
+          }}
+          transition={{
+            duration: dot.duration,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: dot.delay,
+          }}
+        />
+      ))}
+    </div>
   );
 }
 

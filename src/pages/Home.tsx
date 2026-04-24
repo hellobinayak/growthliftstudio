@@ -8,7 +8,7 @@ import {
   Layers,
   Calendar
 } from "lucide-react";
-import { DotGrid, LightBeam, BeamPattern, Particles } from "../components/BackgroundEffects";
+import { DotGrid, LightBeam, BeamPattern, FloatingDots } from "../components/BackgroundEffects";
 import { Button, InteractiveCard } from "../components/UI";
 import { Link } from "react-router-dom";
 import { useSurvey } from "../context/SurveyContext";
@@ -35,13 +35,12 @@ export default function Home() {
 
   return (
     <div ref={containerRef} className="relative">
-      {/* Background Layer */}
+      {/* Global Background Layer */}
       <div className="absolute inset-0 z-0 overflow-hidden min-h-screen">
         <motion.div style={{ y: backgroundY }} className="h-full w-full relative">
           <DotGrid />
+          <FloatingDots count={60} className="opacity-40" />
           <LightBeam className="opacity-40" />
-          <BeamPattern />
-          <Particles />
           
           {/* Subtle Cursor Follow Glow */}
           <motion.div 
@@ -53,7 +52,13 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative z-10 pt-28 pb-12 px-6">
+      <section className="relative z-10 pt-28 pb-12 px-6 overflow-hidden">
+        {/* Moving Dots restricted to Hero */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
+          <FloatingDots count={40} className="opacity-60" />
+          <BeamPattern className="opacity-10" />
+        </div>
+        
         <div className="mx-auto max-w-5xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -63,11 +68,11 @@ export default function Home() {
             <span className="text-[10px] tracking-[0.3em] uppercase text-zinc-400 font-bold border border-zinc-200 px-4 py-1.5 rounded-full bg-white/50 mb-8 inline-block shadow-sm">
               For Home Service Businesses
             </span>
-            <h1 className="text-5xl md:text-8xl font-sans font-extrabold tracking-tighter mb-8 leading-[0.95] text-balance text-brand-navy">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-sans font-extrabold tracking-tighter mb-8 leading-[0.95] text-balance text-brand-navy">
               Your calendar shouldn’t <br />
               <span className="shimmer-text text-brand-cyan">have empty slots.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-zinc-500 max-w-3xl mx-auto mb-6 text-balance leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-zinc-500 max-w-3xl mx-auto mb-6 text-balance leading-relaxed">
               We build systems that bring in <span className="text-brand-navy font-bold">booked, confirmed jobs</span>—not inquiries you have to chase.
             </p>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-cyan mb-12">
@@ -160,7 +165,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-20 items-center mb-24">
             <div>
               <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-6">The Outcome</h2>
-              <p className="text-4xl md:text-6xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
+              <p className="text-3xl sm:text-4xl md:text-6xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
                 Stop chasing inquiries. <br />
                 <span className="text-brand-cyan">Start booking jobs.</span>
               </p>
@@ -200,7 +205,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center mb-20 text-balance">
             <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Process</h2>
-            <p className="text-4xl md:text-5xl font-extrabold tracking-tight text-brand-navy leading-tight">
+            <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-brand-navy leading-tight">
               Simple system. Clear outcome.
             </p>
           </div>
@@ -223,7 +228,7 @@ export default function Home() {
                 >
                   <div className="absolute top-0 -left-[100%] w-[200%] h-full bg-gradient-to-r from-transparent via-white/60 to-transparent -rotate-45 group-hover:left-[100%] transition-all duration-1000 pointer-events-none" />
                   <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-cyan mb-4 block relative z-10 transition-transform group-hover:translate-x-1">Phase {item.step}</span>
-                  <h3 className="text-3xl lg:text-4xl font-black text-brand-navy mb-4 relative z-10 tracking-tighter transition-all group-hover:text-brand-cyan group-hover:scale-[1.02] origin-left">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-navy mb-4 relative z-10 tracking-tighter transition-all group-hover:text-brand-cyan group-hover:scale-[1.02] origin-left">
                     {item.title}
                   </h3>
                   <p className="text-zinc-500 text-sm leading-relaxed relative z-10 font-medium">
@@ -253,7 +258,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
             <div className="max-w-2xl">
               <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">What We Handle</h2>
-              <p className="text-4xl md:text-5xl font-sans font-black text-white tracking-tighter leading-tight">
+              <p className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-white tracking-tighter leading-tight">
                 Systems built for <br />
                 <span className="text-brand-cyan">owner-operators.</span>
               </p>
@@ -294,7 +299,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center mb-20">
             <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Case Studies</h2>
-            <p className="text-4xl md:text-5xl font-sans font-black text-brand-navy tracking-tighter">
+            <p className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-brand-navy tracking-tighter">
               Proof the system <span className="text-brand-cyan">performs.</span>
             </p>
           </div>
@@ -378,7 +383,7 @@ export default function Home() {
       {/* Featured CTA */}
       <section className="relative z-10 py-32 bg-white">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-5xl md:text-7xl font-sans font-extrabold mb-8 tracking-tighter leading-[1.1] text-brand-navy">
+          <h2 className="text-3xl sm:text-5xl md:text-7xl font-sans font-extrabold mb-8 tracking-tighter leading-[1.1] text-brand-navy">
             Your next booked jobs are <br />
             <span className="shimmer-text font-italic italic">already in your market.</span>
           </h2>

@@ -69,12 +69,12 @@ export default function CaseStudies() {
             className="max-w-4xl"
           >
             <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Case Studies</h2>
-            <h1 className="text-5xl md:text-7xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
               Real businesses. <br />
               <span className="text-brand-cyan underline decoration-8 decoration-brand-cyan/10">Real booking outcomes.</span>
             </h1>
             
-            <p className="text-xl text-zinc-500 leading-relaxed font-medium max-w-2xl">
+            <p className="text-lg sm:text-xl text-zinc-500 leading-relaxed font-medium max-w-2xl">
               These are examples of what happens when the pipeline is structured correctly.
             </p>
           </motion.div>
@@ -95,7 +95,7 @@ export default function CaseStudies() {
                   {study.icon}
                 </div>
                 
-                <h3 className="text-2xl font-black text-brand-navy mb-2 tracking-tight">Case Study {i+1} — {study.title}</h3>
+                <h3 className="text-xl sm:text-2xl font-black text-brand-navy mb-2 tracking-tight">Case Study {i+1} — {study.title}</h3>
                 <p className="text-xs font-bold text-brand-cyan mb-8 tracking-wide flex items-center gap-1.5">
                   <MapPin className="h-3 w-3" /> {study.location}  ·  Ad Spend: ~{study.adSpend}  ·  Timeline: {study.timeline}
                 </p>
@@ -134,7 +134,7 @@ export default function CaseStudies() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,183,212,0.1),transparent)] pointer-events-none" />
         
         <div className="mx-auto max-w-4xl relative z-10">
-          <h2 className="text-4xl md:text-6xl font-black mb-12 tracking-tight leading-tight text-white">
+          <h2 className="text-2xl sm:text-4xl md:text-6xl font-black mb-12 tracking-tight leading-tight text-white">
             The difference isn't more effort. <br />
             <span className="shimmer-text">It's a better system.</span>
           </h2>

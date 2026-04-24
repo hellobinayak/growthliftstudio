@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { 
   Instagram, 
   Facebook, 
   Linkedin, 
   Youtube,
-  ArrowRight
+  ArrowRight,
+  Menu,
+  X
 } from "lucide-react";
 import { Button } from "./UI";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "../lib/utils";
 import { useSurvey } from "../context/SurveyContext";
+import { motion, AnimatePresence } from "motion/react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -18,6 +21,24 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const { openSurvey } = useSurvey();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Close menu on route change
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
+
+  // Prevent scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -32,17 +53,21 @@ export function Layout({ children }: LayoutProps) {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-100 bg-white/70 backdrop-blur-md">
         <div className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3 group cursor-pointer">
-            <div className="h-10 w-10 overflow-hidden flex items-center justify-center group-hover:rotate-6 transition-transform">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 group cursor-pointer">
+            <div className="h-8 w-8 sm:h-10 sm:w-10 overflow-hidden flex items-center justify-center group-hover:rotate-6 transition-transform">
               <img 
                 src="https://lh3.googleusercontent.com/d/1KqrKpekKkYsgY6QR-WzzF_QEwaxhswBM" 
                 alt="Growth Lift Studio Logo" 
                 className="h-full w-full object-cover"
               />
             </div>
-            <span className="font-sans font-extrabold text-xl tracking-tight text-brand-navy">Growth Lift Studio</span>
+            <span className="font-sans font-extrabold text-lg sm:text-xl tracking-tight text-brand-navy whitespace-nowrap">
+              Growth Lift <span className="hidden sm:inline">Studio</span>
+            </span>
           </Link>
-          <div className="hidden md:flex items-center gap-8 text-sm text-zinc-500 font-bold uppercase tracking-wider">
+
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center gap-8 text-sm text-zinc-500 font-bold uppercase tracking-wider">
             {navLinks.map((link) => (
               <Link 
                 key={link.name}
@@ -63,7 +88,66 @@ export function Layout({ children }: LayoutProps) {
               Book a Call
             </Button>
           </div>
+
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="lg:hidden p-2 text-brand-navy focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
+
+        {/* Mobile Menu Overlay */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+              animate={{ opacity: 1, backdropFilter: "blur(12px)" }}
+              exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+              transition={{ duration: 0.3 }}
+              className="lg:hidden fixed inset-0 top-20 bg-white/80 z-40 px-6 py-12 flex flex-col gap-8 items-center"
+            >
+              <div className="flex flex-col gap-6 items-center w-full">
+                {navLinks.map((link) => (
+                  <Link 
+                    key={link.name}
+                    to={link.href} 
+                    className={cn(
+                      "text-2xl font-sans font-black uppercase tracking-widest transition-colors",
+                      location.pathname === link.href ? "text-brand-cyan" : "text-brand-navy hover:text-brand-cyan"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-8 flex flex-col gap-4 w-full">
+                <Button 
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    openSurvey();
+                  }} 
+                  className="w-full bg-brand-navy text-white py-6 text-lg"
+                >
+                  Book a Call
+                </Button>
+                <div className="flex justify-center gap-8 mt-12">
+                  <a href="https://www.instagram.com/growthliftstudio/" target="_blank" rel="noopener noreferrer">
+                    <Instagram className="h-6 w-6 text-zinc-400 hover:text-brand-cyan" />
+                  </a>
+                  <a href="https://www.facebook.com/profile.php?id=61552669001037" target="_blank" rel="noopener noreferrer">
+                    <Facebook className="h-6 w-6 text-zinc-400 hover:text-brand-cyan" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/binayakdey/" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="h-6 w-6 text-zinc-400 hover:text-brand-cyan" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       <main className="relative z-10 pt-20">
@@ -128,8 +212,8 @@ export function Layout({ children }: LayoutProps) {
             <div>
               <h4 className="font-sans font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-6">Legal</h4>
               <ul className="space-y-4 text-sm font-bold text-zinc-500">
-                <li><Link to="/privacy" className="hover:text-brand-cyan transition-colors">Privacy</Link></li>
-                <li><Link to="/terms" className="hover:text-brand-cyan transition-colors">Terms</Link></li>
+                <li><Link to="/privacy-policy" className="hover:text-brand-cyan transition-colors">Privacy Policy</Link></li>
+                <li><Link to="/terms-conditions" className="hover:text-brand-cyan transition-colors">Terms & Conditions</Link></li>
               </ul>
             </div>
           </div>

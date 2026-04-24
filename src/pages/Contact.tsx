@@ -21,11 +21,11 @@ export default function Contact() {
             animate={{ opacity: 1, scale: 1 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-5xl md:text-8xl font-sans font-black text-brand-navy mb-8 tracking-tighter">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-sans font-black text-brand-navy mb-8 tracking-tighter">
               Let's build your <br />
               <span className="text-brand-cyan">pipeline.</span>
             </h1>
-            <p className="text-xl text-zinc-500 font-medium">
+            <p className="text-lg sm:text-xl text-zinc-500 font-medium">
               Ready to stop chasing leads and start booking jobs? <br />
               Select a time for your <span className="text-brand-navy font-bold">Pipeline Audit</span> below.
             </p>
@@ -40,15 +40,15 @@ export default function Contact() {
             {/* Booking Interface */}
             <div className="relative">
               <div className="sticky top-32">
-                <div className="bg-white p-4 rounded-[2.5rem] border border-zinc-100 shadow-2xl shadow-brand-navy/5 min-h-[600px] flex flex-col overflow-hidden">
+                <div className="bg-white p-2 sm:p-4 rounded-[2rem] sm:rounded-[2.5rem] border border-zinc-100 shadow-2xl shadow-brand-navy/5 min-h-[500px] sm:min-h-[600px] flex flex-col overflow-hidden">
                   <iframe 
                     src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3WQLsy4iqUWW3mXx-POE-rP0_oq5fbsQd3BghhvJYwVYXvfPILrApICS1xwGIx5Ws_M_D5T8i8?gv=true" 
                     style={{ border: 0 }} 
                     width="100%" 
-                    height="700" 
+                    height="600" 
                     frameBorder="0"
                     title="Schedule a Pipeline Audit"
-                    className="rounded-[1.5rem]"
+                    className="rounded-[1.5rem] h-[500px] sm:h-[700px]"
                   ></iframe>
                 </div>
               </div>
@@ -57,8 +57,8 @@ export default function Contact() {
             {/* Support Info */}
             <div className="flex flex-col justify-center space-y-16">
               <div className="space-y-6">
-                <h3 className="text-3xl font-black text-brand-navy tracking-tight">Direct Connect</h3>
-                <p className="text-zinc-500 text-lg leading-relaxed max-w-md">
+                <h3 className="text-2xl sm:text-3xl font-black text-brand-navy tracking-tight">Direct Connect</h3>
+                <p className="text-zinc-500 text-base sm:text-lg leading-relaxed max-w-md">
                   Most owners prefer to book a time that works for them. 
                   However, if you're in a rush or want to talk immediately, reach out through these channels.
                 </p>
@@ -71,7 +71,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">Email</p>
-                    <p className="text-xl font-black text-brand-navy">hello@growthlift.studio</p>
+                    <p className="text-lg sm:text-xl font-black text-brand-navy">hello@growthlift.studio</p>
                   </div>
                 </div>
 
@@ -81,7 +81,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">Phone</p>
-                    <p className="text-xl font-black text-brand-navy">+1 (888) 422-7901</p>
+                    <p className="text-lg sm:text-xl font-black text-brand-navy">+1 (888) 422-7901</p>
                   </div>
                 </div>
 

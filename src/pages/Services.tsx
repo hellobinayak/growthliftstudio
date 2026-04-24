@@ -70,16 +70,16 @@ export default function Services() {
             className="max-w-4xl"
           >
             <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Our Services</h2>
-            <h1 className="text-5xl md:text-7xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
               What we handle—so your <br />
               <span className="text-brand-cyan underline decoration-8 decoration-brand-cyan/10">calendar stays consistent.</span>
             </h1>
             
             <div className="space-y-6 max-w-2xl">
-              <p className="text-2xl text-brand-navy font-bold leading-tight">
+              <p className="text-xl sm:text-2xl text-brand-navy font-bold leading-tight">
                 Most contractors don't have time to manage marketing systems.
               </p>
-              <p className="text-xl text-zinc-500 leading-relaxed font-medium">
+              <p className="text-lg sm:text-xl text-zinc-500 leading-relaxed font-medium">
                 That's where we come in. We build and manage the pipeline that brings in qualified opportunities and booked jobs—so you can stay focused on the work.
               </p>
             </div>
@@ -101,7 +101,7 @@ export default function Services() {
                    <div className="absolute inset-0 bg-gradient-to-tr from-brand-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   {service.icon}
                 </div>
-                <h3 className="text-3xl font-black text-brand-navy mb-4 tracking-tight group-hover:text-brand-cyan transition-colors">{service.title}</h3>
+                <h3 className="text-2xl sm:text-3xl font-black text-brand-navy mb-4 tracking-tight group-hover:text-brand-cyan transition-colors">{service.title}</h3>
                 <p className="text-zinc-500 text-lg leading-relaxed mb-8 font-medium italic">
                   {service.intro}
                 </p>
@@ -125,7 +125,7 @@ export default function Services() {
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(0,183,212,0.1),transparent)] pointer-events-none" />
         
         <div className="mx-auto max-w-4xl relative z-10">
-          <h2 className="text-4xl md:text-6xl font-black mb-12 tracking-tight leading-tight text-white">
+          <h2 className="text-2xl sm:text-4xl md:text-6xl font-black mb-12 tracking-tight leading-tight text-white">
             Everything is built around one outcome— <br />
             <span className="shimmer-text">a steady flow of work on your calendar.</span>
           </h2>

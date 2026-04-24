@@ -51,16 +51,6 @@
   100% { background-position: -200% 0; }
 }
 
-@keyframes dot-pulse {
-  0% { opacity: 0.1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(1.1); }
-  100% { opacity: 0.1; transform: scale(1); }
-}
-
-.animate-dot-pulse {
-  animation: dot-pulse 4s ease-in-out infinite;
-}
-
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
