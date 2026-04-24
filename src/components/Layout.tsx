@@ -10,6 +10,7 @@ import {
 import { Button } from "./UI";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "../lib/utils";
+import { useSurvey } from "../context/SurveyContext";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -17,6 +18,7 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
   const location = useLocation();
+  const { openSurvey } = useSurvey();
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -50,9 +52,13 @@ export function Layout({ children }: LayoutProps) {
                 {link.name}
               </Link>
             ))}
-            <Link to="/contact">
-              <Button size="sm" className="bg-brand-navy text-white hover:bg-brand-navy/90">Book a Call</Button>
-            </Link>
+            <Button 
+              onClick={openSurvey} 
+              size="sm" 
+              className="bg-brand-navy text-white hover:bg-brand-navy/90"
+            >
+              Book a Call
+            </Button>
           </div>
         </div>
       </nav>
@@ -77,10 +83,18 @@ export function Layout({ children }: LayoutProps) {
                 Building predictable, high-velocity revenue pipelines for home service businesses across the US.
               </p>
               <div className="flex gap-6">
-                <Instagram className="h-5 w-5 text-zinc-400 hover:text-brand-cyan transition-colors cursor-pointer" />
-                <Facebook className="h-5 w-5 text-zinc-400 hover:text-brand-cyan transition-colors cursor-pointer" />
-                <Linkedin className="h-5 w-5 text-zinc-400 hover:text-brand-cyan transition-colors cursor-pointer" />
-                <Youtube className="h-5 w-5 text-zinc-400 hover:text-brand-cyan transition-colors cursor-pointer" />
+                <a href="https://www.instagram.com/growthliftstudio/" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="h-5 w-5 text-zinc-400 hover:text-brand-cyan transition-colors cursor-pointer" />
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61552669001037" target="_blank" rel="noopener noreferrer">
+                  <Facebook className="h-5 w-5 text-zinc-400 hover:text-brand-cyan transition-colors cursor-pointer" />
+                </a>
+                <a href="https://www.linkedin.com/in/binayakdey/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-5 w-5 text-zinc-400 hover:text-brand-cyan transition-colors cursor-pointer" />
+                </a>
+                <a href="https://www.youtube.com/@Growthliftstudio" target="_blank" rel="noopener noreferrer">
+                  <Youtube className="h-5 w-5 text-zinc-400 hover:text-brand-cyan transition-colors cursor-pointer" />
+                </a>
               </div>
             </div>
 

@@ -11,10 +11,12 @@ import {
 import { DotGrid, LightBeam, BeamPattern, Particles } from "../components/BackgroundEffects";
 import { Button, InteractiveCard } from "../components/UI";
 import { Link } from "react-router-dom";
+import { useSurvey } from "../context/SurveyContext";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const { openSurvey } = useSurvey();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -72,11 +74,13 @@ export default function Home() {
               You run the crew. We handle the pipeline.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
-              <Link to="/contact">
-                <Button size="lg" className="bg-brand-navy text-white hover:bg-brand-navy/90 text-lg py-7 px-10 shadow-xl shadow-brand-navy/20 w-full sm:w-auto">
-                  Book a Call
-                </Button>
-              </Link>
+              <Button 
+                onClick={openSurvey}
+                size="lg" 
+                className="bg-brand-navy text-white hover:bg-brand-navy/90 text-lg py-7 px-10 shadow-xl shadow-brand-navy/20 w-full sm:w-auto"
+              >
+                Book a Call
+              </Button>
               <Link to="/results">
                 <Button variant="outline" size="lg" className="border-zinc-200 text-zinc-600 hover:bg-zinc-50 text-lg py-7 px-10 w-full sm:w-auto">
                   See case studies
@@ -238,18 +242,24 @@ export default function Home() {
       </section>
 
       {/* Services Preview Section */}
-      <section className="relative z-10 py-32 bg-white">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="relative z-10 py-32 bg-brand-navy overflow-hidden">
+        {/* Background Decor */}
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy to-brand-navy/90 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,183,212,0.15),transparent)] pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-cyan/20 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-cyan/20 to-transparent" />
+
+        <div className="mx-auto max-w-7xl px-6 relative z-10">
           <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
             <div className="max-w-2xl">
               <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">What We Handle</h2>
-              <p className="text-4xl md:text-5xl font-sans font-black text-brand-navy tracking-tighter leading-tight">
+              <p className="text-4xl md:text-5xl font-sans font-black text-white tracking-tighter leading-tight">
                 Systems built for <br />
                 <span className="text-brand-cyan">owner-operators.</span>
               </p>
             </div>
             <Link to="/services">
-              <Button variant="outline" className="border-brand-navy/10 hover:border-brand-cyan text-brand-navy font-bold px-8 h-14">
+              <Button variant="outline" className="border-white/10 hover:border-brand-cyan text-white font-bold px-8 h-14 bg-white/5 backdrop-blur-sm">
                 View All Services <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
             </Link>
@@ -262,14 +272,17 @@ export default function Home() {
               { title: "Follow-Up", desc: "Automated sequences so no lead is missed.", icon: <TrendingUp className="h-5 w-5" /> },
               { title: "Pipeline Management", desc: "Visibility into your revenue future.", icon: <Layers className="h-5 w-5" /> }
             ].map((s, i) => (
-              <InteractiveCard key={i} className="p-8 bg-white border border-zinc-100 rounded-3xl group">
-                <div className="h-10 w-10 bg-brand-cyan/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-cyan transition-colors">
+              <InteractiveCard key={i} className="flex-1 group relative p-8 rounded-2xl bg-gradient-to-br from-white via-cyan-50/40 to-brand-cyan/5 border border-white shadow-xl shadow-brand-cyan/5 flex flex-col overflow-hidden transition-all hover:-translate-y-2">
+                <div className="absolute top-0 -left-[100%] w-[200%] h-full bg-gradient-to-r from-transparent via-white/60 to-transparent -rotate-45 group-hover:left-[100%] transition-all duration-1000 pointer-events-none" />
+                
+                <div className="h-10 w-10 bg-brand-cyan/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-cyan transition-colors border border-brand-cyan/20 relative z-10">
                   <div className="text-brand-cyan group-hover:text-brand-navy transition-colors">
                     {s.icon}
                   </div>
                 </div>
-                <h4 className="text-lg font-black text-brand-navy mb-2">{s.title}</h4>
-                <p className="text-xs text-zinc-500 font-bold leading-relaxed">{s.desc}</p>
+                
+                <h4 className="text-xl font-black text-brand-navy mb-3 tracking-tight relative z-10 group-hover:text-brand-cyan transition-colors">{s.title}</h4>
+                <p className="text-sm text-zinc-500 font-medium leading-relaxed relative z-10">{s.desc}</p>
               </InteractiveCard>
             ))}
           </div>
@@ -288,18 +301,65 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {[
-              { company: "Remodeling", results: "8 jobs in 30 days" },
-              { company: "Roofing", results: "5 installs in 3 weeks" },
-              { company: "Local Service", results: "10+ monthly bookings" }
+              { 
+                tag: "Verified Result",
+                niche: "Kitchen & Bathroom Remodeling",
+                location: "Columbus, OH",
+                metric: "8",
+                unit: "confirmed jobs",
+                timeline: "in 30 days",
+                before: "1–2 jobs/month, gaps every week",
+                fix: "Structured campaigns + booking system"
+              },
+              { 
+                tag: "Verified Result",
+                niche: "Residential Roofing",
+                location: "Charlotte, NC",
+                metric: "5",
+                unit: "booked installs",
+                timeline: "in 3 weeks",
+                before: "High inquiries, low conversion",
+                fix: "Targeted ads + follow-up system"
+              },
+              { 
+                tag: "Verified Result",
+                niche: "HVAC & Plumbing",
+                location: "Phoenix, AZ",
+                metric: "10+",
+                unit: "monthly bookings",
+                timeline: "every month",
+                before: "2–3 unpredictable jobs/month",
+                fix: "Full pipeline system built from scratch"
+              }
             ].map((cs, i) => (
-              <InteractiveCard key={i} className="p-10 bg-white border border-zinc-100 rounded-[2.5rem] group hover:border-brand-cyan transition-all shadow-sm hover:shadow-xl relative overflow-hidden">
+              <InteractiveCard key={i} className="p-10 bg-white border border-zinc-100 rounded-[2.5rem] group hover:border-brand-cyan transition-all shadow-sm hover:shadow-xl relative overflow-hidden flex flex-col">
                 <div className="absolute top-0 right-0 p-6 opacity-[0.03] group-hover:opacity-10 transition-opacity">
                    <TrendingUp className="h-24 w-24 text-brand-navy" />
                 </div>
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-cyan mb-4 block underline decoration-brand-cyan/20 underline-offset-4">Verified Result</span>
-                <h4 className="text-xl font-black text-brand-navy mb-6 leading-tight">{cs.company} <br /> Business</h4>
-                <div className="pt-6 border-t border-zinc-50">
-                   <p className="text-2xl font-black text-brand-navy group-hover:text-brand-cyan transition-colors">{cs.results}</p>
+                
+                <div className="mb-6">
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-2 block">{cs.tag}</span>
+                  <p className="text-[13px] text-zinc-500 leading-tight">
+                    {cs.niche} <br />
+                    {cs.location}
+                  </p>
+                </div>
+
+                <div className="py-6 border-y border-zinc-100 mb-6 text-center">
+                  <p className="text-7xl font-sans font-black text-brand-navy group-hover:text-brand-cyan transition-colors leading-none mb-2">{cs.metric}</p>
+                  <p className="text-lg font-medium text-brand-navy leading-none mb-1">{cs.unit}</p>
+                  <p className="text-sm text-zinc-400">{cs.timeline}</p>
+                </div>
+
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-[12px] font-bold text-zinc-400 uppercase tracking-wider mb-1">Before:</p>
+                    <p className="text-[12px] text-zinc-500 font-medium leading-relaxed">{cs.before}</p>
+                  </div>
+                  <div>
+                    <p className="text-[12px] font-bold text-zinc-400 uppercase tracking-wider mb-1">Fix:</p>
+                    <p className="text-[12px] text-zinc-500 font-medium leading-relaxed">{cs.fix}</p>
+                  </div>
                 </div>
               </InteractiveCard>
             ))}
@@ -322,11 +382,15 @@ export default function Home() {
             Your next booked jobs are <br />
             <span className="shimmer-text font-italic italic">already in your market.</span>
           </h2>
-          <Button size="lg" className="h-20 px-14 text-xl bg-brand-navy text-white hover:bg-brand-navy/90 rounded-2xl group transition-all">
-            <Link to="/contact" className="flex items-center gap-3">
+          <Button 
+            onClick={openSurvey}
+            size="lg" 
+            className="h-20 px-14 text-xl bg-brand-navy text-white hover:bg-brand-navy/90 rounded-2xl group transition-all"
+          >
+            <div className="flex items-center gap-3">
               Book a Call
               <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </div>
           </Button>
         </div>
       </section>

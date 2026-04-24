@@ -11,8 +11,10 @@ import {
 } from "lucide-react";
 import { InteractiveCard } from "../components/UI";
 import { Link } from "react-router-dom";
+import { useSurvey } from "../context/SurveyContext";
 
 export default function Services() {
+  const { openSurvey } = useSurvey();
   const serviceCategories = [
     {
       icon: <Target className="h-8 w-8 text-brand-cyan" />,
@@ -123,19 +125,20 @@ export default function Services() {
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(0,183,212,0.1),transparent)] pointer-events-none" />
         
         <div className="mx-auto max-w-4xl relative z-10">
-          <h2 className="text-4xl md:text-6xl font-black mb-12 tracking-tight leading-tight">
+          <h2 className="text-4xl md:text-6xl font-black mb-12 tracking-tight leading-tight text-white">
             Everything is built around one outcome— <br />
             <span className="shimmer-text">a steady flow of work on your calendar.</span>
           </h2>
           
-          <Link to="/contact">
-            <button className="h-24 px-16 text-2xl bg-brand-cyan text-brand-navy font-black rounded-2xl hover:scale-105 hover:bg-white transition-all shadow-2xl shadow-brand-cyan/20 group">
-              <span className="flex items-center gap-3">
-                Book a Call
-                <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform" />
-              </span>
-            </button>
-          </Link>
+          <button 
+            onClick={openSurvey}
+            className="h-24 px-16 text-2xl bg-brand-cyan text-brand-navy font-black rounded-2xl hover:scale-105 hover:bg-white transition-all shadow-2xl shadow-brand-cyan/20 group"
+          >
+            <span className="flex items-center gap-3">
+              Book a Call
+              <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform" />
+            </span>
+          </button>
         </div>
       </section>
     </div>

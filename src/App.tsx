@@ -23,6 +23,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { cn } from "./lib/utils";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { Layout } from "./components/Layout";
+import { SurveyProvider } from "./context/SurveyContext";
 
 // Page Imports
 import Home from "./pages/Home";
@@ -53,18 +54,20 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/results" element={<CaseStudies />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/contact" element={<Contact />} />
-          {/* Fallback */}
-          <Route path="*" element={<Home />} />
-        </Routes>
-      </Layout>
+      <SurveyProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/results" element={<CaseStudies />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/contact" element={<Contact />} />
+            {/* Fallback */}
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </Layout>
+      </SurveyProvider>
     </Router>
   );
 }
