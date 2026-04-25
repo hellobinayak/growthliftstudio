@@ -3,13 +3,14 @@ import { motion, AnimatePresence } from "motion/react";
 import { X, Check, ArrowRight, ArrowLeft, Calendar } from "lucide-react";
 import { cn } from "../lib/utils";
 import { useNavigate } from "react-router-dom";
+import { useForm, ValidationError } from '@formspree/react';
 
 interface SurveyModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-type Step = 1 | 2 | 3 | 4 | 5 | 6 | 'success';
+type Step = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 'success';
 
 export default function SurveyModal({ isOpen, onClose }: SurveyModalProps) {
   const navigate = useNavigate();
@@ -22,60 +23,99 @@ export default function SurveyModal({ isOpen, onClose }: SurveyModalProps) {
     phone: "",
   });
 
-  const totalSteps = 6;
+  const [state, handleSubmit] = useForm('mrerjnge');
+
+  const onFinalSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    handleSubmit({
+      ...answers,
+      ...contactData,
+      _subject: `Survey Submission: ${contactData.biz}`
+    });
+  };
+
+  const totalSteps = 8;
   const progress = step === 'success' ? 100 : (Number(step) / totalSteps) * 100;
 
   const selectOpt = (key: string, value: string) => {
     setAnswers((prev) => ({ ...prev, [key]: value }));
   };
 
+  const [redirectCount, setRedirectCount] = useState(3);
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (step === 'success') {
+      if (redirectCount > 0) {
+        timer = setTimeout(() => {
+          setRedirectCount((prev) => prev - 1);
+        }, 1000);
+      } else {
+        handleGoToBooking();
+      }
+    }
+    return () => clearTimeout(timer);
+  }, [step, redirectCount]);
+
   const handleNext = () => {
     if (step === 'success') return;
-    if (step < 6) setStep((step + 1) as Step);
-    else handleFinalSubmit();
+    const currentStep = Number(step);
+    if (currentStep < totalSteps) {
+      setStep((currentStep + 1) as Step);
+    }
   };
 
   const handleBack = () => {
     if (step === 'success') return;
-    if (step > 1) setStep((step - 1) as Step);
+    const currentStep = Number(step);
+    if (currentStep > 1) {
+      setStep((currentStep - 1) as Step);
+    }
   };
 
-  const handleFinalSubmit = () => {
-    setStep('success');
-  };
+  useEffect(() => {
+    if (state.succeeded && step === 8) {
+      setStep('success');
+    }
+  }, [state.succeeded, step]);
 
   const handleGoToBooking = () => {
     onClose();
     navigate("/contact");
-    // Reset survey state for next time
-    setTimeout(() => setStep(1), 500);
+    // Reset survey state for next time - use a longer delay to ensure animation finishes
+    setTimeout(() => {
+      setStep(1);
+      setRedirectCount(3);
+    }, 1000);
   };
 
   const isNextDisabled = () => {
     if (step === 'success') return false;
+    if (step === 8) return false;
     if (step < 6) return !answers[`step${step}`];
-    return !contactData.name || !contactData.email || !contactData.phone || !contactData.biz;
+    if (step === 6) return !contactData.name || !contactData.biz;
+    if (step === 7) return !contactData.email || !contactData.phone;
+    return false;
   };
 
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="absolute inset-0 bg-brand-navy/80 backdrop-blur-sm"
-          />
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={onClose}
+        className="absolute inset-0 bg-brand-navy/80 backdrop-blur-sm"
+      />
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-[560px] bg-[#111f30] rounded-2xl border border-[#1e3a50] overflow-hidden shadow-2xl flex flex-col"
-          >
-            {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+        className="relative w-full max-w-[560px] bg-[#111f30] rounded-2xl border border-[#1e3a50] overflow-hidden shadow-2xl flex flex-col"
+      >
+            <form onSubmit={onFinalSubmit} className="flex flex-col h-full">
+              {/* Header */}
             <div className="bg-[#0d1b2a] px-8 py-5 border-bottom border-[#1e3a50] flex items-center justify-between">
               <div className="font-sans font-bold text-sm text-brand-cyan tracking-tight">
                 Growth<span className="text-white">Lift</span> Studio
@@ -302,14 +342,16 @@ export default function SurveyModal({ isOpen, onClose }: SurveyModalProps) {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
                   >
-                    <p className="font-sans text-xl font-bold text-white mb-2 leading-tight">Last step — where should we send your audit?</p>
-                    <p className="text-sm text-[#5a7a95] mb-8">We'll review your answers before the call so we come prepared.</p>
+                    <p className="font-sans text-xl font-bold text-white mb-2 leading-tight">Who are we speaking with?</p>
+                    <p className="text-sm text-[#5a7a95] mb-8">Enter your name and business name to continue.</p>
                     
                     <div className="space-y-4">
                       <div className="space-y-2">
                         <label className="text-[10px] font-black uppercase tracking-widest text-[#5a7a95]">Full Name</label>
                         <input 
                           type="text" 
+                          name="name"
+                          required
                           placeholder="e.g. Mike Thompson"
                           value={contactData.name}
                           onChange={(e) => setContactData({...contactData, name: e.target.value})}
@@ -320,35 +362,90 @@ export default function SurveyModal({ isOpen, onClose }: SurveyModalProps) {
                         <label className="text-[10px] font-black uppercase tracking-widest text-[#5a7a95]">Business Name</label>
                         <input 
                           type="text" 
+                          name="business"
+                          required
                           placeholder="e.g. Thompson Remodeling"
                           value={contactData.biz}
                           onChange={(e) => setContactData({...contactData, biz: e.target.value})}
                           className="w-full bg-[#0d1b2a] border border-[#1e3a50] rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-brand-cyan transition-colors"
                         />
                       </div>
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <label className="text-[10px] font-black uppercase tracking-widest text-[#5a7a95]">Work Email</label>
-                          <input 
-                            type="email" 
-                            placeholder="you@biz.com"
-                            value={contactData.email}
-                            onChange={(e) => setContactData({...contactData, email: e.target.value})}
-                            className="w-full bg-[#0d1b2a] border border-[#1e3a50] rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-brand-cyan transition-colors"
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <label className="text-[10px] font-black uppercase tracking-widest text-[#5a7a95]">Phone Number</label>
-                          <input 
-                            type="tel" 
-                            placeholder="+1 (555) 000-0000"
-                            value={contactData.phone}
-                            onChange={(e) => setContactData({...contactData, phone: e.target.value})}
-                            className="w-full bg-[#0d1b2a] border border-[#1e3a50] rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-brand-cyan transition-colors"
-                          />
-                        </div>
+                    </div>
+                  </motion.div>
+                )}
+
+                {step === 7 && (
+                  <motion.div
+                    key="step7"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                  >
+                    <p className="font-sans text-xl font-bold text-white mb-2 leading-tight">Where should we send your audit?</p>
+                    <p className="text-sm text-[#5a7a95] mb-8">Enter your contact details so we can reach out with the results.</p>
+                    
+                    <div className="space-y-4">
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-black uppercase tracking-widest text-[#5a7a95]">Work Email</label>
+                        <input 
+                          type="email" 
+                          name="email"
+                          required
+                          placeholder="you@biz.com"
+                          value={contactData.email}
+                          onChange={(e) => setContactData({...contactData, email: e.target.value})}
+                          className="w-full bg-[#0d1b2a] border border-[#1e3a50] rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-brand-cyan transition-colors"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-black uppercase tracking-widest text-[#5a7a95]">Phone Number</label>
+                        <input 
+                          type="tel" 
+                          name="phone"
+                          required
+                          placeholder="+1 (555) 000-0000"
+                          value={contactData.phone}
+                          onChange={(e) => setContactData({...contactData, phone: e.target.value})}
+                          className="w-full bg-[#0d1b2a] border border-[#1e3a50] rounded-xl px-4 py-3 text-white text-sm outline-none focus:border-brand-cyan transition-colors"
+                        />
                       </div>
                     </div>
+                  </motion.div>
+                )}
+
+                {step === 8 && (
+                  <motion.div
+                    key="step8"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                  >
+                    <p className="font-sans text-xl font-bold text-white mb-2 leading-tight">Review your information</p>
+                    <p className="text-sm text-[#5a7a95] mb-6">Please confirm everything is correct before submitting.</p>
+                    
+                    <div className="bg-[#0d1b2a] border border-[#1e3a50] rounded-2xl p-6 text-left space-y-3 overflow-y-auto max-h-[300px]">
+                      {[
+                        { label: 'Name', value: contactData.name },
+                        { label: 'Business', value: contactData.biz },
+                        { label: 'Email', value: contactData.email },
+                        { label: 'Phone', value: contactData.phone },
+                        { label: 'Industry', value: answers.step1 },
+                        { label: 'Goal', value: answers.step2 },
+                        { label: 'Status', value: answers.step3 },
+                        { label: 'Ads', value: answers.step4 },
+                        { label: 'Budget', value: answers.step5 },
+                      ].map((item) => (
+                        <div key={item.label} className="flex justify-between items-start gap-4 pb-3 border-b border-[#1e3a50]/50 last:border-0 last:pb-0">
+                          <span className="text-[11px] font-black text-[#5a7a95] uppercase tracking-wider">{item.label}</span>
+                          <span className="text-[13px] font-bold text-[#c8dae8] text-right">{item.value || '—'}</span>
+                        </div>
+                      ))}
+                    </div>
+                    {state.errors && (
+                      <div className="mt-4 p-4 rounded-xl bg-red-500/10 border border-red-500/50 text-red-500 text-xs font-bold text-center">
+                        Submission failed. Please check your information and try again.
+                      </div>
+                    )}
                   </motion.div>
                 )}
 
@@ -357,31 +454,31 @@ export default function SurveyModal({ isOpen, onClose }: SurveyModalProps) {
                     key="success"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-4"
+                    className="text-center py-12"
                   >
-                    <div className="w-16 h-16 rounded-full bg-brand-cyan/10 border-2 border-brand-cyan flex items-center justify-center mx-auto mb-6">
-                      <Check className="h-8 w-8 text-brand-cyan" />
+                    <div className="w-20 h-20 rounded-full bg-brand-cyan/10 border-2 border-brand-cyan flex items-center justify-center mx-auto mb-8 relative">
+                       <motion.div 
+                         className="absolute inset-0 rounded-full bg-brand-cyan/20"
+                         animate={{ scale: [1, 1.2, 1] }}
+                         transition={{ duration: 2, repeat: Infinity }}
+                       />
+                      <Check className="h-10 w-10 text-brand-cyan relative z-10" />
                     </div>
-                    <p className="font-sans text-2xl font-black text-white mb-3">You're on the list.</p>
-                    <p className="text-[#5a7a95] text-sm leading-relaxed mb-8 max-w-[400px] mx-auto">
-                      We'll review your answers and reach out within 24 hours to confirm your Pipeline Audit call. No pressure, no pitch — just a clear look at where your pipeline is leaking.
+                    <p className="font-sans text-3xl font-black text-white mb-4 italic">Submission Successful!</p>
+                    <p className="text-[#5a7a95] text-lg leading-relaxed mb-12 max-w-[400px] mx-auto">
+                      Your audit data has been received. Let's find you a time to review the results.
                     </p>
 
-                    <div className="bg-[#0d1b2a] border border-[#1e3a50] rounded-2xl p-6 text-left space-y-3">
-                      {[
-                        { label: 'Name', value: contactData.name },
-                        { label: 'Business', value: contactData.biz },
-                        { label: 'Niche', value: answers.step1 },
-                        { label: 'Monthly Jobs', value: answers.step2 },
-                        { label: 'Main Challenge', value: answers.step3 },
-                        { label: 'Ads Experience', value: answers.step4 },
-                        { label: 'Budget', value: answers.step5 },
-                      ].map((item) => (
-                        <div key={item.label} className="flex justify-between items-start gap-4 pb-3 border-b border-[#1e3a50]/50 last:border-0 last:pb-0">
-                          <span className="text-[11px] font-black text-[#5a7a95] uppercase tracking-wider">{item.label}</span>
-                          <span className="text-[13px] font-bold text-[#c8dae8] text-right">{item.value || '—'}</span>
-                        </div>
-                      ))}
+                    <div className="flex flex-col items-center gap-3">
+                       <span className="text-xs font-black uppercase tracking-widest text-brand-cyan">Redirecting in {redirectCount}s</span>
+                       <div className="w-48 h-[2px] bg-[#1e3a50] rounded-full overflow-hidden">
+                          <motion.div 
+                            className="h-full bg-brand-cyan"
+                            initial={{ width: "100%" }}
+                            animate={{ width: "0%" }}
+                            transition={{ duration: redirectCount, ease: "linear" }}
+                          />
+                       </div>
                     </div>
                   </motion.div>
                 )}
@@ -401,11 +498,12 @@ export default function SurveyModal({ isOpen, onClose }: SurveyModalProps) {
                       <ArrowLeft className="h-4 w-4" /> Back
                     </button>
                     <button
-                      onClick={handleNext}
-                      disabled={isNextDisabled()}
+                      type={step === 8 ? 'submit' : 'button'}
+                      onClick={step === 8 ? undefined : handleNext}
+                      disabled={isNextDisabled() || (step === 8 && state.submitting)}
                       className="px-8 py-3 rounded-xl bg-brand-cyan text-brand-navy text-sm font-black uppercase tracking-widest flex items-center gap-2 hover:bg-[#33ddff] transition-all disabled:opacity-20 disabled:grayscale"
                     >
-                      {step === 6 ? 'Book My Audit' : 'Continue'} <ArrowRight className="h-4 w-4" />
+                      {state.submitting ? 'Sending...' : (step === 8 ? 'Confirm & Submit' : (step === 7 ? 'See Summary' : 'Continue'))} <ArrowRight className="h-4 w-4" />
                     </button>
                   </>
                 )}
@@ -420,9 +518,8 @@ export default function SurveyModal({ isOpen, onClose }: SurveyModalProps) {
                 )}
               </div>
             </div>
-          </motion.div>
-        </div>
-      )}
-    </AnimatePresence>
+          </form>
+        </motion.div>
+    </div>
   );
 }

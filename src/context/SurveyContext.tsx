@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useCallback } from "react";
 import SurveyModal from "../components/SurveyModal";
+import { AnimatePresence } from "motion/react";
 
 interface SurveyContextType {
   openSurvey: () => void;
@@ -17,7 +18,9 @@ export function SurveyProvider({ children }: { children: React.ReactNode }) {
   return (
     <SurveyContext.Provider value={{ openSurvey, closeSurvey }}>
       {children}
-      <SurveyModal isOpen={isOpen} onClose={closeSurvey} />
+      <AnimatePresence>
+        {isOpen && <SurveyModal isOpen={isOpen} onClose={closeSurvey} />}
+      </AnimatePresence>
     </SurveyContext.Provider>
   );
 }
