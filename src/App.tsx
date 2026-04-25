@@ -34,6 +34,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import Testimonials from "./pages/Testimonials";
 import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -67,6 +68,7 @@ export default function App() {
             <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<FAQ />} />
             {/* Fallback */}
             <Route path="*" element={<Home />} />
           </Routes>

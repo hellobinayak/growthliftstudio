@@ -75,6 +75,12 @@ export default function Home() {
             <p className="text-lg sm:text-xl md:text-2xl text-zinc-500 max-w-3xl mx-auto mb-6 text-balance leading-relaxed">
               We build systems that bring in <span className="text-brand-navy font-bold">booked, confirmed jobs</span>—not inquiries you have to chase.
             </p>
+            <div className="flex items-center justify-center gap-2 mb-8">
+              <CheckCircle2 className="h-4 w-4 text-brand-cyan" />
+              <p className="text-sm font-bold text-zinc-600 tracking-tight">
+                370+ confirmed jobs booked for our clients in 2025.
+              </p>
+            </div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-cyan mb-12">
               You run the crew. We handle the pipeline.
             </p>
@@ -363,12 +369,12 @@ export default function Home() {
 
                 <div className="space-y-4">
                   <div>
-                    <p className="text-[12px] font-bold text-zinc-400 uppercase tracking-wider mb-1">Before:</p>
-                    <p className="text-[12px] text-zinc-500 font-medium leading-relaxed">{cs.before}</p>
+                    <p className="text-[13px] font-bold text-zinc-500 uppercase tracking-wider mb-1">Before:</p>
+                    <p className="text-[13px] text-zinc-600 font-medium leading-relaxed">{cs.before}</p>
                   </div>
                   <div>
-                    <p className="text-[12px] font-bold text-zinc-400 uppercase tracking-wider mb-1">Fix:</p>
-                    <p className="text-[12px] text-zinc-500 font-medium leading-relaxed">{cs.fix}</p>
+                    <p className="text-[13px] font-bold text-zinc-500 uppercase tracking-wider mb-1">Fix:</p>
+                    <p className="text-[13px] text-zinc-600 font-medium leading-relaxed">{cs.fix}</p>
                   </div>
                 </div>
               </InteractiveCard>

@@ -46,12 +46,16 @@ export function Layout({ children }: LayoutProps) {
     { name: "Case Studies", href: "/results" },
     { name: "About Us", href: "/about" },
     { name: "Testimonials", href: "/testimonials" },
+    { name: "FAQ", href: "/faq" },
   ];
 
   return (
     <div className="relative min-h-screen font-body text-brand-navy bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-100 bg-white/70 backdrop-blur-md">
+      <nav className={cn(
+        "fixed top-0 left-0 right-0 z-50 border-b border-zinc-100 transition-colors duration-300",
+        isMenuOpen ? "bg-white" : "bg-white/80 backdrop-blur-xl"
+      )}>
         <div className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 sm:gap-3 group cursor-pointer">
             <div className="h-8 w-8 sm:h-10 sm:w-10 overflow-hidden flex items-center justify-center group-hover:rotate-6 transition-transform">
@@ -103,48 +107,84 @@ export function Layout({ children }: LayoutProps) {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
-              animate={{ opacity: 1, backdropFilter: "blur(12px)" }}
-              exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
-              transition={{ duration: 0.3 }}
-              className="lg:hidden fixed inset-0 top-20 bg-white/80 z-40 px-6 py-12 flex flex-col gap-8 items-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="lg:hidden fixed inset-0 top-0 bg-white z-[60] px-6 pt-32 pb-12 flex flex-col items-center overflow-y-auto"
             >
-              <div className="flex flex-col gap-6 items-center w-full">
-                {navLinks.map((link) => (
-                  <Link 
+              <div className="absolute top-0 left-0 right-0 h-20 px-6 flex items-center justify-between border-b border-zinc-100">
+                <Link to="/" className="flex items-center gap-2 sm:gap-3" onClick={() => setIsMenuOpen(false)}>
+                  <div className="h-8 w-8 sm:h-10 sm:w-10 overflow-hidden flex items-center justify-center">
+                    <img 
+                      src="https://lh3.googleusercontent.com/d/1KqrKpekKkYsgY6QR-WzzF_QEwaxhswBM" 
+                      alt="Growth Lift Studio Logo" 
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <span className="font-sans font-extrabold text-lg sm:text-xl tracking-tight text-brand-navy whitespace-nowrap">
+                    Growth Lift <span className="hidden sm:inline">Studio</span>
+                  </span>
+                </Link>
+                <button 
+                  onClick={() => setIsMenuOpen(false)}
+                  className="p-2 text-brand-navy hover:text-brand-cyan transition-colors"
+                  aria-label="Close menu"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
+
+              <div className="flex flex-col gap-8 items-center w-full">
+                {navLinks.map((link, i) => (
+                  <motion.div
                     key={link.name}
-                    to={link.href} 
-                    className={cn(
-                      "text-2xl font-sans font-black uppercase tracking-widest transition-colors",
-                      location.pathname === link.href ? "text-brand-cyan" : "text-brand-navy hover:text-brand-cyan"
-                    )}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.05 * i, duration: 0.4, ease: "easeOut" }}
                   >
-                    {link.name}
-                  </Link>
+                    <Link 
+                      to={link.href} 
+                      className={cn(
+                        "text-3xl font-sans font-black uppercase tracking-widest transition-all",
+                        location.pathname === link.href ? "text-brand-cyan scale-110" : "text-brand-navy hover:text-brand-cyan"
+                      )}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
-              <div className="mt-8 flex flex-col gap-4 w-full">
+              
+              <motion.div 
+                className="mt-12 flex flex-col gap-6 w-full max-w-sm"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.4 }}
+              >
+                <div className="h-px w-12 bg-zinc-100 mx-auto" />
                 <Button 
                   onClick={() => {
                     setIsMenuOpen(false);
                     openSurvey();
                   }} 
-                  className="w-full bg-brand-navy text-white py-6 text-lg"
+                  className="w-full bg-brand-navy text-white py-6 text-lg hover:bg-[#0d1b2a] transition-all"
                 >
                   Book a Call
                 </Button>
-                <div className="flex justify-center gap-8 mt-12">
-                  <a href="https://www.instagram.com/growthliftstudio/" target="_blank" rel="noopener noreferrer">
+                
+                <div className="flex justify-center gap-10 mt-6">
+                  <a href="https://www.instagram.com/growthliftstudio/" target="_blank" rel="noopener noreferrer" className="p-3 bg-zinc-50 rounded-full hover:bg-brand-cyan/10 transition-colors">
                     <Instagram className="h-6 w-6 text-zinc-400 hover:text-brand-cyan" />
                   </a>
-                  <a href="https://www.facebook.com/profile.php?id=61552669001037" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.facebook.com/profile.php?id=61552669001037" target="_blank" rel="noopener noreferrer" className="p-3 bg-zinc-50 rounded-full hover:bg-brand-cyan/10 transition-colors">
                     <Facebook className="h-6 w-6 text-zinc-400 hover:text-brand-cyan" />
                   </a>
-                  <a href="https://www.linkedin.com/in/binayakdey/" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/in/binayakdey/" target="_blank" rel="noopener noreferrer" className="p-3 bg-zinc-50 rounded-full hover:bg-brand-cyan/10 transition-colors">
                     <Linkedin className="h-6 w-6 text-zinc-400 hover:text-brand-cyan" />
                   </a>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -204,7 +244,7 @@ export function Layout({ children }: LayoutProps) {
               <h4 className="font-sans font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-6">Resources</h4>
               <ul className="space-y-4 text-sm font-bold text-zinc-500">
                 <li><Link to="/about" className="hover:text-brand-cyan transition-colors">About Us</Link></li>
-                <li><Link to="/about#faq" className="hover:text-brand-cyan transition-colors">FAQ</Link></li>
+                <li><Link to="/faq" className="hover:text-brand-cyan transition-colors">FAQ</Link></li>
                 <li><Link to="/contact" className="hover:text-brand-cyan transition-colors">Contact</Link></li>
               </ul>
             </div>
