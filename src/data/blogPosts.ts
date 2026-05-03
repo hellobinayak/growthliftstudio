@@ -19,107 +19,147 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     category: "Facebook Ads",
     excerpt:
-      "Most bathroom remodeling contractors who try Facebook Ads fail within 60 days — not because ads don't work, but because they make the same five mistakes. Here's what actually works.",
+      "Most bathroom remodeling contractors who try Facebook Ads quit within 60 days — not because ads don't work, but because nobody told them what actually does.",
     content: `
-## Why Facebook Ads Work for Bathroom Remodeling
+## Let's be honest about something
 
-Bathroom remodeling is one of the highest-intent home improvement markets in the US. Homeowners searching for a remodel have already made the decision — they just need to find the right contractor. Facebook and Instagram Ads let you put your business in front of exactly those homeowners before they call anyone else.
+Most contractors I talk to have tried Facebook Ads at least once. And most of them got burned.
 
-The numbers are real. Our clients typically generate 10–20 qualified leads per month at a cost of $50–$150 per lead. In one campaign, we generated 21 leads in 30 days for a bathroom remodeler in New York City at $55 per lead.
+They spent $500, got a handful of tire-kickers, maybe one person who ghosted them after the quote — and decided ads were a scam.
 
-But most contractors who try Facebook Ads fail. Here's why — and what to do instead.
+I get it. I've seen it happen dozens of times.
 
----
+But here's what I also know: the contractors who stuck with it, fixed a few key things, and gave it a real shot? They're now booking 15–20 jobs a month from ads alone. One of our clients in New York City got 21 leads in 30 days at $55 a lead. That's real money.
 
-## The 5 Mistakes Bathroom Remodeling Contractors Make with Facebook Ads
-
-### Mistake 1: Targeting Too Broadly
-
-New advertisers target "everyone in my city aged 25–65." That burns budget fast. The right approach is to layer your targeting: homeowners only, household income $75k+, aged 35–65, interests in home improvement, recent life events like moving or home purchase.
-
-The more specific your audience, the lower your cost per qualified lead.
-
-### Mistake 2: Using the Wrong Objective
-
-Most contractors boost a post and wonder why they get likes but no calls. Boosting is not advertising. You need a proper campaign with the Leads objective or a landing page campaign with the Conversions objective. Facebook's algorithm optimizes for whoever is most likely to take your desired action — but only if you tell it what that action is.
-
-### Mistake 3: No Offer
-
-"Call us for a free quote" is not an offer. It's what every contractor says. Homeowners scroll past it in half a second. A strong offer gives them a specific reason to act now. Examples that work for bathroom remodeling:
-
-- Free 3D bathroom design (no obligation)
-- $500 off if booked before the end of the month
-- Free in-home consultation with a design mockup
-
-Give them something they actually want.
-
-### Mistake 4: Sending Traffic to a Generic Website
-
-If your ad sends people to your homepage, you will lose them. Your homepage has too many options — services, about us, gallery, contact. A lead generation ad needs to send people to a single focused landing page with one call to action. Remove the navigation. One page, one form, one goal.
-
-### Mistake 5: Giving Up Too Early
-
-Facebook Ads need data to optimize. Most contractors run a campaign for two weeks, get 3 leads, decide it doesn't work, and quit. The algorithm needs at least 50 conversion events to exit the learning phase. That takes time and a realistic budget. Contractors who stick with it past the learning phase see their cost per lead drop significantly.
+The difference isn't luck. It's knowing what you're doing.
 
 ---
 
-## What a Working Bathroom Remodeling Facebook Ad Campaign Looks Like
+## Why Facebook Ads actually make sense for bathroom remodeling
 
-A properly structured campaign has three layers:
+Think about who's on Facebook and Instagram on a Tuesday evening. It's the 45-year-old homeowner sitting on their couch, scrolling after dinner, quietly annoyed by their outdated bathroom for the hundredth time.
 
-**Campaign level:** Leads objective or Conversions objective. Budget at least $30–$50/day to exit the learning phase within 2–3 weeks.
+They're not searching Google yet. They're not ready to call anyone. But if the right ad shows up — something that looks like their dream bathroom, with a compelling offer — they'll click. And if your landing page is solid, they'll fill out the form.
 
-**Ad set level:** Target homeowners in your service radius (typically 25–50 miles). Layer income, age, and homeownership targeting. Create 2–3 ad sets testing different audiences.
+That's the window Facebook gives you. You're not waiting for people to search. You're finding them before they start shopping, which means less competition and lower cost per lead.
 
-**Ad level:** Test at least 3 creatives — before/after images perform best for bathroom remodeling. Video testimonials from past clients also convert well. Write headlines that speak directly to the pain: "Still dealing with that outdated bathroom?"
+Typical results for bathroom remodeling campaigns done right:
 
----
-
-## The Offer That Converts Best for Bathroom Remodelers
-
-After running campaigns for bathroom remodeling contractors across the US, one offer consistently outperforms everything else:
-
-**Free 3D Design Consultation**
-
-Here's why it works: it lowers the barrier to entry (no commitment, no payment), it creates a tangible deliverable the homeowner actually wants, and it gives your sales team a reason to get on the phone and demonstrate your expertise before quoting.
-
-Pair this with a simple landing page — headline, one image, a short form asking for name, phone, email, and zip code — and you have a proven lead generation system.
+- 10–20 qualified leads per month
+- $50–$150 cost per lead depending on your market
+- 7–14 days to start seeing leads after launch
 
 ---
 
-## How Much Should Bathroom Remodeling Contractors Spend on Facebook Ads?
+## Real campaign results — not made up numbers
 
-A realistic starting budget is $1,500–$2,000/month in ad spend. This gives you enough data to optimize and typically generates 15–25 leads per month in most US markets.
+Here's an actual campaign we ran. 3 ad sets, $486 in total spend, 9 leads at an average of $54.05 per lead.
 
-Cost per lead varies by market. Competitive metro areas like New York, Los Angeles, and Chicago run $80–$150 per lead. Less competitive markets can be as low as $30–$60 per lead.
+IMAGE::/images/results-adset.png::Real Facebook Ads campaign results — 9 leads at $54.05 average cost per lead
 
-The math is straightforward: if the average bathroom remodel is $12,000 and you close 25% of your leads, one closed job from 4 leads at $100 each ($400 in ad spend) returns $12,000 in revenue. That's a 30x return.
+That's a live screenshot from our Ads Manager. The "Awareness (Videos)" ad set performed best at $32.31 per lead. The image ad came in at $56.56. Both are well within a profitable range for a bathroom remodeling business with an average job value of $10,000–$20,000.
 
----
+Here's the ad-level breakdown from another campaign — showing exactly which creatives we tested and how each one performed:
 
-## Performance-Based vs Retainer — Which Model Is Right for You?
+IMAGE::/images/results-ads.png::Ad-level breakdown showing performance of each creative — video vs image
 
-Most agencies charge a flat monthly retainer regardless of results — typically $1,000–$3,000/month plus ad spend. You pay whether you get leads or not.
+And here's a full campaign overview across all our Meta campaigns:
 
-At Growth Lift Studio, we work differently. Our model is performance-based: a one-time setup fee of $1,500, then 1.5% of the job value you close from our leads. If you close a $15,000 bathroom remodel, our fee is $225. If you don't close jobs, you don't pay us.
+IMAGE::/images/all-meta-campaign.png::Full Meta campaign overview across all active Growth Lift Studio campaigns
 
-We also deliver the first 5 qualified appointments free — no charge until you see results.
-
-This model only works because our campaigns actually perform. We only make money when you make money.
+This is what data-driven advertising looks like. Not guessing — testing, measuring, and doubling down on what works.
 
 ---
 
-## Getting Started
+## The 5 reasons most contractor Facebook Ads fail
 
-If you're a bathroom remodeling contractor ready to build a consistent pipeline of qualified leads using Facebook Ads, here's what to do next:
+### 1. They target everyone
 
-1. Define your service area — pick the 25–50 mile radius where you do your best work
-2. Choose your offer — free 3D design consultation is the strongest starting point
-3. Set a realistic budget — $1,500/month minimum in ad spend to get real data
-4. Build a dedicated landing page — keep it simple, one form, one call to action
-5. Launch and give it 60 days — don't judge results in the first two weeks
+"Homeowners, 25–65, within 30 miles" — that's not targeting, that's guessing. You're paying to show ads to renters, apartment dwellers, people who just remodeled last year, and people who'll never spend $15k on a bathroom no matter what.
 
-Or skip the trial and error entirely. Book a call with Growth Lift Studio and we'll tell you exactly what your market looks like and what cost per lead to expect before you spend a dollar.
+Layer your targeting. Homeowners only. Household income $75k+. Age 35–65. Home improvement interests. Life events like recent home purchase. The tighter your audience, the lower your cost per lead.
+
+### 2. They boost posts instead of running real campaigns
+
+Boosting a post is not advertising. It's paying Facebook to show your post to more people who will scroll past it. A real campaign uses the Leads or Conversions objective, which tells Facebook's algorithm to find people likely to actually fill out a form — not just people likely to double-tap and keep scrolling.
+
+### 3. Their offer is boring
+
+"Call for a free quote." Cool. So does every other contractor in town. Why would someone stop scrolling for that?
+
+Your offer needs to be something they actually want. The one that works best for bathroom remodeling:
+
+**Free 3D bathroom design — no obligation.**
+
+Most homeowners have no idea what their new bathroom could look like. A free design gives them something tangible to get excited about. It gets them on the phone with you. And once they see the design, they're already emotionally invested in the project.
+
+### 4. They send traffic to their homepage
+
+Your homepage has 8 different things to click. When someone lands there from an ad, they get confused and leave. Every ad needs its own dedicated landing page — one headline, one image, one form, zero distractions. That's it.
+
+### 5. They quit during the learning phase
+
+Facebook's algorithm needs data to optimize. Specifically, it needs about 50 conversion events before it exits "learning phase" and really starts performing. That takes time — usually 2–3 weeks with a proper budget.
+
+Most contractors quit at week 2 when results look shaky. That's exactly when you need to hold on.
+
+---
+
+## What a bathroom remodeling campaign actually looks like
+
+Here's a simple structure that works:
+
+**Campaign objective:** Leads (if using Facebook's native lead forms) or Conversions (if sending to a landing page). Never Traffic. Never Reach.
+
+**Budget:** At least $30–$50/day. Less than that and you won't get enough data to optimize.
+
+**Ad sets:** Run 2–3 different audiences against each other. Let them compete. The winner gets more budget.
+
+**Creatives:** Before/after photos are your best friend. Real transformations. Real bathrooms. Not stock photos. If you have video testimonials from past clients, even better.
+
+**Headline examples that work:**
+- "Still living with that bathroom from 2005?"
+- "We'll design your dream bathroom — for free"
+- "New York homeowners: See what your bathroom could look like"
+
+---
+
+## How much should you actually spend?
+
+Realistic starting budget: $1,500–$2,000/month in ad spend.
+
+Here's the math that makes it obvious why it works:
+
+Average bathroom remodel job: $12,000
+Your close rate (being conservative): 20%
+Leads needed to close one job: 5
+Cost per lead at $100: $500 in ad spend
+Revenue from one job: $12,000
+Return: 24x your ad spend
+
+Even if your numbers are worse than that — say you close 1 in 8 leads at $120 per lead — you're spending $960 to make $12,000. That's still a no-brainer.
+
+---
+
+## The honest truth about most marketing agencies
+
+Most agencies will charge you $1,500–$3,000/month retainer whether you get results or not. They'll send you a report with impressions and reach and call it a win while you're sitting there with an empty calendar.
+
+We work differently. At Growth Lift Studio, our model is simple: $1,500 setup fee, then 1.5% of the job value you close from our leads. Close a $15,000 bathroom remodel? Our fee is $225.
+
+And the first 5 qualified appointments are free. You don't pay anything beyond the setup until you actually see results.
+
+We built it this way because we were tired of seeing contractors get burned by agencies that didn't have any skin in the game.
+
+---
+
+## What to do next
+
+If you're a bathroom remodeling contractor and you want to build a real pipeline of leads — not random form fills, not tire-kickers — here's where to start:
+
+Pick your service area. Choose your offer (free 3D design works). Set a real budget. Build a simple landing page. Give it 60 days.
+
+Or skip the trial and error and book a call with us. We'll tell you exactly what your market looks like and what cost per lead to expect before you spend a dollar.
     `,
   },
 ];

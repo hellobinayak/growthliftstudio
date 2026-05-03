@@ -7,7 +7,6 @@ export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
   const post = blogPosts.find((p) => p.slug === slug);
 
-  // Update meta tags for SEO
   useEffect(() => {
     if (post) {
       document.title = `${post.title} | Growth Lift Studio`;
@@ -31,7 +30,6 @@ export default function BlogPost() {
     );
   }
 
-  // Convert markdown-style content to JSX
   const renderContent = (content: string) => {
     const lines = content.trim().split("\n");
     const elements: JSX.Element[] = [];
@@ -41,25 +39,41 @@ export default function BlogPost() {
       const line = lines[i].trim();
 
       if (!line) {
-        elements.push(<div key={key++} className="h-4" />);
+        elements.push(<div key={key++} className="h-2" />);
+        continue;
+      }
+
+      // IMAGE render — format: IMAGE::path::caption
+      if (line.startsWith("IMAGE::")) {
+        const parts = line.split("::");
+        const src = parts[1];
+        const caption = parts[2] || "";
+        elements.push(
+          <figure key={key++} className="my-8">
+            <img
+              src={src}
+              alt={caption}
+              className="w-full rounded-xl border border-white/10 shadow-lg"
+            />
+            {caption && (
+              <figcaption className="text-center text-gray-500 text-sm mt-3 italic">
+                {caption}
+              </figcaption>
+            )}
+          </figure>
+        );
         continue;
       }
 
       if (line.startsWith("## ")) {
         elements.push(
-          <h2
-            key={key++}
-            className="text-2xl font-bold text-white mt-10 mb-4"
-          >
+          <h2 key={key++} className="text-2xl font-bold text-white mt-10 mb-4">
             {line.replace("## ", "")}
           </h2>
         );
       } else if (line.startsWith("### ")) {
         elements.push(
-          <h3
-            key={key++}
-            className="text-xl font-semibold text-cyan-400 mt-8 mb-3"
-          >
+          <h3 key={key++} className="text-xl font-semibold text-cyan-400 mt-8 mb-3">
             {line.replace("### ", "")}
           </h3>
         );
@@ -71,17 +85,12 @@ export default function BlogPost() {
         );
       } else if (line.startsWith("- ")) {
         elements.push(
-          <li
-            key={key++}
-            className="text-gray-300 leading-relaxed ml-4 list-disc marker:text-cyan-400"
-          >
+          <li key={key++} className="text-gray-300 leading-relaxed ml-4 list-disc marker:text-cyan-400">
             {line.replace("- ", "")}
           </li>
         );
       } else if (line === "---") {
-        elements.push(
-          <hr key={key++} className="border-white/10 my-8" />
-        );
+        elements.push(<hr key={key++} className="border-white/10 my-8" />);
       } else {
         elements.push(
           <p key={key++} className="text-gray-300 leading-relaxed text-lg">
@@ -132,7 +141,6 @@ export default function BlogPost() {
           </p>
         </div>
 
-        {/* Divider */}
         <hr className="border-white/10 mb-10" />
 
         {/* Content */}
@@ -156,7 +164,6 @@ export default function BlogPost() {
           </Link>
         </div>
 
-        {/* Back */}
         <div className="mt-10">
           <Link
             to="/blog"
