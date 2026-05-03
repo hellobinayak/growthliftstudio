@@ -55,17 +55,17 @@ Typical results for bathroom remodeling campaigns done right:
 
 Here's an actual campaign we ran. 3 ad sets, $486 in total spend, 9 leads at an average of $54.05 per lead.
 
-IMAGE::/images/results-adset.png::Real Facebook Ads campaign results — 9 leads at $54.05 average cost per lead
+IMAGE::/images/RESULTS-ADSET.png::Real Facebook Ads campaign results — 9 leads at $54.05 average cost per lead
 
 That's a live screenshot from our Ads Manager. The "Awareness (Videos)" ad set performed best at $32.31 per lead. The image ad came in at $56.56. Both are well within a profitable range for a bathroom remodeling business with an average job value of $10,000–$20,000.
 
 Here's the ad-level breakdown from another campaign — showing exactly which creatives we tested and how each one performed:
 
-IMAGE::/images/results-ads.png::Ad-level breakdown showing performance of each creative — video vs image
+IMAGE::/images/RESULTS-ADS.png::Ad-level breakdown showing performance of each creative — video vs image
 
 And here's a full campaign overview across all our Meta campaigns:
 
-IMAGE::/images/all-meta-campaign.png::Full Meta campaign overview across all active Growth Lift Studio campaigns
+IMAGE::/images/ALL-META-CAMPAIGN.png::Full Meta campaign overview across all active Growth Lift Studio campaigns
 
 This is what data-driven advertising looks like. Not guessing — testing, measuring, and doubling down on what works.
 
