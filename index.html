@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1KqrKpekKkYsgY6QR-WzzF_QEwaxhswBM" />
     <title>Qualified Booked Appointments | Growth Lift Studio</title>
+<script>
+  (function(){
+    var p = window.location.search.match(/p=([^&]*)/);
+    if(p){
+      window.history.replaceState(null, null,
+        '/' + decodeURIComponent(p[1].replace(/~and~/g, '&')) +
+        (window.location.search.match(/q=([^&]*)/) ? '?' + decodeURIComponent(window.location.search.match(/q=([^&]*)/)[1].replace(/~and~/g, '&')) : '') +
+        window.location.hash
+      );
+    }
+  }());
+</script>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VF39LJDPJ"></script>
 <script>
