@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Homepage — highest priority -->
   <url>
     <loc>https://growthliftstudio.in/</loc>
     <lastmod>2026-04-26</lastmod>
@@ -8,6 +9,7 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Services — second most important page -->
   <url>
     <loc>https://growthliftstudio.in/services</loc>
     <lastmod>2026-04-26</lastmod>
@@ -15,6 +17,7 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Case Studies — high value for credibility and AI citations -->
   <url>
     <loc>https://growthliftstudio.in/case-studies</loc>
     <lastmod>2026-04-26</lastmod>
@@ -22,6 +25,7 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- FAQ — important for AI visibility -->
   <url>
     <loc>https://growthliftstudio.in/faq</loc>
     <lastmod>2026-04-26</lastmod>
@@ -29,6 +33,15 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog — high value for SEO -->
+  <url>
+    <loc>https://growthliftstudio.in/blog</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Testimonials -->
   <url>
     <loc>https://growthliftstudio.in/testimonials</loc>
     <lastmod>2026-04-26</lastmod>
@@ -36,15 +49,9 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- About Us -->
   <url>
     <loc>https://growthliftstudio.in/about</loc>
-    <lastmod>2026-04-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://growthliftstudio.in/contact</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

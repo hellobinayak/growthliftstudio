@@ -46,6 +46,7 @@ export function Layout({ children }: LayoutProps) {
     { name: "Case Studies", href: "/results" },
     { name: "About Us", href: "/about" },
     { name: "Testimonials", href: "/testimonials" },
+    { name: "Blog", href: "/blog" },
     { name: "FAQ", href: "/faq" },
   ];
 
@@ -244,6 +245,7 @@ export function Layout({ children }: LayoutProps) {
               <h4 className="font-sans font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-6">Resources</h4>
               <ul className="space-y-4 text-sm font-bold text-zinc-500">
                 <li><Link to="/about" className="hover:text-brand-cyan transition-colors">About Us</Link></li>
+                <li><Link to="/blog" className="hover:text-brand-cyan transition-colors">Blog</Link></li>
                 <li><Link to="/faq" className="hover:text-brand-cyan transition-colors">FAQ</Link></li>
                 <li><Link to="/contact" className="hover:text-brand-cyan transition-colors">Contact</Link></li>
               </ul>

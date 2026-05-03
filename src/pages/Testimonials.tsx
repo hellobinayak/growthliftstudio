@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { motion } from "motion/react";
 import { 
   Play, 
@@ -17,53 +17,10 @@ import {
 import { Link } from "react-router-dom";
 import { Button, InteractiveCard } from "../components/UI";
 import { useSurvey } from "../context/SurveyContext";
+import TestimonialSlider from "../components/TestimonialSlider";
 
 export default function Testimonials() {
-  const scrollRef = useRef<HTMLDivElement>(null);
   const { openSurvey } = useSurvey();
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const scrollAmount = 400;
-      scrollRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  const testimonials = [
-    {
-      company: "James R.",
-      location: "Kitchen & Bathroom Remodeler, Columbus, OH",
-      quote: "We were getting inquiries before, but nothing consistent. Now we have booked jobs every week — 8 in the first 30 days. It's so much easier to plan crews and order materials when you actually know what's coming.",
-      tag: "Verified Client"
-    },
-    {
-      company: "Derek M.",
-      location: "Residential Roofing, Charlotte, NC",
-      quote: "The biggest difference is the quality of conversations. Before, half our calls were price-shoppers who ghosted after the quote. Now most people we talk to are ready to move. We booked 5 installs in the first 3 weeks.",
-      tag: "Verified Client"
-    },
-    {
-      company: "Tony V.",
-      location: "HVAC & Plumbing, Phoenix, AZ",
-      quote: "We used to rely on referrals and some seasons were completely dry. Now we have a steady flow coming in, which makes everything more predictable — payroll, scheduling, everything.",
-      tag: "Verified Client"
-    },
-    {
-      company: "Steve H.",
-      location: "Window & Door Replacement, Tampa, FL",
-      quote: "I was skeptical because we'd tried Facebook Ads on our own and burned money. This was completely different — they handled everything and we started seeing booked calls within the first two weeks.",
-      tag: "Verified Client"
-    },
-    {
-      company: "Carlos B.",
-      location: "Residential Plumbing, Houston, TX",
-      quote: "We went from 2–3 jobs a month with zero predictability to 10+ consistent bookings. The audit call alone showed us exactly where we were losing leads. That was worth it before we even started.",
-      tag: "Verified Client"
-    }
-  ];
 
   return (
     <div className="bg-white min-h-screen">
@@ -146,71 +103,18 @@ export default function Testimonials() {
         </div>
       </section>
 
-      {/* Testimonials Horizontal Scroll with Arrows */}
+      {/* Testimonials Slider Section */}
       <section className="py-32 px-6 bg-zinc-50 border-y border-zinc-100 overflow-hidden">
         <div className="mx-auto max-w-7xl">
-          <div className="flex items-center justify-between mb-12">
-            <div>
-              <h3 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-2">Success Stories</h3>
-              <p className="text-2xl sm:text-3xl font-black text-brand-navy tracking-tight">Verified Results</p>
-            </div>
-            <div className="flex gap-4">
-              <button 
-                onClick={() => scroll('left')}
-                className="h-14 w-14 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-brand-navy hover:bg-brand-cyan hover:border-brand-cyan hover:text-white transition-all shadow-lg shadow-brand-navy/5 active:scale-95"
-                aria-label="Scroll Left"
-              >
-                <ChevronLeft className="h-6 w-6" />
-              </button>
-              <button 
-                onClick={() => scroll('right')}
-                className="h-14 w-14 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-brand-navy hover:bg-brand-cyan hover:border-brand-cyan hover:text-white transition-all shadow-lg shadow-brand-navy/5 active:scale-95"
-                aria-label="Scroll Right"
-              >
-                <ChevronRight className="h-6 w-6" />
-              </button>
-            </div>
+          <div className="text-center mb-12">
+            <h3 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Success Stories</h3>
+            <p className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-brand-navy tracking-tighter">
+              Verified outcomes from <br />
+              <span className="text-brand-cyan">real business owners.</span>
+            </p>
           </div>
-
-          <div 
-            ref={scrollRef}
-            className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory no-scrollbar -mx-6 px-6"
-          >
-            {testimonials.map((t, i) => (
-              <div 
-                key={i} 
-                className="flex-shrink-0 w-[85vw] md:w-[380px] snap-center h-full"
-              >
-                <InteractiveCard 
-                  delay={i * 0.1}
-                  className="h-full group relative p-8 rounded-[2rem] bg-gradient-to-br from-white via-cyan-50/40 to-brand-cyan/5 border border-white shadow-xl shadow-brand-cyan/5 flex flex-col overflow-hidden cursor-default min-h-[380px]"
-                >
-                  {/* Process Card Gloss */}
-                  <div className="absolute top-0 -left-[100%] w-[200%] h-full bg-gradient-to-r from-transparent via-white/60 to-transparent -rotate-45 group-hover:left-[100%] transition-all duration-1000 pointer-events-none" />
-                  
-                  <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-cyan mb-6 block relative z-10 transition-transform group-hover:translate-x-1 flex items-center gap-1.5"><Tag className="h-3 w-3" /> {t.tag}</span>
-                  
-                  <div className="mb-4 relative z-10">
-                    <Quote className="h-6 w-6 text-brand-cyan opacity-40 group-hover:opacity-100 transition-opacity" />
-                  </div>
-
-                  <p className="text-base sm:text-lg text-brand-navy leading-relaxed font-bold flex-grow italic mb-8 text-balance relative z-10">
-                    "{t.quote}"
-                  </p>
-
-                  <div className="pt-6 border-t border-brand-cyan/10 relative z-10">
-                    <h3 className="text-sm font-black text-brand-navy uppercase tracking-widest mb-1">{t.company}</h3>
-                    <p className="text-[11px] text-brand-cyan font-black tracking-tight uppercase opacity-60 group-hover:opacity-100 transition-opacity leading-tight">{t.location}</p>
-                  </div>
-
-                  {/* Subtle Background Icon Decoration */}
-                  <div className="absolute -bottom-4 -right-4 opacity-[0.03] group-hover:opacity-10 transition-opacity">
-                    <Quote className="h-28 w-28 text-brand-navy rotate-12" />
-                  </div>
-                </InteractiveCard>
-              </div>
-            ))}
-          </div>
+          
+          <TestimonialSlider />
         </div>
       </section>
 

@@ -36,7 +36,6 @@ import Testimonials from "./pages/Testimonials";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -69,10 +68,9 @@ export default function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/faq" element={<FAQ />} /> 
-	    <Route path="/blog" element={<Blog />} />
-	    <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/faq" element={<FAQ />} />
             {/* Fallback */}
             <Route path="*" element={<Home />} />
           </Routes>
