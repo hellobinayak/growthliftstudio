@@ -63,11 +63,6 @@ Here's the ad-level breakdown from another campaign — showing exactly which cr
 
 IMAGE::/images/RESULTS-ADS.png::Ad-level breakdown showing performance of each creative — video vs image
 
-And here's a full campaign overview across all our Meta campaigns:
-
-IMAGE::/images/ALL-META-CAMPAIGN.png::Full Meta campaign overview across all active Growth Lift Studio campaigns
-
-This is what data-driven advertising looks like. Not guessing — testing, measuring, and doubling down on what works.
 
 ---
 
