@@ -33,6 +33,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog — high value for SEO -->
+  <url>
+    <loc>https://growthliftstudio.in/blog</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Testimonials -->
   <url>
     <loc>https://growthliftstudio.in/testimonials</loc>

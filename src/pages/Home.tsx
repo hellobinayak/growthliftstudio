@@ -407,6 +407,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Latest Intel (Blog) Section */}
+      <section className="relative z-10 py-32 bg-zinc-50 border-y border-zinc-100">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+            <div className="max-w-2xl">
+              <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Latest Intel</h2>
+              <p className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-brand-navy tracking-tighter leading-tight text-balance">
+                The growth <span className="text-brand-cyan">archive.</span>
+              </p>
+            </div>
+            <Link to="/blog">
+              <Button variant="outline" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white px-8 h-14 font-black uppercase tracking-widest text-xs">
+                View All Insights <ArrowRight className="h-4 w-4 ml-2" />
+              </Button>
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <InteractiveCard className="group flex flex-col sm:flex-row overflow-hidden bg-white border border-zinc-100 transition-all hover:border-brand-cyan/30">
+              <div className="w-full sm:w-2/5 relative h-48 sm:h-auto">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="NYC Case Study" />
+              </div>
+              <div className="p-8 flex flex-col justify-between flex-1">
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-brand-cyan mb-4 block">Case Study</span>
+                  <h4 className="text-xl font-black text-brand-navy mb-4 group-hover:text-brand-cyan transition-colors leading-tight">21 Qualified Leads in 30 Days: The NYC Breakdown</h4>
+                  <p className="text-sm text-zinc-500 font-medium line-clamp-2">How we achieved a $55 cost-per-lead for a bathroom remodeler in New York City.</p>
+                </div>
+                <Link to="/blog" className="mt-6 flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-brand-navy">
+                  Read Story <ArrowRight className="h-3 w-3" />
+                </Link>
+              </div>
+            </InteractiveCard>
+
+            <InteractiveCard className="group flex flex-col sm:flex-row overflow-hidden bg-white border border-zinc-100 transition-all hover:border-brand-cyan/30">
+              <div className="w-full sm:w-2/5 relative h-48 sm:h-auto">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="1.5% Model" />
+              </div>
+              <div className="p-8 flex flex-col justify-between flex-1">
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-brand-cyan mb-4 block">Strategy</span>
+                  <h4 className="text-xl font-black text-brand-navy mb-4 group-hover:text-brand-cyan transition-colors leading-tight">Why Monthly Retainers are a Relic of the Past</h4>
+                  <p className="text-sm text-zinc-500 font-medium line-clamp-2">Understanding the 1.5% performance model and how it aligns with your profit.</p>
+                </div>
+                <Link to="/blog" className="mt-6 flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-brand-navy">
+                  Read Story <ArrowRight className="h-3 w-3" />
+                </Link>
+              </div>
+            </InteractiveCard>
+          </div>
+        </div>
+      </section>
+
       {/* Featured CTA */}
       <section className="relative z-10 py-32 bg-white">
         <div className="mx-auto max-w-4xl px-6 text-center">
