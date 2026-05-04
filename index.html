@@ -198,6 +198,42 @@
     }
     </script>
   </head>
+<!-- LocalBusiness Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Growth Lift Studio",
+  "description": "Performance-based lead generation agency for US home improvement contractors. We run Facebook Ads and Google Ads for bathroom remodeling, kitchen remodeling, window replacement, roofing and HVAC businesses.",
+  "url": "https://growthliftstudio.in",
+  "telephone": "",
+  "priceRange": "$1500 setup + 1.5% per closed job",
+  "areaServed": "United States",
+  "serviceType": ["Facebook Ads", "Google Ads", "Lead Generation"],
+  "knowsAbout": ["Bathroom Remodeling Leads", "Kitchen Remodeling Leads", "Window Replacement Leads", "Home Improvement Marketing"]
+}
+</script>
+
+<!-- Service Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Paid Advertising & Lead Generation",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Growth Lift Studio"
+  },
+  "areaServed": "United States",
+  "description": "We generate 10-20 qualified leads per month for home improvement contractors using Facebook Ads and Google Ads. Performance-based pricing — first 5 appointments free.",
+  "offers": {
+    "@type": "Offer",
+    "price": "1500",
+    "priceCurrency": "USD",
+    "description": "Setup fee + 1.5% of closed job value"
+  }
+}
+</script>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
