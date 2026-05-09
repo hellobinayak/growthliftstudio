@@ -7,6 +7,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,31 +21,80 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install Puppeteer dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libgbm-dev \
+            libxkbcommon-x11-0 \
+            libgtk-3-0 \
+            libnss3 \
+            libatk-bridge2.0-0 \
+            libdrm2 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxrandr2 \
+            libxss1 \
+            libasound2
+
+      - name: Install Puppeteer
+        run: npm install puppeteer --save-dev
+
       - name: Build
         run: npm run build
 
-      - name: Pre-render pages
+      - name: Pre-render pages with Puppeteer
         run: |
           npm install -g serve
           npx serve dist -p 5000 &
-          sleep 3
-          
-          ROUTES=(
-            "/"
-            "/services"
-            "/results"
-            "/about"
-            "/faq"
-            "/testimonials"
-            "/contact"
-            "/blog"
-            "/blog/facebook-ads-bathroom-remodeling-contractors"
-          )
-          
-          for route in "${ROUTES[@]}"; do
-            mkdir -p "dist${route}"
-            curl -s "http://localhost:5000${route}" -o "dist${route}/index.html" || true
-          done
+          sleep 5
+
+          node -e "
+          const puppeteer = require('puppeteer');
+          const fs = require('fs');
+          const path = require('path');
+
+          const routes = [
+            '/',
+            '/services',
+            '/results',
+            '/about',
+            '/faq',
+            '/testimonials',
+            '/contact',
+            '/blog',
+            '/blog/facebook-ads-bathroom-remodeling-contractors'
+          ];
+
+          (async () => {
+            const browser = await puppeteer.launch({
+              headless: 'new',
+              args: ['--no-sandbox', '--disable-setuid-sandbox']
+            });
+
+            for (const route of routes) {
+              const page = await browser.newPage();
+              await page.goto('http://localhost:5000' + route, {
+                waitUntil: 'networkidle0',
+                timeout: 30000
+              });
+
+              // Wait for React to render
+              await page.waitForSelector('#root > *', { timeout: 10000 }).catch(() => {});
+
+              const html = await page.content();
+              const outDir = path.join('dist', route === '/' ? '' : route);
+              fs.mkdirSync(outDir, { recursive: true });
+              fs.writeFileSync(path.join(outDir, 'index.html'), html);
+              console.log('Pre-rendered: ' + route);
+
+              await page.close();
+            }
+
+            await browser.close();
+            console.log('Pre-rendering complete.');
+          })();
+          "
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
