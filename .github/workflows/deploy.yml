@@ -46,7 +46,7 @@ jobs:
       - name: Pre-render pages with Puppeteer
         run: |
           npm install -g serve
-          npx serve dist -p 5000 &
+          npx serve dist -p 5000 --single &
           sleep 5
 
           node -e "
