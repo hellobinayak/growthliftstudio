@@ -53,25 +53,47 @@ jobs:
           const puppeteer = require('puppeteer');
           const fs = require('fs');
           const path = require('path');
+          const routes = [
+            '/',
+            '/services',
+            '/results',
+            '/about',
+            '/faq',
+            '/testimonials',
+            '/contact',
+            '/blog',
+            '/blog/facebook-ads-bathroom-remodeling-contractors'
+          ];
           (async () => {
             const browser = await puppeteer.launch({
               headless: 'new',
               args: ['--no-sandbox', '--disable-setuid-sandbox']
             });
-            const page = await browser.newPage();
-            page.on('console', msg => console.log('BROWSER LOG:', msg.text()));
-            page.on('pageerror', err => console.log('BROWSER ERROR:', err.message));
-            page.on('requestfailed', req => console.log('FAILED REQUEST:', req.url()));
-            await page.goto('http://localhost:5000/', {
-              waitUntil: 'domcontentloaded',
-              timeout: 60000
-            });
-            await new Promise(r => setTimeout(r, 5000));
-            const rootLength = await page.evaluate(() => document.getElementById('root').innerHTML.length);
-            console.log('Root length after 5s:', rootLength);
-            const html = await page.content();
-            console.log('Body snippet:', html.substring(html.indexOf('<body'), html.indexOf('<body') + 500));
+            for (const route of routes) {
+              const page = await browser.newPage();
+              await page.goto('http://localhost:5000' + route, {
+                waitUntil: 'domcontentloaded',
+                timeout: 60000
+              });
+              let attempts = 0;
+              while (attempts < 15) {
+                const rootLength = await page.evaluate(() => {
+                  const root = document.getElementById('root');
+                  return root ? root.innerHTML.length : 0;
+                });
+                if (rootLength > 500) break;
+                await new Promise(r => setTimeout(r, 1000));
+                attempts++;
+              }
+              const html = await page.content();
+              const outDir = path.join('dist', route === '/' ? '' : route);
+              fs.mkdirSync(outDir, { recursive: true });
+              fs.writeFileSync(path.join(outDir, 'index.html'), html);
+              console.log('Pre-rendered: ' + route);
+              await page.close();
+            }
             await browser.close();
+            console.log('Pre-rendering complete.');
           })();
           "
 
