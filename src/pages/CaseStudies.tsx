@@ -62,12 +62,7 @@ export default function CaseStudies() {
       {/* Header Section */}
       <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">
         <div className="mx-auto max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
+          <div className="max-w-4xl">
             <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Case Studies</h2>
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
               Real businesses. <br />
@@ -77,7 +72,7 @@ export default function CaseStudies() {
             <p className="text-lg sm:text-xl text-zinc-500 leading-relaxed font-medium max-w-2xl">
               These are examples of what happens when the pipeline is structured correctly.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
