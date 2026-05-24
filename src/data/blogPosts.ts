@@ -177,7 +177,7 @@ Google Ads is different. It's hunting.
 
 When someone types "kitchen remodeling contractor near me" or "luxury kitchen renovation cost" into Google, they aren't looking to be entertained. They have a problem, they have the budget, and they are actively looking for a professional to solve it.
 
-This is what we call High-Intent Traffic. And for a high-ticket service like kitchen remodeling — where jobs easily range from $15,000 to $40,000+ — it is the absolute gold standard of lead generation.
+This is what we call High-Intent Traffic. And for a high-ticket service like kitchen remodeling — where typical mid-range projects range from $30,000 to $75,000+ — it is the absolute gold standard of lead generation.
 
 ---
 
@@ -191,10 +191,11 @@ By positioning your business at the very top of those search results, you bypass
 
 Typical results for a properly optimized kitchen remodeling Google Ads campaign:
 
-- Average cost per lead: $70–$140
-- Booking rate from lead to appointment: 30%–45%
-- Average project value: $25,000+
-- ROI: 10x to 15x your ad spend
+- Average Cost Per Click (CPC): $8–$22 (depending on market competitiveness)
+- Average Cost Per Lead (CPL): $120–$280
+- Lead-to-appointment booking rate: 30%–45%
+- Average mid-range project value: $30,000–$75,000
+- Return on Investment (ROI): 10x to 15x+ your ad spend
 
 IMAGE::/images/kitchen-remodel-lead-gen.png::A stunning, luxury kitchen remodel that represents the high-ticket projects Google Ads can consistently attract
 
@@ -249,31 +250,31 @@ A Google lead is hot, but it cools down fast. The homeowner who filled out your 
 
 **If you wait 2 hours to call them, they are already talking to your competitor.**
 
-If you call a new lead within 5 minutes, your chances of booking the appointment increase by 391%. You must set up automated text and email alerts so you or your office manager can jump on leads the second they come in.
+Industry data shows that responding to a lead within one minute can boost conversion rates by up to 391% compared to a delayed response. Furthermore, waiting just 30 minutes instead of 5 minutes makes that lead 21 times less likely to qualify as a valid, interested prospect. You must set up automated text and email alerts so you can jump on leads the second they come in.
 
 ---
 
 ## Let's do the math on ROI
 
-Let's look at real numbers to see why Google Ads is a no-brainer for high-ticket kitchen remodeling projects.
+Let's look at real, benchmark-backed numbers to see why Google Ads is a no-brainer for high-ticket kitchen remodeling projects.
 
-Let's assume a conservative campaign setup:
+Let's assume a realistic mid-range campaign setup, fully aligned with national averages:
 
-- Monthly Ad Spend: $1,500
-- Cost Per Click (CPC): $8
-- Monthly Clicks: 187 clicks
-- Conversion Rate: 12% (very achievable on a good landing page)
-- Monthly Leads: 22 leads
-- Cost Per Lead (CPL): $68
-- Appointment Booking Rate: 35%
-- Booked Appointments: 7.7 (let's say 7 appointments)
-- Close Rate (from appointment to contract): 25%
-- Jobs Closed: 1.7 jobs (let's say 1 job closed)
-- Average Kitchen Job Value: $28,000
+- Monthly Ad Spend: $3,000 (recommended starting budget to secure adequate search volume)
+- Average Cost Per Click (CPC): $12 (within the standard $8–$22 range)
+- Monthly Clicks: 250 clicks
+- Conversion Rate: 10% (achievable on a high-performing dedicated landing page)
+- Monthly Leads: 25 leads
+- Cost Per Lead (CPL): $120 (well within the typical $120–$280 national average)
+- Appointment Booking Rate: 40% (converting web lead to a qualified site inspection)
+- Booked Appointments: 10 appointments
+- Close Rate (from inspection to signed contract): 20%
+- Jobs Closed: 2 jobs closed
+- Average Kitchen Job Value: $32,000 (perfectly in line with the $30k–$75k national average)
 
-In this scenario, you spent $1,500 on ads to secure a $28,000 job. Even after accounting for materials and labor, your return on investment is massive.
+In this scenario, you spent $3,000 on Google Ads to secure $64,000 in closed contracts. That represents a 21.3x Return on Ad Spend!
 
-And if you close 2 jobs instead of 1? You're looking at a 37x return on ad spend.
+Even if you run a highly conservative campaign where your close rate is lower and you only close 1 job at $32,000, you are still generating a 10.6x return. That is a massive win for any growing contracting business.
 
 ---
 
