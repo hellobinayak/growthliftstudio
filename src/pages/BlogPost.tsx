@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { blogPosts } from "../data/blogPosts";
 import { ArrowLeft, Clock, Tag, Calendar } from "lucide-react";
 import { useSurvey } from "../context/SurveyContext";
@@ -34,7 +34,7 @@ export default function BlogPost() {
 
   const renderContent = (content: string) => {
     const lines = content.trim().split("\n");
-    const elements: JSX.Element[] = [];
+    const elements: React.JSX.Element[] = [];
     let key = 0;
 
     for (let i = 0; i < lines.length; i++) {
