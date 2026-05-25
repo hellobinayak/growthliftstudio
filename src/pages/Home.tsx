@@ -13,6 +13,7 @@ import { Button, InteractiveCard } from "../components/UI";
 import { Link } from "react-router-dom";
 import { useSurvey } from "../context/SurveyContext";
 import TestimonialSlider from "../components/TestimonialSlider";
+import { SEO } from "../components/SEO";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -36,6 +37,10 @@ export default function Home() {
 
   return (
     <div ref={containerRef} className="relative">
+      <SEO 
+        title="Growth Lift Studio | Lead Generation for Home Improvement Contractors" 
+        description="We build high-velocity booked appointment pipelines for B2B home improvement contractors. Pay only when you close jobs. First 5 appointments free."
+      />
       {/* Global Background Layer */}
       <div className="absolute inset-0 z-0 overflow-hidden min-h-screen">
         <motion.div style={{ y: backgroundY }} className="h-full w-full relative">

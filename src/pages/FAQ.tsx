@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Plus, Minus, ArrowRight } from "lucide-react";
 import { Button } from "../components/UI";
 import { useSurvey } from "../context/SurveyContext";
+import { SEO } from "../components/SEO";
 
 export default function FAQ() {
   const { openSurvey } = useSurvey();
@@ -45,6 +46,10 @@ export default function FAQ() {
 
   return (
     <div className="bg-white min-h-screen">
+      <SEO 
+        title="Frequently Asked Questions | Growth Lift Studio" 
+        description="Find answers to all your questions about B2B lead generation, pricing models, and booked appointment systems with Growth Lift Studio."
+      />
       {/* Header Section */}
       <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">
         <div className="mx-auto max-w-4xl pt-12">

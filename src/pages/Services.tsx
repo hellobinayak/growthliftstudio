@@ -12,6 +12,7 @@ import {
 import { Button, InteractiveCard } from "../components/UI";
 import { Link } from "react-router-dom";
 import { useSurvey } from "../context/SurveyContext";
+import { SEO } from "../components/SEO";
 
 export default function Services() {
   const { openSurvey } = useSurvey();
@@ -60,6 +61,10 @@ export default function Services() {
 
   return (
     <div className="bg-white min-h-screen">
+      <SEO 
+        title="Our Trade Pipeline Services | Growth Lift Studio" 
+        description="We handle the B2B marketing and booked appointment pipeline for home improvement contractors: Facebook Ads, Google Ads, booking systems, and lead follow-up."
+      />
       {/* Header Section */}
       <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">
         <div className="mx-auto max-w-7xl">

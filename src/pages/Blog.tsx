@@ -2,10 +2,15 @@ import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { blogPosts } from "../data/blogPosts";
+import { SEO } from "../components/SEO";
 
 export default function Blog() {
   return (
     <div className="relative min-h-screen bg-white">
+      <SEO 
+        title="The Growth Archive & B2B Strategy Blog | Growth Lift Studio" 
+        description="Read standard performance ads strategy breakdowns, niche industry case studies, and insights on growing home improvement contractor bookings."
+      />
       {/* Header */}
       <section className="relative py-24 px-6 bg-zinc-50 border-b border-zinc-100">
         <div className="mx-auto max-w-5xl text-center">

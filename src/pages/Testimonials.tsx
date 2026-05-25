@@ -18,12 +18,17 @@ import { Link } from "react-router-dom";
 import { Button, InteractiveCard } from "../components/UI";
 import { useSurvey } from "../context/SurveyContext";
 import TestimonialSlider from "../components/TestimonialSlider";
+import { SEO } from "../components/SEO";
 
 export default function Testimonials() {
   const { openSurvey } = useSurvey();
 
   return (
     <div className="bg-white min-h-screen">
+      <SEO 
+        title="Client Reviews & Verified Results | Growth Lift Studio" 
+        description="See what remodeling and roofing business owners say about the Growth Lift Studio booked appointment systems and campaigns."
+      />
       {/* Header & Video Player Section */}
       <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100 overflow-hidden">
         <div className="mx-auto max-w-7xl">

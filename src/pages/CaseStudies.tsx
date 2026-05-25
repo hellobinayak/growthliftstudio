@@ -12,6 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import { Button, InteractiveCard } from "../components/UI";
 import { useSurvey } from "../context/SurveyContext";
+import { SEO } from "../components/SEO";
 
 export default function CaseStudies() {
   const { openSurvey } = useSurvey();
@@ -59,6 +60,10 @@ export default function CaseStudies() {
 
   return (
     <div className="bg-white min-h-screen">
+      <SEO 
+        title="Proven Remodeling & Roofing Results | Growth Lift Studio" 
+        description="See real performance-based advertising case studies and outcomes for remodeling, roofing, and local home service businesses."
+      />
       {/* Header Section */}
       <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">
         <div className="mx-auto max-w-7xl">

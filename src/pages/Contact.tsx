@@ -10,10 +10,15 @@ import {
   CheckCircle2
 } from "lucide-react";
 import { cn } from "../lib/utils";
+import { SEO } from "../components/SEO";
 
 export default function Contact() {
   return (
     <div className="bg-white min-h-screen">
+      <SEO 
+        title="Book a Trade Pipeline Audit | Growth Lift Studio" 
+        description="Ready to stop chasing leads and stabilize your B2B trade pipeline? Book a free 30-min strategy session to identify revenue gaps."
+      />
       <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">
         <div className="mx-auto max-w-7xl">
           <motion.div
