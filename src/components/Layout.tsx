@@ -175,13 +175,13 @@ const navLinks = [
                 </Button>
                 
                 <div className="flex justify-center gap-10 mt-6">
-                  <a href="https://www.instagram.com/growthliftstudio/" target="_blank" rel="noopener noreferrer" className="p-3 bg-zinc-50 rounded-full hover:bg-brand-cyan/10 transition-colors">
+                  <a href="https://www.instagram.com/growthliftstudio/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page" className="p-3 bg-zinc-50 rounded-full hover:bg-brand-cyan/10 transition-colors">
                     <Instagram className="h-6 w-6 text-zinc-400 hover:text-brand-cyan" />
                   </a>
-                  <a href="https://www.facebook.com/profile.php?id=61552669001037" target="_blank" rel="noopener noreferrer" className="p-3 bg-zinc-50 rounded-full hover:bg-brand-cyan/10 transition-colors">
+                  <a href="https://www.facebook.com/profile.php?id=61552669001037" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page" className="p-3 bg-zinc-50 rounded-full hover:bg-brand-cyan/10 transition-colors">
                     <Facebook className="h-6 w-6 text-zinc-400 hover:text-brand-cyan" />
                   </a>
-                  <a href="https://www.linkedin.com/in/binayakdey/" target="_blank" rel="noopener noreferrer" className="p-3 bg-zinc-50 rounded-full hover:bg-brand-cyan/10 transition-colors">
+                  <a href="https://www.linkedin.com/in/binayakdey/" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn profile" className="p-3 bg-zinc-50 rounded-full hover:bg-brand-cyan/10 transition-colors">
                     <Linkedin className="h-6 w-6 text-zinc-400 hover:text-brand-cyan" />
                   </a>
                 </div>
@@ -207,6 +207,9 @@ const navLinks = [
                     src="https://lh3.googleusercontent.com/d/1KqrKpekKkYsgY6QR-WzzF_QEwaxhswBM" 
                     alt="Growth Lift Studio Logo" 
                     className="h-full w-full object-cover"
+                    width="40"
+                    height="40"
+                    loading="lazy"
                   />
                 </div>
                 <span className="font-sans font-black text-xl tracking-tight text-brand-navy">Growth Lift Studio</span>
@@ -215,16 +218,16 @@ const navLinks = [
                 Building predictable, high-velocity revenue pipelines for home service businesses across the US.
               </p>
               <div className="flex gap-6">
-                <a href="https://www.instagram.com/growthliftstudio/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/growthliftstudio/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page">
                   <Instagram className="h-5 w-5 text-zinc-400 hover:text-brand-cyan transition-colors cursor-pointer" />
                 </a>
-                <a href="https://www.facebook.com/profile.php?id=61552669001037" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/profile.php?id=61552669001037" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
                   <Facebook className="h-5 w-5 text-zinc-400 hover:text-brand-cyan transition-colors cursor-pointer" />
                 </a>
-                <a href="https://www.linkedin.com/in/binayakdey/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/binayakdey/" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn profile">
                   <Linkedin className="h-5 w-5 text-zinc-400 hover:text-brand-cyan transition-colors cursor-pointer" />
                 </a>
-                <a href="https://www.youtube.com/@Growthliftstudio" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.youtube.com/@Growthliftstudio" target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel">
                   <Youtube className="h-5 w-5 text-zinc-400 hover:text-brand-cyan transition-colors cursor-pointer" />
                 </a>
               </div>
@@ -232,7 +235,7 @@ const navLinks = [
 
             {/* Links Columns */}
             <div>
-              <h4 className="font-sans font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-6">Expertise</h4>
+              <h3 className="font-sans font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-6">Expertise</h3>
               <ul className="space-y-4 text-sm font-bold text-zinc-500">
                 <li><Link to="/services" className="hover:text-brand-cyan transition-colors">Services</Link></li>
                 <li><Link to="/results" className="hover:text-brand-cyan transition-colors">Case Studies</Link></li>
@@ -242,7 +245,7 @@ const navLinks = [
             </div>
 
             <div>
-              <h4 className="font-sans font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-6">Resources</h4>
+              <h3 className="font-sans font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-6">Resources</h3>
              <ul className="space-y-4 text-sm font-bold text-zinc-500">
                 <li><Link to="/about" className="hover:text-brand-cyan transition-colors">About Us</Link></li>
                 <li><Link to="/faq" className="hover:text-brand-cyan transition-colors">FAQ</Link></li>
@@ -252,7 +255,7 @@ const navLinks = [
             </div>
 
             <div>
-              <h4 className="font-sans font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-6">Legal</h4>
+              <h3 className="font-sans font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-6">Legal</h3>
               <ul className="space-y-4 text-sm font-bold text-zinc-500">
                 <li><Link to="/privacy-policy" className="hover:text-brand-cyan transition-colors">Privacy Policy</Link></li>
                 <li><Link to="/terms-conditions" className="hover:text-brand-cyan transition-colors">Terms & Conditions</Link></li>
@@ -261,10 +264,10 @@ const navLinks = [
           </div>
 
           <div className="pt-12 border-t border-zinc-100 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-xs font-bold text-zinc-400 uppercase tracking-[0.3em]">Growth Lift Studio © 2026</p>
+            <p className="text-xs font-bold text-zinc-500 uppercase tracking-[0.3em]">Growth Lift Studio © 2026</p>
             <div className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-brand-cyan animate-pulse" />
-              <p className="text-[10px] font-black text-zinc-400 uppercase tracking-widest leading-none">System Operational v4.2</p>
+              <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest leading-none">System Operational v4.2</p>
             </div>
           </div>
         </div>
