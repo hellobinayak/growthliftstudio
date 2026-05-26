@@ -58,11 +58,31 @@ export default function CaseStudies() {
     }
   ];
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://growthliftstudio.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Results",
+        "item": "https://growthliftstudio.in/results"
+      }
+    ]
+  };
+
   return (
     <div className="bg-white min-h-screen">
       <SEO 
         title="Proven Remodeling & Roofing Results | Growth Lift Studio" 
         description="See real performance-based advertising case studies and outcomes for remodeling, roofing, and local home service businesses."
+        schema={breadcrumbSchema}
       />
       {/* Header Section */}
       <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">

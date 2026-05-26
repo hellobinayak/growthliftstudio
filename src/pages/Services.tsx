@@ -59,11 +59,31 @@ export default function Services() {
     }
   ];
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://growthliftstudio.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://growthliftstudio.in/services"
+      }
+    ]
+  };
+
   return (
     <div className="bg-white min-h-screen">
       <SEO 
         title="Our Trade Pipeline Services | Growth Lift Studio" 
         description="We handle the B2B marketing and booked appointment pipeline for home improvement contractors: Facebook Ads, Google Ads, booking systems, and lead follow-up."
+        schema={breadcrumbSchema}
       />
       {/* Header Section */}
       <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">

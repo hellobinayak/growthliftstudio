@@ -1,23 +1,14 @@
 import { useParams, Link } from "react-router-dom";
-import React, { useEffect } from "react";
+import React from "react";
 import { blogPosts } from "../data/blogPosts";
 import { ArrowLeft, Clock, Tag, Calendar } from "lucide-react";
 import { useSurvey } from "../context/SurveyContext";
+import { SEO } from "../components/SEO";
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
   const { openSurvey } = useSurvey();
   const post = blogPosts.find((p) => p.slug === slug);
-
-  useEffect(() => {
-    if (post) {
-      document.title = `${post.title} | Growth Lift Studio`;
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) {
-        metaDesc.setAttribute("content", post.metaDescription);
-      }
-    }
-  }, [post]);
 
   if (!post) {
     return (
@@ -105,8 +96,64 @@ export default function BlogPost() {
     return elements;
   };
 
+  const blogPostSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://growthliftstudio.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://growthliftstudio.in/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": post.title,
+          "item": `https://growthliftstudio.in/blog/${post.slug}`
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "datePublished": "2026-05-24",
+      "author": {
+        "@type": "Person",
+        "name": "Binayak Dey",
+        "url": "https://www.linkedin.com/in/binayakdey/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Growth Lift Studio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://growthliftstudio.in/GLS-icon-navy.svg.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://growthliftstudio.in/blog/${post.slug}`
+      }
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title={`${post.title} | Growth Lift Studio`}
+        description={post.metaDescription}
+        schema={blogPostSchema}
+      />
 
       {/* Hero */}
       <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">

@@ -4,9 +4,10 @@ import { useLocation } from "react-router-dom";
 interface SEOProps {
   title: string;
   description: string;
+  schema?: Record<string, any> | Record<string, any>[];
 }
 
-export function SEO({ title, description }: SEOProps) {
+export function SEO({ title, description, schema }: SEOProps) {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -43,7 +44,31 @@ export function SEO({ title, description }: SEOProps) {
       document.head.appendChild(linkCanonical);
     }
     linkCanonical.setAttribute("href", canonicalUrl);
-  }, [title, description, pathname]);
+
+    // 6. Update dynamic JSON-LD schema
+    let scriptSchema = document.getElementById("dynamic-seo-schema");
+    if (schema) {
+      if (!scriptSchema) {
+        scriptSchema = document.createElement("script");
+        scriptSchema.setAttribute("type", "application/ld+json");
+        scriptSchema.setAttribute("id", "dynamic-seo-schema");
+        document.head.appendChild(scriptSchema);
+      }
+      scriptSchema.textContent = JSON.stringify(schema);
+    } else {
+      if (scriptSchema) {
+        scriptSchema.remove();
+      }
+    }
+
+    return () => {
+      // Clean up script on unmount
+      const oldScript = document.getElementById("dynamic-seo-schema");
+      if (oldScript) {
+        oldScript.remove();
+      }
+    };
+  }, [title, description, pathname, schema]);
 
   return null;
 }

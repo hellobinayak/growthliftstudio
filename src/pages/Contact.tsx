@@ -13,11 +13,40 @@ import { cn } from "../lib/utils";
 import { SEO } from "../components/SEO";
 
 export default function Contact() {
+  const contactSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://growthliftstudio.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact",
+          "item": "https://growthliftstudio.in/contact"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Growth Lift Studio",
+      "description": "Ready to stabilize your home improvement contractor bookings? Schedule a free 30-minute Pipeline Audit call.",
+      "url": "https://growthliftstudio.in/contact"
+    }
+  ];
+
   return (
     <div className="bg-white min-h-screen">
       <SEO 
         title="Book a Trade Pipeline Audit | Growth Lift Studio" 
         description="Ready to stop chasing leads and stabilize your B2B trade pipeline? Book a free 30-min strategy session to identify revenue gaps."
+        schema={contactSchema}
       />
       <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">
         <div className="mx-auto max-w-7xl">

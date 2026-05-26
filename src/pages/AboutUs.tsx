@@ -100,11 +100,40 @@ export default function AboutUs() {
     }
   ];
 
+  const aboutSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://growthliftstudio.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://growthliftstudio.in/about"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About Growth Lift Studio",
+      "description": "Learn about the mission, values, and performance-based marketing model of Growth Lift Studio, founded by Binayak Dey.",
+      "url": "https://growthliftstudio.in/about"
+    }
+  ];
+
   return (
     <div className="bg-white min-h-screen">
       <SEO 
         title="About Growth Lift Studio | B2B B2B Contractor Lead Gen" 
         description="Learn about Growth Lift Studio and founder Binayak Dey. We build B2B-optimized booked appointment pipelines exclusively for home service contractors in the US."
+        schema={aboutSchema}
       />
       {/* Header Section */}
       <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">

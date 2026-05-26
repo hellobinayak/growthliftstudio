@@ -44,11 +44,31 @@ export default function FAQ() {
     }
   ];
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://growthliftstudio.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "FAQ",
+        "item": "https://growthliftstudio.in/faq"
+      }
+    ]
+  };
+
   return (
     <div className="bg-white min-h-screen">
       <SEO 
         title="Frequently Asked Questions | Growth Lift Studio" 
         description="Find answers to all your questions about B2B lead generation, pricing models, and booked appointment systems with Growth Lift Studio."
+        schema={breadcrumbSchema}
       />
       {/* Header Section */}
       <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">

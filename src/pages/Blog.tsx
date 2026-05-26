@@ -5,11 +5,31 @@ import { blogPosts } from "../data/blogPosts";
 import { SEO } from "../components/SEO";
 
 export default function Blog() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://growthliftstudio.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://growthliftstudio.in/blog"
+      }
+    ]
+  };
+
   return (
     <div className="relative min-h-screen bg-white">
       <SEO 
         title="The Growth Archive & B2B Strategy Blog | Growth Lift Studio" 
         description="Read standard performance ads strategy breakdowns, niche industry case studies, and insights on growing home improvement contractor bookings."
+        schema={breadcrumbSchema}
       />
       {/* Header */}
       <section className="relative py-24 px-6 bg-zinc-50 border-b border-zinc-100">
