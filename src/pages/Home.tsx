@@ -95,19 +95,19 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-[10px] tracking-[0.3em] uppercase text-zinc-400 font-bold border border-zinc-200 px-4 py-1.5 rounded-full bg-white/50 mb-8 inline-block shadow-sm">
+            <span className="text-[10px] tracking-[0.3em] uppercase text-zinc-600 font-bold border border-zinc-200 px-4 py-1.5 rounded-full bg-white/50 mb-8 inline-block shadow-sm">
               For Home Service Businesses
             </span>
             <h1 className="text-4xl sm:text-6xl md:text-8xl font-sans font-extrabold tracking-tighter mb-8 leading-[0.95] text-balance text-brand-navy">
               Your calendar shouldn’t <br />
               <span className="shimmer-text text-brand-cyan">have empty slots.</span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-zinc-500 max-w-3xl mx-auto mb-6 text-balance leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-zinc-600 max-w-3xl mx-auto mb-6 text-balance leading-relaxed">
               We build systems that bring in <span className="text-brand-navy font-bold">booked, confirmed jobs</span>—not inquiries you have to chase.
             </p>
             <div className="flex items-center justify-center gap-2 mb-8">
               <CheckCircle2 className="h-4 w-4 text-brand-cyan" />
-              <p className="text-sm font-bold text-zinc-600 tracking-tight">
+              <p className="text-sm font-bold text-zinc-700 tracking-tight">
                 370+ confirmed jobs booked for our clients in 2025.
               </p>
             </div>
