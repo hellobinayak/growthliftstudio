@@ -1,10 +1,12 @@
 import React from "react";
 import { motion } from "motion/react";
 import { FileText, CheckCircle, AlertCircle, Scale, Shield, Mail, Phone, Globe } from "lucide-react";
+import { SEO } from "../components/SEO";
 
 export default function TermsConditions() {
   return (
     <div className="relative min-h-screen bg-white">
+      <SEO title="Terms & Conditions | Growth Lift Studio" description="Terms and conditions for Growth Lift Studio services. Performance-based lead generation for home improvement contractors." />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,183,212,0.1),transparent)] pointer-events-none" />

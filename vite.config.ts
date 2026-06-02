@@ -18,24 +18,6 @@ export default defineConfig(({ mode }) => {
     server: {
       hmr: process.env.DISABLE_HMR !== 'true',
     },
-    ssgOptions: {
-      script: 'async',
-      formatting: 'minify',
-      includedRoutes() {
-        return [
-          '/',
-          '/services',
-          '/results',
-          '/about',
-          '/faq',
-          '/testimonials',
-          '/contact',
-          '/privacy-policy',
-          '/terms-conditions',
-          '/blog',
-          '/blog/facebook-ads-bathroom-remodeling-contractors',
-        ];
-      },
-    },
+
   };
 });

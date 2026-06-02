@@ -35,6 +35,13 @@ export function SEO({ title, description, schema }: SEOProps) {
       ogDesc.setAttribute("content", description);
     }
 
+    // 4b. Update Open Graph URL
+    const pageUrl = `https://growthliftstudio.in${pathname === "/" ? "" : pathname.replace(/\/$/, "")}`;
+    let ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) {
+      ogUrl.setAttribute("content", pageUrl);
+    }
+
     // 5. Update Canonical link
     const canonicalUrl = `https://growthliftstudio.in${pathname === "/" ? "" : pathname.replace(/\/$/, "")}`;
     let linkCanonical = document.querySelector('link[rel="canonical"]');

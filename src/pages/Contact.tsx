@@ -105,7 +105,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">Email</p>
-                    <p className="text-lg sm:text-xl font-black text-brand-navy">hello@growthlift.studio</p>
+                    <a href="mailto:hello@growthlift.studio" className="text-lg sm:text-xl font-black text-brand-navy hover:text-brand-cyan transition-colors">hello@growthlift.studio</a>
                   </div>
                 </div>
 
@@ -115,7 +115,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">Phone</p>
-                    <p className="text-lg sm:text-xl font-black text-brand-navy">+1 (888) 422-7901</p>
+                    <a href="tel:+18884227901" className="text-lg sm:text-xl font-black text-brand-navy hover:text-brand-cyan transition-colors">+1 (888) 422-7901</a>
                   </div>
                 </div>
 

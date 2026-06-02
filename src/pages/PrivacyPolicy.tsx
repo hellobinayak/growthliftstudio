@@ -1,10 +1,12 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Shield, Lock, Eye, RefreshCw, Mail, Phone, Globe } from "lucide-react";
+import { SEO } from "../components/SEO";
 
 export default function PrivacyPolicy() {
   return (
     <div className="relative min-h-screen bg-white">
+      <SEO title="Privacy Policy | Growth Lift Studio" description="How Growth Lift Studio collects, uses, and protects your personal information. Written in plain English." />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,183,212,0.1),transparent)] pointer-events-none" />

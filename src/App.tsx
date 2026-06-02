@@ -37,6 +37,7 @@ import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import NotFound from "./pages/NotFound";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -73,8 +74,8 @@ export default function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
-            {/* Fallback */}
-            <Route path="*" element={<Home />} />
+            {/* 404 Fallback */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
       </SurveyProvider>

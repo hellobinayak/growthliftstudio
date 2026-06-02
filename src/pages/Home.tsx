@@ -150,7 +150,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 relative">
           <div className="text-center mb-16">
             <p className="text-[11px] font-black uppercase tracking-[0.4em] text-brand-navy/30 mb-2">Industry Leaders</p>
-            <h2 className="text-xs md:text-sm font-sans font-black text-brand-navy/60 uppercase tracking-[0.2em]">Brand we closely work with</h2>
+            <h2 className="text-xs md:text-sm font-sans font-black text-brand-navy/60 uppercase tracking-[0.2em]">Brands We Work With</h2>
             <div className="h-px w-8 bg-brand-cyan/30 mx-auto mt-4" />
           </div>
           <div className="flex flex-wrap justify-center items-start gap-x-24 gap-y-12 transition-all duration-700">

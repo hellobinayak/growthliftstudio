@@ -131,7 +131,7 @@ export default function AboutUs() {
   return (
     <div className="bg-white min-h-screen">
       <SEO 
-        title="About Growth Lift Studio | B2B B2B Contractor Lead Gen" 
+        title="About Growth Lift Studio | B2B Contractor Lead Gen" 
         description="Learn about Growth Lift Studio and founder Binayak Dey. We build B2B-optimized booked appointment pipelines exclusively for home service contractors in the US."
         schema={aboutSchema}
       />

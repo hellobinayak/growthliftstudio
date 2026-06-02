@@ -43,7 +43,7 @@ export default function Blog() {
               The Growth Archive
             </span>
             <h1 className="text-4xl sm:text-6xl font-sans font-black tracking-tighter text-brand-navy mb-6 leading-tight">
-              Paid Ads. Real Results.<br />
+              Paid Ads. Real Results. <br />
               <span className="text-brand-cyan">No Fluff.</span>
             </h1>
             <p className="text-lg text-zinc-500 font-medium max-w-xl mx-auto">
