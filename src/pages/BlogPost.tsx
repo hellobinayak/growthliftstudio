@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import React, { useState } from "react";
 import { blogPosts } from "../data/blogPosts";
-import { ArrowLeft, Clock, Tag, Calendar, Linkedin, Youtube, Facebook, Link2, Check } from "lucide-react";
+import { ArrowLeft, Clock, Tag, Calendar, Linkedin, Youtube, Facebook, Instagram, Link2, Check } from "lucide-react";
 import { useSurvey } from "../context/SurveyContext";
 import { SEO } from "../components/SEO";
 
@@ -372,8 +372,9 @@ export default function BlogPost() {
           {/* Author Block */}
           <div className="mt-12 p-8 bg-zinc-50 rounded-2xl flex flex-col sm:flex-row items-start gap-6">
             <img
-              src="/images/author-binayak.png"
-              alt="Binayak Dey"
+              src="https://drive.google.com/thumbnail?id=1dK3OKxXZ2AT7cj_e8jFWNAZXji0B2tmX&sz=w200"
+              alt="Binayak Dey - Founder of Growth Lift Studio"
+              referrerPolicy="no-referrer"
               className="w-20 h-20 rounded-full object-cover flex-shrink-0"
             />
             <div>
@@ -404,6 +405,24 @@ export default function BlogPost() {
                   aria-label="YouTube"
                 >
                   <Youtube size={20} />
+                </a>
+                <a
+                  href="https://www.instagram.com/growthliftstudio/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-300 hover:text-brand-cyan transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={20} />
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61552669001037"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-300 hover:text-brand-cyan transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook size={20} />
                 </a>
               </div>
             </div>
