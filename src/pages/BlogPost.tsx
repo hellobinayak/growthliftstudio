@@ -301,12 +301,26 @@ export default function BlogPost() {
       {/* Hero */}
       <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">
         <div className="max-w-3xl mx-auto">
-          <Link
-            to="/blog"
-            className="inline-flex items-center gap-2 text-zinc-400 hover:text-brand-cyan transition-colors mb-10 text-sm font-black uppercase tracking-widest"
-          >
-            <ArrowLeft size={14} /> Back to Blog
-          </Link>
+          {/* Breadcrumb Navigation */}
+          <nav aria-label="Breadcrumb" className="mb-10">
+            <ol className="flex items-center gap-2 text-sm font-bold">
+              <li>
+                <Link to="/" className="text-zinc-400 hover:text-brand-cyan transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li className="text-zinc-300">→</li>
+              <li>
+                <Link to="/blog" className="text-zinc-400 hover:text-brand-cyan transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li className="text-zinc-300">→</li>
+              <li className="text-brand-navy truncate max-w-[280px] sm:max-w-none">
+                {post.title}
+              </li>
+            </ol>
+          </nav>
 
           <div className="flex items-center gap-4 mb-6">
             <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-brand-cyan bg-brand-cyan/10 px-3 py-1 rounded-full">
