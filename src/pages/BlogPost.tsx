@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import React, { useState } from "react";
 import { blogPosts } from "../data/blogPosts";
-import { ArrowLeft, Clock, Tag, Calendar, Linkedin, Youtube, Facebook, Instagram, Link2, Check } from "lucide-react";
+import { ArrowLeft, Clock, Tag, Calendar, Linkedin, Youtube, Facebook, Link2, Check } from "lucide-react";
 import { useSurvey } from "../context/SurveyContext";
 import { SEO } from "../components/SEO";
 
@@ -70,12 +70,12 @@ function ShareButtons({ title, slug }: { title: string; slug: string }) {
 /* ── Related posts mapping ── */
 const relatedPostsMap: Record<string, string[]> = {
   "facebook-ads-bathroom-remodeling-contractors": [
-    "google-ads-kitchen-remodeling-contractors",
     "ppc-ads-kitchen-remodeling-contractors",
+    "google-ads-kitchen-remodeling-contractors",
   ],
   "google-ads-kitchen-remodeling-contractors": [
-    "facebook-ads-bathroom-remodeling-contractors",
     "ppc-ads-kitchen-remodeling-contractors",
+    "facebook-ads-bathroom-remodeling-contractors",
   ],
   "ppc-ads-kitchen-remodeling-contractors": [
     "facebook-ads-bathroom-remodeling-contractors",
@@ -124,6 +124,9 @@ export default function BlogPost() {
   /* ── Inline mid-post CTA (inserted after 3rd H2) ── */
   const MidPostCTA = () => (
     <div className="my-12 bg-[#0A0A0A] rounded-2xl p-8 sm:p-10 text-center">
+      <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#00C2E0] mb-4">
+        Free Strategy Call
+      </p>
       <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight mb-3">
         Running ads without a system is just burning money.
       </h3>
@@ -370,7 +373,8 @@ export default function BlogPost() {
           </div>
 
           {/* Author Block */}
-          <div className="mt-12 p-8 bg-zinc-50 rounded-2xl flex flex-col sm:flex-row items-start gap-6">
+          <hr className="mt-12 border-zinc-100" />
+          <div className="py-8 flex flex-col sm:flex-row items-start gap-6">
             <img
               src="https://drive.google.com/thumbnail?id=1dK3OKxXZ2AT7cj_e8jFWNAZXji0B2tmX&sz=w200"
               alt="Binayak Dey - Founder of Growth Lift Studio"
@@ -383,9 +387,9 @@ export default function BlogPost() {
                 Performance Marketing Strategist | Founder, Growth Lift Studio
               </p>
               <p className="text-zinc-500 font-medium text-sm leading-relaxed mb-4">
-                Binayak helps home improvement contractors build predictable revenue pipelines using
-                Facebook Ads and Google Ads. He works exclusively with US-based remodeling, roofing,
-                and HVAC businesses.
+                Binayak helps US home improvement contractors build predictable lead pipelines using
+                Google Ads and Facebook Ads. He's worked with bathroom remodelers, kitchen contractors,
+                and window replacement companies across the US.
               </p>
               <div className="flex items-center gap-4">
                 <a
@@ -406,27 +410,10 @@ export default function BlogPost() {
                 >
                   <Youtube size={20} />
                 </a>
-                <a
-                  href="https://www.instagram.com/growthliftstudio/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-zinc-300 hover:text-brand-cyan transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram size={20} />
-                </a>
-                <a
-                  href="https://www.facebook.com/profile.php?id=61552669001037"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-zinc-300 hover:text-brand-cyan transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook size={20} />
-                </a>
               </div>
             </div>
           </div>
+          <hr className="border-zinc-100" />
 
           {/* Related Posts — Keep Reading */}
           {relatedPosts.length > 0 && (
