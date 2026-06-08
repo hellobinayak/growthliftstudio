@@ -303,4 +303,253 @@ If you are a kitchen remodeling contractor in the US and want to build a consist
 Book a free strategy call with Binayak and the Growth Lift Studio team today. We'll run the numbers for your specific city and show you exactly how many leads are waiting for you right now.
     `,
   },
+  {
+    slug: "google-ads-bathroom-remodeling-contractors",
+    title: "Google Ads for Bathroom Remodeling Contractors: The Complete Guide (2026)",
+    metaDescription:
+      "A practical Google Ads guide for bathroom remodeling contractors. Real budgets, campaign structure, keywords that convert, and what separates booked jobs from wasted spend.",
+    date: "June 17, 2026",
+    readTime: "10 min read",
+    category: "Google Ads",
+    excerpt:
+      "Bathroom remodeling has tighter margins than kitchen work — which means your Google Ads campaign has zero room for wasted spend. Here's how to build one that actually books jobs.",
+    content: `
+IMAGE::/images/google-ads-bathroom-remodeling.png::Google Ads campaign structure for bathroom remodeling contractors
+
+Bathroom remodeling is one of the most searched home improvement services on Google. And yet most bathroom remodeling contractors running Google Ads are getting mediocre results — inconsistent leads, high cost per click, and campaigns that look active but produce nothing.
+
+The problem isn't Google Ads. The problem is how the campaigns are set up.
+
+Bathroom remodeling has a unique dynamic compared to other home improvement niches. The job values are lower than kitchen remodeling ($8,000–$25,000 on average), which means your margin for wasted ad spend is tighter. You can't absorb $400 leads the way a kitchen contractor can. Every dollar has to work harder.
+
+That's exactly why campaign structure matters more in this niche than almost any other. A bathroom remodeling Google Ads campaign built the right way can deliver consistent $150–$250 leads and a cost per booked job well under $1,000. Built the wrong way, it burns through budget and produces leads that don't pick up the phone.
+
+This guide covers everything — the right structure, the keywords that actually convert bathroom remodeling leads, realistic budget expectations, and the specific mistakes that silently drain your campaigns before you see a single result.
+
+---
+
+## Why Google Ads Works Differently for Bathroom Remodeling
+
+Bathroom remodeling sits in a specific position in the home improvement market. It's not an emergency service — nobody calls at 2am because their bathroom needs remodeling. But it's also not a long, drawn-out research process like a full home addition. Most homeowners decide they want a bathroom remodel, research for 2–4 weeks, get 3–5 quotes, and pull the trigger.
+
+That 2–4 week research window is exactly where Google Ads captures them.
+
+When a homeowner types "bathroom remodeling contractor near me" or "bathroom renovation company [city]," they've moved past the inspiration stage. They're not on Pinterest saving ideas anymore. They're actively looking for someone to hire. That's the moment you want to be visible — and Google Ads puts you there instantly, without waiting months for organic SEO to kick in.
+
+Here's what makes bathroom remodeling particularly suited to paid search:
+
+**Decision cycle is short enough to close within one ad budget cycle.**
+
+Unlike a home addition that takes months from first search to signed contract, bathroom remodels commonly go from first inquiry to signed contract within 2–3 weeks. That means you'll see real ROI data faster than almost any other home improvement service.
+
+**Repeat and referral potential is high.**
+
+A bathroom remodel client who had a good experience often comes back for the kitchen — or sends three neighbors your way. The lifetime value of a single Google Ads lead in this niche is higher than the job itself.
+
+**Competition is beatable in most markets.**
+
+Unlike kitchen remodeling in major metros, bathroom remodeling Google Ads in mid-size cities often has thin competition. Many contractors in this space are running poorly optimized campaigns — which means a well-built campaign can dominate the top positions at a fraction of what you'd expect.
+
+---
+
+## Realistic Budgets and Benchmarks for 2026
+
+Before running a single ad, you need to understand the real numbers — not the numbers Google's sales team will tell you, and not the fantasy figures from marketing blogs promising "$10 leads."
+
+Here's what bathroom remodeling Google Ads actually looks like in 2026:
+
+**Cost Per Click (CPC): $6–$15**
+
+- Bathroom remodeling CPCs are generally lower than kitchen remodeling because there's less competition
+- In smaller markets, you can still get clicks for $5–$8
+- In New York, Los Angeles, or Chicago, expect $12–$18
+
+**Cost Per Lead (CPL): $120–$300**
+
+- This range is wide because landing page quality is the single biggest variable
+- A contractor sending traffic to their homepage will pay 2–3x more per lead than one running a dedicated, conversion-optimized landing page
+
+**Cost Per Booked Project: $400–$900**
+
+- If your CPL is $200 and you close 1 in 3 leads, your cost per booked job is $600
+- On a $12,000 bathroom remodel, that's 5% of revenue going to acquisition — very manageable
+
+**Minimum viable monthly budget: $1,500–$2,000/month**
+
+- This is lower than kitchen remodeling because CPCs are lower
+- Don't go below $1,500 — below that threshold, the campaign doesn't generate enough clicks to learn and optimize
+
+The mindset shift that changes everything: stop tracking cost per click. Stop even tracking cost per lead in isolation. The only number that determines whether your Google Ads campaign is worth continuing is cost per booked project.
+
+A $280 lead that becomes a $15,000 signed contract is cheap. A $90 lead that ghosts you after the quote is expensive.
+
+---
+
+## The Campaign Structure That Actually Produces Bathroom Remodeling Leads
+
+The most common mistake bathroom remodeling contractors make when setting up Google Ads is treating it like a simple on/off switch — pick some keywords, set a budget, wait for calls. That approach produces unpredictable results at best and a drained budget at worst.
+
+Here's the structure that works:
+
+### One Focused Search Campaign
+
+Run a single Search campaign for bathroom remodeling. Don't try to run bathroom, kitchen, and general remodeling all in one campaign. Separate campaigns allow you to control budget by service and read performance data clearly.
+
+Inside that campaign, build three focused ad groups:
+
+**Ad Group 1 — High-Intent Service Keywords**
+
+- "bathroom remodeling contractor [city]"
+- "bathroom renovation company near me"
+- "bathroom remodel contractor [city]"
+- "local bathroom remodeling company"
+
+**Ad Group 2 — Project-Specific Keywords**
+
+- "walk-in shower installation [city]"
+- "bathtub to shower conversion"
+- "master bathroom remodel [city]"
+- "small bathroom renovation contractor"
+
+**Ad Group 3 — Estimate/Consultation Keywords**
+
+- "bathroom remodeling estimate [city]"
+- "bathroom remodel quote [city]"
+- "bathroom renovation consultation"
+- "free bathroom remodel estimate"
+
+Write separate responsive search ads (RSAs) for each ad group. The ad copy must match the search intent of that specific group. A homeowner searching for a "bathtub to shower conversion" should see an ad specifically about that — not a generic "bathroom remodeling" headline.
+
+### Keywords: What to Bid On and What to Avoid
+
+The keywords that waste bathroom remodeling budgets faster than anything else are broad, generic terms: "bathroom ideas," "bathroom renovation," "bathroom remodel cost," "small bathroom design." These attract researchers and DIYers — people who will click your ad and never call.
+
+Stick to keywords that include contractor-intent signals: the words "contractor," "company," "near me," your city name, or action words like "estimate," "quote," or "hire."
+
+Use phrase match and exact match only in the first 60 days. Broad match will bleed budget on irrelevant searches before you have enough negative keyword data to control it.
+
+### Negative Keywords: Build This List Before You Spend a Dollar
+
+Add these before your first campaign goes live:
+
+- DIY, do it yourself, how to
+- cheap, affordable, low cost, budget
+- ideas, inspiration, photos, pictures, gallery
+- jobs, hiring, career, employment
+- cost, price, how much (unless you have a specific cost-related landing page)
+- any city or state outside your service area
+
+Review your Search Terms report every single week for the first 60 days and add new negatives aggressively. This one habit alone can reduce wasted spend by 25–35%.
+
+---
+
+## The Landing Page Problem Most Bathroom Remodeling Contractors Don't Know They Have
+
+You can build a technically perfect Google Ads campaign — right keywords, right structure, right bids — and still generate zero leads. If your landing page isn't built to convert, all you've done is pay for traffic that bounces.
+
+Most bathroom remodeling contractors make one of two landing page mistakes: they send all traffic to their homepage, or they have a "contact us" page that gives visitors no reason to fill out a form.
+
+Here's what a bathroom remodeling landing page actually needs to convert:
+
+**Headline message match.**
+
+If your ad says "Bathroom Remodeling in Dallas — Free In-Home Estimate," your landing page headline must say something nearly identical. The moment a homeowner lands on a page that doesn't reflect what they clicked on, they hit the back button. This single issue can drop conversion rates by 40%.
+
+**Real project photos above the fold.**
+
+Bathroom remodeling is a visual decision. Homeowners need to see what your work looks like before they'll trust you with their home. Use before/after photos of real projects you've completed — not stock images.
+
+**One review visible without scrolling.**
+
+A single specific review from a real customer with a full name dramatically increases conversion rates. "John M. gave us 5 stars" means nothing. "Sarah K. from Plano: 'They turned our outdated bathroom into something we're genuinely proud of'" means everything.
+
+**A single, clear CTA.**
+
+Either a phone number to call or a short form. Not both. Not three options. One action.
+
+**Load speed under 2 seconds on mobile.**
+
+Over 60% of home services searches happen on smartphones. A page that takes 3–4 seconds to load on mobile will cost you leads before a single homeowner reads your headline.
+
+---
+
+## The One Setting That Drains Bathroom Remodeling Budgets Overnight
+
+There is one default Google Ads setting that silently destroys bathroom remodeling campaigns, and Google doesn't make it obvious:
+
+**Search Partners and Display Network are enabled by default.**
+
+When you create a new Google Ads campaign, Google automatically opts you into showing ads on their Search Partner network and the Display Network. These networks almost never produce quality leads for home improvement contractors — but they spend your budget just as fast as the main Google Search network.
+
+Turn both off before your campaign goes live. Run on Google Search only.
+
+The second setting to fix immediately: location targeting. Google defaults to "Presence or interest" — meaning your ads can show to people who are interested in your location but physically located elsewhere. For a bathroom remodeling contractor serving a 30-mile radius, this is useless. Change it to "Presence only."
+
+---
+
+## Conversion Tracking — The Non-Negotiable Foundation
+
+If you're running Google Ads without conversion tracking, you're not running a campaign — you're making a donation to Google.
+
+Conversion tracking tells you exactly which keywords, ads, and times of day are generating phone calls and form submissions. Without it, Google's algorithm optimizes for clicks instead of leads — which is exactly the wrong objective.
+
+Set up these four things before spending a dollar:
+
+**1. Google Ads call tracking.**
+
+Track calls directly from your ads and calls from your website landing page separately.
+
+**2. Form submission tracking.**
+
+Set up a conversion action that fires when the thank-you page loads after submission.
+
+**3. Google Analytics 4 connection.**
+
+Link your Google Ads account to GA4 so you can see what happens after the click.
+
+**4. A defined conversion goal.**
+
+Decide what counts as a conversion: a phone call over 60 seconds, a form submission, or a booked consultation. Set that as your primary conversion action.
+
+This setup takes 2–3 hours to do correctly. It's the most important thing you'll do before launching.
+
+---
+
+## Your 5-Step Launch Plan for Bathroom Remodeling Google Ads
+
+If you're a bathroom remodeling contractor ready to run Google Ads properly, here's exactly where to start:
+
+**1. Set up conversion tracking before anything else.**
+
+Don't build the campaign until call tracking and form tracking are live and verified.
+
+**2. Build a dedicated landing page.**
+
+Do not send Google Ads traffic to your homepage. Build one page specifically for this campaign — real project photos, a single CTA, a headline that matches your ads.
+
+**3. Start with $1,500–$2,000/month and commit to 60 days.**
+
+Don't judge the campaign at day 14. Set the budget, commit to 60 days, and measure success by cost per booked project.
+
+**4. Turn off Search Partners and Display Network immediately.**
+
+Run on Google Search only. This alone prevents a significant portion of wasted spend in the first 30 days.
+
+**5. Follow up with every lead within 5 minutes.**
+
+Bathroom remodeling homeowners are comparing 3–5 contractors simultaneously. The first contractor to call back wins the appointment most of the time.
+
+---
+
+## The bottom line
+
+Google Ads for bathroom remodeling contractors works — but the margin for error is tighter than in higher-ticket niches. Every structural mistake costs more relative to your job value.
+
+The contractors who consistently generate bathroom remodeling leads from Google Ads aren't spending more than their competitors. They're spending smarter — tighter keyword targeting, a dedicated landing page, conversion tracking that actually works, and a follow-up process that moves faster than anyone else in their market.
+
+If you want a clear picture of what a properly structured Google Ads campaign would look like for your bathroom remodeling business — realistic budget, expected CPL, and a 90-day roadmap — book a free strategy call with Growth Lift Studio.
+
+We work exclusively with home improvement contractors. Every campaign we build is designed around one outcome: booked jobs, not just leads.
+    `,
+  },
 ];

@@ -71,9 +71,15 @@ function ShareButtons({ title, slug }: { title: string; slug: string }) {
 const relatedPostsMap: Record<string, string[]> = {
   "facebook-ads-bathroom-remodeling-contractors": [
     "google-ads-kitchen-remodeling-contractors",
+    "google-ads-bathroom-remodeling-contractors",
   ],
   "google-ads-kitchen-remodeling-contractors": [
     "facebook-ads-bathroom-remodeling-contractors",
+    "google-ads-bathroom-remodeling-contractors",
+  ],
+  "google-ads-bathroom-remodeling-contractors": [
+    "facebook-ads-bathroom-remodeling-contractors",
+    "google-ads-kitchen-remodeling-contractors",
   ],
 };
 
