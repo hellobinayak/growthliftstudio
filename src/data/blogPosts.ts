@@ -169,6 +169,8 @@ Or skip the trial and error and book a call with us. We'll tell you exactly what
     excerpt:
       "Google Ads is the single fastest way for kitchen remodeling contractors to get in front of homeowners who are actively looking to start a renovation. Here is the exact blueprint to capture these high-ticket leads.",
     content: `
+IMAGE::/images/kitchen-hunting-vs-fishing.png::Facebook Ads vs Google Ads — fishing with a net vs hunting with a target
+
 ## Let's talk about the difference between hunting and fishing
 
 If you've run Facebook Ads before, you know they can work. But you're essentially fishing with a net. You're showing ads to people who are scrolling through photos of their grandkids, hoping that one of them has a kitchen from 1990 they want to tear out.
@@ -197,11 +199,15 @@ Typical results for a properly optimized kitchen remodeling Google Ads campaign:
 - Average mid-range project value: $30,000–$75,000
 - Return on Investment (ROI): 10x to 15x+ your ad spend
 
+IMAGE::/images/kitchen-benchmark-stats.png::Google Ads benchmark stats for kitchen remodeling contractors — CPC, CPL, ROI
+
 IMAGE::/images/kitchen-remodel-lead-gen.png::A stunning, luxury kitchen remodel that represents the high-ticket projects Google Ads can consistently attract
 
 ---
 
 ## The 4 pillars of a high-converting kitchen remodeling campaign
+
+IMAGE::/images/kitchen-four-pillars.png::4 Pillars of a High-Converting Google Ads Campaign for Kitchen Remodeling Contractors
 
 Most contractors who set up Google Ads themselves end up wasting thousands of dollars. They pay for clicks from people looking for DIY kitchen painting tips, or people looking for a cheap handyman.
 
@@ -220,6 +226,8 @@ Crucial negative keywords to add immediately:
 - "painting", "refinishing", "minor repair", "handyman"
 
 By blocking these terms, you save hundreds of dollars a week in useless clicks.
+
+IMAGE::/images/kitchen-negative-keywords.png::Example negative keyword list in Google Ads for a kitchen remodeling campaign
 
 ### 2. Ditch Broad Match (Use Phrase and Exact Match)
 
@@ -243,6 +251,8 @@ A high-converting landing page needs:
 - A brief bulleted list of why homeowners choose you (licensed, insured, 5-star rated)
 - A simple form requesting Name, Email, Phone, and Project Timeline
 - A clear call to action: "Get Your Free Custom Kitchen Design Estimate"
+
+IMAGE::/images/kitchen-landing-page-wireframe.png::Wireframe mockup of a high-converting landing page for kitchen remodeling Google Ads
 
 ### 4. The Speed-to-Lead Formula
 
@@ -275,6 +285,8 @@ Let's assume a realistic mid-range campaign setup, fully aligned with national a
 In this scenario, you spent $3,000 on Google Ads to secure $64,000 in closed contracts. That represents a 21.3x Return on Ad Spend!
 
 Even if you run a highly conservative campaign where your close rate is lower and you only close 1 job at $32,000, you are still generating a 10.6x return. That is a massive win for any growing contracting business.
+
+IMAGE::/images/kitchen-roi-flow.png::Google Ads ROI flow diagram — $3,000 ad spend to $64,000 revenue at 21x ROAS
 
 ---
 
