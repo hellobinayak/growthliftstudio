@@ -338,6 +338,8 @@ That's exactly why campaign structure matters more in this niche than almost any
 
 This guide covers everything — the right structure, the keywords that actually convert bathroom remodeling leads, realistic budget expectations, and the specific mistakes that silently drain your campaigns before you see a single result.
 
+IMAGE::/images/bath-search-intent.png::Homeowner searching Google for bathroom remodeling contractors
+
 ---
 
 ## Why Google Ads Works Differently for Bathroom Remodeling
@@ -395,6 +397,8 @@ The mindset shift that changes everything: stop tracking cost per click. Stop ev
 
 A $280 lead that becomes a $15,000 signed contract is cheap. A $90 lead that ghosts you after the quote is expensive.
 
+IMAGE::/images/bath-benchmark-stats.png::Benchmark stats for bathroom remodeling Google Ads
+
 ---
 
 ## The Campaign Structure That Actually Produces Bathroom Remodeling Leads
@@ -431,6 +435,8 @@ Inside that campaign, build three focused ad groups:
 - "free bathroom remodel estimate"
 
 Write separate responsive search ads (RSAs) for each ad group. The ad copy must match the search intent of that specific group. A homeowner searching for a "bathtub to shower conversion" should see an ad specifically about that — not a generic "bathroom remodeling" headline.
+
+IMAGE::/images/bath-campaign-structure.png::Campaign structure hierarchy diagram for Google Ads bathroom remodeling
 
 ### Keywords: What to Bid On and What to Avoid
 
@@ -493,6 +499,8 @@ There is one default Google Ads setting that silently destroys bathroom remodeli
 
 When you create a new Google Ads campaign, Google automatically opts you into showing ads on their Search Partner network and the Display Network. These networks almost never produce quality leads for home improvement contractors — but they spend your budget just as fast as the main Google Search network.
 
+IMAGE::/images/bath-campaign-settings.png::Google Ads campaign settings panel — turn off Search Partners and Display Network
+
 Turn both off before your campaign goes live. Run on Google Search only.
 
 The second setting to fix immediately: location targeting. Google defaults to "Presence or interest" — meaning your ads can show to people who are interested in your location but physically located elsewhere. For a bathroom remodeling contractor serving a 30-mile radius, this is useless. Change it to "Presence only."
@@ -523,6 +531,8 @@ Link your Google Ads account to GA4 so you can see what happens after the click.
 
 Decide what counts as a conversion: a phone call over 60 seconds, a form submission, or a booked consultation. Set that as your primary conversion action.
 
+IMAGE::/images/bath-conversion-tracking.png::Google Ads conversion tracking setup flow for a bathroom remodeling contractor
+
 This setup takes 2–3 hours to do correctly. It's the most important thing you'll do before launching.
 
 ---
@@ -550,6 +560,8 @@ Run on Google Search only. This alone prevents a significant portion of wasted s
 **5. Follow up with every lead within 5 minutes.**
 
 Bathroom remodeling homeowners are comparing 3–5 contractors simultaneously. The first contractor to call back wins the appointment most of the time.
+
+IMAGE::/images/bath-launch-checklist.png::5-Step Google Ads Launch Checklist for Bathroom Remodeling Contractors
 
 ---
 
