@@ -491,7 +491,7 @@ Either a phone number to call or a short form. Not both. Not three options. One 
 
 Over 60% of home services searches happen on smartphones. A page that takes 3–4 seconds to load on mobile will cost you leads before a single homeowner reads your headline.
 
-IMAGE::/images/bath-landing-page-annotated.png::High-Converting Landing Page Example for Bathroom Remodeling
+IMAGE::/images/bath-landing-page-annotated-v2.png::High-Converting Landing Page Example for Bathroom Remodeling
 
 ---
 
