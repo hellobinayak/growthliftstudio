@@ -506,7 +506,7 @@ Crucial negative keywords to add immediately:
 
 By blocking these terms, you save hundreds of dollars a week in useless clicks.
 
-IMAGE::/images/kitchen-negative-keywords-v2.png::Negative Keywords Panel — Block These Before Launch
+IMAGE::/images/kitchen-negative-keywords-v3.png::Negative Keywords Panel — Block These Before Launch
 
 ### 2. Ditch Broad Match (Use Phrase and Exact Match)
 
@@ -772,7 +772,7 @@ When you create a new Google Ads campaign, Google automatically opts you into sh
 
 Turn both off before your campaign goes live. Run on Google Search only.
 
-IMAGE::/images/bath-network-settings-annotated.png::Google Ads Settings Screenshot — Turn off Display Network
+IMAGE::/images/bath-network-settings-annotated-v2.png::Google Ads Settings Screenshot — Turn off Display Network
 
 The second setting to fix immediately: location targeting. Google defaults to "Presence or interest" — meaning your ads can show to people who are interested in your location but physically located elsewhere. For a bathroom remodeling contractor serving a 30-mile radius, this is useless. Change it to "Presence only."
 
