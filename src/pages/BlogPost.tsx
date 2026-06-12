@@ -317,7 +317,7 @@ export default function BlogPost() {
       />
 
       {/* Hero */}
-      <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">
+      <section className="pt-24 pb-12 px-6 bg-zinc-50 border-b border-zinc-100">
         <div className="max-w-3xl mx-auto">
           {/* Breadcrumb Navigation */}
           <nav aria-label="Breadcrumb" className="mb-10">
@@ -369,8 +369,8 @@ export default function BlogPost() {
       </section>
 
       {/* Content & Sidebars */}
-      <section className="py-16 px-6">
-        <div className="max-w-7xl mx-auto flex, flex-col lg:flex-row lg:gap-12 xl:gap-16">
+      <section className="py-12 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:gap-12 xl:gap-16">
 
           {/* Left Sidebar: Table of Contents */}
           <aside className="hidden lg:block w-64 shrink-0 sticky top-24 self-start">
