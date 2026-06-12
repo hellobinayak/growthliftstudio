@@ -87,6 +87,24 @@ export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
   const { openSurvey } = useSurvey();
   const post = blogPosts.find((p) => p.slug === slug);
+  const [activeId, setActiveId] = useState<string>("");
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let visibleIds = entries.filter(e => e.isIntersecting).map(e => e.target.id);
+        if (visibleIds.length > 0) {
+          setActiveId(visibleIds[0]);
+        }
+      },
+      { rootMargin: "-100px 0px -80% 0px" }
+    );
+
+    const headingElements = document.querySelectorAll("h2[id]");
+    headingElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, [slug]);
 
   if (!post) {
     return (
@@ -350,35 +368,69 @@ export default function BlogPost() {
         </div>
       </section>
 
-      {/* Content */}
+      {/* Content & Sidebars */}
       <section className="py-16 px-6">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-7xl mx-auto flex, flex-col lg:flex-row lg:gap-12 xl:gap-16">
 
-          {/* Table of Contents */}
-          {headings.length > 0 && (
-            <nav className="mb-12 bg-zinc-50 border-l-4 border-[#00C2E0] rounded-r-2xl p-6 sm:p-8">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-brand-navy mb-4">
-                In This Article
-              </p>
-              <ul className="space-y-2.5">
-                {headings.map((h, i) => (
-                  <li key={i}>
-                    <a
-                      href={`#${h.id}`}
-                      className="flex items-center gap-3 text-zinc-500 hover:text-brand-cyan transition-colors font-medium text-[15px] group"
-                    >
-                      <span className="text-[#00C2E0] text-sm group-hover:translate-x-1 transition-transform">→</span>
-                      {h.text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          )}
+          {/* Left Sidebar: Table of Contents */}
+          <aside className="hidden lg:block w-64 shrink-0 sticky top-24 self-start">
+            {headings.length > 0 && (
+              <nav className="bg-zinc-50 border-l-4 border-[#00C2E0] rounded-r-2xl p-6">
+                <p className="text-xs font-black uppercase tracking-[0.2em] text-brand-navy mb-4">
+                  In This Article
+                </p>
+                <ul className="space-y-3">
+                  {headings.map((h, i) => (
+                    <li key={i}>
+                      <a
+                        href={`#${h.id}`}
+                        className={`flex items-start gap-2 text-[14px] leading-snug transition-colors ${
+                          activeId === h.id
+                            ? "text-brand-cyan font-black"
+                            : "text-zinc-500 hover:text-brand-cyan font-medium"
+                        }`}
+                      >
+                        <span className={`text-sm mt-0.5 ${activeId === h.id ? "text-brand-cyan" : "text-transparent"}`}>
+                          →
+                        </span>
+                        {h.text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
+          </aside>
 
-          <div className="space-y-4">
-            {renderContent(post.content)}
-          </div>
+          {/* Center Content */}
+          <div className="flex-1 min-w-0 max-w-3xl mx-auto w-full">
+            {/* Mobile/Tablet TOC */}
+            <div className="block lg:hidden mb-12">
+              {headings.length > 0 && (
+                <nav className="bg-zinc-50 border-l-4 border-[#00C2E0] rounded-r-2xl p-6 sm:p-8">
+                  <p className="text-xs font-black uppercase tracking-[0.2em] text-brand-navy mb-4">
+                    In This Article
+                  </p>
+                  <ul className="space-y-2.5">
+                    {headings.map((h, i) => (
+                      <li key={i}>
+                        <a
+                          href={`#${h.id}`}
+                          className="flex items-center gap-3 text-zinc-500 hover:text-brand-cyan transition-colors font-medium text-[15px] group"
+                        >
+                          <span className="text-[#00C2E0] text-sm group-hover:translate-x-1 transition-transform">→</span>
+                          {h.text}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              )}
+            </div>
+
+            <div className="prose prose-lg prose-zinc max-w-none">
+              {renderContent(post.content)}
+            </div>
 
           {/* Share buttons — above author block */}
           <div className="mt-16 pt-8 border-t border-zinc-100">
@@ -429,9 +481,9 @@ export default function BlogPost() {
           </div>
           <hr className="border-zinc-100" />
 
-          {/* Related Posts — Keep Reading */}
+          {/* Related Posts — Keep Reading (Mobile/Tablet fallback) */}
           {relatedPosts.length > 0 && (
-            <div className="mt-16">
+            <div className="mt-16 block xl:hidden">
               <h3 className="text-xs font-black uppercase tracking-[0.2em] text-brand-navy mb-6">Keep Reading</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {relatedPosts.map((related) => (
@@ -458,6 +510,33 @@ export default function BlogPost() {
               </div>
             </div>
           )}
+
+          </div> {/* End Center Content */}
+
+          {/* Right Sidebar: Related Posts */}
+          <aside className="hidden xl:block w-72 shrink-0 sticky top-24 self-start">
+            {relatedPosts.length > 0 && (
+              <div className="bg-zinc-50 rounded-2xl border border-zinc-100 p-6">
+                <h3 className="text-xs font-black uppercase tracking-[0.2em] text-brand-navy mb-5">Related Articles</h3>
+                <div className="flex flex-col gap-4">
+                  {relatedPosts.map((related) => (
+                    <Link
+                      key={related!.slug}
+                      to={`/blog/${related!.slug}`}
+                      className="group block border-b border-zinc-100 pb-4 last:border-0 last:pb-0 transition-all"
+                    >
+                      <p className="font-bold text-brand-navy text-[15px] tracking-tight group-hover:text-brand-cyan transition-colors mb-1.5 leading-snug">
+                        {related!.title}
+                      </p>
+                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-zinc-400 uppercase tracking-wider">
+                        <Clock size={10} /> {related!.readTime}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </aside>
 
         </div>
       </section>
