@@ -222,7 +222,7 @@ export default function PrivacyPolicy() {
                       <Mail className="h-6 w-6 text-brand-cyan mt-1" />
                       <div>
                         <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">Email</p>
-                        <p className="text-lg font-black text-brand-navy">hello@growthliftstudio.in</p>
+                        <p className="text-lg font-black text-brand-navy">binayak@growthliftstudio.in</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">

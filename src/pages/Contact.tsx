@@ -105,7 +105,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">Email</p>
-                    <a href="mailto:hello@growthlift.studio" className="text-lg sm:text-xl font-black text-brand-navy hover:text-brand-cyan transition-colors">hello@growthlift.studio</a>
+                    <a href="mailto:binayak@growthliftstudio.in" className="text-lg sm:text-xl font-black text-brand-navy hover:text-brand-cyan transition-colors">binayak@growthliftstudio.in</a>
                   </div>
                 </div>
 
