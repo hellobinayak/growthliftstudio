@@ -61,7 +61,7 @@ const navLinks = [
           <Link to="/" className="flex items-center gap-2 sm:gap-3 group cursor-pointer">
             <div className="h-8 w-8 sm:h-10 sm:w-10 overflow-hidden flex items-center justify-center group-hover:rotate-6 transition-transform">
               <img 
-                src="https://lh3.googleusercontent.com/d/1KqrKpekKkYsgY6QR-WzzF_QEwaxhswBM" 
+                src="/GLS-icon-navy.svg.png" 
                 alt="Growth Lift Studio Logo" 
                 className="h-full w-full object-cover"
               />
@@ -118,7 +118,7 @@ const navLinks = [
                 <Link to="/" className="flex items-center gap-2 sm:gap-3" onClick={() => setIsMenuOpen(false)}>
                   <div className="h-8 w-8 sm:h-10 sm:w-10 overflow-hidden flex items-center justify-center">
                     <img 
-                      src="https://lh3.googleusercontent.com/d/1KqrKpekKkYsgY6QR-WzzF_QEwaxhswBM" 
+                      src="/GLS-icon-navy.svg.png" 
                       alt="Growth Lift Studio Logo" 
                       className="h-full w-full object-cover"
                     />
@@ -204,7 +204,7 @@ const navLinks = [
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-10 w-10 overflow-hidden flex items-center justify-center">
                   <img 
-                    src="https://lh3.googleusercontent.com/d/1KqrKpekKkYsgY6QR-WzzF_QEwaxhswBM" 
+                    src="/GLS-icon-navy.svg.png" 
                     alt="Growth Lift Studio Logo" 
                     className="h-full w-full object-cover"
                     width="40"

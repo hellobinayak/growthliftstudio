@@ -174,7 +174,7 @@ export default function AboutUs() {
               <div className="relative z-10 p-2 bg-white rounded-[2.5rem] shadow-2xl shadow-brand-navy/10 border border-zinc-100 overflow-hidden group max-w-[400px]">
                 <div className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-brand-navy relative">
                   <img 
-                    src="https://drive.google.com/thumbnail?id=1dK3OKxXZ2AT7cj_e8jFWNAZXji0B2tmX&sz=w1000" 
+                    src="/images/author-binayak.png" 
                     alt="Binayak Dey - Founder of Growth Lift Studio" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"

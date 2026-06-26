@@ -442,7 +442,7 @@ export default function BlogPost() {
           <hr className="mt-12 border-zinc-100" />
           <div className="py-8 flex flex-col sm:flex-row items-start gap-6">
             <img
-              src="https://drive.google.com/thumbnail?id=1dK3OKxXZ2AT7cj_e8jFWNAZXji0B2tmX&sz=w200"
+              src="/images/author-binayak.png"
               alt="Binayak Dey - Founder of Growth Lift Studio"
               referrerPolicy="no-referrer"
               className="w-20 h-20 rounded-full object-cover flex-shrink-0"
