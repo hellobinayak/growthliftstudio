@@ -494,21 +494,33 @@ export default function BlogPost() {
                   <Link
                     key={related!.slug}
                     to={`/blog/${related!.slug}`}
-                    className="group block p-6 rounded-2xl border border-zinc-100 hover:border-brand-cyan/30 hover:bg-zinc-50 transition-all"
+                    className="group block rounded-2xl border border-zinc-100 overflow-hidden hover:border-brand-cyan/30 hover:bg-zinc-50 transition-all"
                   >
-                    <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-brand-cyan mb-3">
-                      <Tag size={10} />
-                      {related!.category}
-                    </span>
-                    <p className="font-black text-brand-navy text-base tracking-tight group-hover:text-brand-cyan transition-colors mb-2 leading-snug">
-                      {related!.title}
-                    </p>
-                    <p className="text-zinc-400 text-sm font-medium leading-relaxed line-clamp-2">
-                      {related!.excerpt}
-                    </p>
-                    <span className="inline-flex items-center gap-1 text-xs font-bold text-zinc-400 mt-3 uppercase tracking-wider">
-                      <Clock size={10} /> {related!.readTime}
-                    </span>
+                    {related!.coverImage && (
+                      <div className="aspect-[16/9] overflow-hidden bg-brand-navy">
+                        <img
+                          src={related!.coverImage}
+                          alt={related!.title}
+                          loading="lazy"
+                          className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    )}
+                    <div className="p-6">
+                      <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-brand-cyan mb-3">
+                        <Tag size={10} />
+                        {related!.category}
+                      </span>
+                      <p className="font-black text-brand-navy text-base tracking-tight group-hover:text-brand-cyan transition-colors mb-2 leading-snug">
+                        {related!.title}
+                      </p>
+                      <p className="text-zinc-400 text-sm font-medium leading-relaxed line-clamp-2">
+                        {related!.excerpt}
+                      </p>
+                      <span className="inline-flex items-center gap-1 text-xs font-bold text-zinc-400 mt-3 uppercase tracking-wider">
+                        <Clock size={10} /> {related!.readTime}
+                      </span>
+                    </div>
                   </Link>
                 ))}
               </div>
@@ -529,6 +541,16 @@ export default function BlogPost() {
                       to={`/blog/${related!.slug}`}
                       className="group block border-b border-zinc-100 pb-4 last:border-0 last:pb-0 transition-all"
                     >
+                      {related!.coverImage && (
+                        <div className="aspect-[16/9] overflow-hidden rounded-lg bg-brand-navy mb-2.5">
+                          <img
+                            src={related!.coverImage}
+                            alt={related!.title}
+                            loading="lazy"
+                            className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                        </div>
+                      )}
                       <p className="font-bold text-brand-navy text-[15px] tracking-tight group-hover:text-brand-cyan transition-colors mb-1.5 leading-snug">
                         {related!.title}
                       </p>
