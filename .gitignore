@@ -6,3 +6,7 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Local blog drafts & image-generation tooling (not part of the deployed site)
+image-gen/
+draft-*.md

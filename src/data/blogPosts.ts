@@ -580,4 +580,229 @@ If you want a clear picture of what a properly structured Google Ads campaign wo
 We work exclusively with home improvement contractors. Every campaign we build is designed around one outcome: booked jobs, not just leads.
     `,
   },
+  {
+    slug: "google-ads-window-replacement-contractors",
+    title: "Google Ads for Window Replacement Contractors: How to Get High-Intent Leads",
+    metaDescription:
+      "How window replacement contractors use Google Ads to get high-intent leads — seasonal timing, keywords that convert, real budgets, and a campaign that books jobs.",
+    date: "June 24, 2026",
+    readTime: "9 min read",
+    category: "Google Ads",
+    excerpt:
+      "Window replacement is one of the most seasonal, highest-intent searches in home improvement. Here's how to build a Google Ads campaign that books installs instead of burning budget.",
+    content: `
+IMAGE::/images/window-why-faster.png::Why window replacement jobs close faster than kitchen or bathroom remodels
+
+## Why this is different from every other home improvement ad
+
+Window replacement is one of the cleanest products to sell with paid search — and most window contractors are still getting it wrong.
+
+Here's the thing: when a homeowner types "window replacement near me" or "energy efficient windows cost," they aren't browsing. They've already decided their drafty, single-pane windows have to go. They're not saving inspiration on Pinterest like a kitchen remodeler. They want a number and an installer. That high-intent moment is exactly what Google Ads for window replacement contractors is built to capture — and it's why this niche can produce a steadier, faster-closing pipeline than almost any other home improvement service.
+
+The catch is that window replacement has two quirks no one tells you about: it's brutally seasonal, and the buying decision moves fast. Get the timing and the campaign structure right and you'll book installs at a cost per lead most remodelers would envy. Get them wrong and you'll spend your whole budget in the off-season chasing tire-kickers.
+
+This guide breaks down exactly how to do it right — the seasonal timing, the keywords that convert, realistic 2026 budgets, and the campaign structure that turns clicks into booked window jobs.
+
+---
+
+## Why window jobs close faster than remodels
+
+Before the tactics, understand why this niche behaves differently — because it changes how you should run the ads.
+
+A bathroom or kitchen remodel is an emotional, drawn-out decision. Homeowners agonize over tile, layouts, and contractors for months. Windows aren't like that. A window replacement is a defined product solving a specific pain — drafts, sky-high energy bills, fogged-up glass, noise, or windows that won't open.
+
+That changes everything:
+
+- The decision cycle is short. Many homeowners go from first search to signed contract in 1–2 weeks, so you'll see real ROI data faster than any remodeler.
+- The price range is predictable. A full-home window replacement typically runs $8,000–$25,000, and homeowners can ballpark it themselves — less sticker shock, fewer ghosted quotes.
+- Financing is normal. "$0 down, low monthly payments" is a proven hook here because it removes the single biggest objection on the spot.
+- The trigger is concrete. Nobody replaces windows for fun. There's always a reason, and that reason is your ad angle.
+
+Faster decisions mean your follow-up speed matters more here than almost anywhere else. More on that below.
+
+---
+
+## The seasonal advantage most window contractors miss
+
+This is the single biggest lever in window replacement advertising, and most contractors ignore it.
+
+IMAGE::/images/window-seasonal-demand.png::Seasonal search demand for window replacement peaks in fall (Aug–Oct) and again in tax-refund season (Feb–Apr)
+
+Window demand is highly seasonal, and the searches spike in predictable windows:
+
+- Late summer to fall (August–October) is peak. Homeowners feel the first cold nights, remember last winter's heating bills, and want the job done before winter hits.
+- Tax-refund season (February–April) is the second wave — fresh cash and "fresh start" energy.
+- Early summer brings a smaller bump as people fight rising AC bills and the heat coming through old glass.
+
+The mistake contractors make is running the same flat budget all year. Instead, front-load your spend into the high-intent seasons and ramp up 3–4 weeks before the peak — not during it, when every competitor is bidding and clicks are most expensive.
+
+Your ad copy should lean into whatever urgency the season hands you:
+
+- Fall: "Replace your drafty windows before winter — free in-home estimate."
+- Winter: "Tired of high heating bills? See your window replacement quote."
+- Summer: "Stop your AC from leaking out through old windows."
+
+Seasonal urgency isn't a gimmick. It's the difference between an ad that gets scrolled past and one that gets a homeowner to act today.
+
+---
+
+## Realistic budgets and benchmarks for 2026
+
+Let's talk real numbers — not the fantasy "$15 leads" you'll see in marketing blogs.
+
+IMAGE::/images/window-benchmarks.png::Window replacement Google Ads benchmarks for 2026 — CPC, CPL, cost per booked estimate, and minimum monthly budget
+
+**Cost Per Click (CPC): $8–$20**
+
+- Window replacement keywords are competitive but usually cheaper than kitchen remodeling.
+- Smaller markets run $7–$12. Major metros like NYC, LA, and Chicago run $15–$22.
+
+**Cost Per Lead (CPL): $80–$200**
+
+- Lower than bathroom and kitchen because intent is higher and the offer is simpler.
+- Landing page quality is the biggest variable — a dedicated page beats homepage traffic 2–3x.
+
+**Cost Per Booked Estimate: $250–$600**
+
+- If your CPL is $150 and you book 1 in 3 leads into an in-home estimate, that's $450 per appointment.
+- On a $12,000 full-home job, that's under 4% of revenue going to acquisition. Very healthy.
+
+**Minimum viable monthly budget: $1,500–$2,000/month**
+
+- This is lower than kitchen remodeling because the sales cycle is short and CPLs are reasonable.
+- Don't drop below $1,500 in peak season — you won't gather enough data to optimize.
+
+The mindset shift that matters: stop judging the campaign on cost per click, or even cost per lead. The only number that counts is cost per booked job. A $180 lead that turns into a $14,000 install is cheap. A $60 lead that never picks up the phone is expensive.
+
+---
+
+## The campaign structure that books window jobs
+
+Most window contractors set up Google Ads like an on/off switch — pick keywords, set a budget, hope the phone rings. That produces wasted spend and inconsistent leads. Here's the structure that actually works.
+
+IMAGE::/images/window-campaign-structure.png::Google Ads campaign structure for window replacement — one focused search campaign split into three ad groups
+
+### One focused Search campaign
+
+Run a single Search campaign for window replacement. Don't blend it with doors, siding, or general remodeling — separate campaigns let you control budget and read performance cleanly. Inside it, build three tightly themed ad groups.
+
+**Ad Group 1 — High-Intent Service Keywords**
+
+- "window replacement contractor [city]"
+- "window replacement company near me"
+- "replacement windows [city]"
+- "window installation company [city]"
+
+**Ad Group 2 — Product / Benefit Keywords**
+
+- "energy efficient windows [city]"
+- "vinyl replacement windows"
+- "double pane window replacement"
+- "soundproof or triple pane windows [city]"
+
+**Ad Group 3 — Estimate / Quote Keywords**
+
+- "window replacement estimate [city]"
+- "window replacement cost [city]"
+- "free window quote [city]"
+- "window replacement financing"
+
+Write separate responsive search ads for each group so the headline matches what the person typed. Someone searching "energy efficient windows" should see an energy-savings ad — not a generic "window replacement" headline.
+
+### Keywords to bid on — and what to avoid
+
+Stick to keywords with hiring intent: the words "contractor," "company," "installation," "near me," your city, or action words like "estimate," "quote," and "financing." Use phrase match and exact match only for the first 60 days — broad match will bleed budget before you have negative-keyword data to control it.
+
+### Negative keywords — build this before you spend a dollar
+
+Add these immediately:
+
+- DIY, how to, do it yourself, install myself
+- cheap, used, secondhand, salvage
+- repair, glass repair, screen repair (unless you offer it)
+- parts, hardware, replacement glass only
+- jobs, hiring, career, salary
+- rental, apartment, mobile home (unless you serve them)
+- any city or state outside your service area
+
+Then review your Search Terms report every week for the first 60 days and add new negatives aggressively. This one habit cuts wasted spend by 25–35%.
+
+---
+
+## Urgency-based ad copy that actually converts
+
+Window ads live and die on the offer and the urgency. The winning formula in this niche:
+
+- Lead with the pain or the season: "Drafty windows? Beat the cold." or "Cut your energy bills this winter."
+- Stack a concrete offer: "Free in-home estimate + no-obligation quote" beats "Get a quote" every time. If you offer financing, say it: "$0 down, payments from $99/mo."
+- Add proof: "Rated 4.9 stars by 300+ local homeowners."
+- Make the next step tiny: "Book your free estimate in 60 seconds."
+
+Avoid the trap of selling the windows. Homeowners don't want windows — they want a warm house, lower bills, and a quiet bedroom. Sell that.
+
+---
+
+## Don't skip the landing page or the tracking
+
+You can build a perfect campaign and still get zero leads if these two pieces are broken.
+
+**The landing page.**
+
+Never send window ads to your homepage. Build one dedicated page that matches your ad's headline word-for-word, shows real before/after photos of your installs, surfaces one specific customer review above the fold, has a single clear call to action (call or short form — not both), and loads in under 2 seconds on mobile. Over 60% of these searches happen on phones.
+
+**Conversion tracking.**
+
+If you're running ads without it, you're not advertising — you're donating to Google. Before you spend a dollar, set up call tracking, form-submission tracking, and a GA4 connection, and define what counts as a conversion (a call over 60 seconds or a booked estimate). Without tracking, Google optimizes for clicks instead of booked jobs — exactly the wrong goal.
+
+Two default settings to fix immediately: turn off Search Partners and the Display Network (they rarely produce quality home-services leads), and change location targeting from "Presence or interest" to "Presence only" so you're not paying to reach people three states away.
+
+---
+
+## Your 5-step launch plan
+
+If you're a window replacement contractor ready to run Google Ads properly, here's exactly where to start.
+
+IMAGE::/images/window-launch-checklist.png::Pre-launch checklist for window replacement Google Ads contractors
+
+**1. Set up conversion tracking first.**
+
+Call tracking and form tracking live and verified before the campaign goes on.
+
+**2. Build one dedicated landing page.**
+
+Real install photos, one review, one CTA, and a headline that matches your ads.
+
+**3. Time your budget to the season.**
+
+Ramp 3–4 weeks before the fall and winter peak. Start at $1,500–$2,000/month and commit to 60 days — don't judge it at day 14.
+
+**4. Turn off Search Partners, Display, and "interest" location targeting.**
+
+Run on Google Search, your service area only.
+
+**5. Call every lead within 5 minutes.**
+
+Window homeowners decide fast and call 2–3 companies. The first to call back usually wins the estimate.
+
+---
+
+## The Growth Lift Studio advantage
+
+Most agencies charge a $1,500–$3,000 monthly retainer whether your phone rings or not, then send you a report full of "impressions" while your calendar sits empty.
+
+We work the opposite way. At Growth Lift Studio we charge a $1,500 one-time setup fee to build your landing page and launch your campaign. After that, your first 5 qualified appointments are free. Once those are delivered, you pay just 1.5% of the value of jobs you actually close. Close a $14,000 window job and our fee is $210. Don't close anything, and you don't pay us beyond setup.
+
+We built it this way because we only work with home improvement contractors, and we were tired of watching them get burned by agencies with no skin in the game.
+
+---
+
+## The bottom line
+
+Window replacement is one of the best-fit niches in all of home improvement for Google Ads — high intent, fast decisions, predictable pricing, and a built-in seasonal urgency you can ride. But the margin for error is real: run a flat budget year-round, send traffic to your homepage, or skip conversion tracking, and you'll spend money without booking a single install.
+
+The contractors who win aren't spending more than their competitors. They're timing their spend to the season, tightening their keywords, sending traffic to a page built to convert, and calling every lead before anyone else does.
+
+If you want a clear picture of what a properly built Google Ads campaign would look like for your window replacement business — realistic budget, expected cost per lead, and a season-by-season plan — book a free strategy call with Growth Lift Studio. We'll run the numbers for your specific market and show you exactly how many leads are waiting for you right now.
+    `,
+  },
 ];

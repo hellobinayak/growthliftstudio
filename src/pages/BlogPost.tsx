@@ -74,11 +74,15 @@ const relatedPostsMap: Record<string, string[]> = {
     "google-ads-bathroom-remodeling-contractors",
   ],
   "google-ads-kitchen-remodeling-contractors": [
-    "facebook-ads-bathroom-remodeling-contractors",
     "google-ads-bathroom-remodeling-contractors",
+    "google-ads-window-replacement-contractors",
   ],
   "google-ads-bathroom-remodeling-contractors": [
-    "facebook-ads-bathroom-remodeling-contractors",
+    "google-ads-kitchen-remodeling-contractors",
+    "google-ads-window-replacement-contractors",
+  ],
+  "google-ads-window-replacement-contractors": [
+    "google-ads-bathroom-remodeling-contractors",
     "google-ads-kitchen-remodeling-contractors",
   ],
 };
