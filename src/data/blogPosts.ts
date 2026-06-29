@@ -6,6 +6,7 @@ export interface BlogPost {
   readTime: string;
   category: string;
   excerpt: string;
+  coverImage?: string;
   content: string;
 }
 
@@ -20,6 +21,7 @@ export const blogPosts: BlogPost[] = [
     category: "Facebook Ads",
     excerpt:
       "Most bathroom remodeling contractors who try Facebook Ads quit within 60 days — not because ads don't work, but because nobody told them what actually does.",
+    coverImage: "/images/RESULTS-ADSET.png",
     content: `
 ## Let's be honest about something
 
@@ -168,6 +170,7 @@ Or skip the trial and error and book a call with us. We'll tell you exactly what
     category: "Google Ads",
     excerpt:
       "Google Ads is the single fastest way for kitchen remodeling contractors to get in front of homeowners who are actively looking to start a renovation. Here is the exact blueprint to capture these high-ticket leads.",
+    coverImage: "/images/kitchen-remodel-lead-gen.png",
     content: `
 IMAGE::/images/kitchen-hunting-vs-fishing-v2.png::Facebook Ads vs Google Ads — fishing with a net vs hunting with a target
 
@@ -327,6 +330,7 @@ Book a free strategy call with Binayak and the Growth Lift Studio team today. We
     category: "Google Ads",
     excerpt:
       "Bathroom remodeling has tighter margins than kitchen work — which means your Google Ads campaign has zero room for wasted spend. Here's how to build one that actually books jobs.",
+    coverImage: "/images/bath-benchmarks-v2.png",
     content: `
 IMAGE::/images/google-ads-bathroom-remodeling.png::Google Ads campaign structure for bathroom remodeling contractors
 
@@ -590,6 +594,7 @@ We work exclusively with home improvement contractors. Every campaign we build i
     category: "Google Ads",
     excerpt:
       "Window replacement is one of the most seasonal, highest-intent searches in home improvement. Here's how to build a Google Ads campaign that books installs instead of burning budget.",
+    coverImage: "/images/window-benchmarks.png",
     content: `
 IMAGE::/images/window-why-faster.png::Why window replacement jobs close faster than kitchen or bathroom remodels
 

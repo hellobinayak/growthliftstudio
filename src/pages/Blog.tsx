@@ -71,25 +71,37 @@ export default function Blog() {
                   transition={{ delay: i * 0.1 }}
                 >
                   <Link to={`/blog/${post.slug}`} className="group block h-full">
-                    <div className="h-full p-8 bg-white border border-zinc-100 rounded-3xl hover:border-brand-cyan hover:shadow-xl transition-all duration-300 flex flex-col">
-                      <div className="mb-6">
-                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-cyan bg-brand-cyan/10 px-3 py-1 rounded-full">
-                          {post.category}
-                        </span>
-                      </div>
-                      <h2 className="text-xl font-black text-brand-navy mb-4 leading-tight tracking-tight group-hover:text-brand-cyan transition-colors">
-                        {post.title}
-                      </h2>
-                      <p className="text-sm text-zinc-500 font-medium leading-relaxed mb-8 flex-1">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between pt-6 border-t border-zinc-100">
-                        <div className="flex items-center gap-3">
-                          <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">{post.date}</span>
-                          <span className="h-1 w-1 rounded-full bg-zinc-300" />
-                          <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">{post.readTime}</span>
+                    <div className="h-full bg-white border border-zinc-100 rounded-3xl overflow-hidden hover:border-brand-cyan hover:shadow-xl transition-all duration-300 flex flex-col">
+                      {post.coverImage && (
+                        <div className="aspect-[16/9] overflow-hidden bg-brand-navy">
+                          <img
+                            src={post.coverImage}
+                            alt={post.title}
+                            loading="lazy"
+                            className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
                         </div>
-                        <ArrowRight className="h-4 w-4 text-brand-cyan group-hover:translate-x-1 transition-transform" />
+                      )}
+                      <div className="p-8 flex flex-col flex-1">
+                        <div className="mb-6">
+                          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-cyan bg-brand-cyan/10 px-3 py-1 rounded-full">
+                            {post.category}
+                          </span>
+                        </div>
+                        <h2 className="text-xl font-black text-brand-navy mb-4 leading-tight tracking-tight group-hover:text-brand-cyan transition-colors">
+                          {post.title}
+                        </h2>
+                        <p className="text-sm text-zinc-500 font-medium leading-relaxed mb-8 flex-1">
+                          {post.excerpt}
+                        </p>
+                        <div className="flex items-center justify-between pt-6 border-t border-zinc-100">
+                          <div className="flex items-center gap-3">
+                            <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">{post.date}</span>
+                            <span className="h-1 w-1 rounded-full bg-zinc-300" />
+                            <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">{post.readTime}</span>
+                          </div>
+                          <ArrowRight className="h-4 w-4 text-brand-cyan group-hover:translate-x-1 transition-transform" />
+                        </div>
                       </div>
                     </div>
                   </Link>
