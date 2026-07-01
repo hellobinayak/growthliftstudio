@@ -50,7 +50,7 @@ export default function Testimonials() {
         schema={breadcrumbSchema}
       />
       {/* Header & Video Player Section */}
-      <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100 overflow-hidden">
+      <section className="py-16 md:py-24 px-6 bg-zinc-50 border-b border-zinc-100 overflow-hidden">
         <div className="mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -58,7 +58,7 @@ export default function Testimonials() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Testimonials</h2>
+              <h2 className="text-sm font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-4">Testimonials</h2>
               <h1 className="text-3xl sm:text-5xl md:text-7xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight text-balance">
                 What it looks like when <br />
                 <span className="text-brand-cyan underline decoration-8 decoration-brand-cyan/10">the pipeline is working.</span>
@@ -100,7 +100,7 @@ export default function Testimonials() {
               <div className="w-full max-w-[360px] bg-white p-6 rounded-[2.5rem] border border-zinc-100 shadow-xl shadow-brand-navy/5 relative z-10 transition-transform hover:-translate-y-1">
                 <div className="flex flex-col gap-4">
                   <div>
-                    <p className="text-[10px] font-black text-brand-cyan uppercase tracking-[0.4em] mb-1">Success Story</p>
+                    <p className="text-[10px] font-black text-brand-cyan-ink uppercase tracking-[0.4em] mb-1">Success Story</p>
                     <h3 className="text-xl sm:text-2xl font-black text-brand-navy tracking-tighter">DAMAINE HARRISON</h3>
                   </div>
                   
@@ -129,10 +129,10 @@ export default function Testimonials() {
       </section>
 
       {/* Testimonials Slider Section */}
-      <section className="py-32 px-6 bg-zinc-50 border-y border-zinc-100 overflow-hidden">
+      <section className="py-20 md:py-32 px-6 bg-zinc-50 border-y border-zinc-100 overflow-hidden">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
-            <h3 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Success Stories</h3>
+            <h3 className="text-sm font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-4">Success Stories</h3>
             <p className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-brand-navy tracking-tighter">
               Verified outcomes from <br />
               <span className="text-brand-cyan">real business owners.</span>
@@ -144,11 +144,11 @@ export default function Testimonials() {
       </section>
 
       {/* Trust Section / Consistency */}
-      <section className="py-32 px-6 bg-white">
+      <section className="py-20 md:py-32 px-6 bg-white">
          <div className="mx-auto max-w-7xl">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
                <div>
-                  <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-6">Consistency</h2>
+                  <h2 className="text-sm font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-6">Consistency</h2>
                   <p className="text-2xl sm:text-4xl md:text-6xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
                     Different businesses. <br />
                     Different markets. <br />
@@ -174,7 +174,7 @@ export default function Testimonials() {
       </section>
 
       {/* Closing CTA Section */}
-      <section className="py-32 bg-brand-navy text-white px-6 text-center relative overflow-hidden">
+      <section className="py-20 md:py-32 bg-brand-navy text-white px-6 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,183,212,0.1),transparent)] pointer-events-none" />
         
         <div className="mx-auto max-w-4xl relative z-10">

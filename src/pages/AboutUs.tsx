@@ -136,7 +136,7 @@ export default function AboutUs() {
         schema={aboutSchema}
       />
       {/* Header Section */}
-      <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">
+      <section className="py-16 md:py-24 px-6 bg-zinc-50 border-b border-zinc-100">
         <div className="mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -144,7 +144,7 @@ export default function AboutUs() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">About Us</h2>
+              <h2 className="text-sm font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-4">About Us</h2>
               <h1 className="text-3xl sm:text-5xl md:text-7xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
                 Built around how home service <br />
                 <span className="text-brand-cyan underline decoration-8 decoration-brand-cyan/10">businesses actually operate.</span>
@@ -183,7 +183,7 @@ export default function AboutUs() {
                 </div>
                 
                 <div className="p-6 pt-8">
-                   <p className="text-[10px] font-black text-brand-cyan uppercase tracking-[0.3em] mb-1">FOUNDER</p>
+                   <p className="text-[10px] font-black text-brand-cyan-ink uppercase tracking-[0.3em] mb-1">FOUNDER</p>
                    <h3 className="text-2xl sm:text-3xl font-black text-brand-navy tracking-tight mb-4">Binayak Dey</h3>
                    <p className="text-sm text-zinc-500 font-medium leading-relaxed mb-8">
                      Focusing on one outcome: confirmed jobs on your calendar, consistently.
@@ -249,7 +249,7 @@ export default function AboutUs() {
       </section>
 
       {/* Philosophy Grid */}
-      <section className="py-24 px-6">
+      <section className="py-16 md:py-24 px-6">
         <div className="mx-auto max-w-7xl">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {sections.map((section, i) => (
@@ -283,10 +283,10 @@ export default function AboutUs() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-24 px-6 bg-zinc-50 border-y border-zinc-100">
+      <section id="faq" className="py-16 md:py-24 px-6 bg-zinc-50 border-y border-zinc-100">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-16">
-            <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Frequently Asked Questions</h2>
+            <h2 className="text-sm font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-4">Frequently Asked Questions</h2>
             <p className="text-2xl sm:text-3xl md:text-5xl font-black text-brand-navy tracking-tight">
               You've got questions. <br />
               <span className="text-zinc-400">Here are the honest answers.</span>
@@ -331,7 +331,7 @@ export default function AboutUs() {
       </section>
 
       {/* Closing CTA Section */}
-      <section className="py-32 bg-brand-navy text-white px-6 text-center relative overflow-hidden">
+      <section className="py-20 md:py-32 bg-brand-navy text-white px-6 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,183,212,0.1),transparent)] pointer-events-none" />
         
         <div className="mx-auto max-w-4xl relative z-10">

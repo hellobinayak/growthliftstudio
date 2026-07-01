@@ -79,7 +79,7 @@ const navLinks = [
                 to={link.href} 
                 className={cn(
                   "hover:text-brand-cyan transition-colors",
-                  location.pathname === link.href ? "text-brand-cyan underline decoration-2 underline-offset-4" : ""
+                  location.pathname === link.href ? "text-brand-cyan-ink underline decoration-2 underline-offset-4" : ""
                 )}
               >
                 {link.name}

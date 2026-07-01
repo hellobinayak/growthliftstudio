@@ -32,14 +32,14 @@ export default function Blog() {
         schema={breadcrumbSchema}
       />
       {/* Header */}
-      <section className="relative py-24 px-6 bg-zinc-50 border-b border-zinc-100">
+      <section className="relative py-16 md:py-24 px-6 bg-zinc-50 border-b border-zinc-100">
         <div className="mx-auto max-w-5xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-[10px] tracking-[0.3em] uppercase text-brand-cyan font-black mb-4 inline-block">
+            <span className="text-[10px] tracking-[0.3em] uppercase text-brand-cyan-ink font-black mb-4 inline-block">
               The Growth Archive
             </span>
             <h1 className="text-4xl sm:text-6xl font-sans font-black tracking-tighter text-brand-navy mb-6 leading-tight">
@@ -54,10 +54,10 @@ export default function Blog() {
       </section>
 
       {/* Posts Grid */}
-      <section className="py-24 px-6">
+      <section className="py-16 md:py-24 px-6">
         <div className="mx-auto max-w-7xl">
           {blogPosts.length === 0 ? (
-            <div className="text-center py-24">
+            <div className="text-center py-16 md:py-24">
               <p className="text-zinc-400 font-bold uppercase tracking-widest text-sm">No posts yet. Check back soon.</p>
             </div>
           ) : (
@@ -84,7 +84,7 @@ export default function Blog() {
                       )}
                       <div className="p-8 flex flex-col flex-1">
                         <div className="mb-6">
-                          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-cyan bg-brand-cyan/10 px-3 py-1 rounded-full">
+                          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-cyan-ink bg-brand-cyan/10 px-3 py-1 rounded-full">
                             {post.category}
                           </span>
                         </div>

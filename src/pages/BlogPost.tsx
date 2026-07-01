@@ -115,7 +115,7 @@ export default function BlogPost() {
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-black text-brand-navy mb-4">Post not found</h1>
-          <Link to="/blog" className="text-brand-cyan hover:underline font-bold">
+          <Link to="/blog" className="text-brand-cyan-ink hover:underline font-bold">
             ← Back to blog
           </Link>
         </div>
@@ -345,7 +345,7 @@ export default function BlogPost() {
           </nav>
 
           <div className="flex items-center gap-4 mb-6">
-            <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-brand-cyan bg-brand-cyan/10 px-3 py-1 rounded-full">
+            <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-brand-cyan-ink bg-brand-cyan/10 px-3 py-1 rounded-full">
               <Tag size={10} />
               {post.category}
             </span>
@@ -507,7 +507,7 @@ export default function BlogPost() {
                       </div>
                     )}
                     <div className="p-6">
-                      <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-brand-cyan mb-3">
+                      <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-brand-cyan-ink mb-3">
                         <Tag size={10} />
                         {related!.category}
                       </span>
@@ -568,7 +568,7 @@ export default function BlogPost() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6 bg-brand-navy">
+      <section className="py-16 md:py-24 px-6 bg-brand-navy">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tighter mb-4">
             Want this system built <span className="text-brand-cyan">for you?</span>
@@ -590,7 +590,7 @@ export default function BlogPost() {
         <div className="max-w-3xl mx-auto">
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 text-zinc-400 hover:text-brand-cyan transition-colors text-sm font-black uppercase tracking-widest"
+            className="inline-flex items-center gap-2 text-zinc-400 hover:text-brand-cyan-ink transition-colors text-sm font-black uppercase tracking-widest"
           >
             <ArrowLeft size={14} /> Back to Blog
           </Link>

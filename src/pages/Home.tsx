@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { DotGrid, LightBeam, BeamPattern, FloatingDots } from "../components/BackgroundEffects";
 import { Button, InteractiveCard } from "../components/UI";
+import { ProximityBadge } from "../components/ProximityBadge";
 import { Link } from "react-router-dom";
 import { useSurvey } from "../context/SurveyContext";
 import TestimonialSlider from "../components/TestimonialSlider";
@@ -38,6 +39,17 @@ const StripeIcon = () => (
     <path d="M13.994 10.052c0-1.026-.82-1.41-2.18-1.41-1.576 0-3.155.632-4.103 1.155L6.685 6.2c1.233-.67 3.32-1.2 5.568-1.2 4.07 0 6.69 2.012 6.69 5.674v8.136c0 .99.198 1.558.423 1.834h-4.664c-.167-.282-.32-.734-.32-1.346h-.06c-.958.948-2.607 1.604-4.52 1.604-3.4 0-5.815-1.92-5.815-5.012 0-3.792 3.125-5.184 7.69-5.184h2.317zm-2.31 3.518c-1.91 0-3.204.426-3.204 1.488 0 .8.694 1.2 1.892 1.2 1.706 0 3.205-.726 3.205-2.07v-.618h-1.893z"/>
   </svg>
 );
+
+// Kept at module scope so its array identity is stable across renders
+// (prevents the typewriter effect from resetting on every parent re-render).
+const TRADES = [
+  "Remodelers",
+  "Landscapers",
+  "HVAC Pros",
+  "Plumbers",
+  "Roofers",
+  "Window & Door Pros",
+];
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -95,9 +107,13 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-[10px] tracking-[0.3em] uppercase text-zinc-600 font-bold border border-zinc-200 px-4 py-1.5 rounded-full bg-white/50 mb-8 inline-block shadow-sm">
-              For Home Service Businesses
-            </span>
+            <div className="flex justify-center mb-8">
+              <ProximityBadge
+                label="Built for"
+                items={TRADES}
+                ariaLabel="Built for home improvement pros"
+              />
+            </div>
             <h1 className="text-4xl sm:text-6xl md:text-8xl font-sans font-extrabold tracking-tighter mb-8 leading-[0.95] text-balance text-brand-navy">
               Your calendar shouldn’t <br />
               <span className="shimmer-text text-brand-cyan">have empty slots.</span>
@@ -111,7 +127,7 @@ export default function Home() {
                 370+ confirmed jobs booked for our clients in 2025.
               </p>
             </div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-cyan mb-12">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-brand-cyan-ink mb-12">
               You run the crew. We handle the pipeline.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
@@ -133,7 +149,7 @@ export default function Home() {
       </section>
 
       {/* Credibility Section - Logos */}
-      <section className="relative z-10 py-20 bg-white border-y border-zinc-200/50 overflow-hidden">
+      <section className="relative z-10 py-16 md:py-20 bg-white border-y border-zinc-200/50 overflow-hidden">
         {/* Blue-Shaded Gloss Layering */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,rgba(0,183,212,0.1),transparent)] opacity-70 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-b from-white via-cyan-50/10 to-white pointer-events-none" />
@@ -148,12 +164,12 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-100/50 to-transparent" />
         
         <div className="mx-auto max-w-7xl px-6 relative">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <p className="text-[11px] font-black uppercase tracking-[0.4em] text-brand-navy/30 mb-2">Industry Leaders</p>
             <h2 className="text-xs md:text-sm font-sans font-black text-brand-navy/60 uppercase tracking-[0.2em]">Brands We Work With</h2>
             <div className="h-px w-8 bg-brand-cyan/30 mx-auto mt-4" />
           </div>
-          <div className="flex flex-wrap justify-center items-start gap-x-24 gap-y-12 transition-all duration-700">
+          <div className="flex flex-wrap justify-center items-start gap-x-10 gap-y-10 sm:gap-x-16 md:gap-x-24 md:gap-y-12 transition-all duration-700">
             {[
               { icon: <MetaIcon />, name: "Meta" },
               { icon: <GoogleIcon />, name: "Google" },
@@ -192,11 +208,11 @@ export default function Home() {
       </section>
 
       {/* Value Proposition Section */}
-      <section className="relative z-10 py-32 bg-white">
+      <section className="relative z-10 py-20 md:py-32 bg-white">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid lg:grid-cols-2 gap-20 items-center mb-24">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-16 md:mb-24">
             <div>
-              <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-6">The Outcome</h2>
+              <h2 className="text-sm font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-6">The Outcome</h2>
               <p className="text-3xl sm:text-4xl md:text-6xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
                 Stop chasing inquiries. <br />
                 <span className="text-brand-cyan">Start booking jobs.</span>
@@ -225,7 +241,7 @@ export default function Home() {
                     <Layers className="h-5 w-5 text-brand-cyan group-hover:text-brand-navy transition-colors" />
                  </div>
                  <h3 className="text-lg font-black text-brand-navy mb-2">Turnkey Operation</h3>
-                 <p className="text-sm text-zinc-500 font-medium max-w-xs">We handle the tech and targeting while you handle the tools. No extra management needed.</p>
+                 <p className="text-sm text-zinc-500 font-medium">We handle the tech and targeting while you handle the tools. No extra management needed.</p>
               </InteractiveCard>
             </div>
           </div>
@@ -233,10 +249,10 @@ export default function Home() {
       </section>
 
       {/* Process Section Preview */}
-      <section id="process" className="relative z-10 py-32 bg-zinc-50 border-y border-zinc-100">
+      <section id="process" className="relative z-10 py-20 md:py-32 bg-zinc-50 border-y border-zinc-100">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center mb-20 text-balance">
-            <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Process</h2>
+          <div className="text-center mb-12 md:mb-20 text-balance">
+            <h2 className="text-sm font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-4">Process</h2>
             <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-brand-navy leading-tight">
               Simple system. Clear outcome.
             </p>
@@ -259,7 +275,7 @@ export default function Home() {
                   className="flex-1 group relative p-8 rounded-2xl bg-gradient-to-br from-white via-cyan-50/40 to-brand-cyan/5 border border-white shadow-xl shadow-brand-cyan/5 flex flex-col overflow-hidden cursor-default min-w-0"
                 >
                   <div className="absolute top-0 -left-[100%] w-[200%] h-full bg-gradient-to-r from-transparent via-white/60 to-transparent -rotate-45 group-hover:left-[100%] transition-all duration-1000 pointer-events-none" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-cyan mb-4 block relative z-10 transition-transform group-hover:translate-x-1">Phase {item.step}</span>
+                  <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-cyan-ink mb-4 block relative z-10 transition-transform group-hover:translate-x-1">Phase {item.step}</span>
                   <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-navy mb-4 relative z-10 tracking-tighter transition-all group-hover:text-brand-cyan group-hover:scale-[1.02] origin-left">
                     {item.title}
                   </h3>
@@ -279,7 +295,7 @@ export default function Home() {
       </section>
 
       {/* Services Preview Section */}
-      <section className="relative z-10 py-32 bg-brand-navy overflow-hidden">
+      <section className="relative z-10 py-20 md:py-32 bg-brand-navy overflow-hidden">
         {/* Background Decor */}
         <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-navy to-brand-navy/90 pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,183,212,0.15),transparent)] pointer-events-none" />
@@ -287,7 +303,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-cyan/20 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-10 md:mb-16 gap-6 md:gap-8">
             <div className="max-w-2xl">
               <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">What We Handle</h2>
               <p className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-white tracking-tighter leading-tight">
@@ -295,8 +311,8 @@ export default function Home() {
                 <span className="text-brand-cyan">owner-operators.</span>
               </p>
             </div>
-            <Link to="/services">
-              <Button variant="outline" className="border-white/10 hover:border-brand-cyan text-white font-bold px-8 h-14 bg-white/5 backdrop-blur-sm">
+            <Link to="/services" className="w-full sm:w-auto lg:flex-shrink-0">
+              <Button variant="outline" className="w-full sm:w-auto border-white/10 hover:border-brand-cyan text-white font-bold px-8 h-14 bg-white/5 backdrop-blur-sm">
                 View All Services <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
             </Link>
@@ -309,7 +325,7 @@ export default function Home() {
               { title: "Follow-Up", desc: "Automated sequences so no lead is missed.", icon: <TrendingUp className="h-5 w-5" /> },
               { title: "Pipeline Management", desc: "Visibility into your revenue future.", icon: <Layers className="h-5 w-5" /> }
             ].map((s, i) => (
-              <InteractiveCard key={i} className="flex-1 group relative p-8 rounded-2xl bg-gradient-to-br from-white via-cyan-50/40 to-brand-cyan/5 border border-white shadow-xl shadow-brand-cyan/5 flex flex-col overflow-hidden transition-all hover:-translate-y-2">
+              <InteractiveCard key={i} className="group relative p-8 rounded-2xl bg-gradient-to-br from-white via-cyan-50/40 to-brand-cyan/5 border border-white shadow-xl shadow-brand-cyan/5 overflow-hidden transition-all hover:-translate-y-2">
                 <div className="absolute top-0 -left-[100%] w-[200%] h-full bg-gradient-to-r from-transparent via-white/60 to-transparent -rotate-45 group-hover:left-[100%] transition-all duration-1000 pointer-events-none" />
                 
                 <div className="h-10 w-10 bg-brand-cyan/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-cyan transition-colors border border-brand-cyan/20 relative z-10">
@@ -327,16 +343,16 @@ export default function Home() {
       </section>
 
       {/* Case Studies Preview Section */}
-      <section className="relative z-10 py-32 bg-zinc-50 border-y border-zinc-100">
+      <section className="relative z-10 py-20 md:py-32 bg-zinc-50 border-y border-zinc-100">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Case Studies</h2>
+          <div className="text-center mb-12 md:mb-20">
+            <h2 className="text-sm font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-4">Case Studies</h2>
             <p className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-brand-navy tracking-tighter">
               Proof the system <span className="text-brand-cyan">performs.</span>
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
+          <div className="grid md:grid-cols-3 gap-6 mb-10 md:mb-16">
             {[
               { 
                 tag: "Verified Result",
@@ -369,7 +385,7 @@ export default function Home() {
                 fix: "Full pipeline system built from scratch"
               }
             ].map((cs, i) => (
-              <InteractiveCard key={i} className="p-10 bg-white border border-zinc-100 rounded-[2.5rem] group hover:border-brand-cyan transition-all shadow-sm hover:shadow-xl relative overflow-hidden flex flex-col">
+              <InteractiveCard key={i} className="p-7 sm:p-10 bg-white border border-zinc-100 rounded-3xl sm:rounded-[2.5rem] group hover:border-brand-cyan transition-all shadow-sm hover:shadow-xl relative overflow-hidden flex flex-col">
                 <div className="absolute top-0 right-0 p-6 opacity-[0.03] group-hover:opacity-10 transition-opacity">
                    <TrendingUp className="h-24 w-24 text-brand-navy" />
                 </div>
@@ -383,7 +399,7 @@ export default function Home() {
                 </div>
 
                 <div className="py-6 border-y border-zinc-100 mb-6 text-center">
-                  <p className="text-7xl font-sans font-black text-brand-navy group-hover:text-brand-cyan transition-colors leading-none mb-2">{cs.metric}</p>
+                  <p className="text-6xl sm:text-7xl font-sans font-black text-brand-navy group-hover:text-brand-cyan transition-colors leading-none mb-2">{cs.metric}</p>
                   <p className="text-lg font-medium text-brand-navy leading-none mb-1">{cs.unit}</p>
                   <p className="text-sm text-zinc-400">{cs.timeline}</p>
                 </div>
@@ -413,10 +429,10 @@ export default function Home() {
       </section>
 
       {/* Testimonials Slider Section */}
-      <section className="relative z-10 py-32 bg-white overflow-hidden">
+      <section className="relative z-10 py-20 md:py-32 bg-white overflow-hidden">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Testimonials</h2>
+          <div className="text-center mb-10 md:mb-12">
+            <h2 className="text-sm font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-4">Testimonials</h2>
             <p className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-brand-navy tracking-tighter">
               A predictable pipeline means <br />
               <span className="text-brand-cyan">predictable growth.</span>
@@ -428,7 +444,7 @@ export default function Home() {
       </section>
 
       {/* Featured CTA */}
-      <section className="relative z-10 py-32 bg-white">
+      <section className="relative z-10 py-20 md:py-32 bg-white">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="text-3xl sm:text-5xl md:text-7xl font-sans font-extrabold mb-8 tracking-tighter leading-[1.1] text-brand-navy">
             Your next booked jobs are <br />

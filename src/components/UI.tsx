@@ -4,7 +4,7 @@ import React from "react";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary" | "outline";
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl";
   children?: React.ReactNode;
   className?: string;
 };
@@ -41,7 +41,7 @@ export function Button({
       )}
       {...(props as any)}
     >
-      <span className="relative z-10">{children}</span>
+      <span className="relative z-10 inline-flex items-center justify-center">{children}</span>
     </motion.button>
   );
 }

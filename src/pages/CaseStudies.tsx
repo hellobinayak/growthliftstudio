@@ -85,10 +85,10 @@ export default function CaseStudies() {
         schema={breadcrumbSchema}
       />
       {/* Header Section */}
-      <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">
+      <section className="py-16 md:py-24 px-6 bg-zinc-50 border-b border-zinc-100">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-4xl">
-            <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Case Studies</h2>
+            <h2 className="text-sm font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-4">Case Studies</h2>
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
               Real businesses. <br />
               <span className="text-brand-cyan underline decoration-8 decoration-brand-cyan/10">Real booking outcomes.</span>
@@ -102,7 +102,7 @@ export default function CaseStudies() {
       </section>
 
       {/* Case Studies Grid */}
-      <section className="py-32 px-6">
+      <section className="py-20 md:py-32 px-6">
         <div className="mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-3 gap-8">
             {caseStudies.map((study, i) => (
@@ -150,7 +150,7 @@ export default function CaseStudies() {
       </section>
 
       {/* Closing CTA */}
-      <section className="py-32 bg-brand-navy text-white px-6 text-center relative overflow-hidden">
+      <section className="py-20 md:py-32 bg-brand-navy text-white px-6 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,183,212,0.1),transparent)] pointer-events-none" />
         
         <div className="mx-auto max-w-4xl relative z-10">

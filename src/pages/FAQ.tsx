@@ -84,7 +84,7 @@ export default function FAQ() {
         schema={[breadcrumbSchema, faqSchema]}
       />
       {/* Header Section */}
-      <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">
+      <section className="py-16 md:py-24 px-6 bg-zinc-50 border-b border-zinc-100">
         <div className="mx-auto max-w-4xl pt-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -92,7 +92,7 @@ export default function FAQ() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">FAQ</h2>
+            <h2 className="text-sm font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-4">FAQ</h2>
             <h1 className="text-4xl sm:text-6xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
               Honest answers to <br />
               <span className="text-brand-cyan">honest questions.</span>
@@ -105,7 +105,7 @@ export default function FAQ() {
       </section>
 
       {/* FAQ Grid */}
-      <section className="py-24 px-6">
+      <section className="py-16 md:py-24 px-6">
         <div className="mx-auto max-w-4xl">
           <div className="space-y-4">
             {faqs.map((faq, index) => (
@@ -148,7 +148,7 @@ export default function FAQ() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 bg-brand-navy text-white text-center relative overflow-hidden">
+      <section className="py-16 md:py-24 px-6 bg-brand-navy text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,183,212,0.1),transparent)] pointer-events-none" />
         <div className="mx-auto max-w-4xl relative z-10">
           <h2 className="text-3xl sm:text-5xl font-black mb-12 tracking-tight leading-tight">

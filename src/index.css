@@ -8,12 +8,20 @@
   --color-brand-navy: #0D1B2A;
   --color-brand-cloud: #F4F6F8;
   --color-brand-cyan: #00C2E0;
+  /* Accessible cyan for text on light backgrounds (~4.8:1 on white, passes WCAG AA).
+     Keep bright --color-brand-cyan for icons, accents, and text on navy. */
+  --color-brand-cyan-ink: #0A7A8E;
 }
 
 @layer base {
+  html {
+    overflow-x: hidden;
+  }
   body {
     @apply bg-white text-brand-navy antialiased selection:bg-brand-cyan/20 selection:text-brand-navy;
     font-family: var(--font-body);
+    overflow-x: hidden;
+    max-width: 100%;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-sans;

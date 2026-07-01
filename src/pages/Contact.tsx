@@ -48,7 +48,7 @@ export default function Contact() {
         description="Ready to stop chasing leads and stabilize your B2B trade pipeline? Book a free 30-min strategy session to identify revenue gaps."
         schema={contactSchema}
       />
-      <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">
+      <section className="py-16 md:py-24 px-6 bg-zinc-50 border-b border-zinc-100">
         <div className="mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -67,7 +67,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-24 px-6">
+      <section className="py-16 md:py-24 px-6">
         <div className="mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-20 items-stretch">
             

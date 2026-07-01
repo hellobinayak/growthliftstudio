@@ -86,7 +86,7 @@ export default function Services() {
         schema={breadcrumbSchema}
       />
       {/* Header Section */}
-      <section className="py-24 px-6 bg-zinc-50 border-b border-zinc-100">
+      <section className="py-16 md:py-24 px-6 bg-zinc-50 border-b border-zinc-100">
         <div className="mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -94,7 +94,7 @@ export default function Services() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl"
           >
-            <h2 className="text-sm font-bold text-brand-cyan uppercase tracking-[0.2em] mb-4">Our Services</h2>
+            <h2 className="text-sm font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-4">Our Services</h2>
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
               What we handle—so your <br />
               <span className="text-brand-cyan underline decoration-8 decoration-brand-cyan/10">calendar stays consistent.</span>
@@ -113,7 +113,7 @@ export default function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-32 px-6">
+      <section className="py-20 md:py-32 px-6">
         <div className="mx-auto max-w-7xl">
           <div className="grid md:grid-cols-2 gap-12">
             {serviceCategories.map((service, i) => (
@@ -145,7 +145,7 @@ export default function Services() {
       </section>
 
       {/* Closing CTA Section */}
-      <section className="py-32 bg-brand-navy text-white px-6 relative overflow-hidden text-center">
+      <section className="py-20 md:py-32 bg-brand-navy text-white px-6 relative overflow-hidden text-center">
         {/* Background Accents */}
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(0,183,212,0.1),transparent)] pointer-events-none" />
         
