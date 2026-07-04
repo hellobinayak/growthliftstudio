@@ -114,7 +114,7 @@ export default function FAQ() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
-                className="bg-white rounded-2xl border border-zinc-100 overflow-hidden shadow-sm transition-all duration-300"
+                className={`bg-white rounded-2xl border overflow-hidden transition-all duration-300 ${openFaq === index ? 'border-brand-cyan/30 elev-cyan' : 'border-zinc-100 elev-soft'}`}
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}

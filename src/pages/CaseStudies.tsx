@@ -109,7 +109,7 @@ export default function CaseStudies() {
               <InteractiveCard 
                 key={i} 
                 delay={i * 0.1}
-                className="bg-white border border-zinc-100 p-10 flex flex-col h-full group hover:shadow-2xl hover:border-brand-cyan/20 transition-all duration-500 rounded-[2.5rem]"
+                className="bg-white border border-zinc-100 p-10 flex flex-col h-full group elev-soft hover:elev-cyan hover:border-brand-cyan/20 transition-all duration-500 rounded-[2.5rem]"
               >
                 <div className="w-16 h-16 bg-brand-cyan/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-cyan/10 transition-colors">
                   {study.icon}

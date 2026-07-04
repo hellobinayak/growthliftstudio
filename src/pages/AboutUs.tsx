@@ -256,7 +256,7 @@ export default function AboutUs() {
               <InteractiveCard 
                 key={i} 
                 delay={i * 0.1}
-                className="bg-white border border-zinc-100 p-8 flex flex-col items-start group hover:border-brand-cyan transition-all duration-500 rounded-3xl shadow-sm hover:shadow-xl h-full"
+                className="bg-white border border-zinc-100 p-8 flex flex-col items-start group hover:border-brand-cyan transition-all duration-500 rounded-3xl elev-soft hover:elev-cyan h-full"
               >
                 <div className="w-12 h-12 bg-brand-cyan/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-cyan/10 transition-colors">
                   {/* Scale icon down slightly for smaller cards */}

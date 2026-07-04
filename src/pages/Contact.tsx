@@ -74,7 +74,7 @@ export default function Contact() {
             {/* Booking Interface */}
             <div className="relative">
               <div className="sticky top-32">
-                <div className="bg-white p-2 sm:p-4 rounded-[2rem] sm:rounded-[2.5rem] border border-zinc-100 shadow-2xl shadow-brand-navy/5 min-h-[500px] sm:min-h-[600px] flex flex-col overflow-hidden">
+                <div className="bg-white p-2 sm:p-4 rounded-[2rem] sm:rounded-[2.5rem] border border-zinc-100 elev-cyan min-h-[500px] sm:min-h-[600px] flex flex-col overflow-hidden">
                   <iframe 
                     src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3WQLsy4iqUWW3mXx-POE-rP0_oq5fbsQd3BghhvJYwVYXvfPILrApICS1xwGIx5Ws_M_D5T8i8?gv=true" 
                     style={{ border: 0 }} 
@@ -99,8 +99,8 @@ export default function Contact() {
               </div>
 
               <div className="space-y-8">
-                <div className="flex items-center gap-6 group cursor-pointer">
-                  <div className="h-16 w-16 bg-brand-cyan/5 rounded-2xl flex items-center justify-center group-hover:bg-brand-cyan/10 transition-colors">
+                <div className="flex items-center gap-5 p-6 bg-white rounded-2xl border border-zinc-100 elev-soft group cursor-pointer transition-all hover:border-brand-cyan/20 hover:elev-cyan">
+                  <div className="h-14 w-14 shrink-0 bg-brand-cyan/5 rounded-2xl flex items-center justify-center group-hover:bg-brand-cyan/10 transition-colors">
                     <Mail className="h-6 w-6 text-brand-cyan" />
                   </div>
                   <div>
@@ -109,8 +109,8 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-6 group cursor-pointer">
-                  <div className="h-16 w-16 bg-brand-cyan/5 rounded-2xl flex items-center justify-center group-hover:bg-brand-cyan/10 transition-colors">
+                <div className="flex items-center gap-5 p-6 bg-white rounded-2xl border border-zinc-100 elev-soft group cursor-pointer transition-all hover:border-brand-cyan/20 hover:elev-cyan">
+                  <div className="h-14 w-14 shrink-0 bg-brand-cyan/5 rounded-2xl flex items-center justify-center group-hover:bg-brand-cyan/10 transition-colors">
                     <Phone className="h-6 w-6 text-brand-cyan" />
                   </div>
                   <div>
@@ -139,7 +139,7 @@ export default function Contact() {
               </div>
 
               {/* Trust Badge */}
-              <div className="p-8 bg-zinc-50 rounded-3xl border border-zinc-100 flex items-start gap-5">
+              <div className="p-8 bg-white rounded-3xl border border-zinc-100 elev-soft flex items-start gap-5">
                  <div className="h-10 w-10 shrink-0 bg-white rounded-xl shadow-sm border border-zinc-100 flex items-center justify-center">
                     <CheckCircle2 className="h-5 w-5 text-brand-cyan" />
                  </div>

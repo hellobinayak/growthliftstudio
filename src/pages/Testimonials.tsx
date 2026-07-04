@@ -161,7 +161,7 @@ export default function Testimonials() {
                     { title: "Better quality conversations", icon: <TrendingUp className="h-6 w-6 text-brand-cyan" /> },
                     { title: "Clearer visibility into the pipeline", icon: <ShieldCheck className="h-6 w-6 text-brand-cyan" /> }
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-6 p-8 bg-zinc-50 border border-zinc-100 rounded-2xl group transition-all hover:bg-white hover:border-brand-cyan hover:shadow-xl">
+                    <div key={i} className="flex items-center gap-6 p-8 bg-white border border-zinc-100 rounded-2xl group transition-all elev-soft hover:border-brand-cyan hover:elev-cyan">
                        <div className="h-12 w-12 bg-white rounded-xl flex items-center justify-center shadow-sm border border-zinc-50 group-hover:bg-brand-cyan/10 group-hover:border-brand-cyan/20">
                           {item.icon}
                        </div>
