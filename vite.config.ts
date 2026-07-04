@@ -6,6 +6,12 @@ import { defineConfig } from 'vite';
 export default defineConfig(({ mode }) => {
   return {
     plugins: [react(), tailwindcss()],
+    build: {
+      // react-snap prerenders with an older bundled Chromium that lacks
+      // optional chaining / nullish coalescing. Down-level output so the
+      // app executes during prerender (and in older browsers generally).
+      target: 'es2019',
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

@@ -3,6 +3,8 @@ export interface BlogPost {
   title: string;
   metaDescription: string;
   date: string;
+  datePublished: string; // ISO 8601 (YYYY-MM-DD) for schema
+  dateModified: string; // ISO 8601 (YYYY-MM-DD) for schema
   readTime: string;
   category: string;
   excerpt: string;
@@ -17,6 +19,8 @@ export const blogPosts: BlogPost[] = [
     metaDescription:
       "Learn how bathroom remodeling contractors can use Facebook Ads to generate 10–20 qualified leads per month at $50–$150 per lead. Real strategies, real numbers.",
     date: "May 4, 2026",
+    datePublished: "2026-05-04",
+    dateModified: "2026-05-04",
     readTime: "8 min read",
     category: "Facebook Ads",
     excerpt:
@@ -166,6 +170,8 @@ Or skip the trial and error and book a call with us. We'll tell you exactly what
     metaDescription:
       "Learn how kitchen remodeling contractors can leverage high-intent Google Search Ads to book $25,000+ renovation projects. Discover exact keyword strategies, negative keyword structures, and landing page designs that convert.",
     date: "May 24, 2026",
+    datePublished: "2026-05-24",
+    dateModified: "2026-05-24",
     readTime: "7 min read",
     category: "Google Ads",
     excerpt:
@@ -265,7 +271,7 @@ A Google lead is hot, but it cools down fast. The homeowner who filled out your 
 
 **If you wait 2 hours to call them, they are already talking to your competitor.**
 
-Industry data shows that responding to a lead within one minute can boost conversion rates by up to 391% compared to a delayed response. Furthermore, waiting just 30 minutes instead of 5 minutes makes that lead 21 times less likely to qualify as a valid, interested prospect. You must set up automated text and email alerts so you can jump on leads the second they come in.
+The data backs this up. Velocify's analysis of roughly 3.5 million leads ("The Ultimate Contact Strategy") found that calling a lead within one minute of their inquiry can boost conversion rates by up to 391% compared to a delayed response. And the Lead Response Management Study by Dr. James Oldroyd — the research behind Harvard Business Review's ["The Short Life of Online Sales Leads"](https://hbr.org/2011/03/the-short-life-of-online-sales-leads) — found that waiting 30 minutes instead of 5 makes a lead roughly 21 times less likely to qualify as a valid, interested prospect. You must set up automated text and email alerts so you can jump on leads the second they come in.
 
 ---
 
@@ -326,6 +332,8 @@ Book a free strategy call with Binayak and the Growth Lift Studio team today. We
     metaDescription:
       "A practical Google Ads guide for bathroom remodeling contractors. Real budgets, campaign structure, keywords that convert, and what separates booked jobs from wasted spend.",
     date: "June 17, 2026",
+    datePublished: "2026-06-17",
+    dateModified: "2026-06-17",
     readTime: "10 min read",
     category: "Google Ads",
     excerpt:
@@ -590,6 +598,8 @@ We work exclusively with home improvement contractors. Every campaign we build i
     metaDescription:
       "How window replacement contractors use Google Ads to get high-intent leads — seasonal timing, keywords that convert, real budgets, and a campaign that books jobs.",
     date: "June 24, 2026",
+    datePublished: "2026-06-24",
+    dateModified: "2026-06-24",
     readTime: "9 min read",
     category: "Google Ads",
     excerpt:

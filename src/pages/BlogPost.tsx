@@ -166,6 +166,36 @@ export default function BlogPost() {
   );
 
   /* ── Content renderer (with anchor IDs on H2s + mid-post CTA) ── */
+  // Parse inline markdown links [text](url) within a paragraph into anchor elements.
+  const renderInline = (text: string): React.ReactNode[] => {
+    const linkRegex = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
+    const nodes: React.ReactNode[] = [];
+    let lastIndex = 0;
+    let inlineKey = 0;
+    let match: RegExpExecArray | null;
+    while ((match = linkRegex.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        nodes.push(text.slice(lastIndex, match.index));
+      }
+      nodes.push(
+        <a
+          key={inlineKey++}
+          href={match[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-brand-cyan-ink underline hover:no-underline font-semibold"
+        >
+          {match[1]}
+        </a>
+      );
+      lastIndex = match.index + match[0].length;
+    }
+    if (lastIndex < text.length) {
+      nodes.push(text.slice(lastIndex));
+    }
+    return nodes;
+  };
+
   const renderContent = (content: string) => {
     const lines = content.trim().split("\n");
     const elements: React.JSX.Element[] = [];
@@ -247,7 +277,7 @@ export default function BlogPost() {
       } else {
         elements.push(
           <p key={key++} className="text-zinc-600 leading-relaxed text-lg font-medium">
-            {line}
+            {renderInline(line)}
           </p>
         );
       }
@@ -291,7 +321,8 @@ export default function BlogPost() {
       "@type": "BlogPosting",
       "headline": post.title,
       "description": post.excerpt,
-      "datePublished": "2026-05-24",
+      "datePublished": post.datePublished,
+      "dateModified": post.dateModified,
       "author": {
         "@type": "Person",
         "name": "Binayak Dey",

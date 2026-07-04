@@ -43,72 +43,83 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Growth Lift Studio",
-      "alternateName": ["GLS", "Growth Lift Studio Agency"],
-      "url": "https://growthliftstudio.in/"
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Growth Lift Studio",
-      "url": "https://growthliftstudio.in",
-      "founder": {
-        "@type": "Person",
-        "name": "Binayak Dey"
-      },
-      "description": "Performance-based lead generation agency specializing in Facebook Ads and Google Ads for US home improvement contractors including bathroom remodeling, kitchen remodeling, roofing, HVAC, plumbing, and window replacement businesses.",
-      "priceRange": "$1,500 setup + 1.5% of closed job value",
-      "areaServed": {
-        "@type": "Country",
-        "name": "United States"
-      },
-      "sameAs": [
-        "https://www.instagram.com/growthliftstudio/",
-        "https://www.facebook.com/profile.php?id=61552669001037",
-        "https://www.linkedin.com/in/binayakdey/",
-        "https://www.youtube.com/@Growthliftstudio"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Lead Generation Services",
-        "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Facebook Ads for Home Improvement Contractors"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Google Ads for Remodeling Contractors"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lead Generation for Roofing Contractors"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lead Generation for HVAC & Plumbing Businesses"}}
-        ]
-      },
-      "knowsAbout": ["Facebook Ads","Google Ads","Lead Generation","Bathroom Remodeling Marketing","Kitchen Remodeling Marketing","Roofing Contractor Marketing","HVAC Marketing","Plumbing Contractor Marketing","Home Improvement Advertising","Performance-Based Marketing"]
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Facebook Ads Lead Generation",
-      "name": "Facebook Ads for Home Improvement Contractors",
-      "provider": {"@type": "ProfessionalService", "name": "Growth Lift Studio", "url": "https://growthliftstudio.in"},
-      "description": "Full-service Facebook and Instagram Ads management for home improvement contractors in the US including remodeling, roofing, HVAC, and plumbing. Includes creative production, audience targeting, A/B testing, and ongoing optimization.",
-      "areaServed": "United States",
-      "offers": {"@type": "Offer", "price": "1500", "priceCurrency": "USD", "description": "$1,500 setup fee + 1.5% of closed job value. First 5 qualified appointments free."}
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Google Ads Lead Generation",
-      "name": "Google Ads for Home Improvement Contractors",
-      "provider": {"@type": "ProfessionalService", "name": "Growth Lift Studio", "url": "https://growthliftstudio.in"},
-      "description": "Google Search and Display Ads management for home improvement contractors including remodeling, roofing, HVAC, and plumbing businesses across the United States.",
-      "areaServed": "United States",
-      "offers": {"@type": "Offer", "price": "1500", "priceCurrency": "USD", "description": "$1,500 setup fee + 1.5% of closed job value. First 5 qualified appointments free."}
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://growthliftstudio.in/#website",
+          "name": "Growth Lift Studio",
+          "alternateName": ["GLS", "Growth Lift Studio Agency"],
+          "url": "https://growthliftstudio.in/",
+          "publisher": {"@id": "https://growthliftstudio.in/#organization"}
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://growthliftstudio.in/#organization",
+          "name": "Growth Lift Studio",
+          "url": "https://growthliftstudio.in",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://growthliftstudio.in/#logo",
+            "url": "https://growthliftstudio.in/GLS-icon-navy.svg.png",
+            "caption": "Growth Lift Studio"
+          },
+          "image": {"@id": "https://growthliftstudio.in/#logo"},
+          "founder": {"@id": "https://growthliftstudio.in/#founder"},
+          "description": "Performance-based lead generation agency specializing in Facebook Ads and Google Ads for US home improvement contractors including bathroom remodeling, kitchen remodeling, and window replacement businesses.",
+          "priceRange": "$$",
+          "areaServed": {
+            "@type": "Country",
+            "name": "United States"
+          },
+          "sameAs": [
+            "https://www.instagram.com/growthliftstudio/",
+            "https://www.facebook.com/profile.php?id=61552669001037",
+            "https://www.linkedin.com/in/binayakdey/",
+            "https://www.youtube.com/@Growthliftstudio"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Lead Generation Services",
+            "itemListElement": [
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Facebook Ads for Home Improvement Contractors"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Google Ads for Home Improvement Contractors"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lead Generation for Bathroom Remodeling Contractors"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lead Generation for Kitchen Remodeling Contractors"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lead Generation for Window Replacement Contractors"}}
+            ]
+          },
+          "knowsAbout": ["Facebook Ads","Google Ads","Lead Generation","Bathroom Remodeling Marketing","Kitchen Remodeling Marketing","Window Replacement Marketing","Home Improvement Advertising","Performance-Based Marketing"]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://growthliftstudio.in/#founder",
+          "name": "Binayak Dey",
+          "jobTitle": "Founder & Lead Strategist",
+          "url": "https://growthliftstudio.in/about",
+          "worksFor": {"@id": "https://growthliftstudio.in/#organization"},
+          "sameAs": ["https://www.linkedin.com/in/binayakdey/"]
+        },
+        {
+          "@type": "Service",
+          "@id": "https://growthliftstudio.in/#service-facebook-ads",
+          "serviceType": "Facebook Ads Lead Generation",
+          "name": "Facebook Ads for Home Improvement Contractors",
+          "provider": {"@id": "https://growthliftstudio.in/#organization"},
+          "description": "Full-service Facebook and Instagram Ads management for US home improvement contractors including bathroom remodeling, kitchen remodeling, and window replacement. Includes creative production, audience targeting, A/B testing, and ongoing optimization.",
+          "areaServed": "United States",
+          "offers": {"@type": "Offer", "price": "1500", "priceCurrency": "USD", "description": "$1,500 setup fee + 1.5% of closed job value. First 5 qualified appointments free."}
+        },
+        {
+          "@type": "Service",
+          "@id": "https://growthliftstudio.in/#service-google-ads",
+          "serviceType": "Google Ads Lead Generation",
+          "name": "Google Ads for Home Improvement Contractors",
+          "provider": {"@id": "https://growthliftstudio.in/#organization"},
+          "description": "Google Search and Display Ads management for US home improvement contractors including bathroom remodeling, kitchen remodeling, and window replacement businesses.",
+          "areaServed": "United States",
+          "offers": {"@type": "Offer", "price": "1500", "priceCurrency": "USD", "description": "$1,500 setup fee + 1.5% of closed job value. First 5 qualified appointments free."}
+        }
+      ]
     }
     </script>
 
