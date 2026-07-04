@@ -39,6 +39,13 @@
   .glass-card {
     @apply bg-brand-cloud border border-zinc-200 backdrop-blur-[10px];
   }
+  /* Colored, diffused elevation — reads as depth on light surfaces where a hard shadow would vanish */
+  .elev-soft {
+    box-shadow: 0 1px 2px rgba(13, 27, 42, 0.05), 0 18px 40px -18px rgba(13, 27, 42, 0.22);
+  }
+  .elev-cyan {
+    box-shadow: 0 1px 2px rgba(13, 27, 42, 0.04), 0 20px 45px -18px rgba(0, 120, 140, 0.3), 0 6px 16px -8px rgba(0, 194, 224, 0.2);
+  }
   .border-beam {
     @apply relative overflow-hidden;
   }
@@ -56,6 +63,15 @@
 @keyframes shimmer {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[marquee_28s_linear_infinite\] { animation: none; }
 }
 
 .no-scrollbar::-webkit-scrollbar {

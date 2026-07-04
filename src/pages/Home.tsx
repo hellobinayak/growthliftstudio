@@ -145,102 +145,141 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Credibility Section - Logos */}
-      <section className="relative z-10 py-16 md:py-20 bg-white border-y border-zinc-200/50 overflow-hidden">
-        {/* Blue-Shaded Gloss Layering */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,rgba(0,183,212,0.1),transparent)] opacity-70 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-cyan-50/10 to-white pointer-events-none" />
-        
-        {/* Diagonal Gloss Streak with Blue Tint */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -inset-[100%] aspect-square bg-[linear-gradient(45deg,transparent_25%,rgba(0,183,212,0.15)_50%,transparent_75%)] opacity-20 transform -translate-x-1/2 -translate-y-1/2 animate-[shimmer_15s_infinite] pointer-events-none" />
-        </div>
+      {/* Credibility Section - Trusted By Bar */}
+      <section className="relative z-10 py-16 md:py-24 bg-white border-y border-zinc-200/50 overflow-hidden">
+        {/* Ambient cyan glow */}
+        <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(ellipse_at_50%_0%,rgba(0,194,224,0.08),transparent_70%)] pointer-events-none" />
 
-        {/* Top Specular Highlight with Blue shadow */}
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent shadow-[0_1px_15px_rgba(0,183,212,0.3)]" />
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-100/50 to-transparent" />
-        
-        <div className="mx-auto max-w-7xl px-6 relative">
-          <div className="text-center mb-10 md:mb-16">
-            <p className="text-[11px] font-black uppercase tracking-[0.4em] text-brand-navy/30 mb-2">Industry Leaders</p>
-            <h2 className="text-xs md:text-sm font-sans font-black text-brand-navy/60 uppercase tracking-[0.2em]">Brands We Work With</h2>
-            <div className="h-px w-8 bg-brand-cyan/30 mx-auto mt-4" />
+        <div className="mx-auto max-w-6xl px-6 relative">
+          {/* Eyebrow pill */}
+          <div className="flex justify-center mb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 rounded-full border border-brand-cyan/20 bg-white px-4 py-1.5 elev-soft"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-brand-navy/70">Trusted by teams running on</span>
+            </motion.div>
           </div>
-          <div className="flex flex-wrap justify-center items-start gap-x-10 gap-y-10 sm:gap-x-16 md:gap-x-24 md:gap-y-12 transition-all duration-700">
-            {[
-              { icon: <MetaIcon />, name: "Meta" },
-              { icon: <GoogleIcon />, name: "Google" },
-              { icon: <InstagramIcon />, name: "Instagram" },
-              { icon: <StripeIcon />, name: "Stripe" },
-              { icon: <Layers className="h-6 w-6 text-brand-cyan relative z-10" />, name: "GoHighLevel" }
-            ].map((logo, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 0.6, y: 0 }}
-                whileHover={{ opacity: 1, scale: 1.1, y: -6 }}
-                viewport={{ once: true }}
-                transition={{ 
-                  delay: i * 0.1,
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 15
-                }}
-                className="flex flex-col items-center gap-4 justify-center filter grayscale group/logo text-center relative"
-              >
-                <div className="h-10 flex items-center justify-center transition-all duration-300 transform group-hover/logo:filter-none">
-                  <div className="h-10 w-10 bg-brand-navy rounded-lg flex items-center justify-center shadow-xl shadow-brand-navy/10 relative overflow-hidden group-hover/logo:bg-brand-cyan transition-colors">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
-                    {logo.icon}
-                  </div>
+
+          {/* Elevated marquee trust bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="group/bar relative mx-auto max-w-4xl rounded-2xl bg-white border border-zinc-200/80 overflow-hidden elev-soft"
+          >
+            {/* Edge fades */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+            <div className="flex w-max animate-[marquee_28s_linear_infinite] group-hover/bar:[animation-play-state:paused] py-6">
+              {[0, 1].map((dup) => (
+                <div key={dup} className="flex items-center gap-10 sm:gap-14 px-5 sm:px-7 shrink-0" aria-hidden={dup === 1}>
+                  {[
+                    { icon: <MetaIcon />, name: "Meta" },
+                    { icon: <GoogleIcon />, name: "Google" },
+                    { icon: <InstagramIcon />, name: "Instagram" },
+                    { icon: <StripeIcon />, name: "Stripe" },
+                    { icon: <Layers className="h-6 w-6 text-brand-cyan relative z-10" />, name: "GoHighLevel" }
+                  ].map((logo, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center gap-3 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300"
+                    >
+                      <div className="h-9 w-9 bg-brand-navy rounded-lg flex items-center justify-center relative overflow-hidden shrink-0">
+                        <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
+                        {logo.icon}
+                      </div>
+                      <span className="font-sans font-black text-sm tracking-tight text-brand-navy/70 whitespace-nowrap">
+                        {logo.name}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-                <span className="font-sans font-black text-[11px] tracking-[0.25em] text-brand-navy/40 group-hover/logo:text-brand-navy transition-all uppercase">
-                  {logo.name}
-                </span>
-                <div className="absolute -inset-4 bg-white/40 blur-xl opacity-0 group-hover/logo:opacity-100 transition-opacity -z-10" />
-              </motion.div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Value Proposition Section */}
       <section className="relative z-10 py-20 md:py-32 bg-white">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-16 md:mb-24">
-            <div>
-              <h2 className="text-sm font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-6">The Outcome</h2>
-              <p className="text-3xl sm:text-4xl md:text-6xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
-                Stop chasing inquiries. <br />
-                <span className="text-brand-cyan">Start booking jobs.</span>
-              </p>
-              <p className="text-xl text-zinc-500 leading-relaxed font-medium max-w-xl">
-                Most agencies measure success in 'leads'. We measure it in confirmed appointments and work on your crew's schedule.
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <InteractiveCard className="p-8 bg-zinc-50 border border-zinc-100 rounded-3xl group">
-                 <div className="h-10 w-10 bg-brand-cyan/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-cyan transition-colors">
-                    <Target className="h-5 w-5 text-brand-cyan group-hover:text-brand-navy transition-colors" />
-                 </div>
-                 <h3 className="text-lg font-black text-brand-navy mb-2">High Intent Only</h3>
-                 <p className="text-sm text-zinc-500 font-medium">We filter for intent so you don't waste time on price-shoppers.</p>
-              </InteractiveCard>
-              <InteractiveCard className="p-8 bg-zinc-50 border border-zinc-100 rounded-3xl group">
-                 <div className="h-10 w-10 bg-brand-cyan/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-cyan transition-colors">
-                    <TrendingUp className="h-5 w-5 text-brand-cyan group-hover:text-brand-navy transition-colors" />
-                 </div>
-                 <h3 className="text-lg font-black text-brand-navy mb-2">Predictable Flow</h3>
-                 <p className="text-sm text-zinc-500 font-medium">Stabilize your income with a pipeline that doesn't go silent.</p>
-              </InteractiveCard>
-              <InteractiveCard className="p-8 bg-zinc-50 border border-zinc-100 rounded-3xl group sm:col-span-2">
-                 <div className="h-10 w-10 bg-brand-cyan/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-cyan transition-colors">
-                    <Layers className="h-5 w-5 text-brand-cyan group-hover:text-brand-navy transition-colors" />
-                 </div>
-                 <h3 className="text-lg font-black text-brand-navy mb-2">Turnkey Operation</h3>
-                 <p className="text-sm text-zinc-500 font-medium">We handle the tech and targeting while you handle the tools. No extra management needed.</p>
-              </InteractiveCard>
-            </div>
+          <div className="max-w-2xl mb-12 md:mb-16">
+            <h2 className="text-sm font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-6">The Outcome</h2>
+            <p className="text-3xl sm:text-4xl md:text-6xl font-sans font-black text-brand-navy mb-8 tracking-tighter leading-tight">
+              Stop chasing inquiries. <br />
+              <span className="text-brand-cyan">Start booking jobs.</span>
+            </p>
+            <p className="text-xl text-zinc-500 leading-relaxed font-medium max-w-xl">
+              Most agencies measure success in 'leads'. We measure it in confirmed appointments that fit your crew's schedule.
+            </p>
+          </div>
+
+          {/* Bento grid */}
+          <div className="grid sm:grid-cols-3 gap-4">
+            {/* Feature card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -6 }}
+              className="sm:col-span-2 sm:row-span-2 relative overflow-hidden rounded-3xl bg-brand-navy p-8 md:p-10 elev-cyan"
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_0%,rgba(0,194,224,0.22),transparent_55%)] pointer-events-none" />
+              <div className="absolute -right-10 -bottom-10 h-48 w-48 rounded-full bg-brand-cyan/10 blur-3xl pointer-events-none" />
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="h-11 w-11 bg-brand-cyan rounded-xl flex items-center justify-center mb-6">
+                  <Target className="h-5 w-5 text-brand-navy" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-black text-white mb-3 tracking-tight">High-Intent Only</h3>
+                <p className="text-zinc-300 leading-relaxed font-medium max-w-sm mb-8">
+                  We filter for buying intent, so your crew spends time on homeowners ready to book—not price-shoppers.
+                </p>
+                <div className="mt-auto flex items-end gap-3 pt-6 border-t border-white/10">
+                  <span className="text-5xl md:text-6xl font-sans font-black text-brand-cyan leading-none">370+</span>
+                  <span className="text-sm text-zinc-400 pb-1 leading-tight">confirmed jobs booked<br />for our clients in 2025</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Small card 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              whileHover={{ y: -6 }}
+              className="group rounded-3xl bg-white border border-zinc-200/70 p-6 md:p-7 elev-soft"
+            >
+              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-brand-cyan/15 to-brand-cyan/5 flex items-center justify-center mb-4 group-hover:from-brand-cyan group-hover:to-brand-cyan transition-colors">
+                <TrendingUp className="h-5 w-5 text-brand-cyan-ink group-hover:text-brand-navy transition-colors" />
+              </div>
+              <h3 className="text-lg font-black text-brand-navy mb-1.5">Predictable Flow</h3>
+              <p className="text-sm text-zinc-500 font-medium leading-relaxed">A pipeline that doesn't go silent between seasons.</p>
+            </motion.div>
+
+            {/* Small card 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              whileHover={{ y: -6 }}
+              className="group rounded-3xl bg-white border border-zinc-200/70 p-6 md:p-7 elev-soft"
+            >
+              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-brand-cyan/15 to-brand-cyan/5 flex items-center justify-center mb-4 group-hover:from-brand-cyan group-hover:to-brand-cyan transition-colors">
+                <Layers className="h-5 w-5 text-brand-cyan-ink group-hover:text-brand-navy transition-colors" />
+              </div>
+              <h3 className="text-lg font-black text-brand-navy mb-1.5">Turnkey Build</h3>
+              <p className="text-sm text-zinc-500 font-medium leading-relaxed">We run the tech and targeting. You run the crew.</p>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -255,38 +294,45 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-stretch justify-between gap-4 lg:gap-2">
-            {[
-              { step: "01", title: "Audit", desc: "We study your service area, your competition, and exactly where your current pipeline is losing jobs. No guesswork — just a clear picture of what needs to be built." },
-              { step: "02", title: "Build", desc: "Your ad campaigns, booking system, and follow-up sequences are built and launched — fully done for you. You don't touch a single setting." },
-              { step: "03", title: "Optimize", desc: "Every week, we refine targeting, copy, and conversion points based on real data from your market. The system gets sharper the longer it runs." },
-              { step: "04", title: "Book", desc: "Qualified homeowners land directly on your calendar. You show up, run the estimate, and close the job. That's your only job." }
-            ].map((item, i, arr) => (
-              <React.Fragment key={i}>
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
-                  className="flex-1 group relative p-8 rounded-2xl bg-gradient-to-br from-white via-cyan-50/40 to-brand-cyan/5 border border-white shadow-xl shadow-brand-cyan/5 flex flex-col overflow-hidden cursor-default min-w-0"
-                >
-                  <div className="absolute top-0 -left-[100%] w-[200%] h-full bg-gradient-to-r from-transparent via-white/60 to-transparent -rotate-45 group-hover:left-[100%] transition-all duration-1000 pointer-events-none" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-cyan-ink mb-4 block relative z-10 transition-transform group-hover:translate-x-1">Phase {item.step}</span>
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-navy mb-4 relative z-10 tracking-tighter transition-all group-hover:text-brand-cyan group-hover:scale-[1.02] origin-left">
-                    {item.title}
-                  </h3>
-                  <p className="text-zinc-500 text-sm leading-relaxed relative z-10 font-medium">
-                    {item.desc}
-                  </p>
-                </motion.div>
-                {i < arr.length - 1 && (
-                  <div className="hidden lg:flex items-center justify-center z-20">
-                    <ArrowRight className="h-6 w-6 text-brand-cyan/30" />
+          <div className="relative">
+            {/* Connector rail (desktop) — ties the four steps into one journey */}
+            <div className="hidden lg:block absolute top-5 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-brand-cyan/10 via-brand-cyan/50 to-brand-cyan/10" />
+
+            <div className="grid lg:grid-cols-4 gap-6 lg:gap-5">
+              {[
+                { step: "01", title: "Audit", desc: "We study your service area, your competition, and exactly where your current pipeline is losing jobs. No guesswork — just a clear picture of what needs to be built." },
+                { step: "02", title: "Build", desc: "Your ad campaigns, booking system, and follow-up sequences are built and launched — fully done for you. You don't touch a single setting." },
+                { step: "03", title: "Optimize", desc: "Every week, we refine targeting, copy, and conversion points based on real data from your market. The system gets sharper the longer it runs." },
+                { step: "04", title: "Book", desc: "Qualified homeowners land directly on your calendar. You show up, run the estimate, and close the job. That's your only job." }
+              ].map((item, i) => (
+                <div key={i} className="relative flex flex-col">
+                  {/* Numbered node on the rail */}
+                  <div className="hidden lg:flex mx-auto mb-8 h-10 w-10 items-center justify-center rounded-full bg-brand-cyan text-brand-navy font-sans font-black text-xs relative z-10 ring-4 ring-zinc-50 shadow-[0_0_0_1px_rgba(0,194,224,0.4)]">
+                    {item.step}
                   </div>
-                )}
-              </React.Fragment>
-            ))}
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
+                    className="flex-1 group relative p-8 rounded-2xl bg-gradient-to-br from-white via-cyan-50/40 to-brand-cyan/5 border border-white shadow-xl shadow-brand-cyan/5 flex flex-col overflow-hidden cursor-default min-w-0"
+                  >
+                    {/* Ghost numeral — adds depth without touching the box style */}
+                    <span className="pointer-events-none absolute -top-4 right-2 text-8xl font-sans font-black text-brand-cyan/[0.06] leading-none select-none">{item.step}</span>
+                    <div className="absolute top-0 -left-[100%] w-[200%] h-full bg-gradient-to-r from-transparent via-white/60 to-transparent -rotate-45 group-hover:left-[100%] transition-all duration-1000 pointer-events-none" />
+                    <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-cyan-ink mb-4 block relative z-10 transition-transform group-hover:translate-x-1 lg:hidden">Phase {item.step}</span>
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-navy mb-4 relative z-10 tracking-tighter transition-all group-hover:text-brand-cyan group-hover:scale-[1.02] origin-left">
+                      {item.title}
+                    </h3>
+                    <p className="text-zinc-500 text-sm leading-relaxed relative z-10 font-medium">
+                      {item.desc}
+                    </p>
+                  </motion.div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
