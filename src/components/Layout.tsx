@@ -196,74 +196,77 @@ const navLinks = [
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-zinc-100 pt-24 pb-12 bg-white">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-20">
+      <footer className="relative z-10 bg-brand-navy text-white overflow-hidden">
+        {/* Ambient cyan glow */}
+        <div className="absolute inset-x-0 top-0 h-64 bg-[radial-gradient(ellipse_at_70%_-20%,rgba(0,194,224,0.15),transparent_70%)] pointer-events-none" />
+
+        <div className="mx-auto max-w-7xl px-6 relative">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-10 md:gap-12 pt-16 md:pt-24 pb-12">
             {/* Brand Column */}
             <div className="col-span-2">
               <div className="flex items-center gap-3 mb-6">
-                <div className="h-10 w-10 overflow-hidden flex items-center justify-center">
-                  <img 
-                    src="/GLS-icon-navy.svg.png" 
-                    alt="Growth Lift Studio Logo" 
+                <div className="h-10 w-10 rounded-xl bg-white/10 ring-1 ring-white/10 overflow-hidden flex items-center justify-center">
+                  <img
+                    src="/GLS-icon-navy.svg.png"
+                    alt="Growth Lift Studio Logo"
                     className="h-full w-full object-cover"
                     width="40"
                     height="40"
                     loading="lazy"
                   />
                 </div>
-                <span className="font-sans font-black text-xl tracking-tight text-brand-navy">Growth Lift Studio</span>
+                <span className="font-sans font-black text-xl tracking-tight text-white">Growth Lift Studio</span>
               </div>
-              <p className="text-zinc-500 max-w-xs leading-relaxed mb-8">
+              <p className="text-zinc-400 max-w-xs leading-relaxed mb-8">
                 Building predictable, high-velocity revenue pipelines for home service businesses across the US.
               </p>
-              <div className="flex gap-6">
-                <a href="https://www.instagram.com/growthliftstudio/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page">
-                  <Instagram className="h-5 w-5 text-zinc-400 hover:text-brand-cyan transition-colors cursor-pointer" />
+              <div className="flex gap-3">
+                <a href="https://www.instagram.com/growthliftstudio/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page" className="h-10 w-10 rounded-xl bg-white/5 ring-1 ring-white/10 flex items-center justify-center text-zinc-300 hover:bg-brand-cyan hover:text-brand-navy transition-colors">
+                  <Instagram className="h-5 w-5" />
                 </a>
-                <a href="https://www.facebook.com/profile.php?id=61552669001037" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
-                  <Facebook className="h-5 w-5 text-zinc-400 hover:text-brand-cyan transition-colors cursor-pointer" />
+                <a href="https://www.facebook.com/profile.php?id=61552669001037" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page" className="h-10 w-10 rounded-xl bg-white/5 ring-1 ring-white/10 flex items-center justify-center text-zinc-300 hover:bg-brand-cyan hover:text-brand-navy transition-colors">
+                  <Facebook className="h-5 w-5" />
                 </a>
-                <a href="https://www.linkedin.com/in/binayakdey/" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn profile">
-                  <Linkedin className="h-5 w-5 text-zinc-400 hover:text-brand-cyan transition-colors cursor-pointer" />
+                <a href="https://www.linkedin.com/in/binayakdey/" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn profile" className="h-10 w-10 rounded-xl bg-white/5 ring-1 ring-white/10 flex items-center justify-center text-zinc-300 hover:bg-brand-cyan hover:text-brand-navy transition-colors">
+                  <Linkedin className="h-5 w-5" />
                 </a>
-                <a href="https://www.youtube.com/@Growthliftstudio" target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel">
-                  <Youtube className="h-5 w-5 text-zinc-400 hover:text-brand-cyan transition-colors cursor-pointer" />
+                <a href="https://www.youtube.com/@Growthliftstudio" target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel" className="h-10 w-10 rounded-xl bg-white/5 ring-1 ring-white/10 flex items-center justify-center text-zinc-300 hover:bg-brand-cyan hover:text-brand-navy transition-colors">
+                  <Youtube className="h-5 w-5" />
                 </a>
               </div>
             </div>
 
             {/* Links Columns */}
             <div>
-              <h3 className="font-sans font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-6">Expertise</h3>
-              <ul className="space-y-4 text-sm font-bold text-zinc-500">
-                <li><Link to="/services" className="hover:text-brand-cyan transition-colors">Services</Link></li>
-                <li><Link to="/results" className="hover:text-brand-cyan transition-colors">Case Studies</Link></li>
-                <li><Link to="/testimonials" className="hover:text-brand-cyan transition-colors">Testimonials</Link></li>
-                <li><a href="/#process" className="hover:text-brand-cyan transition-colors">Our Process</a></li>
+              <h3 className="font-sans font-black text-[11px] uppercase tracking-[0.25em] text-brand-cyan mb-6">Expertise</h3>
+              <ul className="space-y-4 text-sm font-bold text-zinc-400">
+                <li><Link to="/services" className="hover:text-white transition-colors">Services</Link></li>
+                <li><Link to="/results" className="hover:text-white transition-colors">Case Studies</Link></li>
+                <li><Link to="/testimonials" className="hover:text-white transition-colors">Testimonials</Link></li>
+                <li><a href="/#process" className="hover:text-white transition-colors">Our Process</a></li>
               </ul>
             </div>
 
             <div>
-              <h3 className="font-sans font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-6">Resources</h3>
-             <ul className="space-y-4 text-sm font-bold text-zinc-500">
-                <li><Link to="/about" className="hover:text-brand-cyan transition-colors">About Us</Link></li>
-                <li><Link to="/faq" className="hover:text-brand-cyan transition-colors">FAQ</Link></li>
-                <li><Link to="/blog" className="hover:text-brand-cyan transition-colors">Blog</Link></li>
-                <li><Link to="/contact" className="hover:text-brand-cyan transition-colors">Contact</Link></li>
+              <h3 className="font-sans font-black text-[11px] uppercase tracking-[0.25em] text-brand-cyan mb-6">Resources</h3>
+             <ul className="space-y-4 text-sm font-bold text-zinc-400">
+                <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
+                <li><Link to="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
+                <li><Link to="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+                <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
               </ul>
             </div>
 
             <div>
-              <h3 className="font-sans font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-6">Legal</h3>
-              <ul className="space-y-4 text-sm font-bold text-zinc-500">
-                <li><Link to="/privacy-policy" className="hover:text-brand-cyan transition-colors">Privacy Policy</Link></li>
-                <li><Link to="/terms-conditions" className="hover:text-brand-cyan transition-colors">Terms & Conditions</Link></li>
+              <h3 className="font-sans font-black text-[11px] uppercase tracking-[0.25em] text-brand-cyan mb-6">Legal</h3>
+              <ul className="space-y-4 text-sm font-bold text-zinc-400">
+                <li><Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                <li><Link to="/terms-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link></li>
               </ul>
             </div>
           </div>
 
-          <div className="pt-12 border-t border-zinc-100 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="pt-8 pb-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-xs font-bold text-zinc-500 uppercase tracking-[0.3em]">Growth Lift Studio © 2026</p>
             <div className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-brand-cyan animate-pulse" />

@@ -103,9 +103,9 @@ export default function Contact() {
                   <div className="h-14 w-14 shrink-0 bg-brand-cyan/5 rounded-2xl flex items-center justify-center group-hover:bg-brand-cyan/10 transition-colors">
                     <Mail className="h-6 w-6 text-brand-cyan" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">Email</p>
-                    <a href="mailto:binayak@growthliftstudio.in" className="text-lg sm:text-xl font-black text-brand-navy hover:text-brand-cyan transition-colors">binayak@growthliftstudio.in</a>
+                    <a href="mailto:binayak@growthliftstudio.in" className="text-base sm:text-xl font-black text-brand-navy hover:text-brand-cyan transition-colors break-all">binayak@growthliftstudio.in</a>
                   </div>
                 </div>
 

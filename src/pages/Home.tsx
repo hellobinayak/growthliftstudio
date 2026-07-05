@@ -161,7 +161,7 @@ export default function Home() {
               className="inline-flex items-center gap-2 rounded-full border border-brand-cyan/20 bg-white px-4 py-1.5 elev-soft"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-brand-navy/70">Trusted by teams running on</span>
+              <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-brand-navy/70">The platforms we build on</span>
             </motion.div>
           </div>
 
