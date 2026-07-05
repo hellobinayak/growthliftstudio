@@ -365,6 +365,9 @@ export default function Home() {
                 Systems built for <br />
                 <span className="text-brand-cyan">owner-operators.</span>
               </p>
+              <p className="text-zinc-400 mt-5 text-base sm:text-lg leading-relaxed max-w-md font-medium">
+                Four connected stages&mdash;one system that turns ad spend into booked jobs.
+              </p>
             </div>
             <Link to="/services" className="w-full sm:w-auto lg:flex-shrink-0">
               <Button variant="outline" className="w-full sm:w-auto border-white/10 hover:border-brand-cyan text-white font-bold px-8 h-14 bg-white/5 backdrop-blur-sm">
@@ -375,22 +378,30 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { title: "Advertising", desc: "Local targeting where homeowners are looking.", icon: <Target className="h-5 w-5" /> },
-              { title: "Booking Systems", desc: "Turning interest into scheduled appointments.", icon: <Calendar className="h-5 w-5" /> },
-              { title: "Follow-Up", desc: "Automated sequences so no lead is missed.", icon: <TrendingUp className="h-5 w-5" /> },
-              { title: "Pipeline Management", desc: "Visibility into your revenue future.", icon: <Layers className="h-5 w-5" /> }
+              { n: "01", title: "Advertising", desc: "Local targeting that puts you in front of homeowners actively looking.", icon: <Target className="h-6 w-6" /> },
+              { n: "02", title: "Booking Systems", desc: "Turning that interest into scheduled, confirmed appointments.", icon: <Calendar className="h-6 w-6" /> },
+              { n: "03", title: "Follow-Up", desc: "Automated sequences so no lead ever slips through the cracks.", icon: <TrendingUp className="h-6 w-6" /> },
+              { n: "04", title: "Pipeline Management", desc: "Full visibility—know every job and every stage that's coming.", icon: <Layers className="h-6 w-6" /> }
             ].map((s, i) => (
-              <InteractiveCard key={i} className="group relative p-8 rounded-2xl bg-gradient-to-br from-white via-cyan-50/40 to-brand-cyan/5 border border-white shadow-xl shadow-brand-cyan/5 overflow-hidden transition-all hover:-translate-y-2">
+              <InteractiveCard key={i} className="group relative p-8 rounded-2xl bg-gradient-to-br from-white via-cyan-50/40 to-brand-cyan/5 border border-white shadow-xl shadow-brand-cyan/5 overflow-hidden transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-cyan/10">
+                <Link to="/services" className="absolute inset-0 z-20" aria-label={`${s.title} — view all services`} />
                 <div className="absolute top-0 -left-[100%] w-[200%] h-full bg-gradient-to-r from-transparent via-white/60 to-transparent -rotate-45 group-hover:left-[100%] transition-all duration-1000 pointer-events-none" />
-                
-                <div className="h-10 w-10 bg-brand-cyan/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-cyan transition-colors border border-brand-cyan/20 relative z-10">
+
+                <span className="absolute top-6 right-7 text-3xl font-black text-brand-navy/[0.07] group-hover:text-brand-cyan/25 transition-colors tracking-tight tabular-nums z-10">{s.n}</span>
+
+                <div className="h-12 w-12 bg-brand-cyan/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-cyan transition-colors border border-brand-cyan/20 relative z-10">
                   <div className="text-brand-cyan group-hover:text-brand-navy transition-colors">
                     {s.icon}
                   </div>
                 </div>
-                
+
                 <h3 className="text-xl font-black text-brand-navy mb-3 tracking-tight relative z-10 group-hover:text-brand-cyan transition-colors">{s.title}</h3>
-                <p className="text-sm text-zinc-500 font-medium leading-relaxed relative z-10">{s.desc}</p>
+                <p className="text-sm text-zinc-500 font-medium leading-relaxed relative z-10 mb-6">{s.desc}</p>
+
+                <div className="mt-auto pt-2 relative z-10 flex items-center gap-1.5 text-[11px] font-black uppercase tracking-[0.15em] text-zinc-400 group-hover:text-brand-cyan-ink transition-colors">
+                  See how it works
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                </div>
               </InteractiveCard>
             ))}
           </div>
