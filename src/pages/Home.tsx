@@ -15,29 +15,34 @@ import { useSurvey } from "../context/SurveyContext";
 import TestimonialSlider from "../components/TestimonialSlider";
 import { SEO } from "../components/SEO";
 
-const MetaIcon = () => (
-  <svg viewBox="0 0 24 24" className="h-6 w-6 text-brand-cyan group-hover:text-brand-navy transition-colors relative z-10" fill="currentColor" width="24" height="24" aria-hidden="true">
-    <path d="M16.51 8A4.48 4.48 0 0 0 13 9.68a4.48 4.48 0 0 0-3.5-1.68A4.5 4.5 0 0 0 5 12.5 4.5 4.5 0 0 0 9.5 17a4.48 4.48 0 0 0 3.5-1.68a4.48 4.48 0 0 0 3.5 1.68 4.5 4.5 0 0 0 4.5-4.5A4.5 4.5 0 0 0 16.51 8zM9.5 14.5a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2zm7 0a2 2 0 0 1-2-2 2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2z"/>
-  </svg>
-);
-
-const GoogleIcon = () => (
-  <svg viewBox="0 0 24 24" className="h-6 w-6 text-brand-cyan group-hover:text-brand-navy transition-colors relative z-10" fill="currentColor" width="24" height="24" aria-hidden="true">
-    <path d="M12.24 10.285V14.4h6.887c-.648 2.41-2.519 4.113-5.136 4.113A5.727 5.727 0 0 1 8.24 12.8a5.727 5.727 0 0 1 5.75-5.713c1.558 0 2.923.616 3.96 1.623l3.076-3.076C19.167 3.868 16.793 2.7 13.99 2.7A9.13 9.13 0 0 0 4.88 11.8a9.13 9.13 0 0 0 9.11 9.1c5.448 0 9.12-3.834 9.12-9.285 0-.585-.052-1.154-.15-1.702H12.24Z"/>
-  </svg>
-);
-
-const InstagramIcon = () => (
-  <svg viewBox="0 0 24 24" className="h-6 w-6 text-brand-cyan group-hover:text-brand-navy transition-colors relative z-10" fill="currentColor" width="24" height="24" aria-hidden="true">
-    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-  </svg>
-);
-
-const StripeIcon = () => (
-  <svg viewBox="0 0 24 24" className="h-6 w-6 text-brand-cyan group-hover:text-brand-navy transition-colors relative z-10" fill="currentColor" width="24" height="24" aria-hidden="true">
-    <path d="M13.994 10.052c0-1.026-.82-1.41-2.18-1.41-1.576 0-3.155.632-4.103 1.155L6.685 6.2c1.233-.67 3.32-1.2 5.568-1.2 4.07 0 6.69 2.012 6.69 5.674v8.136c0 .99.198 1.558.423 1.834h-4.664c-.167-.282-.32-.734-.32-1.346h-.06c-.958.948-2.607 1.604-4.52 1.604-3.4 0-5.815-1.92-5.815-5.012 0-3.792 3.125-5.184 7.69-5.184h2.317zm-2.31 3.518c-1.91 0-3.204.426-3.204 1.488 0 .8.694 1.2 1.892 1.2 1.706 0 3.205-.726 3.205-2.07v-.618h-1.893z"/>
-  </svg>
-);
+// Real brand marks for the "platforms we build on" bar.
+// Exact single-path logos from Simple Icons (simpleicons.org), inlined so the
+// live site has no external logo dependency. Rendered in brand color and
+// desaturated at rest — see the marquee below. GoHighLevel has no Simple Icons
+// mark, so it renders as a wordmark (path omitted).
+const PLATFORM_LOGOS: { name: string; color: string; path?: string }[] = [
+  {
+    name: "Meta",
+    color: "#0467DF",
+    path: "M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z",
+  },
+  {
+    name: "Google",
+    color: "#4285F4",
+    path: "M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z",
+  },
+  {
+    name: "Stripe",
+    color: "#635BFF",
+    path: "M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.594-7.305h.003z",
+  },
+  {
+    name: "Twilio",
+    color: "#F22F46",
+    path: "M12 0C5.381-.008.008 5.352 0 11.971V12c0 6.64 5.359 12 12 12 6.64 0 12-5.36 12-12 0-6.641-5.36-12-12-12zm0 20.801c-4.846.015-8.786-3.904-8.801-8.75V12c-.014-4.846 3.904-8.786 8.75-8.801H12c4.847-.014 8.786 3.904 8.801 8.75V12c.015 4.847-3.904 8.786-8.75 8.801H12zm5.44-11.76c0 1.359-1.12 2.479-2.481 2.479-1.366-.007-2.472-1.113-2.479-2.479 0-1.361 1.12-2.481 2.479-2.481 1.361 0 2.481 1.12 2.481 2.481zm0 5.919c0 1.36-1.12 2.48-2.481 2.48-1.367-.008-2.473-1.114-2.479-2.48 0-1.359 1.12-2.479 2.479-2.479 1.361-.001 2.481 1.12 2.481 2.479zm-5.919 0c0 1.36-1.12 2.48-2.479 2.48-1.368-.007-2.475-1.113-2.481-2.48 0-1.359 1.12-2.479 2.481-2.479 1.358-.001 2.479 1.12 2.479 2.479zm0-5.919c0 1.359-1.12 2.479-2.479 2.479-1.367-.007-2.475-1.112-2.481-2.479 0-1.361 1.12-2.481 2.481-2.481 1.358 0 2.479 1.12 2.479 2.481z",
+  },
+  { name: "GoHighLevel", color: "#2A3EC4" },
+];
 
 // Kept at module scope so its array identity is stable across renders
 // (prevents the typewriter effect from resetting on every parent re-render).
@@ -192,21 +197,16 @@ export default function Home() {
             <div className="flex w-max animate-[marquee_28s_linear_infinite] group-hover/bar:[animation-play-state:paused] py-6">
               {[0, 1].map((dup) => (
                 <div key={dup} className="flex items-center gap-10 sm:gap-14 px-5 sm:px-7 shrink-0" aria-hidden={dup === 1}>
-                  {[
-                    { icon: <MetaIcon />, name: "Meta" },
-                    { icon: <GoogleIcon />, name: "Google" },
-                    { icon: <InstagramIcon />, name: "Instagram" },
-                    { icon: <StripeIcon />, name: "Stripe" },
-                    { icon: <Layers className="h-6 w-6 text-brand-cyan relative z-10" />, name: "GoHighLevel" }
-                  ].map((logo, i) => (
+                  {PLATFORM_LOGOS.map((logo, i) => (
                     <div
                       key={i}
-                      className="flex items-center gap-3 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-300"
+                      className="flex items-center gap-2.5 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300"
                     >
-                      <div className="h-9 w-9 bg-brand-navy rounded-lg flex items-center justify-center relative overflow-hidden shrink-0">
-                        <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none" />
-                        {logo.icon}
-                      </div>
+                      {logo.path && (
+                        <svg viewBox="0 0 24 24" className="h-6 w-6 shrink-0" fill={logo.color} aria-hidden="true">
+                          <path d={logo.path} />
+                        </svg>
+                      )}
                       <span className="font-sans font-black text-sm tracking-tight text-brand-navy/70 whitespace-nowrap">
                         {logo.name}
                       </span>
