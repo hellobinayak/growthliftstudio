@@ -2,9 +2,8 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { 
   ArrowRight, 
-  TrendingUp, 
-  Target, 
-  CheckCircle2,
+  TrendingUp,
+  Target,
   Layers,
   Calendar
 } from "lucide-react";
@@ -114,26 +113,39 @@ export default function Home() {
                 ariaLabel="Built for home improvement pros"
               />
             </div>
-            <h1 className="text-4xl sm:text-6xl md:text-8xl font-sans font-extrabold tracking-tighter mb-8 leading-[0.95] text-balance text-brand-navy">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-sans font-extrabold tracking-tighter mb-6 leading-[0.95] text-balance text-brand-navy">
               Your calendar shouldn’t <br />
               <span className="shimmer-text text-brand-cyan">have empty slots.</span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-zinc-600 max-w-3xl mx-auto mb-6 text-balance leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-zinc-600 max-w-3xl mx-auto mb-10 text-balance leading-relaxed">
               We build systems that bring in <span className="text-brand-navy font-bold">booked, confirmed jobs</span>—not inquiries you have to chase.
             </p>
-            <div className="flex items-center justify-center gap-2 mb-12">
-              <CheckCircle2 className="h-4 w-4 text-brand-cyan" />
-              <p className="text-sm font-bold text-zinc-700 tracking-tight">
-                370+ confirmed jobs booked for our clients in 2025.
-              </p>
+
+            {/* Proof stat strip */}
+            <div className="flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-10 gap-y-5 mb-10">
+              {[
+                { value: "370+", label: "Jobs booked in 2025" },
+                { value: "First 5", label: "Appointments free" },
+                { value: "Pay on close", label: "Only when you win" },
+              ].map((stat, i) => (
+                <React.Fragment key={stat.value}>
+                  {i > 0 && <div className="hidden sm:block h-9 w-px bg-zinc-200/80" aria-hidden="true" />}
+                  <div className="text-center">
+                    <div className="text-xl sm:text-2xl font-black tracking-tight text-brand-navy">{stat.value}</div>
+                    <div className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500 mt-0.5">{stat.label}</div>
+                  </div>
+                </React.Fragment>
+              ))}
             </div>
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
-              <Button 
+              <Button
                 onClick={openSurvey}
-                size="xl" 
+                size="xl"
                 className="bg-brand-navy text-white hover:bg-brand-navy/90 shadow-xl shadow-brand-navy/20 w-full sm:w-auto"
               >
                 Book a Call
+                <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
               </Button>
               <Link to="/results">
                 <Button variant="outline" size="xl" className="border-zinc-200 text-zinc-600 hover:bg-zinc-50 w-full sm:w-auto">
