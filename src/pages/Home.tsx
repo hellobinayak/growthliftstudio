@@ -126,21 +126,27 @@ export default function Home() {
               We build systems that bring in <span className="text-brand-navy font-bold">booked, confirmed jobs</span>—not inquiries you have to chase.
             </p>
 
-            {/* Proof stat strip */}
-            <div className="flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-10 gap-y-5 mb-10">
-              {[
-                { value: "370+", label: "Jobs booked in 2025" },
-                { value: "First 5", label: "Appointments free" },
-                { value: "Pay on close", label: "Only when you win" },
-              ].map((stat, i) => (
-                <React.Fragment key={stat.value}>
-                  {i > 0 && <div className="hidden sm:block h-9 w-px bg-zinc-200/80" aria-hidden="true" />}
-                  <div className="text-center">
-                    <div className="text-xl sm:text-2xl font-black tracking-tight text-brand-navy">{stat.value}</div>
-                    <div className="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500 mt-0.5">{stat.label}</div>
-                  </div>
-                </React.Fragment>
-              ))}
+            {/* Proof stat strip — carded, cyan-tinted panel with a bright left-edge accent */}
+            <div className="flex justify-center mb-10">
+              <div className="relative w-full max-w-3xl overflow-hidden rounded-2xl border border-brand-cyan/25 bg-[linear-gradient(120deg,rgba(0,194,224,0.10),rgba(0,194,224,0.04))] px-4 sm:px-10 py-6 elev-soft">
+                {/* Bright cyan left-edge accent bar */}
+                <div className="absolute inset-y-0 left-0 w-1 bg-brand-cyan" aria-hidden="true" />
+                <div className="flex items-center justify-center gap-x-6 sm:gap-x-12">
+                  {[
+                    { value: "370+", label: "Jobs booked in 2025" },
+                    { value: "First 5", label: "Appointments free" },
+                    { value: "Pay on close", label: "Only when you win" },
+                  ].map((stat, i) => (
+                    <React.Fragment key={stat.value}>
+                      {i > 0 && <div className="h-10 w-px shrink-0 bg-brand-cyan/25" aria-hidden="true" />}
+                      <div className="text-center">
+                        <div className="text-lg sm:text-2xl font-black tracking-tight text-brand-navy whitespace-nowrap">{stat.value}</div>
+                        <div className="text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.12em] sm:tracking-[0.15em] text-zinc-500 mt-1 whitespace-nowrap">{stat.label}</div>
+                      </div>
+                    </React.Fragment>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
