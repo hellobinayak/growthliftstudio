@@ -1,4 +1,6 @@
 {
+  "buildCommand": "vite build",
+  "outputDirectory": "dist",
   "redirects": [
     { "source": "/blog/ppc-ads-kitchen-remodeling-contractors", "destination": "/blog/google-ads-kitchen-remodeling-contractors", "statusCode": 308 },
     { "source": "/:path*", "has": [{ "type": "host", "value": "www.growthliftstudio.in" }], "destination": "https://growthliftstudio.in/:path*", "statusCode": 308 }
