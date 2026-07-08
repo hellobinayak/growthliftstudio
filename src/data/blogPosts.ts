@@ -168,10 +168,10 @@ Or skip the trial and error and book a call with us. We'll tell you exactly what
     slug: "google-ads-kitchen-remodeling-contractors",
     title: "Google Ads for Kitchen Remodeling Contractors: The Complete 2026 Guide",
     metaDescription:
-      "Learn how kitchen remodeling contractors can leverage high-intent Google Search Ads to book $25,000+ renovation projects. Discover exact keyword strategies, negative keyword structures, and landing page designs that convert.",
+      "Google Ads (PPC) for kitchen remodeling contractors: the exact keywords, budgets, and campaign structure that book $30,000+ renovation jobs in 2026.",
     date: "May 24, 2026",
     datePublished: "2026-05-24",
-    dateModified: "2026-05-24",
+    dateModified: "2026-07-08",
     readTime: "7 min read",
     category: "Google Ads",
     excerpt:
@@ -190,9 +190,11 @@ When someone types "kitchen remodeling contractor near me" or "luxury kitchen re
 
 This is what we call High-Intent Traffic. And for a high-ticket service like kitchen remodeling — where typical mid-range projects range from $30,000 to $75,000+ — it is the absolute gold standard of lead generation.
 
+Quick note on terminology: you'll see this called both "Google Ads" and "PPC" (pay-per-click). They're the same thing — Google Ads is simply the biggest PPC platform, so "PPC ads for kitchen remodeling" and "Google Ads for kitchen remodeling" mean the exact same campaign. If you also run bathrooms, windows, or other trades, the same engine powers all of them — see our [complete Google Ads guide for home improvement contractors](https://growthliftstudio.in/blog/google-ads-home-improvement-contractors) for the cross-niche playbook.
+
 ---
 
-## Why Google Ads makes massive sense for kitchen remodelers
+## Why Google Ads (PPC) makes massive sense for kitchen remodelers
 
 Kitchen remodeling is not an impulse buy. Homeowners think about it for months, sometimes years, before making a move.
 
@@ -818,6 +820,207 @@ Window replacement is one of the best-fit niches in all of home improvement for 
 The contractors who win aren't spending more than their competitors. They're timing their spend to the season, tightening their keywords, sending traffic to a page built to convert, and calling every lead before anyone else does.
 
 If you want a clear picture of what a properly built Google Ads campaign would look like for your window replacement business — realistic budget, expected cost per lead, and a season-by-season plan — book a free strategy call with Growth Lift Studio. We'll run the numbers for your specific market and show you exactly how many leads are waiting for you right now.
+    `,
+  },
+  {
+    slug: "google-ads-home-improvement-contractors",
+    title: "Google Ads for Home Improvement Contractors (2026 Guide)",
+    metaDescription:
+      "How home improvement contractors use Google Ads (PPC) to book high-value jobs in 2026 — campaign structure, realistic budgets, negative keywords, and a proven per-niche playbook.",
+    date: "July 8, 2026",
+    datePublished: "2026-07-08",
+    dateModified: "2026-07-08",
+    readTime: "11 min read",
+    category: "Google Ads",
+    excerpt:
+      "Whether you remodel kitchens, replace windows, or gut bathrooms, the Google Ads playbook that books high-ticket jobs is the same. Here's the complete 2026 system — and where your specific niche fits in.",
+    coverImage: "/images/google-ads-bathroom-remodeling.png",
+    content: `
+IMAGE::/images/google-ads-bathroom-remodeling.png::Google Ads for home improvement contractors — the campaign structure that books high-ticket jobs
+
+Google Ads is the fastest, most predictable way for home improvement contractors to put their business in front of homeowners at the exact moment they're ready to hire. Not "brand awareness." Not "impressions." Homeowners typing "kitchen remodeling contractor near me" or "window replacement company" into Google right now, wallet already half open.
+
+This is the complete 2026 guide to running Google Ads (also called PPC, or pay-per-click) for a home improvement business — kitchen, bathroom, windows, roofing, decks, whatever you build. The specifics of each niche differ, but the engine underneath is identical. Get this engine right and you can turn ad spend into booked jobs on demand. Get it wrong and you'll donate your budget to Google and swear off ads forever.
+
+Let's build it right.
+
+---
+
+## Why Google Ads is the fastest lead channel for home improvement contractors
+
+Most lead channels make you wait. SEO takes six months to a year. Referrals trickle in on their own schedule. Facebook Ads work, but you're interrupting people who weren't thinking about their bathroom — you have to create the demand.
+
+Google Ads is different because the demand already exists. Every day, homeowners in your service area search for exactly what you do. Google Ads lets you skip the line and land at the top of that search the day you launch.
+
+Here's why that matters so much for home improvement specifically:
+
+- The intent is red-hot. Someone searching "bathroom remodel contractor" isn't browsing — they've decided to do the project and they're picking who to call.
+- The job values are high. A single closed kitchen or window job is worth $10,000–$75,000, so you can afford a $150–$280 lead when one signed contract pays for months of ad spend.
+- The decision cycle is short. Most home improvement projects go from first search to signed contract in 2–4 weeks — you see real ROI data fast, not six months later.
+- You control the faucet. Booked out? Turn it down. Need work next month? Turn it up. No other channel gives you that.
+
+That combination — high intent, high ticket, fast cycle, on-demand control — is why paid search is the backbone of nearly every predictable contractor lead pipeline we build.
+
+---
+
+## Google Ads, PPC, or Facebook Ads — what actually fits contractors?
+
+First, let's clear up the words, because homeowners and contractors use them interchangeably and it causes confusion.
+
+**"Google Ads" and "PPC" are the same thing.**
+
+PPC just means pay-per-click — you pay only when someone clicks your ad. Google Ads is the biggest PPC platform, so when contractors search "PPC ads for kitchen remodel company" or "kitchen remodeling PPC," they're looking for exactly what this guide covers. Same engine, different name.
+
+**Facebook Ads are a different tool for a different job.**
+
+The simplest way to think about it:
+
+- Google Ads is hunting. You show up for people already searching for your service — high intent, higher cost per click, faster to close.
+- Facebook Ads is fishing. You put a compelling before/after in front of homeowners who weren't searching yet and catch the ones quietly annoyed by their outdated space — lower intent, lower cost per lead, more nurturing required.
+
+IMAGE::/images/kitchen-hunting-vs-fishing-v2.png::Google Ads vs Facebook Ads for contractors — hunting high-intent searchers vs fishing for demand
+
+Neither is "better." They do different jobs. But if you only have the budget or bandwidth to run one channel, and you sell a high-ticket service homeowners actively search for, start with Google Ads. You're capturing demand that already exists instead of trying to manufacture it. Once your Google campaigns are profitable and consistent, layer Facebook on top to fill the funnel above them.
+
+The rest of this guide is about doing Google Ads right.
+
+---
+
+## The 4 fundamentals every contractor campaign needs
+
+Ninety percent of wasted ad spend comes from getting these four things wrong. Nail them and you're ahead of most contractors in your market — including the ones spending more than you.
+
+IMAGE::/images/kitchen-four-pillars-v2.png::The 4 fundamentals of a high-converting Google Ads campaign for home improvement contractors
+
+### 1. Match the campaign to buyer intent
+
+Bid on keywords that signal someone is ready to hire, not just researching. Terms with "contractor," "company," "near me," "installation," "estimate," or "quote" plus your city are gold. Broad, generic terms like "kitchen ideas," "bathroom inspiration," or "how much does a remodel cost" attract DIYers and window-shoppers who click your ad and never call.
+
+Use phrase match and exact match only for your first 60 days. Broad match hands Google permission to show your ad for anything vaguely related, and it will bleed your budget before you have the data to control it.
+
+### 2. Structure the campaign so you can read the data
+
+Run one focused Search campaign per service, split into tightly themed ad groups (high-intent service terms, project-specific terms, and estimate/quote terms). Write a separate ad for each group so the headline matches what the person typed. Someone searching "walk-in shower installation" should see an ad about walk-in showers — not a generic "we remodel bathrooms" headline. Message match is the difference between a 4% and a 12% conversion rate.
+
+### 3. Build the negative keyword shield before you spend a dollar
+
+This is where 80% of wasted budget hides. Google will happily show your "kitchen remodeling" ad for "kitchen remodeling jobs," "DIY kitchen cabinets," "cheap kitchen countertops," and "kitchen remodeling software." A negative keyword list tells Google not to. Add these before launch, then review your Search Terms report every single week for the first 60 days and add more:
+
+- DIY, how to, do it yourself
+- cheap, affordable, budget, discount
+- jobs, hiring, career, salary, employment
+- ideas, inspiration, photos, pictures, gallery, software
+- any city or state outside your service area
+
+This one habit alone cuts wasted spend by 25–35%.
+
+### 4. Send traffic to a dedicated landing page — never your homepage
+
+Your homepage has ten things to click. A homeowner arriving from an ad gets overwhelmed and leaves. Every campaign needs its own page built for one job: capturing the lead. That means a headline matching your ad, real before/after photos of your actual work, one specific customer review visible without scrolling, a single clear call to action, and a sub-2-second load on mobile (over 60% of these searches happen on phones).
+
+And once the lead comes in — call within 5 minutes. Home improvement homeowners contact 3–5 companies. The first to call back usually wins the appointment, full stop.
+
+---
+
+## Realistic budgets and ROI by job value
+
+Let's talk real 2026 numbers — not the "$15 leads" fantasy you'll see in marketing blogs. Costs vary by niche and market, but here are honest ranges:
+
+IMAGE::/images/kitchen-roi-flow-v2.png::Google Ads ROI math for home improvement contractors — turning ad spend into booked jobs
+
+**Cost per click (CPC): $6–$22**
+
+Bathroom and window terms run cheaper; kitchen and major-metro terms run higher.
+
+**Cost per lead (CPL): $80–$300**
+
+Landing page quality is the single biggest variable — a dedicated page beats homepage traffic 2–3x.
+
+**Minimum viable monthly budget: $1,500–$2,000**
+
+Below that, the campaign can't gather enough data to optimize. Commit to at least 60 days before judging it — don't pull the plug at day 14 during the learning phase.
+
+Here's the math that makes it a no-brainer. Say you spend $2,000/month at a $150 cost per lead — that's about 13 leads. Book 1 in 3 into an estimate (roughly 4 appointments), then close half (2 jobs). On an average $18,000 project, that's $36,000 in signed contracts from $2,000 in spend — an 18x return. Even in a rough month where you close just one job, you've turned $2,000 into $18,000.
+
+That's why the only number that actually matters is cost per booked job — not cost per click, or even cost per lead. A $280 lead that becomes a $20,000 contract is cheap. A $60 lead that never answers the phone is expensive.
+
+---
+
+## Pick your service: the per-niche playbook
+
+The fundamentals above are universal, but each niche has its own quirks — seasonality, job values, keyword language, and the specific mistakes that drain budgets. We've written a detailed, no-fluff Google Ads guide for each of the core home improvement trades. Start with yours:
+
+**Kitchen remodeling**
+
+The highest-ticket, most competitive niche — which means the negative keyword shield and match types matter most here. Full breakdown of keywords, budgets, and the four pillars: [Google Ads for Kitchen Remodeling Contractors](https://growthliftstudio.in/blog/google-ads-kitchen-remodeling-contractors).
+
+**Bathroom remodeling**
+
+Lower job values than kitchens mean tighter margins and zero room for wasted spend. Here's the structure that delivers $150–$250 leads and a cost per booked job under $1,000: [Google Ads for Bathroom Remodeling Contractors](https://growthliftstudio.in/blog/google-ads-bathroom-remodeling-contractors).
+
+**Window replacement**
+
+Brutally seasonal and fast-closing — timing your budget to the fall and tax-refund peaks is the biggest lever. Here's the season-by-season plan: [Google Ads for Window Replacement Contractors](https://growthliftstudio.in/blog/google-ads-window-replacement-contractors).
+
+**Prefer Facebook, or want to run both?**
+
+For bathroom remodelers specifically, here's how to make Facebook Ads produce qualified leads at $50–$150 each: [Facebook Ads for Bathroom Remodeling Contractors](https://growthliftstudio.in/blog/facebook-ads-bathroom-remodeling-contractors).
+
+Roofing, siding, decks, HVAC, and general remodeling all follow the same four fundamentals — if you run one of those and want a plan built for your exact trade, that's a five-minute conversation.
+
+---
+
+## The 5 mistakes that burn contractor ad budgets
+
+Even contractors who set up a technically fine campaign lose money to these. Avoid all five:
+
+### 1. Leaving Search Partners and the Display Network on
+
+Google opts you into both by default. They almost never produce quality home improvement leads, but they spend your budget just as fast. Turn both off and run on Google Search only.
+
+### 2. Location targeting set to "Presence or interest"
+
+The default lets your ads show to people merely interested in your city — including someone three states away. Change it to "Presence only" so you're paying to reach people actually in your service area.
+
+### 3. Running without conversion tracking
+
+If you can't see which keywords and ads produce calls and form fills, Google optimizes for clicks instead of leads — exactly the wrong goal. Set up call tracking, form tracking, and a GA4 connection before you spend a dollar. Running ads without tracking isn't advertising; it's a donation to Google.
+
+### 4. Judging the campaign too early
+
+Google's algorithm needs data — roughly 2–3 weeks and a real budget — to exit the learning phase. Most contractors panic and quit at day 12, right before it starts performing. Commit to 60 days up front.
+
+### 5. Slow lead follow-up
+
+You can do everything else perfectly and still lose. A lead that sits for two hours is already talking to your competitor. Automate text and email alerts and call within 5 minutes, every time.
+
+IMAGE::/images/bath-launch-checklist-v2.png::Pre-launch checklist for home improvement contractors running Google Ads
+
+---
+
+## The Growth Lift Studio advantage
+
+Most agencies charge a $1,500–$3,000 monthly retainer whether your phone rings or not, then send you a report full of "impressions" and "click-through rates" while your calendar sits empty. They have no skin in the game.
+
+We work the opposite way:
+
+**We charge a $1,500 one-time setup fee to build your landing page and launch your campaign.**
+**After that, your first 5 qualified appointments are completely free.**
+**Once those are delivered, you pay just 1.5% of the value of the jobs you actually close.**
+
+Close a $20,000 remodel and our fee is $300. Don't close anything, and you don't pay us beyond the setup.
+
+We built it this way for one reason: we work exclusively with home improvement contractors, and we were tired of watching good builders get burned by agencies that got paid whether or not the work showed up.
+
+---
+
+## The bottom line
+
+Google Ads is the most predictable lead channel in home improvement because it captures demand that already exists — homeowners searching for your exact service, ready to hire. The engine is the same across every trade: match buyer intent, structure for clean data, shield your budget with negative keywords, send traffic to a page built to convert, and call every lead in 5 minutes.
+
+The contractors who win with Google Ads aren't spending more than their competitors. They're spending smarter — and following up faster.
+
+If you want a clear picture of what a properly built campaign would look like for your specific trade and city — realistic budget, expected cost per lead, and a 90-day roadmap — book a free strategy call with Growth Lift Studio. We'll run the numbers for your market and show you exactly how many leads are waiting for you right now.
     `,
   },
 ];

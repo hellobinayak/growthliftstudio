@@ -72,18 +72,27 @@ const relatedPostsMap: Record<string, string[]> = {
   "facebook-ads-bathroom-remodeling-contractors": [
     "google-ads-kitchen-remodeling-contractors",
     "google-ads-bathroom-remodeling-contractors",
+    "google-ads-home-improvement-contractors",
   ],
   "google-ads-kitchen-remodeling-contractors": [
     "google-ads-bathroom-remodeling-contractors",
     "google-ads-window-replacement-contractors",
+    "google-ads-home-improvement-contractors",
   ],
   "google-ads-bathroom-remodeling-contractors": [
     "google-ads-kitchen-remodeling-contractors",
     "google-ads-window-replacement-contractors",
+    "google-ads-home-improvement-contractors",
   ],
   "google-ads-window-replacement-contractors": [
     "google-ads-bathroom-remodeling-contractors",
     "google-ads-kitchen-remodeling-contractors",
+    "google-ads-home-improvement-contractors",
+  ],
+  "google-ads-home-improvement-contractors": [
+    "google-ads-kitchen-remodeling-contractors",
+    "google-ads-bathroom-remodeling-contractors",
+    "google-ads-window-replacement-contractors",
   ],
 };
 
