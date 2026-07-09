@@ -5,9 +5,12 @@ interface SEOProps {
   title: string;
   description: string;
   schema?: Record<string, any> | Record<string, any>[];
+  /** When true, emit <meta name="robots" content="noindex,follow"> so Google
+   *  won't index this route (used for 404 / not-found states to avoid soft-404). */
+  noindex?: boolean;
 }
 
-export function SEO({ title, description, schema }: SEOProps) {
+export function SEO({ title, description, schema, noindex }: SEOProps) {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -51,6 +54,21 @@ export function SEO({ title, description, schema }: SEOProps) {
       document.head.appendChild(linkCanonical);
     }
     linkCanonical.setAttribute("href", canonicalUrl);
+
+    // 5b. Robots meta — noindex for not-found routes, otherwise ensure it's cleared
+    let metaRobots = document.querySelector('meta[name="robots"]');
+    if (noindex) {
+      if (!metaRobots) {
+        metaRobots = document.createElement("meta");
+        metaRobots.setAttribute("name", "robots");
+        document.head.appendChild(metaRobots);
+      }
+      metaRobots.setAttribute("content", "noindex,follow");
+    } else if (metaRobots) {
+      // A previous not-found route may have left this behind — remove it so
+      // real pages stay indexable.
+      metaRobots.remove();
+    }
 
     // 6. Update dynamic JSON-LD schema
     let scriptSchema = document.getElementById("dynamic-seo-schema");

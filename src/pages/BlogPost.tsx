@@ -122,6 +122,11 @@ export default function BlogPost() {
   if (!post) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
+        <SEO
+          title="Post Not Found | Growth Lift Studio"
+          description="This blog post doesn't exist or has been moved."
+          noindex
+        />
         <div className="text-center">
           <h1 className="text-2xl font-black text-brand-navy mb-4">Post not found</h1>
           <Link to="/blog" className="text-brand-cyan-ink hover:underline font-bold">

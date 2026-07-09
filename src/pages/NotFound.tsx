@@ -1,10 +1,16 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { Search, Home, Wrench, BarChart3, Phone } from "lucide-react";
+import { SEO } from "../components/SEO";
 
 export default function NotFound() {
   return (
     <div className="relative min-h-screen bg-white flex items-center justify-center">
+      <SEO
+        title="Page Not Found | Growth Lift Studio"
+        description="The page you're looking for doesn't exist or has been moved."
+        noindex
+      />
       {/* Background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(0,183,212,0.08),transparent_60%)] pointer-events-none" />
 
