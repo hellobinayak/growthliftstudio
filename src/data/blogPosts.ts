@@ -73,6 +73,8 @@ This is what data-driven advertising looks like. Not guessing — testing, measu
 
 ---
 
+VIDEO::RbMHPdImGQo::Watch: a Growth Lift Studio client on the leads and jobs we booked for them
+
 ## The 5 reasons most contractor Facebook Ads fail
 
 ### 1. They target everyone
@@ -277,6 +279,8 @@ The data backs this up. Velocify's analysis of roughly 3.5 million leads ("The U
 
 ---
 
+VIDEO::9IvCJRxM1Nk::Watch: how we do Google Ads keyword research for a remodeling business
+
 ## Let's do the math on ROI
 
 Let's look at real, benchmark-backed numbers to see why Google Ads is a no-brainer for high-ticket kitchen remodeling projects.
@@ -476,6 +480,8 @@ Add these before your first campaign goes live:
 Review your Search Terms report every single week for the first 60 days and add new negatives aggressively. This one habit alone can reduce wasted spend by 25–35%.
 
 ---
+
+VIDEO::Mn3e1CXCGP8::Watch: generating 40+ bathroom remodeling leads a month with Google Ads
 
 ## The Landing Page Problem Most Bathroom Remodeling Contractors Don't Know They Have
 
@@ -693,6 +699,8 @@ The mindset shift that matters: stop judging the campaign on cost per click, or 
 
 ---
 
+VIDEO::zTyiYahtxTg::Watch: the location-targeting mistake that quietly wastes your Google Ads budget
+
 ## The campaign structure that books window jobs
 
 Most window contractors set up Google Ads like an on/off switch — pick keywords, set a budget, hope the phone rings. That produces wasted spend and inconsistent leads. Here's the structure that actually works.
@@ -885,6 +893,8 @@ Neither is "better." They do different jobs. But if you only have the budget or 
 The rest of this guide is about doing Google Ads right.
 
 ---
+
+VIDEO::f99lQp2V_ac::Watch: a full Google Ads search campaign setup for a local contractor, step by step
 
 ## The 4 fundamentals every contractor campaign needs
 

@@ -219,6 +219,33 @@ export default function BlogPost() {
         continue;
       }
 
+      // VIDEO render — format: VIDEO::youtubeId::caption
+      if (line.startsWith("VIDEO::")) {
+        const parts = line.split("::");
+        const videoId = parts[1];
+        const caption = parts[2] || "";
+        elements.push(
+          <figure key={key++} className="my-10">
+            <div className="relative w-full overflow-hidden rounded-2xl border border-zinc-100 shadow-xl aspect-video">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+                title={caption || "YouTube video"}
+                className="absolute inset-0 h-full w-full"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+            {caption && (
+              <figcaption className="text-center text-zinc-400 text-sm mt-3 italic font-medium">
+                {caption}
+              </figcaption>
+            )}
+          </figure>
+        );
+        continue;
+      }
+
       // IMAGE render — format: IMAGE::path::caption
       if (line.startsWith("IMAGE::")) {
         const parts = line.split("::");
