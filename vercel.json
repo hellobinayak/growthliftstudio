@@ -1,5 +1,5 @@
 {
-  "buildCommand": "vite build",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "redirects": [
     { "source": "/blog/ppc-ads-kitchen-remodeling-contractors", "destination": "/blog/google-ads-kitchen-remodeling-contractors", "statusCode": 308 },
