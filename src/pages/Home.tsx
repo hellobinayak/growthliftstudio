@@ -97,8 +97,8 @@ export default function Home() {
         </motion.div>
       </div>
 
-      {/* Hero Section */}
-      <section className="relative z-10 pt-28 pb-12 px-6 overflow-hidden">
+      {/* Hero Section - Home's hero is taller than other pages by design */}
+      <section className="relative z-10 pt-24 md:pt-32 pb-16 md:pb-24 px-6 overflow-hidden">
         {/* Moving Dots restricted to Hero */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
           <FloatingDots count={40} className="opacity-60" />
@@ -129,7 +129,7 @@ export default function Home() {
             {/* Proof stat strip — carded, cyan-tinted panel with a bright left-edge accent.
                 Phones: stacked rows (value left, label right). sm+: horizontal 3-up. */}
             <div className="flex justify-center mb-10">
-              <div className="relative w-full max-w-3xl overflow-hidden rounded-2xl border border-brand-cyan/25 bg-[linear-gradient(120deg,rgba(0,194,224,0.10),rgba(0,194,224,0.04))] pl-6 pr-5 sm:px-10 py-1.5 sm:py-6 elev-soft">
+              <div className="relative w-full max-w-3xl overflow-hidden rounded-2xl border border-brand-cyan/25 bg-[linear-gradient(120deg,rgba(0,194,224,0.10),rgba(0,194,224,0.04))] pl-6 pr-5 sm:px-10 py-3 sm:py-6 elev-soft">
                 {/* Bright cyan left-edge accent bar */}
                 <div className="absolute inset-y-0 left-0 w-1 bg-brand-cyan" aria-hidden="true" />
                 <div className="flex flex-col divide-y divide-brand-cyan/15 sm:flex-row sm:items-center sm:justify-center sm:divide-y-0 sm:divide-x sm:divide-brand-cyan/20">
@@ -170,7 +170,7 @@ export default function Home() {
       </section>
 
       {/* Credibility Section - Trusted By Bar */}
-      <section className="relative z-10 py-16 md:py-24 bg-white border-y border-zinc-200/50 overflow-hidden">
+      <section className="relative z-10 py-20 md:py-32 bg-white border-y border-zinc-200/50 overflow-hidden">
         {/* Ambient cyan glow */}
         <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(ellipse_at_50%_0%,rgba(0,194,224,0.08),transparent_70%)] pointer-events-none" />
 
@@ -317,7 +317,7 @@ export default function Home() {
             {/* Connector rail (desktop) — ties the four steps into one journey */}
             <div className="hidden lg:block absolute top-5 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-brand-cyan/10 via-brand-cyan/50 to-brand-cyan/10" />
 
-            <div className="grid lg:grid-cols-4 gap-6 lg:gap-5">
+            <div className="grid lg:grid-cols-4 gap-6">
               {[
                 { step: "01", title: "Audit", desc: "We study your service area, your competition, and exactly where your current pipeline is losing jobs. No guesswork — just a clear picture of what needs to be built." },
                 { step: "02", title: "Build", desc: "Your ad campaigns, booking system, and follow-up sequences are built and launched — fully done for you. You don't touch a single setting." },
@@ -477,7 +477,7 @@ export default function Home() {
                   <p className="text-sm text-zinc-400">{cs.timeline}</p>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-4 min-h-[110px]">
                   <div>
                     <p className="text-[13px] font-bold text-zinc-500 uppercase tracking-wider mb-1">Before:</p>
                     <p className="text-[13px] text-zinc-600 font-medium leading-relaxed">{cs.before}</p>

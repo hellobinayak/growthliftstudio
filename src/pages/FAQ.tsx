@@ -105,7 +105,7 @@ export default function FAQ() {
       </section>
 
       {/* FAQ Grid */}
-      <section className="py-16 md:py-24 px-6">
+      <section className="py-20 md:py-32 px-6">
         <div className="mx-auto max-w-4xl">
           <div className="space-y-4">
             {faqs.map((faq, index) => (
@@ -148,7 +148,7 @@ export default function FAQ() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 px-6 bg-brand-navy text-white text-center relative overflow-hidden">
+      <section className="py-20 md:py-32 px-6 bg-brand-navy text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,183,212,0.1),transparent)] pointer-events-none" />
         <div className="mx-auto max-w-4xl relative z-10">
           <h2 className="text-3xl sm:text-5xl font-black mb-12 tracking-tight leading-tight">

@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Growth Lift Studio — UI Redesign Comparison</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            navy: '#0D1B2A',
+            cloud: '#F4F6F8',
+            cyan: '#00C2E0',
+            'cyan-ink': '#0A7A8E',
+          },
+        },
+        fontFamily: {
+          sans: ['Plus Jakarta Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          body: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+  .marquee { animation: scroll 22s linear infinite; }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee-wrap:hover .marquee { animation-play-state: paused; }
+  /* soft colored elevation used in the "after" designs */
+  .elev-cyan { box-shadow: 0 1px 2px rgba(13,27,42,.04), 0 12px 30px -12px rgba(0,120,140,.28), 0 4px 12px -6px rgba(0,194,224,.18); }
+  .elev-soft { box-shadow: 0 1px 2px rgba(13,27,42,.05), 0 18px 40px -18px rgba(13,27,42,.22); }
+  .ghost-num { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; line-height:1; }
+</style>
+</head>
+<body class="bg-white text-brand-navy antialiased">
+
+<!-- ==================== PAGE HEADER ==================== -->
+<header class="border-b border-zinc-200 bg-brand-navy text-white">
+  <div class="mx-auto max-w-6xl px-6 py-10">
+    <p class="text-[11px] font-black uppercase tracking-[0.35em] text-brand-cyan mb-3">Design Review</p>
+    <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Homepage UI — Before vs. After</h1>
+    <p class="text-zinc-300 max-w-2xl leading-relaxed">
+      Side-by-side redesign of the three sections that read as "flat." Same brand colors, same fonts —
+      the difference is <span class="text-white font-semibold">depth, layering, and visual hierarchy</span>.
+      Scroll through and compare. Nothing here is live yet.
+    </p>
+  </div>
+</header>
+
+<!-- legend -->
+<div class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-zinc-200">
+  <div class="mx-auto max-w-6xl px-6 py-3 flex items-center gap-6 text-xs font-bold">
+    <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-zinc-300"></span>BEFORE (current live)</span>
+    <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-brand-cyan"></span>AFTER (proposed)</span>
+  </div>
+</div>
+
+<main class="mx-auto max-w-6xl px-6 py-16 space-y-24">
+
+  <!-- ============================================================= -->
+  <!-- SECTION 1 : BRANDS WE WORK WITH                               -->
+  <!-- ============================================================= -->
+  <section>
+    <div class="mb-6">
+      <h2 class="text-2xl font-extrabold tracking-tight">1 &nbsp;·&nbsp; "Brands We Work With"</h2>
+      <p class="text-zinc-500 mt-1 text-sm">Fix: turn scattered icon-squares into a contained, elevated <b>Trusted-by trust bar</b> with real wordmarks + motion.</p>
+    </div>
+
+    <!-- BEFORE -->
+    <div class="rounded-xl border border-zinc-200 overflow-hidden mb-4">
+      <div class="px-4 py-2 bg-zinc-50 border-b border-zinc-200 flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-zinc-400">
+        <span class="h-2.5 w-2.5 rounded-full bg-zinc-300"></span> Before
+      </div>
+      <div class="bg-white py-14 px-6 border-t border-zinc-100">
+        <div class="text-center mb-10">
+          <p class="text-[11px] font-black uppercase tracking-[0.4em] text-brand-navy/30 mb-2">Industry Leaders</p>
+          <h3 class="text-xs font-black text-brand-navy/60 uppercase tracking-[0.2em]">Brands We Work With</h3>
+          <div class="h-px w-8 bg-brand-cyan/30 mx-auto mt-4"></div>
+        </div>
+        <div class="flex flex-wrap justify-center items-start gap-x-16 gap-y-10">
+          <!-- generic tiny squares (current) -->
+          <div class="flex flex-col items-center gap-4 grayscale opacity-60">
+            <div class="h-10 w-10 bg-brand-navy rounded-lg flex items-center justify-center text-brand-cyan font-black text-xs">M</div>
+            <span class="font-black text-[11px] tracking-[0.25em] text-brand-navy/40 uppercase">Meta</span>
+          </div>
+          <div class="flex flex-col items-center gap-4 grayscale opacity-60">
+            <div class="h-10 w-10 bg-brand-navy rounded-lg flex items-center justify-center text-brand-cyan font-black text-xs">G</div>
+            <span class="font-black text-[11px] tracking-[0.25em] text-brand-navy/40 uppercase">Google</span>
+          </div>
+          <div class="flex flex-col items-center gap-4 grayscale opacity-60">
+            <div class="h-10 w-10 bg-brand-navy rounded-lg flex items-center justify-center text-brand-cyan font-black text-xs">I</div>
+            <span class="font-black text-[11px] tracking-[0.25em] text-brand-navy/40 uppercase">Instagram</span>
+          </div>
+          <div class="flex flex-col items-center gap-4 grayscale opacity-60">
+            <div class="h-10 w-10 bg-brand-navy rounded-lg flex items-center justify-center text-brand-cyan font-black text-xs">S</div>
+            <span class="font-black text-[11px] tracking-[0.25em] text-brand-navy/40 uppercase">Stripe</span>
+          </div>
+          <div class="flex flex-col items-center gap-4 grayscale opacity-60">
+            <div class="h-10 w-10 bg-brand-navy rounded-lg flex items-center justify-center text-brand-cyan font-black text-xs">◇</div>
+            <span class="font-black text-[11px] tracking-[0.25em] text-brand-navy/40 uppercase">GoHighLevel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AFTER -->
+    <div class="rounded-xl border-2 border-brand-cyan/40 overflow-hidden elev-cyan">
+      <div class="px-4 py-2 bg-brand-cyan/5 border-b border-brand-cyan/20 flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-brand-cyan-ink">
+        <span class="h-2.5 w-2.5 rounded-full bg-brand-cyan"></span> After
+      </div>
+      <div class="relative py-16 px-6 bg-gradient-to-b from-white via-brand-cloud to-white overflow-hidden">
+        <!-- ambient glow -->
+        <div class="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(ellipse_at_50%_0%,rgba(0,194,224,.10),transparent_70%)] pointer-events-none"></div>
+
+        <div class="relative text-center mb-8">
+          <div class="inline-flex items-center gap-2 rounded-full border border-brand-cyan/20 bg-white px-4 py-1.5 elev-soft">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+            <span class="text-[11px] font-bold uppercase tracking-[0.25em] text-brand-navy/70">Trusted by teams running on</span>
+          </div>
+        </div>
+
+        <!-- elevated marquee trust bar -->
+        <div class="relative mx-auto max-w-4xl">
+          <div class="marquee-wrap relative rounded-2xl bg-white border border-zinc-200/80 elev-soft overflow-hidden">
+            <!-- edge fades -->
+            <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+            <div class="flex w-max marquee py-7">
+              <!-- set A -->
+              <div class="flex items-center gap-12 px-12 shrink-0">
+                <span class="text-2xl font-black tracking-tight text-brand-navy/70 hover:text-brand-navy transition">Meta</span>
+                <span class="text-2xl font-black tracking-tight text-brand-navy/70 hover:text-brand-navy transition">Google</span>
+                <span class="text-2xl font-black tracking-tight text-brand-navy/70 hover:text-brand-navy transition">Instagram</span>
+                <span class="text-2xl font-black tracking-tight text-brand-navy/70 hover:text-brand-navy transition">Stripe</span>
+                <span class="text-2xl font-black tracking-tight text-brand-navy/70 hover:text-brand-navy transition">GoHighLevel</span>
+              </div>
+              <!-- set B (duplicate for seamless loop) -->
+              <div class="flex items-center gap-12 px-12 shrink-0" aria-hidden="true">
+                <span class="text-2xl font-black tracking-tight text-brand-navy/70">Meta</span>
+                <span class="text-2xl font-black tracking-tight text-brand-navy/70">Google</span>
+                <span class="text-2xl font-black tracking-tight text-brand-navy/70">Instagram</span>
+                <span class="text-2xl font-black tracking-tight text-brand-navy/70">Stripe</span>
+                <span class="text-2xl font-black tracking-tight text-brand-navy/70">GoHighLevel</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-center text-xs text-zinc-400 mt-4 font-medium">Auto-scrolls · pauses on hover · logos link to the platform</p>
+        </div>
+      </div>
+    </div>
+    <p class="text-xs text-zinc-500 mt-3 leading-relaxed"><b class="text-brand-navy">What changed:</b> "Trusted by" framing (triggers conformity bias) · one contained elevated bar instead of floating squares · real wordmarks · gentle motion signals an active roster · edge-fade + pause-on-hover polish.</p>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- SECTION 2 : THE OUTCOME                                        -->
+  <!-- ============================================================= -->
+  <section>
+    <div class="mb-6">
+      <h2 class="text-2xl font-extrabold tracking-tight">2 &nbsp;·&nbsp; "The Outcome" value cards</h2>
+      <p class="text-zinc-500 mt-1 text-sm">Fix: zinc-50 cards on white have almost no contrast. Move to a <b>bento grid</b> with a featured card, cyan-tinted elevation, and a hard stat.</p>
+    </div>
+
+    <!-- BEFORE -->
+    <div class="rounded-xl border border-zinc-200 overflow-hidden mb-4">
+      <div class="px-4 py-2 bg-zinc-50 border-b border-zinc-200 flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-zinc-400">
+        <span class="h-2.5 w-2.5 rounded-full bg-zinc-300"></span> Before
+      </div>
+      <div class="bg-white p-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <h3 class="text-xs font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-5">The Outcome</h3>
+            <p class="text-3xl md:text-4xl font-black text-brand-navy mb-6 tracking-tight leading-tight">Stop chasing inquiries.<br><span class="text-brand-cyan">Start booking jobs.</span></p>
+            <p class="text-lg text-zinc-500 leading-relaxed font-medium max-w-md">Most agencies measure success in 'leads'. We measure it in confirmed appointments.</p>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="p-6 bg-zinc-50 border border-zinc-100 rounded-3xl">
+              <div class="h-10 w-10 bg-brand-cyan/5 rounded-xl flex items-center justify-center mb-5">🎯</div>
+              <h4 class="text-base font-black text-brand-navy mb-2">High Intent Only</h4>
+              <p class="text-sm text-zinc-500">We filter for intent so you don't waste time on price-shoppers.</p>
+            </div>
+            <div class="p-6 bg-zinc-50 border border-zinc-100 rounded-3xl">
+              <div class="h-10 w-10 bg-brand-cyan/5 rounded-xl flex items-center justify-center mb-5">📈</div>
+              <h4 class="text-base font-black text-brand-navy mb-2">Predictable Flow</h4>
+              <p class="text-sm text-zinc-500">Stabilize income with a pipeline that doesn't go silent.</p>
+            </div>
+            <div class="p-6 bg-zinc-50 border border-zinc-100 rounded-3xl sm:col-span-2">
+              <div class="h-10 w-10 bg-brand-cyan/5 rounded-xl flex items-center justify-center mb-5">🧩</div>
+              <h4 class="text-base font-black text-brand-navy mb-2">Turnkey Operation</h4>
+              <p class="text-sm text-zinc-500">We handle the tech and targeting while you handle the tools.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AFTER -->
+    <div class="rounded-xl border-2 border-brand-cyan/40 overflow-hidden elev-cyan">
+      <div class="px-4 py-2 bg-brand-cyan/5 border-b border-brand-cyan/20 flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-brand-cyan-ink">
+        <span class="h-2.5 w-2.5 rounded-full bg-brand-cyan"></span> After
+      </div>
+      <div class="p-10 bg-brand-cloud">
+        <div class="mb-8 max-w-lg">
+          <h3 class="text-xs font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-4">The Outcome</h3>
+          <p class="text-3xl md:text-4xl font-black text-brand-navy tracking-tight leading-tight">Stop chasing inquiries.<br><span class="text-brand-cyan">Start booking jobs.</span></p>
+        </div>
+
+        <!-- BENTO GRID -->
+        <div class="grid sm:grid-cols-3 gap-4">
+          <!-- FEATURE CARD (2x2) -->
+          <div class="sm:col-span-2 sm:row-span-2 group relative overflow-hidden rounded-3xl bg-brand-navy text-white p-8 elev-cyan">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,rgba(0,194,224,.25),transparent_55%)]"></div>
+            <div class="absolute -right-8 -bottom-8 h-40 w-40 rounded-full bg-brand-cyan/10 blur-2xl"></div>
+            <div class="relative">
+              <div class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-cyan text-brand-navy text-lg mb-6">🎯</div>
+              <h4 class="text-2xl font-black mb-3">High-Intent Only</h4>
+              <p class="text-zinc-300 leading-relaxed max-w-sm mb-8">We filter for buying intent, so your crew spends time on homeowners ready to book — not price-shoppers.</p>
+              <div class="flex items-end gap-3 pt-6 border-t border-white/10">
+                <span class="ghost-num text-5xl text-brand-cyan">92%</span>
+                <span class="text-sm text-zinc-400 pb-1 leading-tight">of booked calls<br>show up qualified</span>
+              </div>
+            </div>
+          </div>
+          <!-- small card 1 -->
+          <div class="group rounded-3xl bg-white border border-zinc-200/70 p-6 elev-soft hover:-translate-y-1 transition">
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-cyan/15 to-brand-cyan/5 text-brand-cyan-ink mb-4">📈</div>
+            <h4 class="text-base font-black text-brand-navy mb-1.5">Predictable Flow</h4>
+            <p class="text-sm text-zinc-500 leading-relaxed">A pipeline that doesn't go silent between seasons.</p>
+          </div>
+          <!-- small card 2 -->
+          <div class="group rounded-3xl bg-white border border-zinc-200/70 p-6 elev-soft hover:-translate-y-1 transition">
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-cyan/15 to-brand-cyan/5 text-brand-cyan-ink mb-4">🧩</div>
+            <h4 class="text-base font-black text-brand-navy mb-1.5">Turnkey Build</h4>
+            <p class="text-sm text-zinc-500 leading-relaxed">We run the tech + targeting. You run the crew.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-xs text-zinc-500 mt-3 leading-relaxed"><b class="text-brand-navy">What changed:</b> light-gray section so white cards actually pop · one navy <b>feature card</b> with a real stat anchors the eye · varied card sizes (bento hierarchy) · cyan-tinted diffused shadows create genuine elevation instead of a flat 1px border.</p>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- SECTION 3 : PROCESS                                            -->
+  <!-- ============================================================= -->
+  <section>
+    <div class="mb-6">
+      <h2 class="text-2xl font-extrabold tracking-tight">3 &nbsp;·&nbsp; "Process" steps</h2>
+      <p class="text-zinc-500 mt-1 text-sm">Fix: 4 equal cards + a faint arrow reads flat. Add a <b>connected numbered timeline</b> with ghost numerals and a gradient progress rail.</p>
+    </div>
+
+    <!-- BEFORE -->
+    <div class="rounded-xl border border-zinc-200 overflow-hidden mb-4">
+      <div class="px-4 py-2 bg-zinc-50 border-b border-zinc-200 flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-zinc-400">
+        <span class="h-2.5 w-2.5 rounded-full bg-zinc-300"></span> Before
+      </div>
+      <div class="bg-zinc-50 p-10">
+        <div class="text-center mb-10">
+          <h3 class="text-xs font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-3">Process</h3>
+          <p class="text-2xl md:text-3xl font-extrabold tracking-tight text-brand-navy">Simple system. Clear outcome.</p>
+        </div>
+        <div class="flex flex-col lg:flex-row items-stretch gap-2">
+          <div class="flex-1 p-6 rounded-2xl bg-gradient-to-br from-white to-brand-cyan/5 border border-white shadow-lg">
+            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-brand-cyan-ink mb-3 block">Phase 01</span>
+            <h4 class="text-2xl font-black text-brand-navy mb-3 tracking-tight">Audit</h4>
+            <p class="text-zinc-500 text-sm">We study your service area and where your pipeline loses jobs.</p>
+          </div>
+          <div class="hidden lg:flex items-center text-brand-cyan/30 text-xl">→</div>
+          <div class="flex-1 p-6 rounded-2xl bg-gradient-to-br from-white to-brand-cyan/5 border border-white shadow-lg">
+            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-brand-cyan-ink mb-3 block">Phase 02</span>
+            <h4 class="text-2xl font-black text-brand-navy mb-3 tracking-tight">Build</h4>
+            <p class="text-zinc-500 text-sm">Ads, booking system, and follow-up — built and launched for you.</p>
+          </div>
+          <div class="hidden lg:flex items-center text-brand-cyan/30 text-xl">→</div>
+          <div class="flex-1 p-6 rounded-2xl bg-gradient-to-br from-white to-brand-cyan/5 border border-white shadow-lg">
+            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-brand-cyan-ink mb-3 block">Phase 03</span>
+            <h4 class="text-2xl font-black text-brand-navy mb-3 tracking-tight">Optimize</h4>
+            <p class="text-zinc-500 text-sm">Weekly refinement of targeting and copy from real market data.</p>
+          </div>
+          <div class="hidden lg:flex items-center text-brand-cyan/30 text-xl">→</div>
+          <div class="flex-1 p-6 rounded-2xl bg-gradient-to-br from-white to-brand-cyan/5 border border-white shadow-lg">
+            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-brand-cyan-ink mb-3 block">Phase 04</span>
+            <h4 class="text-2xl font-black text-brand-navy mb-3 tracking-tight">Book</h4>
+            <p class="text-zinc-500 text-sm">Qualified homeowners land on your calendar. You close the job.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AFTER -->
+    <div class="rounded-xl border-2 border-brand-cyan/40 overflow-hidden elev-cyan">
+      <div class="px-4 py-2 bg-brand-cyan/5 border-b border-brand-cyan/20 flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-brand-cyan-ink">
+        <span class="h-2.5 w-2.5 rounded-full bg-brand-cyan"></span> After
+      </div>
+      <div class="relative p-10 bg-white overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_-10%,rgba(0,194,224,.07),transparent_60%)]"></div>
+        <div class="relative text-center mb-14">
+          <h3 class="text-xs font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-3">Process</h3>
+          <p class="text-2xl md:text-3xl font-extrabold tracking-tight text-brand-navy">Simple system. Clear outcome.</p>
+        </div>
+
+        <!-- connected timeline -->
+        <div class="relative">
+          <!-- progress rail -->
+          <div class="hidden lg:block absolute top-5 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-brand-cyan/10 via-brand-cyan/50 to-brand-cyan/10"></div>
+
+          <div class="grid lg:grid-cols-4 gap-6 lg:gap-5">
+            <!-- step -->
+            <div class="relative group">
+              <div class="hidden lg:flex mx-auto mb-8 h-10 w-10 items-center justify-center rounded-full bg-brand-cyan text-brand-navy font-black text-sm relative z-10 ring-4 ring-white shadow-[0_0_0_1px_rgba(0,194,224,.4)]">01</div>
+              <div class="relative overflow-hidden rounded-2xl bg-white border border-zinc-200/70 p-6 elev-soft hover:-translate-y-1.5 transition">
+                <span class="ghost-num pointer-events-none absolute -top-3 right-2 text-7xl text-brand-cyan/[0.07]">01</span>
+                <span class="lg:hidden text-[10px] font-black uppercase tracking-[0.3em] text-brand-cyan-ink block mb-2">Phase 01</span>
+                <h4 class="text-xl font-black text-brand-navy mb-2 tracking-tight relative z-10">Audit</h4>
+                <p class="text-sm text-zinc-500 leading-relaxed relative z-10">We map your service area and pinpoint exactly where your pipeline loses jobs.</p>
+              </div>
+            </div>
+            <!-- step -->
+            <div class="relative group">
+              <div class="hidden lg:flex mx-auto mb-8 h-10 w-10 items-center justify-center rounded-full bg-brand-cyan text-brand-navy font-black text-sm relative z-10 ring-4 ring-white shadow-[0_0_0_1px_rgba(0,194,224,.4)]">02</div>
+              <div class="relative overflow-hidden rounded-2xl bg-white border border-zinc-200/70 p-6 elev-soft hover:-translate-y-1.5 transition">
+                <span class="ghost-num pointer-events-none absolute -top-3 right-2 text-7xl text-brand-cyan/[0.07]">02</span>
+                <span class="lg:hidden text-[10px] font-black uppercase tracking-[0.3em] text-brand-cyan-ink block mb-2">Phase 02</span>
+                <h4 class="text-xl font-black text-brand-navy mb-2 tracking-tight relative z-10">Build</h4>
+                <p class="text-sm text-zinc-500 leading-relaxed relative z-10">Ads, booking system, and follow-up sequences — built and launched, fully done for you.</p>
+              </div>
+            </div>
+            <!-- step -->
+            <div class="relative group">
+              <div class="hidden lg:flex mx-auto mb-8 h-10 w-10 items-center justify-center rounded-full bg-brand-cyan text-brand-navy font-black text-sm relative z-10 ring-4 ring-white shadow-[0_0_0_1px_rgba(0,194,224,.4)]">03</div>
+              <div class="relative overflow-hidden rounded-2xl bg-white border border-zinc-200/70 p-6 elev-soft hover:-translate-y-1.5 transition">
+                <span class="ghost-num pointer-events-none absolute -top-3 right-2 text-7xl text-brand-cyan/[0.07]">03</span>
+                <span class="lg:hidden text-[10px] font-black uppercase tracking-[0.3em] text-brand-cyan-ink block mb-2">Phase 03</span>
+                <h4 class="text-xl font-black text-brand-navy mb-2 tracking-tight relative z-10">Optimize</h4>
+                <p class="text-sm text-zinc-500 leading-relaxed relative z-10">Weekly refinement of targeting and copy from real data. The system sharpens over time.</p>
+              </div>
+            </div>
+            <!-- step (final, emphasized) -->
+            <div class="relative group">
+              <div class="hidden lg:flex mx-auto mb-8 h-10 w-10 items-center justify-center rounded-full bg-brand-navy text-brand-cyan font-black text-sm relative z-10 ring-4 ring-white shadow-[0_0_0_1px_rgba(13,27,42,.5)]">04</div>
+              <div class="relative overflow-hidden rounded-2xl bg-brand-navy text-white p-6 elev-cyan hover:-translate-y-1.5 transition">
+                <span class="ghost-num pointer-events-none absolute -top-3 right-2 text-7xl text-brand-cyan/10">04</span>
+                <span class="lg:hidden text-[10px] font-black uppercase tracking-[0.3em] text-brand-cyan block mb-2">Phase 04</span>
+                <h4 class="text-xl font-black text-white mb-2 tracking-tight relative z-10">Book</h4>
+                <p class="text-sm text-zinc-300 leading-relaxed relative z-10">Qualified homeowners land on your calendar. You show up and close. That's your only job.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-xs text-zinc-500 mt-3 leading-relaxed"><b class="text-brand-navy">What changed:</b> a real <b>connector rail</b> with numbered nodes turns 4 loose cards into one journey · giant ghost numerals add depth + rhythm · the final "Book" step is inverted to navy so the eye lands on the payoff · consistent soft elevation.</p>
+  </section>
+
+</main>
+
+<footer class="border-t border-zinc-200 bg-brand-cloud">
+  <div class="mx-auto max-w-6xl px-6 py-10 text-sm text-zinc-500">
+    <p class="font-bold text-brand-navy mb-1">This is a static mockup — nothing here is live.</p>
+    <p>Approve any section and I'll implement it in <span class="font-mono text-brand-navy">Home.tsx</span> with your real Motion animations + Lucide icons.</p>
+  </div>
+</footer>
+
+</body>
+</html>

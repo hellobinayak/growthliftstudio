@@ -249,7 +249,7 @@ export default function AboutUs() {
       </section>
 
       {/* Philosophy Grid */}
-      <section className="py-16 md:py-24 px-6">
+      <section className="py-20 md:py-32 px-6">
         <div className="mx-auto max-w-7xl">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {sections.map((section, i) => (
@@ -283,7 +283,7 @@ export default function AboutUs() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-16 md:py-24 px-6 bg-zinc-50 border-y border-zinc-100">
+      <section id="faq" className="py-20 md:py-32 px-6 bg-zinc-50 border-y border-zinc-100">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-sm font-bold text-brand-cyan-ink uppercase tracking-[0.2em] mb-4">Frequently Asked Questions</h2>

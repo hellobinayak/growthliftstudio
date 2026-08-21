@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Growth Lift Studio — Footer Redesign Options</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { brand: { navy:'#0D1B2A', cloud:'#F4F6F8', cyan:'#00C2E0', 'cyan-ink':'#0A7A8E' } },
+      fontFamily: { sans:['Plus Jakarta Sans','sans-serif'], body:['Inter','sans-serif'] },
+    } },
+  };
+</script>
+<style>
+  body { font-family:'Inter',sans-serif; }
+  h1,h2,h3,h4 { font-family:'Plus Jakarta Sans',sans-serif; }
+  .elev-cyan { box-shadow: 0 1px 2px rgba(13,27,42,.04), 0 20px 45px -18px rgba(0,120,140,.30), 0 6px 16px -8px rgba(0,194,224,.20); }
+</style>
+</head>
+<body class="bg-zinc-100 text-brand-navy antialiased">
+
+<header class="bg-brand-navy text-white">
+  <div class="mx-auto max-w-6xl px-6 py-10">
+    <p class="text-[11px] font-black uppercase tracking-[0.35em] text-brand-cyan mb-3">Footer Redesign</p>
+    <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Pick a footer look</h1>
+    <p class="text-zinc-300 max-w-2xl leading-relaxed">Same links, same structure — different skin. Current (light) up top, then two dark-navy options. Hover the links.</p>
+  </div>
+</header>
+
+<main class="mx-auto max-w-6xl px-4 py-12 space-y-16">
+
+  <!-- ============ BEFORE ============ -->
+  <div>
+    <p class="text-[11px] font-black uppercase tracking-widest text-zinc-400 mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-zinc-400"></span>Current — light</p>
+    <div class="rounded-2xl overflow-hidden border border-zinc-200 bg-white">
+      <footer class="pt-16 pb-10 px-8">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-10 mb-14">
+          <div class="col-span-2">
+            <div class="flex items-center gap-3 mb-5"><div class="h-9 w-9 rounded-lg bg-brand-navy flex items-center justify-center text-brand-cyan font-black">G</div><span class="font-black text-lg text-brand-navy">Growth Lift Studio</span></div>
+            <p class="text-zinc-500 max-w-xs leading-relaxed mb-6 text-sm">Building predictable, high-velocity revenue pipelines for home service businesses across the US.</p>
+            <div class="flex gap-5 text-zinc-400 text-sm font-bold">IG · FB · IN · YT</div>
+          </div>
+          <div><h3 class="font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-5">Expertise</h3><ul class="space-y-3 text-sm font-bold text-zinc-500"><li>Services</li><li>Case Studies</li><li>Testimonials</li><li>Our Process</li></ul></div>
+          <div><h3 class="font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-5">Resources</h3><ul class="space-y-3 text-sm font-bold text-zinc-500"><li>About Us</li><li>FAQ</li><li>Blog</li><li>Contact</li></ul></div>
+          <div><h3 class="font-black text-xs uppercase tracking-[0.2em] text-brand-navy mb-5">Legal</h3><ul class="space-y-3 text-sm font-bold text-zinc-500"><li>Privacy Policy</li><li>Terms &amp; Conditions</li></ul></div>
+        </div>
+        <div class="pt-8 border-t border-zinc-100 flex justify-between items-center text-xs font-bold text-zinc-500 uppercase tracking-[0.3em]"><span>Growth Lift Studio © 2026</span><span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-brand-cyan"></span>System Operational v4.2</span></div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ============ OPTION A : GROUNDED NAVY + BIG WORDMARK ============ -->
+  <div>
+    <p class="text-[11px] font-black uppercase tracking-widest text-brand-cyan-ink mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-brand-cyan"></span>Option A — "Grounded" navy + oversized wordmark</p>
+    <div class="rounded-2xl overflow-hidden elev-cyan">
+      <footer class="relative bg-brand-navy text-white overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-cyan/50 to-transparent"></div>
+        <div class="absolute inset-x-0 top-0 h-64 bg-[radial-gradient(ellipse_at_50%_-20%,rgba(0,194,224,.15),transparent_70%)] pointer-events-none"></div>
+
+        <div class="relative px-8 pt-16 pb-8">
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-10 mb-16">
+            <div class="col-span-2">
+              <div class="flex items-center gap-3 mb-5"><div class="h-10 w-10 rounded-xl bg-white/10 backdrop-blur flex items-center justify-center text-brand-cyan font-black ring-1 ring-white/10">G</div><span class="font-black text-xl text-white">Growth Lift Studio</span></div>
+              <p class="text-zinc-400 max-w-xs leading-relaxed mb-8 text-sm">Building predictable, high-velocity revenue pipelines for home service businesses across the US.</p>
+              <div class="flex gap-3">
+                <span class="h-10 w-10 rounded-xl bg-white/5 ring-1 ring-white/10 flex items-center justify-center text-xs font-black text-zinc-300 hover:bg-brand-cyan hover:text-brand-navy transition cursor-pointer">IG</span>
+                <span class="h-10 w-10 rounded-xl bg-white/5 ring-1 ring-white/10 flex items-center justify-center text-xs font-black text-zinc-300 hover:bg-brand-cyan hover:text-brand-navy transition cursor-pointer">FB</span>
+                <span class="h-10 w-10 rounded-xl bg-white/5 ring-1 ring-white/10 flex items-center justify-center text-xs font-black text-zinc-300 hover:bg-brand-cyan hover:text-brand-navy transition cursor-pointer">IN</span>
+                <span class="h-10 w-10 rounded-xl bg-white/5 ring-1 ring-white/10 flex items-center justify-center text-xs font-black text-zinc-300 hover:bg-brand-cyan hover:text-brand-navy transition cursor-pointer">YT</span>
+              </div>
+            </div>
+            <div><h3 class="font-black text-[11px] uppercase tracking-[0.25em] text-brand-cyan mb-5">Expertise</h3><ul class="space-y-3.5 text-sm font-bold text-zinc-400"><li class="hover:text-white transition cursor-pointer">Services</li><li class="hover:text-white transition cursor-pointer">Case Studies</li><li class="hover:text-white transition cursor-pointer">Testimonials</li><li class="hover:text-white transition cursor-pointer">Our Process</li></ul></div>
+            <div><h3 class="font-black text-[11px] uppercase tracking-[0.25em] text-brand-cyan mb-5">Resources</h3><ul class="space-y-3.5 text-sm font-bold text-zinc-400"><li class="hover:text-white transition cursor-pointer">About Us</li><li class="hover:text-white transition cursor-pointer">FAQ</li><li class="hover:text-white transition cursor-pointer">Blog</li><li class="hover:text-white transition cursor-pointer">Contact</li></ul></div>
+            <div><h3 class="font-black text-[11px] uppercase tracking-[0.25em] text-brand-cyan mb-5">Legal</h3><ul class="space-y-3.5 text-sm font-bold text-zinc-400"><li class="hover:text-white transition cursor-pointer">Privacy Policy</li><li class="hover:text-white transition cursor-pointer">Terms &amp; Conditions</li></ul></div>
+          </div>
+
+          <!-- oversized wordmark -->
+          <div class="relative h-20 md:h-28 overflow-hidden mb-2">
+            <span class="absolute left-0 -bottom-3 md:-bottom-5 text-[52px] md:text-[110px] font-black tracking-tighter text-white/[0.05] whitespace-nowrap select-none leading-none">Growth Lift Studio</span>
+          </div>
+
+          <div class="relative pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-[0.3em] text-zinc-500">
+            <span>Growth Lift Studio © 2026</span>
+            <span class="flex items-center gap-2 text-[10px] tracking-widest"><span class="h-1.5 w-1.5 rounded-full bg-brand-cyan animate-pulse"></span>System Operational v4.2</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ============ OPTION B : NAVY + CTA BAND ============ -->
+  <div>
+    <p class="text-[11px] font-black uppercase tracking-widest text-brand-cyan-ink mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-brand-cyan"></span>Option B — navy with a "Book a Call" band on top</p>
+    <div class="rounded-2xl overflow-hidden elev-cyan">
+      <footer class="relative bg-brand-navy text-white overflow-hidden">
+        <div class="absolute inset-x-0 top-0 h-64 bg-[radial-gradient(ellipse_at_70%_-20%,rgba(0,194,224,.15),transparent_70%)] pointer-events-none"></div>
+
+        <!-- CTA band -->
+        <div class="relative px-8 py-10 border-b border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 class="text-2xl md:text-3xl font-black tracking-tight">Ready to fill your calendar?</h3>
+            <p class="text-zinc-400 text-sm mt-1">Book a call — the first 5 appointments are on us.</p>
+          </div>
+          <button class="shrink-0 rounded-xl bg-brand-cyan text-brand-navy font-black uppercase tracking-widest text-xs px-8 py-4 hover:bg-white transition">Book a Call →</button>
+        </div>
+
+        <div class="relative px-8 pt-14 pb-8">
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-10 mb-12">
+            <div class="col-span-2">
+              <div class="flex items-center gap-3 mb-5"><div class="h-10 w-10 rounded-xl bg-white/10 flex items-center justify-center text-brand-cyan font-black ring-1 ring-white/10">G</div><span class="font-black text-xl text-white">Growth Lift Studio</span></div>
+              <p class="text-zinc-400 max-w-xs leading-relaxed mb-8 text-sm">Building predictable, high-velocity revenue pipelines for home service businesses across the US.</p>
+              <div class="flex gap-3">
+                <span class="h-10 w-10 rounded-xl bg-white/5 ring-1 ring-white/10 flex items-center justify-center text-xs font-black text-zinc-300 hover:bg-brand-cyan hover:text-brand-navy transition cursor-pointer">IG</span>
+                <span class="h-10 w-10 rounded-xl bg-white/5 ring-1 ring-white/10 flex items-center justify-center text-xs font-black text-zinc-300 hover:bg-brand-cyan hover:text-brand-navy transition cursor-pointer">FB</span>
+                <span class="h-10 w-10 rounded-xl bg-white/5 ring-1 ring-white/10 flex items-center justify-center text-xs font-black text-zinc-300 hover:bg-brand-cyan hover:text-brand-navy transition cursor-pointer">IN</span>
+                <span class="h-10 w-10 rounded-xl bg-white/5 ring-1 ring-white/10 flex items-center justify-center text-xs font-black text-zinc-300 hover:bg-brand-cyan hover:text-brand-navy transition cursor-pointer">YT</span>
+              </div>
+            </div>
+            <div><h3 class="font-black text-[11px] uppercase tracking-[0.25em] text-brand-cyan mb-5">Expertise</h3><ul class="space-y-3.5 text-sm font-bold text-zinc-400"><li class="hover:text-white transition cursor-pointer">Services</li><li class="hover:text-white transition cursor-pointer">Case Studies</li><li class="hover:text-white transition cursor-pointer">Testimonials</li><li class="hover:text-white transition cursor-pointer">Our Process</li></ul></div>
+            <div><h3 class="font-black text-[11px] uppercase tracking-[0.25em] text-brand-cyan mb-5">Resources</h3><ul class="space-y-3.5 text-sm font-bold text-zinc-400"><li class="hover:text-white transition cursor-pointer">About Us</li><li class="hover:text-white transition cursor-pointer">FAQ</li><li class="hover:text-white transition cursor-pointer">Blog</li><li class="hover:text-white transition cursor-pointer">Contact</li></ul></div>
+            <div><h3 class="font-black text-[11px] uppercase tracking-[0.25em] text-brand-cyan mb-5">Legal</h3><ul class="space-y-3.5 text-sm font-bold text-zinc-400"><li class="hover:text-white transition cursor-pointer">Privacy Policy</li><li class="hover:text-white transition cursor-pointer">Terms &amp; Conditions</li></ul></div>
+          </div>
+          <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-[0.3em] text-zinc-500">
+            <span>Growth Lift Studio © 2026</span>
+            <span class="flex items-center gap-2 text-[10px] tracking-widest"><span class="h-1.5 w-1.5 rounded-full bg-brand-cyan animate-pulse"></span>System Operational v4.2</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+</main>
+
+<footer class="bg-brand-navy text-zinc-400 text-sm">
+  <div class="mx-auto max-w-6xl px-6 py-8">Static mockup · social shown as text chips (IG/FB/IN/YT) — real version uses your Lucide icons. Pick A or B and I'll build it into Layout.tsx.</div>
+</footer>
+
+</body>
+</html>

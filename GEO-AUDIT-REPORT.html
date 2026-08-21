@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GEO Audit Report — Growth Lift Studio</title>
+<style>
+  :root{
+    --navy:#0A1B2E;
+    --navy-2:#12253c;
+    --cyan:#00B7D4;
+    --cyan-ink:#0596ac;
+    --ink:#1b2733;
+    --muted:#5b6b7b;
+    --line:#e7edf2;
+    --bg:#f4f7fa;
+    --card:#ffffff;
+    --crit:#e02424;
+    --high:#f97316;
+    --med:#eab308;
+    --low:#3b82f6;
+    --good:#16a34a;
+    --shadow:0 10px 30px rgba(10,27,46,.08);
+    --shadow-sm:0 4px 14px rgba(10,27,46,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:'Plus Jakarta Sans','Inter',sans-serif;letter-spacing:-.02em;line-height:1.15}
+  a{color:var(--cyan-ink);text-decoration:none}
+  code{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;background:#eef3f7;padding:2px 6px;border-radius:6px;color:#0d2136}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:radial-gradient(1200px 500px at 80% -10%,rgba(0,183,212,.28),transparent 60%),
+               linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);
+    color:#fff;padding:60px 0 130px;position:relative;overflow:hidden;
+  }
+  .hero:before{content:"";position:absolute;inset:0;
+    background:linear-gradient(45deg,transparent 45%,rgba(0,183,212,.06) 50%,transparent 55%);}
+  .brandrow{display:flex;align-items:center;gap:12px;margin-bottom:40px}
+  .logo{height:34px;width:34px;border-radius:9px;background:var(--cyan);display:flex;align-items:center;justify-content:center;
+    font-family:'Plus Jakarta Sans';font-weight:800;color:var(--navy);font-size:15px;box-shadow:0 6px 18px rgba(0,183,212,.4)}
+  .brandrow .name{font-weight:700;letter-spacing:.02em}
+  .kicker{color:var(--cyan);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.28em;margin:0 0 14px}
+  .hero h1{font-size:clamp(30px,5vw,52px);font-weight:800;margin:0 0 18px;max-width:16ch}
+  .hero .sub{color:#b9c9d8;font-size:18px;max-width:60ch;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:7px 14px;border-radius:999px;
+    font-size:13px;color:#dbe6f0;backdrop-filter:blur(6px)}
+  .chip b{color:#fff;font-weight:600}
+
+  /* ---------- SCORE CARD (overlapping hero) ---------- */
+  .scoredeck{margin-top:-96px;position:relative;z-index:3;display:grid;grid-template-columns:320px 1fr;gap:22px}
+  @media(max-width:820px){.scoredeck{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}
+  .score-hero{padding:30px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .gauge{position:relative;width:200px;height:200px}
+  .gauge svg{transform:rotate(-90deg)}
+  .gauge .val{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .gauge .num{font-family:'Plus Jakarta Sans';font-weight:800;font-size:52px;line-height:1;color:var(--navy)}
+  .gauge .den{font-size:14px;color:var(--muted);margin-top:2px}
+  .rating{margin-top:16px;font-weight:800;letter-spacing:.02em;font-size:15px;padding:8px 20px;border-radius:999px;
+    background:rgba(249,115,22,.12);color:#c2410c}
+  .score-note{padding:30px;display:flex;flex-direction:column;justify-content:center}
+  .score-note h2{margin:0 0 12px;font-size:22px;color:var(--navy)}
+  .score-note p{margin:0;color:var(--muted);font-size:15.5px}
+  .verdict{margin-top:18px;padding:16px 18px;border-left:4px solid var(--cyan);background:#f0fbfe;border-radius:0 12px 12px 0;
+    font-size:14.5px;color:#0d3a45}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:52px 0}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:26px}
+  .sec-head .idx{font-family:'JetBrains Mono';color:var(--cyan-ink);font-weight:600;font-size:14px}
+  .sec-head h2{font-size:26px;margin:0;color:var(--navy)}
+  .lead{color:var(--muted);max-width:70ch;margin:-10px 0 26px;font-size:16px}
+
+  /* ---------- BREAKDOWN BARS ---------- */
+  .bars{display:flex;flex-direction:column;gap:16px}
+  .bar-row{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;box-shadow:var(--shadow-sm)}
+  .bar-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;flex-wrap:wrap;gap:6px}
+  .bar-top .lbl{font-weight:700;color:var(--navy);font-size:15px}
+  .bar-top .lbl .w{color:var(--muted);font-weight:500;font-size:12.5px;margin-left:8px}
+  .bar-top .sc{font-family:'Plus Jakarta Sans';font-weight:800;font-size:17px}
+  .track{height:11px;background:#eef3f7;border-radius:999px;overflow:hidden}
+  .fill{height:100%;border-radius:999px}
+  .t-crit{color:var(--crit)} .t-high{color:var(--high)} .t-med{color:var(--med)} .t-good{color:var(--good)} .t-cyan{color:var(--cyan-ink)}
+  .f-crit{background:linear-gradient(90deg,#ef4444,#e02424)}
+  .f-high{background:linear-gradient(90deg,#fb923c,#f97316)}
+  .f-med{background:linear-gradient(90deg,#facc15,#eab308)}
+  .f-good{background:linear-gradient(90deg,#22c55e,#16a34a)}
+  .f-cyan{background:linear-gradient(90deg,#22d3ee,#0596ac)}
+
+  /* ---------- PARADOX callouts ---------- */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:720px){.two{grid-template-columns:1fr}}
+  .pill-card{border-radius:18px;padding:26px;box-shadow:var(--shadow-sm)}
+  .pc-good{background:#effcf5;border:1px solid #cdeede}
+  .pc-bad{background:#fff5f3;border:1px solid #f6d9d2}
+  .pill-card h3{margin:0 0 14px;font-size:17px;display:flex;align-items:center;gap:9px}
+  .pc-good h3{color:#15803d} .pc-bad h3{color:#b91c1c}
+  .pill-card ul{margin:0;padding-left:18px;color:#334;font-size:14.5px}
+  .pill-card li{margin-bottom:8px}
+  .dot{height:9px;width:9px;border-radius:50%;display:inline-block}
+
+  /* ---------- PLATFORM ---------- */
+  .plat{display:flex;flex-direction:column;gap:12px}
+  .plat-row{display:grid;grid-template-columns:180px 1fr 52px;align-items:center;gap:16px;
+    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 18px;box-shadow:var(--shadow-sm)}
+  @media(max-width:560px){.plat-row{grid-template-columns:120px 1fr 44px}}
+  .plat-row .p-name{font-weight:700;color:var(--navy);font-size:14.5px}
+  .plat-row .p-name small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+  .plat-row .sc{font-family:'Plus Jakarta Sans';font-weight:800;text-align:right}
+
+  /* ---------- SEVERITY ---------- */
+  .sev-legend{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+  .badge{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;padding:5px 12px;border-radius:999px}
+  .b-crit{background:rgba(224,36,36,.1);color:var(--crit)}
+  .b-high{background:rgba(249,115,22,.12);color:#c2410c}
+  .b-med{background:rgba(234,179,8,.15);color:#a16207}
+  .b-low{background:rgba(59,130,246,.12);color:#1d4ed8}
+
+  .issue{background:var(--card);border:1px solid var(--line);border-left-width:5px;border-radius:14px;padding:20px 22px;
+    margin-bottom:14px;box-shadow:var(--shadow-sm)}
+  .issue.crit{border-left-color:var(--crit)}
+  .issue.high{border-left-color:var(--high)}
+  .issue.med{border-left-color:var(--med)}
+  .issue.low{border-left-color:var(--low)}
+  .issue .ihead{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+  .issue .tag{font-family:'JetBrains Mono';font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;letter-spacing:.03em}
+  .issue.crit .tag{background:rgba(224,36,36,.1);color:var(--crit)}
+  .issue.high .tag{background:rgba(249,115,22,.12);color:#c2410c}
+  .issue.med .tag{background:rgba(234,179,8,.15);color:#a16207}
+  .issue.low .tag{background:rgba(59,130,246,.12);color:#1d4ed8}
+  .issue h4{margin:0;font-size:16px;color:var(--navy);font-family:'Plus Jakarta Sans';font-weight:700;flex:1;min-width:60%}
+  .issue p{margin:6px 0 0;font-size:14.5px;color:#3a4a5a}
+  .issue .fix{margin-top:10px;font-size:14px;color:#0d3a45;background:#f0fbfe;border-radius:10px;padding:11px 14px}
+  .issue .fix b{color:var(--cyan-ink)}
+  .affects{font-size:12.5px;color:var(--muted)}
+
+  /* ---------- PLAN ---------- */
+  .weeks{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:720px){.weeks{grid-template-columns:1fr}}
+  .week{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+  .week:before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--cyan),transparent)}
+  .week .wk{font-family:'JetBrains Mono';font-size:12px;color:var(--cyan-ink);font-weight:600;letter-spacing:.05em}
+  .week h3{margin:6px 0 14px;font-size:18px;color:var(--navy)}
+  .week ul{margin:0;padding:0;list-style:none}
+  .week li{position:relative;padding-left:26px;margin-bottom:10px;font-size:14px;color:#3a4a5a}
+  .week li:before{content:"";position:absolute;left:0;top:4px;height:15px;width:15px;border:2px solid var(--cyan);border-radius:5px}
+
+  /* ---------- QUICK WINS ---------- */
+  .qw{counter-reset:qw;display:flex;flex-direction:column;gap:12px}
+  .qw-item{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);
+    border-radius:14px;padding:18px 20px;box-shadow:var(--shadow-sm)}
+  .qw-item .n{flex:none;height:34px;width:34px;border-radius:10px;background:var(--navy);color:#fff;
+    font-family:'Plus Jakarta Sans';font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .qw-item .qt{font-weight:700;color:var(--navy);font-size:15px;margin:0 0 3px}
+  .qw-item .qd{font-size:13.5px;color:var(--muted);margin:0}
+  .qw-item .eta{margin-left:auto;flex:none;font-size:12px;font-weight:700;color:var(--good);background:rgba(22,163,74,.1);
+    padding:5px 11px;border-radius:999px;white-space:nowrap}
+
+  /* ---------- APPENDIX TABLE ---------- */
+  table{width:100%;border-collapse:collapse;background:var(--card);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);font-size:13.5px}
+  thead th{background:var(--navy);color:#fff;text-align:left;padding:12px 14px;font-weight:600;font-size:12.5px;letter-spacing:.02em}
+  tbody td{padding:11px 14px;border-top:1px solid var(--line);vertical-align:top}
+  tbody tr:nth-child(even){background:#fafcfe}
+  td code{font-size:12px}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy);color:#9fb2c4;padding:40px 0;margin-top:20px;font-size:13px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+  footer b{color:#fff}
+
+  .divider{height:1px;background:var(--line);margin:0}
+  .print-hint{text-align:center;color:var(--muted);font-size:12.5px;padding:14px}
+  @media print{
+    body{background:#fff}
+    .hero{padding-bottom:90px}
+    .scoredeck{margin-top:-70px}
+    .card,.issue,.week,.bar-row,.plat-row,.qw-item{box-shadow:none}
+    section{padding:26px 0;page-break-inside:avoid}
+    .print-hint{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div class="brandrow">
+      <div class="logo">GLS</div>
+      <div class="name">Growth Lift Studio</div>
+    </div>
+    <p class="kicker">Generative Engine Optimization Audit</p>
+    <h1>Your content is excellent. AI just can’t see it.</h1>
+    <p class="sub">A full GEO audit measuring how discoverable, citable, and recommendable growthliftstudio.in is to ChatGPT, Claude, Perplexity, Gemini &amp; Google AI Overviews.</p>
+    <div class="meta">
+      <span class="chip"><b>Date:</b> July 5, 2026</span>
+      <span class="chip"><b>Site:</b> growthliftstudio.in</span>
+      <span class="chip"><b>Type:</b> Lead-gen agency</span>
+      <span class="chip"><b>Pages:</b> 14 analyzed</span>
+    </div>
+  </div>
+</div>
+
+<!-- SCORE DECK -->
+<div class="wrap">
+  <div class="scoredeck">
+    <div class="card score-hero">
+      <div class="gauge">
+        <svg width="200" height="200" viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="86" fill="none" stroke="#eef3f7" stroke-width="20"/>
+          <!-- 41/100 → dasharray on circumference 540.35; 41% = 221.5 -->
+          <circle cx="100" cy="100" r="86" fill="none" stroke="url(#g)" stroke-width="20" stroke-linecap="round"
+                  stroke-dasharray="221.5 540.35"/>
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#fb923c"/>
+              <stop offset="1" stop-color="#f97316"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="val">
+          <div class="num">41</div>
+          <div class="den">out of 100</div>
+        </div>
+      </div>
+      <div class="rating">POOR</div>
+    </div>
+
+    <div class="card score-note">
+      <h2>The paradox in one line</h2>
+      <p>You’ve done the hard parts of GEO right — genuinely great, quotable content and near-perfect crawler permissions — yet the site is nearly invisible to AI. Two structural failures cancel almost everything out.</p>
+      <div class="verdict">
+        <b>Highest-leverage fix:</b> prerender the 14 routes to static HTML. That single change converts a large body of already-written, highly citable content — and all your per-page schema — from an effective <b>0</b> into an <b>~80</b>, and lifts four of the six categories at once.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT'S WORKING / KILLING -->
+<section>
+  <div class="wrap">
+    <div class="two">
+      <div class="pill-card pc-good">
+        <h3><span class="dot" style="background:var(--good)"></span> What’s working</h3>
+        <ul>
+          <li><b>Content quality is excellent (80/100)</b> — real Ads-Manager screenshots, specific CPL/ROI numbers, honest pricing, a full author block. Assessed as clearly human-authored.</li>
+          <li><b>Permissions are near-perfect</b> — robots.txt explicitly allows GPTBot, ClaudeBot, PerplexityBot, CCBot &amp; more.</li>
+          <li><b>A rich, hand-written <code>llms.txt</code></b> is currently carrying nearly all of your AI visibility.</li>
+          <li><b>Security &amp; URLs are pristine</b> — HSTS preload, scoped CSP, clean hyphenated routes (100/100 security).</li>
+        </ul>
+      </div>
+      <div class="pill-card pc-bad">
+        <h3><span class="dot" style="background:var(--crit)"></span> What’s killing the score</h3>
+        <ul>
+          <li><b>Client-side rendering, no SSR.</b> Every page serves an empty <code>&lt;div id="root"&gt;</code> to non-JS AI crawlers — your content &amp; schema are invisible to them.</li>
+          <li><b>Wrong publish dates</b> hardcoded on 3 of 4 blog posts — a real, cheap-to-fix data bug feeding false freshness signals.</li>
+          <li><b>Near-zero third-party footprint</b> — no Wikidata, thin LinkedIn, undiscoverable YouTube/Instagram, no Reddit or review sites. AI has no external anchor to trust the entity.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- SCORE BREAKDOWN -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">01</span><h2>Score breakdown</h2></div>
+    <p class="lead">Six weighted categories combine into the composite GEO Score. Content is the clear strength; everything downstream of the rendering gap suffers.</p>
+    <div class="bars">
+      <div class="bar-row">
+        <div class="bar-top"><div class="lbl">AI Citability <span class="w">weight 25%</span></div><div class="sc t-crit">22<span style="font-size:12px;color:var(--muted)">/100</span></div></div>
+        <div class="track"><div class="fill f-crit" style="width:22%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-top"><div class="lbl">Brand Authority <span class="w">weight 20%</span></div><div class="sc t-crit">14<span style="font-size:12px;color:var(--muted)">/100</span></div></div>
+        <div class="track"><div class="fill f-crit" style="width:14%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-top"><div class="lbl">Content E-E-A-T <span class="w">weight 20%</span></div><div class="sc t-good">80<span style="font-size:12px;color:var(--muted)">/100</span></div></div>
+        <div class="track"><div class="fill f-good" style="width:80%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-top"><div class="lbl">Technical GEO <span class="w">weight 15%</span></div><div class="sc t-med">52<span style="font-size:12px;color:var(--muted)">/100</span></div></div>
+        <div class="track"><div class="fill f-med" style="width:52%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-top"><div class="lbl">Schema &amp; Structured Data <span class="w">weight 10%</span></div><div class="sc t-med">58<span style="font-size:12px;color:var(--muted)">/100</span></div></div>
+        <div class="track"><div class="fill f-med" style="width:58%"></div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-top"><div class="lbl">Platform Optimization <span class="w">weight 10%</span></div><div class="sc t-high">34<span style="font-size:12px;color:var(--muted)">/100</span></div></div>
+        <div class="track"><div class="fill f-high" style="width:34%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM READINESS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">02</span><h2>AI platform readiness</h2></div>
+    <p class="lead">The client-side-rendering gap hurts every platform — but hits the non-JS-rendering engines (ChatGPT, Perplexity) hardest, since they read raw HTML and see nothing.</p>
+    <div class="plat">
+      <div class="plat-row"><div class="p-name">Google AI Overviews<small>Googlebot renders JS (deferred)</small></div><div class="track"><div class="fill f-med" style="width:48%"></div></div><div class="sc t-med">48</div></div>
+      <div class="plat-row"><div class="p-name">Google Gemini<small>Render path + Knowledge Graph gap</small></div><div class="track"><div class="fill f-med" style="width:42%"></div></div><div class="sc t-med">42</div></div>
+      <div class="plat-row"><div class="p-name">Bing Copilot<small>Unreliable JS; broken IndexNow key</small></div><div class="track"><div class="fill f-high" style="width:30%"></div></div><div class="sc t-high">30</div></div>
+      <div class="plat-row"><div class="p-name">ChatGPT Search<small>GPTBot does not render JS → near-blind</small></div><div class="track"><div class="fill f-high" style="width:28%"></div></div><div class="sc t-high">28</div></div>
+      <div class="plat-row"><div class="p-name">Perplexity AI<small>Minimal JS; heavy Reddit reliance (none)</small></div><div class="track"><div class="fill f-crit" style="width:24%"></div></div><div class="sc t-crit">24</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ISSUES -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">03</span><h2>Prioritized findings</h2></div>
+    <div class="sev-legend">
+      <span class="badge b-crit">● Critical — fix now</span>
+      <span class="badge b-high">● High — this week</span>
+      <span class="badge b-med">● Medium — this month</span>
+      <span class="badge b-low">● Low — when possible</span>
+    </div>
+
+    <!-- CRITICAL -->
+    <div class="issue crit">
+      <div class="ihead"><span class="tag">C1 · CRITICAL</span><h4>Client-side rendering hides all body content from AI crawlers</h4></div>
+      <div class="affects">Affects: all 14 routes · <code>vercel.json</code>, <code>dist/index.html</code></div>
+      <p>Pure CSR React SPA. Every URL serves the same shell whose <code>&lt;body&gt;</code> is just <code>&lt;div id="root"&gt;</code>; content renders from a ~623 KB JS bundle. GPTBot, ClaudeBot, PerplexityBot &amp; CCBot see an empty body on every page.</p>
+      <div class="fix"><b>Fix →</b> Add build-time prerendering of the 14 routes. Fastest: a <code>react-snap</code> postbuild (zero code changes). Durable: migrate rendering to Astro / <code>vite-react-ssg</code> / Next SSG on Vercel. Lifts Technical, Schema, Citability &amp; Platform at once.</div>
+    </div>
+
+    <div class="issue crit">
+      <div class="ihead"><span class="tag">C2 · CRITICAL</span><h4>Per-page title, description, canonical &amp; schema all default to the homepage</h4></div>
+      <div class="affects">Affects: all routes · <code>src/components/SEO.tsx</code></div>
+      <p>All per-page SEO is injected client-side via <code>useEffect</code>. To a non-JS crawler, every one of the 14 pages looks like a near-duplicate homepage stub with a homepage canonical.</p>
+      <div class="fix"><b>Fix →</b> Bake per-route title/description/canonical + JSON-LD into static HTML during the C1 prerender. Interim: emit a self-referencing <code>&lt;link rel="canonical"&gt;</code> per route.</div>
+    </div>
+
+    <div class="issue crit">
+      <div class="ihead"><span class="tag">C3 · CRITICAL</span><h4>Wrong <code>datePublished</code> on 3 of 4 blog posts (data bug)</h4></div>
+      <div class="affects">Affects: all blog posts · <code>src/pages/BlogPost.tsx:294</code></div>
+      <p>The BlogPosting schema hardcodes <code>"2026-05-24"</code> for every post (real dates: May 4 → Jun 24), and there is no <code>dateModified</code> at all. Freshness is a major GEO signal and this is actively false.</p>
+      <div class="fix"><b>Fix →</b> Add <code>datePublished</code>/<code>dateModified</code> ISO fields per entry in <code>blogPosts.ts</code> and reference them. ~15-minute fix — do it regardless of the rendering work.</div>
+    </div>
+
+    <div class="issue crit">
+      <div class="ihead"><span class="tag">C4 · CRITICAL</span><h4>Near-zero third-party footprint → no AI entity recognition</h4></div>
+      <div class="affects">Affects: brand-wide (off-domain)</div>
+      <p>No Wikipedia/Wikidata entity, a thin LinkedIn page (typo “appoinments”), undiscoverable YouTube/Instagram, zero Reddit or Clutch/G2/Trustpilot. AI decides if an entity is real from third-party signals — here there are almost none.</p>
+      <div class="fix"><b>Fix →</b> Create a Wikidata item; claim Clutch/G2/Trustpilot, Google Business Profile &amp; Bing Places; rebuild the LinkedIn page; begin authentic founder participation on Reddit.</div>
+    </div>
+
+    <!-- HIGH -->
+    <div class="issue high">
+      <div class="ihead"><span class="tag">H1 · HIGH</span><h4>IndexNow key file is a false positive</h4></div>
+      <p><code>/.well-known/indexnow-key.txt</code> returns 200 but serves the SPA shell, not a UUID — so IndexNow submissions fail verification and Bing/Copilot get no instant-index benefit.</p>
+      <div class="fix"><b>Fix →</b> Serve a real static UUID key (<code>text/plain</code>) excluded from the SPA catch-all; wire a publish-time IndexNow ping.</div>
+    </div>
+
+    <div class="issue high">
+      <div class="ihead"><span class="tag">H2 · HIGH</span><h4>Best-in-class blog content earns zero AI value while JS-gated</h4></div>
+      <p>The 4 data-rich posts are your strongest citable asset and are 100% invisible to non-JS crawlers.</p>
+      <div class="fix"><b>Fix →</b> Prioritize these 4 routes in the prerender; ensure BlogPosting + FAQPage + author Person render into static HTML.</div>
+    </div>
+
+    <div class="issue high">
+      <div class="ihead"><span class="tag">H3 · HIGH</span><h4>Unsourced statistics stated as fact</h4></div>
+      <p>The kitchen post cites “391% conversion boost” and “21× less likely to qualify” with zero attribution. AI engines and rater guidelines discount unsourced hard numbers.</p>
+      <div class="fix"><b>Fix →</b> Add inline attribution + outbound links (Lead Response Management / Harvard-InsideSales). Bonus: creates the missing outbound-citation signal.</div>
+    </div>
+
+    <div class="issue high">
+      <div class="ihead"><span class="tag">H4 · HIGH</span><h4>Founder <code>Person</code> node is thin and not linked into a graph</h4></div>
+      <p>Static <code>founder</code> has <code>name</code> only — no jobTitle, image, <code>sameAs</code>, or <code>worksFor</code> — and the four static blocks share no <code>@id</code>, so AI sees four disconnected objects. Author photo uses an unreliable Google Drive URL.</p>
+      <div class="fix"><b>Fix →</b> Enrich the founder Person, add stable <code>@id</code>s linking org ↔ founder ↔ services into one <code>@graph</code>, add an org <code>logo</code>, self-host the image.</div>
+    </div>
+
+    <div class="issue high">
+      <div class="ihead"><span class="tag">H5 · HIGH</span><h4>Case-study outcomes are unverifiable</h4></div>
+      <p>“8 confirmed jobs in 30 days” and “21 leads in NYC @ $55” carry no client name, dated proof, or link — the weakest form of authoritativeness.</p>
+      <div class="fix"><b>Fix →</b> Cross-link case studies to the matching named testimonials already on-site; add a redacted dashboard export.</div>
+    </div>
+
+    <!-- MEDIUM (condensed) -->
+    <div class="issue med">
+      <div class="ihead"><span class="tag">M1–M8 · MEDIUM</span><h4>Eight month-scope improvements</h4></div>
+      <p>Undiscoverable social profiles · per-page schema (BlogPosting/FAQ/Breadcrumb) JS-only · no <code>AggregateRating</code>/<code>Review</code> despite real testimonials · no <code>dateModified</code>/refresh cadence · author bio omits “6 yrs / 16 clients” · schema-vs-<code>llms.txt</code> trade-scope drift (roofing/HVAC/plumbing) · <code>llms.txt</code> missing a link section &amp; <code>llms-full.txt</code> · no Reddit/community validation.</p>
+    </div>
+
+    <!-- LOW (condensed) -->
+    <div class="issue low">
+      <div class="ihead"><span class="tag">L1–L7 · LOW</span><h4>Seven optimizations when possible</h4></div>
+      <p>Repeated template across Google Ads posts · thin corpus / no pillar page · free-text <code>priceRange</code> · stale sitemap <code>lastmod</code> · no <code>Content-Signal:</code> directive · CSP <code>'unsafe-inline'</code> · large PNGs (300–750 KB) → convert to WebP/AVIF with explicit dimensions.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- QUICK WINS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">04</span><h2>Quick wins — this week</h2></div>
+    <div class="qw">
+      <div class="qw-item"><div class="n">1</div><div><p class="qt">Fix the hardcoded publish-date bug</p><p class="qd">Add real ISO <code>datePublished</code>/<code>dateModified</code> per post — corrects a factual error AI reads today.</p></div><span class="eta">~15 min</span></div>
+      <div class="qw-item"><div class="n">2</div><div><p class="qt">Ship a react-snap prerender of all 14 routes</p><p class="qd">The single biggest lever — no framework migration required to start.</p></div><span class="eta">~half day</span></div>
+      <div class="qw-item"><div class="n">3</div><div><p class="qt">Attribute the 391% / 21× statistics</p><p class="qd">Named sources + outbound links — improves trust and adds citation signals.</p></div><span class="eta">~30 min</span></div>
+      <div class="qw-item"><div class="n">4</div><div><p class="qt">Enrich founder schema + @graph + logo</p><p class="qd">Directly in <code>index.html</code> — crawler-visible immediately, no build change.</p></div><span class="eta">~30 min</span></div>
+      <div class="qw-item"><div class="n">5</div><div><p class="qt">Create Wikidata + claim Clutch / Google Business Profile</p><p class="qd">Begins the off-domain entity anchor that AI needs to trust the brand.</p></div><span class="eta">~1–2 hrs</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 30-DAY PLAN -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">05</span><h2>30-day action plan</h2></div>
+    <div class="weeks">
+      <div class="week"><div class="wk">WEEK 1</div><h3>Stop the bleeding — code fixes</h3><ul>
+        <li>Fix <code>datePublished</code>/<code>dateModified</code> in <code>blogPosts.ts</code> (C3)</li>
+        <li>Enrich founder Person, add <code>@graph</code> <code>@id</code>s + org logo (H4)</li>
+        <li>Audit <code>SEO.tsx</code>; add canonical fallback awareness (C2)</li>
+        <li>Attribute the 391% / 21× stats with sources (H3)</li>
+      </ul></div>
+      <div class="week"><div class="wk">WEEK 2</div><h3>Rendering — the big one</h3><ul>
+        <li>Implement prerendering; all 14 routes ship static HTML + per-page meta/schema (C1/C2)</li>
+        <li>Verify with <code>curl</code> (no JS) that bodies &amp; schema appear in raw HTML</li>
+        <li>Fix the IndexNow key file + publish-time ping (H1)</li>
+      </ul></div>
+      <div class="week"><div class="wk">WEEK 3</div><h3>Entity &amp; authority</h3><ul>
+        <li>Create Wikidata item for the brand + Binayak Dey (C4)</li>
+        <li>Claim Clutch, G2, Trustpilot, Google Business &amp; Bing Places (C4)</li>
+        <li>Rebuild LinkedIn company page; fix the typo (M1)</li>
+        <li>Cross-link case studies ↔ named testimonials + dashboard proof (H5)</li>
+      </ul></div>
+      <div class="week"><div class="wk">WEEK 4</div><h3>Content depth &amp; polish</h3><ul>
+        <li>Add quantified credentials to the author bio (M5)</li>
+        <li>Pillar page; plan roofing/HVAC/plumbing posts; reconcile trade scope (L2/M6)</li>
+        <li>Add <code>## Pages</code> links + generate <code>llms-full.txt</code> (M7)</li>
+        <li>Convert PNGs → WebP/AVIF; add route code-splitting (L7/CWV)</li>
+        <li>Begin authentic Reddit participation; publish NYC case study (M8)</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- APPENDIX -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="idx">06</span><h2>Appendix — pages analyzed</h2></div>
+    <p class="lead">All 14 pages share the CSR baseline (empty body + homepage-only metadata to non-JS crawlers). Below are the <em>additional</em> page-specific findings.</p>
+    <table>
+      <thead><tr><th>URL</th><th>Intended title</th><th>Additional GEO issues</th></tr></thead>
+      <tbody>
+        <tr><td><code>/</code></td><td>Lead Generation for Home Improvement Contractors</td><td>Homepage schema OK; thin founder node (H4)</td></tr>
+        <tr><td><code>/services</code></td><td>Services</td><td>BreadcrumbList JS-only</td></tr>
+        <tr><td><code>/results</code></td><td>Case Studies</td><td>Unverifiable outcome claims (H5)</td></tr>
+        <tr><td><code>/faq</code></td><td>FAQ</td><td>FAQPage (8 Q&amp;A) JS-only</td></tr>
+        <tr><td><code>/testimonials</code></td><td>Testimonials</td><td>No Review/AggregateRating schema (M3)</td></tr>
+        <tr><td><code>/about</code></td><td>About</td><td>AboutPage JS-only; strong trust content trapped</td></tr>
+        <tr><td><code>/contact</code></td><td>Contact</td><td>Real NAP present but JS-gated</td></tr>
+        <tr><td><code>/blog</code></td><td>Blog index</td><td>No ItemList schema</td></tr>
+        <tr><td><code>/blog/facebook-ads-bathroom-remodeling-contractors</code></td><td>FB Ads for Bathroom Remodeling</td><td>BlogPosting JS-only; strong content invisible (H2)</td></tr>
+        <tr><td><code>/blog/google-ads-kitchen-remodeling-contractors</code></td><td>Google Ads for Kitchen Remodeling</td><td>Unsourced stats (H3); wrong date (C3)</td></tr>
+        <tr><td><code>/blog/google-ads-bathroom-remodeling-contractors</code></td><td>Google Ads for Bathroom Remodeling</td><td>Wrong datePublished (C3)</td></tr>
+        <tr><td><code>/blog/google-ads-window-replacement-contractors</code></td><td>Google Ads for Window Replacement</td><td>Wrong datePublished (C3)</td></tr>
+        <tr><td><code>/privacy-policy</code></td><td>Privacy Policy</td><td>Low GEO priority</td></tr>
+        <tr><td><code>/terms-conditions</code></td><td>Terms &amp; Conditions</td><td>Low GEO priority</td></tr>
+      </tbody>
+    </table>
+    <p class="print-hint">Tip: use your browser’s <b>Print → Save as PDF</b> (enable “Background graphics”) to export this report.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>GEO Audit · <b>Growth Lift Studio</b> · growthliftstudio.in</div>
+    <div>Overall Score <b>41/100</b> · Generated July 5, 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>

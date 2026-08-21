@@ -1,3 +1,8 @@
+export interface BlogPostFAQ {
+  question: string;
+  answer: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -10,6 +15,7 @@ export interface BlogPost {
   excerpt: string;
   coverImage?: string;
   content: string;
+  faqs?: BlogPostFAQ[]; // rendered after content + emitted as FAQPage schema
 }
 
 export const blogPosts: BlogPost[] = [
@@ -168,12 +174,12 @@ Or skip the trial and error and book a call with us. We'll tell you exactly what
   },
   {
     slug: "google-ads-kitchen-remodeling-contractors",
-    title: "Google Ads for Kitchen Remodeling Contractors: The Complete 2026 Guide",
+    title: "Google Ads (PPC) for Kitchen Remodeling Contractors: The Complete 2026 Guide",
     metaDescription:
-      "Google Ads (PPC) for kitchen remodeling contractors: the exact keywords, budgets, and campaign structure that book $30,000+ renovation jobs in 2026.",
+      "PPC for kitchen remodeling: the exact Google Ads keywords, budgets, and campaign structure kitchen remodelers use to book $30,000+ renovation jobs in 2026.",
     date: "May 24, 2026",
     datePublished: "2026-05-24",
-    dateModified: "2026-07-08",
+    dateModified: "2026-07-19",
     readTime: "7 min read",
     category: "Google Ads",
     excerpt:
@@ -331,6 +337,33 @@ If you are a kitchen remodeling contractor in the US and want to build a consist
 
 Book a free strategy call with Binayak and the Growth Lift Studio team today. We'll run the numbers for your specific city and show you exactly how many leads are waiting for you right now.
     `,
+    faqs: [
+      {
+        question: "What is PPC for kitchen remodeling?",
+        answer:
+          "PPC (pay-per-click) for kitchen remodeling means paying to appear at the top of Google when homeowners search for terms like \"kitchen remodeling contractor near me.\" You only pay when someone clicks your ad. Google Ads is the dominant PPC platform, so \"PPC for kitchen remodeling\" and \"Google Ads for kitchen remodeling\" refer to the same strategy.",
+      },
+      {
+        question: "How much does Google Ads cost for a kitchen remodeling company?",
+        answer:
+          "Expect an average cost per click of $8–$22 and a cost per lead of $120–$280 depending on your market. A realistic starting budget is $2,000–$4,000 per month in ad spend. Because mid-range kitchen remodels are worth $30,000–$75,000, a single closed job typically returns 10x–15x the monthly ad budget.",
+      },
+      {
+        question: "Are Google Ads worth it for kitchen remodelers?",
+        answer:
+          "Yes — for high-ticket services like kitchen remodeling, Google Ads reaches homeowners at the exact moment they're searching for a contractor. With proper negative keywords, tight geographic targeting, and a dedicated landing page, well-run campaigns book leads that convert to appointments at 30%–45%.",
+      },
+      {
+        question: "Should I run Google Ads or Facebook Ads for my kitchen remodeling business?",
+        answer:
+          "Google Ads captures homeowners actively searching for a kitchen remodeler right now, which makes it the fastest path to booked jobs. Facebook Ads builds awareness with homeowners who aren't searching yet, so it's usually cheaper per lead but lower intent. Most kitchen remodelers should start with Google Ads, then layer in Facebook once the search pipeline is profitable.",
+      },
+      {
+        question: "How do PPC ads for an outdoor kitchen construction business differ?",
+        answer:
+          "The same campaign structure applies — exact-match keywords, negative keyword shield, local targeting, and a dedicated landing page — but outdoor kitchen searches are more seasonal and lower volume. Target terms like \"outdoor kitchen builder [city]\" and \"outdoor kitchen contractor,\" and expect spring and summer to drive most of the lead flow.",
+      },
+    ],
   },
   {
     slug: "google-ads-bathroom-remodeling-contractors",
@@ -339,7 +372,7 @@ Book a free strategy call with Binayak and the Growth Lift Studio team today. We
       "A practical Google Ads guide for bathroom remodeling contractors. Real budgets, campaign structure, keywords that convert, and what separates booked jobs from wasted spend.",
     date: "June 17, 2026",
     datePublished: "2026-06-17",
-    dateModified: "2026-06-17",
+    dateModified: "2026-07-19",
     readTime: "10 min read",
     category: "Google Ads",
     excerpt:
@@ -599,6 +632,23 @@ If you want a clear picture of what a properly structured Google Ads campaign wo
 
 We work exclusively with home improvement contractors. Every campaign we build is designed around one outcome: booked jobs, not just leads.
     `,
+    faqs: [
+      {
+        question: "What is PPC for bathroom remodeling?",
+        answer:
+          "PPC (pay-per-click) for bathroom remodeling means paying to appear at the top of Google when homeowners search for terms like \"bathroom remodeler near me.\" Google Ads is the biggest PPC platform, so the two terms are used interchangeably — you only pay when someone actually clicks your ad.",
+      },
+      {
+        question: "How much do Google Ads cost for bathroom remodeling contractors?",
+        answer:
+          "In most US markets, bathroom remodeling clicks cost $6–$18 and leads land between $80–$200. A workable starting budget is $1,500–$3,000 per month. Because bathroom remodels typically run $12,000–$35,000, one closed job covers months of ad spend.",
+      },
+      {
+        question: "Are Google Ads worth it for a bathroom remodeling company?",
+        answer:
+          "Yes, if the campaign is structured correctly. Bathroom remodeling has tighter margins than kitchen work, so the winners rely on exact-match keywords, an aggressive negative keyword list, a dedicated landing page, and fast follow-up — not bigger budgets.",
+      },
+    ],
   },
   {
     slug: "google-ads-window-replacement-contractors",
@@ -607,7 +657,7 @@ We work exclusively with home improvement contractors. Every campaign we build i
       "How window replacement contractors use Google Ads to get high-intent leads — seasonal timing, keywords that convert, real budgets, and a campaign that books jobs.",
     date: "June 24, 2026",
     datePublished: "2026-06-24",
-    dateModified: "2026-06-24",
+    dateModified: "2026-07-19",
     readTime: "9 min read",
     category: "Google Ads",
     excerpt:
@@ -829,6 +879,23 @@ The contractors who win aren't spending more than their competitors. They're tim
 
 If you want a clear picture of what a properly built Google Ads campaign would look like for your window replacement business — realistic budget, expected cost per lead, and a season-by-season plan — book a free strategy call with Growth Lift Studio. We'll run the numbers for your specific market and show you exactly how many leads are waiting for you right now.
     `,
+    faqs: [
+      {
+        question: "Do Google Ads work for window installation and repair companies?",
+        answer:
+          "Yes — window replacement and installation is one of the best-fit trades for Google Ads. Homeowners with a broken or drafty window search with urgency and decide fast, so search ads capture demand at its peak. The same campaign structure covers both installation and repair searches; you separate them with ad groups and negative keywords.",
+      },
+      {
+        question: "How much should a window contractor spend on Google Ads?",
+        answer:
+          "Most markets support a starting budget of $1,500–$3,000 per month, with clicks in the $5–$15 range and leads between $60–$150. Spend should flex with the season — front-load budget in spring and fall when replacement searches spike, rather than running a flat budget year-round.",
+      },
+      {
+        question: "What keywords should a window installation company target?",
+        answer:
+          "Start with high-intent local terms: \"window replacement [city],\" \"window installation company [city],\" \"window installers near me,\" and urgency terms like \"broken window repair.\" Block DIY, glass-only, and auto-glass searches with negative keywords so your budget only goes to real replacement and installation jobs.",
+      },
+    ],
   },
   {
     slug: "google-ads-home-improvement-contractors",
@@ -837,7 +904,7 @@ If you want a clear picture of what a properly built Google Ads campaign would l
       "How home improvement contractors use Google Ads (PPC) to book high-value jobs in 2026 — campaign structure, realistic budgets, negative keywords, and a proven per-niche playbook.",
     date: "July 8, 2026",
     datePublished: "2026-07-08",
-    dateModified: "2026-07-08",
+    dateModified: "2026-07-19",
     readTime: "11 min read",
     category: "Google Ads",
     excerpt:
@@ -1032,5 +1099,27 @@ The contractors who win with Google Ads aren't spending more than their competit
 
 If you want a clear picture of what a properly built campaign would look like for your specific trade and city — realistic budget, expected cost per lead, and a 90-day roadmap — book a free strategy call with Growth Lift Studio. We'll run the numbers for your market and show you exactly how many leads are waiting for you right now.
     `,
+    faqs: [
+      {
+        question: "Do Google Ads work for home remodeling companies?",
+        answer:
+          "Yes — Google Ads is the fastest lead channel for home remodeling companies because it captures homeowners at the moment they search for your service. Whether you focus on kitchens, bathrooms, or whole-home remodels, search ads put you in front of buyers who are ready to hire, not just browsing.",
+      },
+      {
+        question: "How much should a home remodeling company budget for Google Ads?",
+        answer:
+          "Budget scales with job value. Bathroom and window contractors can start around $1,500–$3,000 per month; kitchen and whole-home remodelers should plan for $2,000–$4,000+. Across trades, a well-structured campaign returns 8x–15x ad spend once one or two jobs close.",
+      },
+      {
+        question: "What's the difference between Google Ads and PPC for contractors?",
+        answer:
+          "Nothing — PPC (pay-per-click) is the advertising model, and Google Ads is the largest PPC platform. When contractors say \"PPC ads,\" they almost always mean Google Search ads: you bid on keywords and pay only when a homeowner clicks through to your site.",
+      },
+      {
+        question: "Should a remodeling company hire a PPC agency or run ads in-house?",
+        answer:
+          "If you have time to learn negative keywords, conversion tracking, and landing page testing, in-house can work. But most remodeling companies burn their first few thousand dollars on setup mistakes. A contractor-focused agency that already knows the niche's keywords and benchmarks typically pays for itself in avoided waste.",
+      },
+    ],
   },
 ];

@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Growth Lift Studio — Pages UI Before/After</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { brand: { navy:'#0D1B2A', cloud:'#F4F6F8', cyan:'#00C2E0', 'cyan-ink':'#0A7A8E' } },
+      fontFamily: { sans:['Plus Jakarta Sans','sans-serif'], body:['Inter','sans-serif'] },
+    } },
+  };
+</script>
+<style>
+  body { font-family:'Inter',sans-serif; }
+  h1,h2,h3,h4 { font-family:'Plus Jakarta Sans',sans-serif; }
+  /* the exact shadow utilities now used in the app */
+  .elev-soft { box-shadow: 0 1px 2px rgba(13,27,42,.05), 0 18px 40px -18px rgba(13,27,42,.22); }
+  .elev-cyan { box-shadow: 0 1px 2px rgba(13,27,42,.04), 0 20px 45px -18px rgba(0,120,140,.30), 0 6px 16px -8px rgba(0,194,224,.20); }
+  .shadow-sm-old { box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); }
+</style>
+</head>
+<body class="bg-white text-brand-navy antialiased">
+
+<header class="border-b border-zinc-200 bg-brand-navy text-white">
+  <div class="mx-auto max-w-6xl px-6 py-10">
+    <p class="text-[11px] font-black uppercase tracking-[0.35em] text-brand-cyan mb-3">Design Review — All Pages</p>
+    <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Inner Pages — Before vs. After</h1>
+    <p class="text-zinc-300 max-w-2xl leading-relaxed">The same depth system from the homepage, applied to Services, About, Case Studies, Testimonials, FAQ, Contact & Blog. Left = current (flat), right = proposed (elevated). Hover the "after" cards to feel the lift.</p>
+  </div>
+</header>
+
+<div class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-zinc-200">
+  <div class="mx-auto max-w-6xl px-6 py-3 flex items-center gap-6 text-xs font-bold">
+    <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-zinc-300"></span>BEFORE</span>
+    <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-brand-cyan"></span>AFTER</span>
+  </div>
+</div>
+
+<main class="mx-auto max-w-6xl px-6 py-16 space-y-24">
+
+  <!-- ========== SHARED CARD ELEVATION (Services / About / Case Studies) ========== -->
+  <section>
+    <h2 class="text-2xl font-extrabold tracking-tight mb-1">1 · Card grids — Services, About, Case Studies</h2>
+    <p class="text-zinc-500 text-sm mb-6">All three used <code class="text-brand-navy">shadow-sm</code> (invisible on white). Now <code class="text-brand-navy">.elev-soft</code> at rest → <code class="text-brand-navy">.elev-cyan</code> on hover.</p>
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- before -->
+      <div>
+        <p class="text-[11px] font-black uppercase tracking-widest text-zinc-400 mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-zinc-300"></span>Before</p>
+        <div class="bg-white p-8 rounded-3xl border border-zinc-100 shadow-sm-old h-full">
+          <div class="w-14 h-14 bg-brand-cyan/5 rounded-2xl flex items-center justify-center mb-6 text-brand-cyan text-xl">🎯</div>
+          <h3 class="text-2xl font-black text-brand-navy mb-3">Advertising</h3>
+          <p class="text-zinc-500 italic mb-6">Local targeting where homeowners are actively looking.</p>
+          <ul class="space-y-3 text-brand-navy font-bold text-sm">
+            <li class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-brand-cyan"></span>Facebook &amp; Instagram Ads</li>
+            <li class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-brand-cyan"></span>Google Search Ads</li>
+          </ul>
+        </div>
+      </div>
+      <!-- after -->
+      <div>
+        <p class="text-[11px] font-black uppercase tracking-widest text-brand-cyan-ink mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-brand-cyan"></span>After (hover me)</p>
+        <div class="bg-white p-8 rounded-3xl border border-zinc-100 elev-soft hover:elev-cyan hover:border-brand-cyan transition-all duration-500 h-full group">
+          <div class="w-14 h-14 bg-brand-cyan/5 rounded-2xl flex items-center justify-center mb-6 text-brand-cyan text-xl group-hover:bg-brand-cyan/10 transition-colors">🎯</div>
+          <h3 class="text-2xl font-black text-brand-navy mb-3 group-hover:text-brand-cyan transition-colors">Advertising</h3>
+          <p class="text-zinc-500 italic mb-6">Local targeting where homeowners are actively looking.</p>
+          <ul class="space-y-3 text-brand-navy font-bold text-sm">
+            <li class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-brand-cyan"></span>Facebook &amp; Instagram Ads</li>
+            <li class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-brand-cyan"></span>Google Search Ads</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BLOG ========== -->
+  <section>
+    <h2 class="text-2xl font-extrabold tracking-tight mb-1">2 · Blog — featured latest post + elevated cards</h2>
+    <p class="text-zinc-500 text-sm mb-6">Biggest change. Was a flat uniform 3-col grid; now the latest post is a wide featured card and the rest are elevated.</p>
+
+    <!-- before -->
+    <p class="text-[11px] font-black uppercase tracking-widest text-zinc-400 mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-zinc-300"></span>Before</p>
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      <div class="bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm-old">
+        <div class="aspect-[16/9] bg-brand-navy/90 flex items-center justify-center text-white/30 text-xs">cover</div>
+        <div class="p-6"><span class="text-[10px] font-black uppercase tracking-widest text-brand-cyan-ink bg-brand-cyan/10 px-3 py-1 rounded-full">Google Ads</span><h3 class="text-lg font-black text-brand-navy mt-4 mb-2">Google Ads for Window Contractors</h3><p class="text-sm text-zinc-500">How to structure campaigns that book installs.</p></div>
+      </div>
+      <div class="bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm-old">
+        <div class="aspect-[16/9] bg-brand-navy/90 flex items-center justify-center text-white/30 text-xs">cover</div>
+        <div class="p-6"><span class="text-[10px] font-black uppercase tracking-widest text-brand-cyan-ink bg-brand-cyan/10 px-3 py-1 rounded-full">Strategy</span><h3 class="text-lg font-black text-brand-navy mt-4 mb-2">Leads vs. Booked Jobs</h3><p class="text-sm text-zinc-500">Why measuring leads is costing you money.</p></div>
+      </div>
+      <div class="bg-white border border-zinc-100 rounded-3xl overflow-hidden shadow-sm-old">
+        <div class="aspect-[16/9] bg-brand-navy/90 flex items-center justify-center text-white/30 text-xs">cover</div>
+        <div class="p-6"><span class="text-[10px] font-black uppercase tracking-widest text-brand-cyan-ink bg-brand-cyan/10 px-3 py-1 rounded-full">Systems</span><h3 class="text-lg font-black text-brand-navy mt-4 mb-2">The Follow-Up Engine</h3><p class="text-sm text-zinc-500">Automations that stop leads going cold.</p></div>
+      </div>
+    </div>
+
+    <!-- after -->
+    <p class="text-[11px] font-black uppercase tracking-widest text-brand-cyan-ink mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-brand-cyan"></span>After</p>
+    <div class="space-y-8">
+      <!-- featured -->
+      <div class="grid lg:grid-cols-2 bg-white rounded-3xl overflow-hidden elev-cyan hover:-translate-y-1 transition-all duration-300 group">
+        <div class="aspect-[16/10] lg:aspect-auto lg:min-h-[300px] bg-brand-navy flex items-center justify-center text-white/30 text-sm">cover image</div>
+        <div class="p-8 md:p-12 flex flex-col justify-center">
+          <div class="mb-5 flex items-center gap-3">
+            <span class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-navy bg-brand-cyan px-3 py-1 rounded-full">Latest</span>
+            <span class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-cyan-ink bg-brand-cyan/10 px-3 py-1 rounded-full">Google Ads</span>
+          </div>
+          <h3 class="text-2xl md:text-4xl font-black text-brand-navy mb-4 leading-tight tracking-tight group-hover:text-brand-cyan transition-colors">Google Ads for Window Replacement Contractors</h3>
+          <p class="text-base text-zinc-500 leading-relaxed mb-8">The exact campaign structure we use to turn ad spend into booked, confirmed installs — not tire-kickers.</p>
+          <div class="flex items-center gap-3 text-xs font-bold text-zinc-400 uppercase tracking-wider">Jun 2026 · 8 min read <span class="ml-auto text-brand-cyan">→</span></div>
+        </div>
+      </div>
+      <!-- rest -->
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-3xl overflow-hidden elev-soft hover:elev-cyan hover:-translate-y-1 transition-all duration-300">
+          <div class="aspect-[16/9] bg-brand-navy flex items-center justify-center text-white/30 text-xs">cover</div>
+          <div class="p-6"><span class="text-[10px] font-black uppercase tracking-widest text-brand-cyan-ink bg-brand-cyan/10 px-3 py-1 rounded-full">Strategy</span><h3 class="text-lg font-black text-brand-navy mt-4 mb-2">Leads vs. Booked Jobs</h3><p class="text-sm text-zinc-500">Why measuring leads is costing you money.</p></div>
+        </div>
+        <div class="bg-white rounded-3xl overflow-hidden elev-soft hover:elev-cyan hover:-translate-y-1 transition-all duration-300">
+          <div class="aspect-[16/9] bg-brand-navy flex items-center justify-center text-white/30 text-xs">cover</div>
+          <div class="p-6"><span class="text-[10px] font-black uppercase tracking-widest text-brand-cyan-ink bg-brand-cyan/10 px-3 py-1 rounded-full">Systems</span><h3 class="text-lg font-black text-brand-navy mt-4 mb-2">The Follow-Up Engine</h3><p class="text-sm text-zinc-500">Automations that stop leads going cold.</p></div>
+        </div>
+        <div class="bg-white rounded-3xl overflow-hidden elev-soft hover:elev-cyan hover:-translate-y-1 transition-all duration-300">
+          <div class="aspect-[16/9] bg-brand-navy flex items-center justify-center text-white/30 text-xs">cover</div>
+          <div class="p-6"><span class="text-[10px] font-black uppercase tracking-widest text-brand-cyan-ink bg-brand-cyan/10 px-3 py-1 rounded-full">Local</span><h3 class="text-lg font-black text-brand-navy mt-4 mb-2">Owning Your Service Area</h3><p class="text-sm text-zinc-500">Geo-targeting for home improvement pros.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section>
+    <h2 class="text-2xl font-extrabold tracking-tight mb-1">3 · Contact — boxed email/phone + elevated trust</h2>
+    <p class="text-zinc-500 text-sm mb-6">Contact details were loose floating text. Now each is a real elevated card; trust quote lifted off the background.</p>
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- before -->
+      <div>
+        <p class="text-[11px] font-black uppercase tracking-widest text-zinc-400 mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-zinc-300"></span>Before</p>
+        <div class="bg-white p-6 rounded-2xl space-y-8">
+          <div class="flex items-center gap-6">
+            <div class="h-16 w-16 bg-brand-cyan/5 rounded-2xl flex items-center justify-center text-brand-cyan text-xl">✉</div>
+            <div><p class="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">Email</p><p class="text-lg font-black text-brand-navy">binayak@growthliftstudio.in</p></div>
+          </div>
+          <div class="flex items-center gap-6">
+            <div class="h-16 w-16 bg-brand-cyan/5 rounded-2xl flex items-center justify-center text-brand-cyan text-xl">☎</div>
+            <div><p class="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">Phone</p><p class="text-lg font-black text-brand-navy">+1 (888) 422-7901</p></div>
+          </div>
+          <div class="p-8 bg-zinc-50 rounded-3xl border border-zinc-100 flex items-start gap-5">
+            <div class="h-10 w-10 shrink-0 bg-white rounded-xl shadow-sm-old flex items-center justify-center text-brand-cyan">✓</div>
+            <p class="text-sm font-bold text-zinc-500 italic">"Growth Lift completely stabilized our workflow."</p>
+          </div>
+        </div>
+      </div>
+      <!-- after -->
+      <div>
+        <p class="text-[11px] font-black uppercase tracking-widest text-brand-cyan-ink mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-brand-cyan"></span>After (hover the cards)</p>
+        <div class="bg-white p-6 rounded-2xl space-y-6">
+          <div class="flex items-center gap-5 p-6 bg-white rounded-2xl border border-zinc-100 elev-soft hover:elev-cyan hover:border-brand-cyan/20 transition-all group cursor-pointer">
+            <div class="h-14 w-14 shrink-0 bg-brand-cyan/5 rounded-2xl flex items-center justify-center text-brand-cyan text-xl group-hover:bg-brand-cyan/10 transition-colors">✉</div>
+            <div><p class="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">Email</p><p class="text-lg font-black text-brand-navy">binayak@growthliftstudio.in</p></div>
+          </div>
+          <div class="flex items-center gap-5 p-6 bg-white rounded-2xl border border-zinc-100 elev-soft hover:elev-cyan hover:border-brand-cyan/20 transition-all group cursor-pointer">
+            <div class="h-14 w-14 shrink-0 bg-brand-cyan/5 rounded-2xl flex items-center justify-center text-brand-cyan text-xl group-hover:bg-brand-cyan/10 transition-colors">☎</div>
+            <div><p class="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">Phone</p><p class="text-lg font-black text-brand-navy">+1 (888) 422-7901</p></div>
+          </div>
+          <div class="p-8 bg-white rounded-3xl border border-zinc-100 elev-soft flex items-start gap-5">
+            <div class="h-10 w-10 shrink-0 bg-brand-cyan/5 rounded-xl flex items-center justify-center text-brand-cyan">✓</div>
+            <p class="text-sm font-bold text-zinc-500 italic">"Growth Lift completely stabilized our workflow."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section>
+    <h2 class="text-2xl font-extrabold tracking-tight mb-1">4 · FAQ — active item lifts</h2>
+    <p class="text-zinc-500 text-sm mb-6">Accordions were flat with a faint <code class="text-brand-navy">shadow-sm</code>. Now elevated, and the <b>open</b> item gets a cyan-tinted lift + cyan border.</p>
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- before -->
+      <div>
+        <p class="text-[11px] font-black uppercase tracking-widest text-zinc-400 mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-zinc-300"></span>Before</p>
+        <div class="space-y-4">
+          <div class="bg-white rounded-2xl border border-zinc-100 shadow-sm-old px-6 py-5 flex items-center justify-between"><span class="font-bold text-brand-cyan">Do I pay for leads or booked jobs?</span><span class="h-8 w-8 rounded-full bg-brand-cyan text-white flex items-center justify-center">–</span></div>
+          <div class="bg-white rounded-2xl border border-zinc-100 shadow-sm-old px-6 py-5 flex items-center justify-between"><span class="font-bold text-brand-navy">How fast do results come in?</span><span class="h-8 w-8 rounded-full border border-zinc-200 text-zinc-400 flex items-center justify-center">+</span></div>
+        </div>
+      </div>
+      <!-- after -->
+      <div>
+        <p class="text-[11px] font-black uppercase tracking-widest text-brand-cyan-ink mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-brand-cyan"></span>After</p>
+        <div class="space-y-4">
+          <div class="bg-white rounded-2xl border border-brand-cyan/30 elev-cyan overflow-hidden">
+            <div class="px-6 py-5 flex items-center justify-between"><span class="font-bold text-brand-cyan">Do I pay for leads or booked jobs?</span><span class="h-8 w-8 rounded-full bg-brand-cyan text-white flex items-center justify-center">–</span></div>
+            <div class="px-6 pb-6 text-sm text-zinc-500 font-medium">You pay for confirmed, booked appointments — not raw leads or clicks.</div>
+          </div>
+          <div class="bg-white rounded-2xl border border-zinc-100 elev-soft px-6 py-5 flex items-center justify-between"><span class="font-bold text-brand-navy">How fast do results come in?</span><span class="h-8 w-8 rounded-full border border-zinc-200 text-zinc-400 flex items-center justify-center">+</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section>
+    <h2 class="text-2xl font-extrabold tracking-tight mb-1">5 · Testimonials — "Consistency" benefit rows</h2>
+    <p class="text-zinc-500 text-sm mb-6">Were flat gray rows on white. Now white, elevated cards that pop.</p>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <p class="text-[11px] font-black uppercase tracking-widest text-zinc-400 mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-zinc-300"></span>Before</p>
+        <div class="space-y-6">
+          <div class="flex items-center gap-6 p-8 bg-zinc-50 border border-zinc-100 rounded-2xl"><div class="h-12 w-12 bg-white rounded-xl shadow-sm-old flex items-center justify-center text-brand-cyan">📅</div><p class="font-black text-brand-navy uppercase tracking-wider">More predictable workflow</p></div>
+          <div class="flex items-center gap-6 p-8 bg-zinc-50 border border-zinc-100 rounded-2xl"><div class="h-12 w-12 bg-white rounded-xl shadow-sm-old flex items-center justify-center text-brand-cyan">📈</div><p class="font-black text-brand-navy uppercase tracking-wider">Better conversations</p></div>
+        </div>
+      </div>
+      <div>
+        <p class="text-[11px] font-black uppercase tracking-widest text-brand-cyan-ink mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-brand-cyan"></span>After (hover)</p>
+        <div class="space-y-6">
+          <div class="flex items-center gap-6 p-8 bg-white border border-zinc-100 rounded-2xl elev-soft hover:elev-cyan hover:border-brand-cyan transition-all group"><div class="h-12 w-12 bg-white rounded-xl shadow-sm-old flex items-center justify-center text-brand-cyan group-hover:bg-brand-cyan/10">📅</div><p class="font-black text-brand-navy uppercase tracking-wider">More predictable workflow</p></div>
+          <div class="flex items-center gap-6 p-8 bg-white border border-zinc-100 rounded-2xl elev-soft hover:elev-cyan hover:border-brand-cyan transition-all group"><div class="h-12 w-12 bg-white rounded-xl shadow-sm-old flex items-center justify-center text-brand-cyan group-hover:bg-brand-cyan/10">📈</div><p class="font-black text-brand-navy uppercase tracking-wider">Better conversations</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="border-t border-zinc-200 bg-brand-cloud">
+  <div class="mx-auto max-w-6xl px-6 py-10 text-sm text-zinc-500">
+    <p class="font-bold text-brand-navy mb-1">Static mockup — the real changes are already live on localhost (uncommitted).</p>
+    <p>The shadows are intentionally soft (design restraint). Want more punch? I can deepen <code class="text-brand-navy">.elev-soft</code> or add navy feature cards to Services / Case Studies too.</p>
+  </div>
+</footer>
+
+</body>
+</html>

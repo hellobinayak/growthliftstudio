@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node scripts/shot.mjs after)",
+      "Bash(gh auth *)",
+      "Bash(git fetch *)",
+      "Bash(git ls-tree *)",
+      "Bash(git branch *)",
+      "Bash(git commit -q -m 'Fix Vercel deploy: build with vite only, commit prerender tooling *)",
+      "Bash(node -e \"const p=require\\('./package.json'\\); console.log\\(JSON.stringify\\(p.scripts,null,2\\)\\)\")",
+      "Bash(rm -f scripts/verify-shot.mjs scripts/verify-mobile.png scripts/verify-desktop.png)",
+      "Bash(git commit -q -m 'Home hero: make proof-stat strip responsive on mobile *)",
+      "Bash(npx -y gh-pages@6 -d dist -t -m 'deploy: __TRACKED_VAR__')",
+      "Bash(powershell.exe -NoProfile -Command 'Get-NetTCPConnection -LocalPort 3000,3001 -State Listen -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue; Write-Output \"killed PID $_\" }')"
+    ]
+  }
+}

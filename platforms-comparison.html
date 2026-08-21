@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Growth Lift Studio — Platforms Logo Bar (Before / Options)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { brand: { navy:'#0D1B2A', cloud:'#F4F6F8', cyan:'#00C2E0', 'cyan-ink':'#0A7A8E' } },
+    fontFamily: { sans:['Plus Jakarta Sans','sans-serif'], body:['Inter','sans-serif'] },
+  } } };
+</script>
+<style>
+  body { font-family:'Inter',sans-serif; }
+  h1,h2,h3,h4 { font-family:'Plus Jakarta Sans',sans-serif; }
+  .elev-soft { box-shadow:0 1px 2px rgba(13,27,42,.04), 0 12px 30px -12px rgba(13,27,42,.12); }
+  .glow { background:radial-gradient(ellipse at 50% 0%, rgba(0,194,224,.08), transparent 70%); }
+  @keyframes marquee { from { transform:translateX(0);} to { transform:translateX(-50%);} }
+  .marquee { animation:marquee 28s linear infinite; }
+  .marquee:hover { animation-play-state:paused; }
+  /* Option A: real logos, grayscale -> color */
+  .logoA img { filter:grayscale(1); opacity:.65; transition:all .3s; height:26px; }
+  .logoA:hover img { filter:grayscale(0); opacity:1; }
+  .logoA span { color:#64748b; transition:color .3s; }
+  .logoA:hover span { color:#0D1B2A; }
+  /* Option B: mono wordmarks */
+  .logoB { color:#94a3b8; transition:color .3s; }
+  .logoB:hover { color:#0D1B2A; }
+  .fade-l { background:linear-gradient(90deg,#fff,transparent); }
+  .fade-r { background:linear-gradient(270deg,#fff,transparent); }
+</style>
+</head>
+<body class="bg-zinc-100 text-brand-navy antialiased">
+
+<header class="bg-brand-navy text-white">
+  <div class="mx-auto max-w-5xl px-6 py-10">
+    <p class="text-[11px] font-black uppercase tracking-[0.35em] text-brand-cyan mb-3">"The Platforms We Build On" &mdash; Logo Bar</p>
+    <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Before &amp; two fixes</h1>
+    <p class="text-zinc-300 max-w-2xl leading-relaxed">Set changed to <strong class="text-white">Meta &middot; Google &middot; Stripe &middot; GoHighLevel &middot; Twilio</strong> (Instagram dropped &mdash; it's Meta). Hover any bar to pause &amp; see the color/hover state.</p>
+  </div>
+</header>
+
+<main class="mx-auto max-w-5xl px-4 py-12 space-y-14">
+
+  <!-- ============ BEFORE ============ -->
+  <div>
+    <p class="text-[11px] font-black uppercase tracking-widest text-zinc-400 mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-zinc-400"></span>Before &mdash; navy tiles + wrong marks</p>
+    <div class="glow rounded-2xl bg-white border border-zinc-200 py-12 px-6">
+      <div class="flex justify-center mb-8">
+        <div class="inline-flex items-center gap-2 rounded-full border border-brand-cyan/20 bg-white px-4 py-1.5 elev-soft">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          <span class="text-[11px] font-bold uppercase tracking-[0.25em] text-brand-navy/70">The platforms we build on</span>
+        </div>
+      </div>
+      <div class="relative mx-auto max-w-3xl rounded-2xl bg-white border border-zinc-200/80 overflow-hidden elev-soft">
+        <div class="flex items-center justify-center gap-12 py-6 px-8 flex-wrap">
+          <div class="flex items-center gap-3 grayscale opacity-70"><div class="h-9 w-9 bg-brand-navy rounded-lg flex items-center justify-center text-white font-black">G</div><span class="font-sans font-black text-sm text-brand-navy/70">Google</span></div>
+          <div class="flex items-center gap-3 grayscale opacity-70"><div class="h-9 w-9 bg-brand-navy rounded-lg flex items-center justify-center text-white">&#9634;</div><span class="font-sans font-black text-sm text-brand-navy/70">Instagram</span></div>
+          <div class="flex items-center gap-3 grayscale opacity-70"><div class="h-9 w-9 bg-brand-navy rounded-lg flex items-center justify-center text-white font-black italic">a</div><span class="font-sans font-black text-sm text-brand-navy/70">Stripe</span></div>
+          <div class="flex items-center gap-3 grayscale opacity-70"><div class="h-9 w-9 bg-brand-navy rounded-lg flex items-center justify-center text-white">&#9776;</div><span class="font-sans font-black text-sm text-brand-navy/70">GoHighLevel</span></div>
+          <div class="flex items-center gap-3 grayscale opacity-70"><div class="h-9 w-9 bg-brand-navy rounded-lg flex items-center justify-center text-white">&#8734;</div><span class="font-sans font-black text-sm text-brand-navy/70">Meta</span></div>
+        </div>
+      </div>
+      <p class="mt-5 text-center text-[11px] font-bold text-zinc-500 italic">Stripe reads as "a", Meta reads as "&#8734;", everything flattened into identical gray tiles.</p>
+    </div>
+  </div>
+
+  <!-- ============ OPTION A ============ -->
+  <div>
+    <p class="text-[11px] font-black uppercase tracking-widest text-brand-cyan-ink mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-brand-cyan"></span>Option A &mdash; real brand logos (grayscale &rarr; color on hover)</p>
+    <div class="glow rounded-2xl bg-white border border-brand-cyan/30 py-12 px-6 ring-1 ring-brand-cyan/20">
+      <div class="flex justify-center mb-8">
+        <div class="inline-flex items-center gap-2 rounded-full border border-brand-cyan/20 bg-white px-4 py-1.5 elev-soft">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          <span class="text-[11px] font-bold uppercase tracking-[0.25em] text-brand-navy/70">The platforms we build on</span>
+        </div>
+      </div>
+      <div class="relative mx-auto max-w-3xl rounded-2xl bg-white border border-zinc-200/80 overflow-hidden elev-soft">
+        <div class="absolute left-0 inset-y-0 w-20 fade-l z-10 pointer-events-none"></div>
+        <div class="absolute right-0 inset-y-0 w-20 fade-r z-10 pointer-events-none"></div>
+        <div class="flex w-max marquee py-6">
+          <!-- duplicate x2 for seamless loop -->
+          <div class="flex items-center gap-14 px-7 shrink-0">
+            <div class="logoA flex items-center gap-2.5"><img src="https://cdn.simpleicons.org/meta/0467DF" alt="Meta"><span class="font-sans font-extrabold text-sm">Meta</span></div>
+            <div class="logoA flex items-center gap-2.5"><img src="https://cdn.simpleicons.org/google/4285F4" alt="Google"><span class="font-sans font-extrabold text-sm">Google</span></div>
+            <div class="logoA flex items-center gap-2.5"><img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Stripe"><span class="font-sans font-extrabold text-sm">Stripe</span></div>
+            <div class="logoA flex items-center gap-2.5"><img src="https://cdn.simpleicons.org/gohighlevel/2A3EC4" alt="GoHighLevel" onerror="this.style.display='none'"><span class="font-sans font-extrabold text-sm">GoHighLevel</span></div>
+            <div class="logoA flex items-center gap-2.5"><img src="https://cdn.simpleicons.org/twilio/F22F46" alt="Twilio"><span class="font-sans font-extrabold text-sm">Twilio</span></div>
+          </div>
+          <div class="flex items-center gap-14 px-7 shrink-0" aria-hidden="true">
+            <div class="logoA flex items-center gap-2.5"><img src="https://cdn.simpleicons.org/meta/0467DF" alt=""><span class="font-sans font-extrabold text-sm">Meta</span></div>
+            <div class="logoA flex items-center gap-2.5"><img src="https://cdn.simpleicons.org/google/4285F4" alt=""><span class="font-sans font-extrabold text-sm">Google</span></div>
+            <div class="logoA flex items-center gap-2.5"><img src="https://cdn.simpleicons.org/stripe/635BFF" alt=""><span class="font-sans font-extrabold text-sm">Stripe</span></div>
+            <div class="logoA flex items-center gap-2.5"><img src="https://cdn.simpleicons.org/gohighlevel/2A3EC4" alt="" onerror="this.style.display='none'"><span class="font-sans font-extrabold text-sm">GoHighLevel</span></div>
+            <div class="logoA flex items-center gap-2.5"><img src="https://cdn.simpleicons.org/twilio/F22F46" alt=""><span class="font-sans font-extrabold text-sm">Twilio</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="mt-5 text-center text-[11px] font-bold text-brand-cyan-ink italic">Authentic marks. Understated gray at rest, brand color on hover &mdash; the premium "trusted by" standard.</p>
+    </div>
+  </div>
+
+  <!-- ============ OPTION B ============ -->
+  <div>
+    <p class="text-[11px] font-black uppercase tracking-widest text-zinc-500 mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-brand-navy"></span>Option B &mdash; clean monochrome wordmarks (no icons)</p>
+    <div class="glow rounded-2xl bg-white border border-zinc-200 py-12 px-6">
+      <div class="flex justify-center mb-8">
+        <div class="inline-flex items-center gap-2 rounded-full border border-brand-cyan/20 bg-white px-4 py-1.5 elev-soft">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          <span class="text-[11px] font-bold uppercase tracking-[0.25em] text-brand-navy/70">The platforms we build on</span>
+        </div>
+      </div>
+      <div class="relative mx-auto max-w-3xl rounded-2xl bg-white border border-zinc-200/80 overflow-hidden elev-soft">
+        <div class="absolute left-0 inset-y-0 w-20 fade-l z-10 pointer-events-none"></div>
+        <div class="absolute right-0 inset-y-0 w-20 fade-r z-10 pointer-events-none"></div>
+        <div class="flex w-max marquee py-7">
+          <div class="flex items-center gap-16 px-8 shrink-0">
+            <span class="logoB font-sans font-black text-xl tracking-tight cursor-default">Meta</span>
+            <span class="logoB font-sans font-black text-xl tracking-tight cursor-default">Google</span>
+            <span class="logoB font-sans font-black text-xl tracking-tight cursor-default">Stripe</span>
+            <span class="logoB font-sans font-black text-xl tracking-tight cursor-default">GoHighLevel</span>
+            <span class="logoB font-sans font-black text-xl tracking-tight cursor-default">Twilio</span>
+          </div>
+          <div class="flex items-center gap-16 px-8 shrink-0" aria-hidden="true">
+            <span class="logoB font-sans font-black text-xl tracking-tight cursor-default">Meta</span>
+            <span class="logoB font-sans font-black text-xl tracking-tight cursor-default">Google</span>
+            <span class="logoB font-sans font-black text-xl tracking-tight cursor-default">Stripe</span>
+            <span class="logoB font-sans font-black text-xl tracking-tight cursor-default">GoHighLevel</span>
+            <span class="logoB font-sans font-black text-xl tracking-tight cursor-default">Twilio</span>
+          </div>
+        </div>
+      </div>
+      <p class="mt-5 text-center text-[11px] font-bold text-zinc-500 italic">Impossible to get "wrong", always sharp &mdash; but less visual punch than real marks.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer class="mx-auto max-w-5xl px-4 pb-16 pt-4 text-xs font-bold text-zinc-400 uppercase tracking-[0.3em]">
+  Growth Lift Studio &middot; Platforms logo bar preview
+</footer>
+
+</body>
+</html>

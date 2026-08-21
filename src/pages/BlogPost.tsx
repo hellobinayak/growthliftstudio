@@ -75,8 +75,8 @@ const relatedPostsMap: Record<string, string[]> = {
     "google-ads-home-improvement-contractors",
   ],
   "google-ads-kitchen-remodeling-contractors": [
+    "google-ads-outdoor-kitchen-construction",
     "google-ads-bathroom-remodeling-contractors",
-    "google-ads-window-replacement-contractors",
     "google-ads-home-improvement-contractors",
   ],
   "google-ads-bathroom-remodeling-contractors": [
@@ -93,6 +93,11 @@ const relatedPostsMap: Record<string, string[]> = {
     "google-ads-kitchen-remodeling-contractors",
     "google-ads-bathroom-remodeling-contractors",
     "google-ads-window-replacement-contractors",
+  ],
+  "google-ads-outdoor-kitchen-construction": [
+    "google-ads-kitchen-remodeling-contractors",
+    "google-ads-home-improvement-contractors",
+    "google-ads-bathroom-remodeling-contractors",
   ],
 };
 
@@ -150,6 +155,10 @@ export default function BlogPost() {
         .replace(/\s+/g, "-");
       return { text, id };
     });
+
+  if (post.faqs && post.faqs.length > 0) {
+    headings.push({ text: "Frequently Asked Questions", id: "frequently-asked-questions" });
+  }
 
   /* ── Get related posts ── */
   const relatedSlugs = relatedPostsMap[post.slug] || [];
@@ -381,7 +390,23 @@ export default function BlogPost() {
         "@type": "WebPage",
         "@id": `https://growthliftstudio.in/blog/${post.slug}`
       }
-    }
+    },
+    ...(post.faqs && post.faqs.length > 0
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": post.faqs.map((faq) => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
+          }
+        ]
+      : [])
   ];
 
   return (
@@ -393,7 +418,7 @@ export default function BlogPost() {
       />
 
       {/* Hero */}
-      <section className="pt-24 pb-12 px-6 bg-zinc-50 border-b border-zinc-100">
+      <section className="py-16 md:py-24 px-6 bg-zinc-50 border-b border-zinc-100">
         <div className="max-w-3xl mx-auto">
           {/* Breadcrumb Navigation */}
           <nav aria-label="Breadcrumb" className="mb-10">
@@ -444,8 +469,8 @@ export default function BlogPost() {
         </div>
       </section>
 
-      {/* Content & Sidebars */}
-      <section className="py-12 px-6">
+      {/* Article Body */}
+      <section className="py-20 md:py-32 px-6">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:gap-12 xl:gap-16">
 
           {/* Left Sidebar: Table of Contents */}
@@ -507,6 +532,30 @@ export default function BlogPost() {
             <div className="prose prose-lg prose-zinc max-w-none">
               {renderContent(post.content)}
             </div>
+
+          {/* FAQ Section */}
+          {post.faqs && post.faqs.length > 0 && (
+            <div className="mt-4">
+              <h2
+                id="frequently-asked-questions"
+                className="text-2xl font-black text-brand-navy mt-12 mb-6 tracking-tight scroll-mt-24"
+              >
+                Frequently Asked Questions
+              </h2>
+              <div className="space-y-6">
+                {post.faqs.map((faq, i) => (
+                  <div key={i} className="bg-zinc-50 border border-zinc-100 rounded-2xl p-6 sm:p-8">
+                    <h3 className="text-lg font-black text-brand-navy mb-3 tracking-tight">
+                      {faq.question}
+                    </h3>
+                    <p className="text-zinc-600 leading-relaxed font-medium">
+                      {faq.answer}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Share buttons — above author block */}
           <div className="mt-16 pt-8 border-t border-zinc-100">
@@ -640,7 +689,7 @@ export default function BlogPost() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 px-6 bg-brand-navy">
+      <section className="py-20 md:py-32 px-6 bg-brand-navy">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tighter mb-4">
             Want this system built <span className="text-brand-cyan">for you?</span>

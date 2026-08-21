@@ -1,0 +1,43 @@
+Add-Type -AssemblyName System.Drawing
+$dir = "d:\Growth Lift Studio\Social Media Brand\New folder\public\images"
+$images = @(Get-Item "$dir\kitchen-negative-keywords-v3.png", "$dir\bath-network-settings-annotated-v2.png")
+
+foreach ($imgFile in $images) {
+    $imgPath = $imgFile.FullName
+    $img = [System.Drawing.Image]::FromFile($imgPath)
+    
+    $targetWidth = 1200
+    $targetHeight = 628
+    
+    $ratioX = $targetWidth / $img.Width
+    $ratioY = $targetHeight / $img.Height
+    $ratio = [Math]::Min($ratioX, $ratioY)
+    
+    $newWidth = [int]($img.Width * $ratio)
+    $newHeight = [int]($img.Height * $ratio)
+    
+    $bmp = New-Object System.Drawing.Bitmap($targetWidth, $targetHeight)
+    $g = [System.Drawing.Graphics]::FromImage($bmp)
+    
+    $bgColor = [System.Drawing.Color]::FromArgb(255, 10, 10, 10)
+    $brush = New-Object System.Drawing.SolidBrush($bgColor)
+    $g.FillRectangle($brush, 0, 0, $targetWidth, $targetHeight)
+    
+    $posX = ($targetWidth - $newWidth) / 2
+    $posY = ($targetHeight - $newHeight) / 2
+    
+    $g.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
+    $g.DrawImage($img, $posX, $posY, $newWidth, $newHeight)
+    
+    $img.Dispose()
+    $g.Dispose()
+    $brush.Dispose()
+    
+    $tempPath = $imgPath + ".tmp.png"
+    $bmp.Save($tempPath, [System.Drawing.Imaging.ImageFormat]::Png)
+    $bmp.Dispose()
+    
+    Remove-Item $imgPath -Force
+    Rename-Item $tempPath $imgFile.Name
+    Write-Host "Resized: $($imgFile.Name)"
+}

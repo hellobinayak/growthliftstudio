@@ -54,7 +54,7 @@ export default function Blog() {
       </section>
 
       {/* Posts Grid */}
-      <section className="py-16 md:py-24 px-6">
+      <section className="py-20 md:py-32 px-6">
         <div className="mx-auto max-w-7xl">
           {blogPosts.length === 0 ? (
             <div className="text-center py-16 md:py-24">

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Growth Lift Studio — Hero Polish (Before / After)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { brand: { navy:'#0D1B2A', cloud:'#F4F6F8', cyan:'#00C2E0', 'cyan-ink':'#0A7A8E' } },
+      fontFamily: { sans:['Plus Jakarta Sans','sans-serif'], body:['Inter','sans-serif'] },
+    } },
+  };
+</script>
+<style>
+  body { font-family:'Inter',sans-serif; }
+  h1,h2,h3,h4 { font-family:'Plus Jakarta Sans',sans-serif; }
+  .dotgrid {
+    background-image: radial-gradient(rgba(13,27,42,.10) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+  .hero-wash { background:
+    radial-gradient(ellipse at 15% 20%, rgba(0,194,224,.10), transparent 55%),
+    linear-gradient(180deg,#ffffff 0%,#f7fafb 100%); }
+  .shimmer { color:#0A7A8E; }
+  .diff-add { background:rgba(0,194,224,.10); box-shadow:inset 3px 0 0 #00C2E0; }
+</style>
+</head>
+<body class="bg-zinc-100 text-brand-navy antialiased">
+
+<header class="bg-brand-navy text-white">
+  <div class="mx-auto max-w-6xl px-6 py-10">
+    <p class="text-[11px] font-black uppercase tracking-[0.35em] text-brand-cyan mb-3">Homepage Hero — Visual Polish</p>
+    <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Before &amp; After</h1>
+    <p class="text-zinc-300 max-w-2xl leading-relaxed">Same headline, same brand. The change: the single faint proof line becomes a scannable 3-stat credibility strip, tighter vertical rhythm, and an arrow affordance on the primary CTA.</p>
+  </div>
+</header>
+
+<main class="mx-auto max-w-6xl px-4 py-12 space-y-16">
+
+  <!-- ============ BEFORE ============ -->
+  <div>
+    <p class="text-[11px] font-black uppercase tracking-widest text-zinc-400 mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-zinc-400"></span>Before — current live</p>
+    <div class="rounded-2xl overflow-hidden border border-zinc-200 hero-wash">
+      <div class="dotgrid">
+        <section class="px-8 py-24 text-center">
+          <div class="inline-flex items-center gap-2 rounded-full bg-white ring-1 ring-zinc-200 px-5 py-2 mb-10 shadow-sm">
+            <span class="h-2 w-2 rounded-full bg-brand-cyan"></span>
+            <span class="text-[11px] font-black uppercase tracking-[0.25em] text-brand-navy">Built for</span>
+            <span class="text-[11px] font-black uppercase tracking-[0.25em] text-brand-cyan-ink">Remodelers</span>
+          </div>
+          <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-8 leading-[0.95] text-brand-navy">
+            Your calendar shouldn&rsquo;t <br />
+            <span class="shimmer">have empty slots.</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-zinc-600 max-w-3xl mx-auto mb-6 leading-relaxed">
+            We build systems that bring in <span class="text-brand-navy font-bold">booked, confirmed jobs</span>&mdash;not inquiries you have to chase.
+          </p>
+
+          <!-- OLD proof line -->
+          <p class="inline-flex items-center gap-2 text-sm font-bold text-zinc-500 mb-10">
+            <span class="inline-block h-4 w-4 rounded-full border-2 border-brand-cyan"></span>
+            370+ confirmed jobs booked for our clients in 2025.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <button class="h-11 px-8 rounded-md bg-brand-navy text-white text-xs font-black uppercase tracking-[0.15em]">Book a Call</button>
+            <button class="h-11 px-8 rounded-md border border-zinc-200 text-zinc-600 text-xs font-black uppercase tracking-[0.15em]">See case studies</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ AFTER ============ -->
+  <div>
+    <p class="text-[11px] font-black uppercase tracking-widest text-brand-cyan-ink mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-brand-cyan"></span>After — polished</p>
+    <div class="rounded-2xl overflow-hidden ring-1 ring-brand-cyan/30 shadow-[0_20px_45px_-18px_rgba(0,120,140,.30)] hero-wash">
+      <div class="dotgrid">
+        <section class="px-8 py-24 text-center">
+          <div class="inline-flex items-center gap-2 rounded-full bg-white ring-1 ring-zinc-200 px-5 py-2 mb-10 shadow-sm">
+            <span class="h-2 w-2 rounded-full bg-brand-cyan"></span>
+            <span class="text-[11px] font-black uppercase tracking-[0.25em] text-brand-navy">Built for</span>
+            <span class="text-[11px] font-black uppercase tracking-[0.25em] text-brand-cyan-ink">Remodelers</span>
+          </div>
+          <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 leading-[0.95] text-brand-navy">
+            Your calendar shouldn&rsquo;t <br />
+            <span class="shimmer">have empty slots.</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-zinc-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+            We build systems that bring in <span class="text-brand-navy font-bold">booked, confirmed jobs</span>&mdash;not inquiries you have to chase.
+          </p>
+
+          <!-- NEW 3-stat strip -->
+          <div class="diff-add rounded-xl inline-flex flex-wrap items-center justify-center gap-x-10 gap-y-5 mb-10 px-8 py-5">
+            <div class="text-center">
+              <div class="text-2xl font-black tracking-tight text-brand-navy">370+</div>
+              <div class="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500 mt-0.5">Jobs booked in 2025</div>
+            </div>
+            <div class="h-9 w-px bg-zinc-200/80"></div>
+            <div class="text-center">
+              <div class="text-2xl font-black tracking-tight text-brand-navy">First 5</div>
+              <div class="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500 mt-0.5">Appointments free</div>
+            </div>
+            <div class="h-9 w-px bg-zinc-200/80"></div>
+            <div class="text-center">
+              <div class="text-2xl font-black tracking-tight text-brand-navy">Pay on close</div>
+              <div class="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-500 mt-0.5">Only when you win</div>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <button class="group h-11 px-8 rounded-md bg-brand-navy text-white text-xs font-black uppercase tracking-[0.15em] shadow-xl shadow-brand-navy/20 inline-flex items-center transition-transform hover:-translate-y-0.5">
+              Book a Call
+              <svg class="ml-2 h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <button class="h-11 px-8 rounded-md border border-zinc-200 text-zinc-600 text-xs font-black uppercase tracking-[0.15em] hover:bg-zinc-50 transition">See case studies</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ WHAT CHANGED ============ -->
+  <div>
+    <p class="text-[11px] font-black uppercase tracking-widest text-zinc-400 mb-3 flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-brand-navy"></span>What changed</p>
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="rounded-2xl bg-white ring-1 ring-zinc-200 p-6">
+        <div class="text-brand-cyan-ink text-xs font-black uppercase tracking-[0.2em] mb-2">Proof</div>
+        <p class="text-sm text-zinc-600 leading-relaxed">One faint line became a <strong class="text-brand-navy">3-stat strip</strong> with hairline dividers &mdash; three credibility hits (volume, risk-free trial, pay-on-outcome) that scan in under a second.</p>
+      </div>
+      <div class="rounded-2xl bg-white ring-1 ring-zinc-200 p-6">
+        <div class="text-brand-cyan-ink text-xs font-black uppercase tracking-[0.2em] mb-2">Rhythm</div>
+        <p class="text-sm text-zinc-600 leading-relaxed">Tightened the headline gap and opened space around the strip so the eye steps evenly: <strong class="text-brand-navy">headline &rarr; subhead &rarr; proof &rarr; CTAs</strong>.</p>
+      </div>
+      <div class="rounded-2xl bg-white ring-1 ring-zinc-200 p-6">
+        <div class="text-brand-cyan-ink text-xs font-black uppercase tracking-[0.2em] mb-2">CTA</div>
+        <p class="text-sm text-zinc-600 leading-relaxed">Added an <strong class="text-brand-navy">arrow</strong> to &ldquo;Book a Call&rdquo; that nudges right on hover &mdash; a small motion affordance signaling forward action. <span class="italic">Hover it &uarr;</span></p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="mx-auto max-w-6xl px-4 pb-16 pt-4 text-xs font-bold text-zinc-400 uppercase tracking-[0.3em]">
+  Growth Lift Studio &middot; Hero polish preview
+</footer>
+
+</body>
+</html>

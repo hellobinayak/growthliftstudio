@@ -68,8 +68,8 @@ export default function TestimonialSlider() {
   const testimonial = testimonials[currentIndex];
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto px-4 py-12">
-      <div className="relative overflow-hidden min-h-[400px] flex items-center justify-center">
+    <div className="relative w-full max-w-4xl mx-auto px-4">
+      <div className="relative overflow-hidden min-h-[280px] flex items-center justify-center">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={currentIndex}
