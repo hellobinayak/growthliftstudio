@@ -15,7 +15,8 @@ import { readFile, writeFile, mkdir, readdir, stat } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
+import chromium from '@sparticuz/chromium';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, '..', 'dist');
@@ -88,9 +89,21 @@ async function prerender() {
   }
   const routes = await getRoutes();
   const server = await startServer();
+  let executablePath;
+  if (process.env.VERCEL) {
+    executablePath = await chromium.executablePath();
+  } else {
+    executablePath = process.platform === 'win32'
+      ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+      : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+  }
+  
+  console.log('Using executablePath:', executablePath);
   const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: executablePath,
+    headless: chromium.headless === true ? 'new' : chromium.headless,
   });
 
   let ok = 0;
